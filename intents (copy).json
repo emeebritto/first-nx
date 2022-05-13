@@ -1,0 +1,25 @@
+{
+  "intents": [
+    {
+      "tag": "01xf",
+      "patterns": [ "oi", "oih", "oii", "ei", "eih", "olá", "hi", "hello", "hey" ],
+      "context": null,
+      "responses": [ "oi", "oiih", "hi", "oi, tudo bem?::01xf2" ]
+    },{
+      "tag": "02xf",
+      "patterns": [ "bom dia", "bom diia", "bom diaa" ],
+      "context": null,
+      "responses": [ "bom dia", "bom dia!", "bom dia :)" ]
+    },{
+      "tag": "03xf",
+      "patterns": [ "tudo", "tudo ótimo", "estou bem", "estou ok" ],
+      "context": [ "01xf2" ],
+      "responses": [ "que bom", "que bom :)" ]
+    },{
+      "tag": "04xf",
+      "patterns": [ "estou mal", "estou mal :(", "estou arrasado", "mais ou menos", "+ ou -", "não" ],
+      "context": [ "01xf2" ],
+      "responses": [ "ah :(" ]
+    }
+  ]
+}
