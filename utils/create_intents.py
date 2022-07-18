@@ -7,7 +7,7 @@ thread_contexts = []
 intents = []
 
 # print(dir(str))
-with open('dialog.md', 'r+') as dialog:
+with open('data/dialog.md', 'r+') as dialog:
   dialog_lines = dialog.readlines()
   for index in range(0, len(dialog_lines) - 1, 2):
     dialog_line = dialog_lines[index];

@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 def skLearnResponse(user_response):
-  with open('about_me.md', 'r') as f:
+  with open('data/about_me.md', 'r') as f:
     nexaMd = f.read()
 
   sent_tokens=nltk.sent_tokenize(nexaMd)
