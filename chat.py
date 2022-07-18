@@ -1,3 +1,4 @@
+from nexa import nexa
 import nltk
 import random
 import json
@@ -37,12 +38,12 @@ model.load_state_dict(model_state)
 model.eval()
 
 bot_name = "Nexa"
-print("Let's chat! (type 'quit' to exit)")
+nexa.send_to_author(msg="Let's chat!")
 
 context_network = []
 
 while True:
-  sentence = input("You: ")
+  sentence = nexa.wait_author_response()
   if sentence == "quit":
     break
   if len(sentence) < 1:
@@ -68,12 +69,12 @@ while True:
         response = result[0]
         context = result[1] if len(result) > 1 else None
         if (context): context_network.append(context)
-        print(response, context)
-        print(f"{bot_name}: {response}")
+        # print(response, context)
+        nexa.send_to_author(msg=response)
       elif tag == intent["tag"]:
-        print(f"{bot_name}: ??")
+        nexa.send_to_author(msg="??")
   else:
-    print(f"{bot_name}: {skLearnResponse(sentence)}")
+    nexa.send_to_author(msg=skLearnResponse(sentence))
 
 # 1 - verifica todos os padrões, tantando encontrar o 'match' com o input;
 # 2 - retorna a tag em que ocorreu o 'match';
