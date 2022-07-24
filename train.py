@@ -29,7 +29,7 @@ for intent in intents['intents']:
     xy.append((w, tag))
 
 # stem and lower each word
-ignore_words = ['?', '.', '!']
+ignore_words = ['?', '.', '!', ',', '||']
 all_words = [stem(w) for w in all_words if w not in ignore_words]
 # remove duplicates and sort
 all_words = sorted(set(all_words))
@@ -54,7 +54,7 @@ X_train = np.array(X_train)
 y_train = np.array(y_train)
 
 # Hyper-parameters 
-num_epochs = 4000
+num_epochs = 5000
 batch_size = 100
 learning_rate = 0.001
 input_size = len(X_train[0])
@@ -109,7 +109,7 @@ for epoch in range(num_epochs):
     optimizer.zero_grad()
     loss.backward()
     optimizer.step()
-      
+
   if (epoch+1) % 100 == 0:
     print (f'Epoch [{epoch+1}/{num_epochs}], Loss: {loss.item():.4f}')
 

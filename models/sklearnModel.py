@@ -15,7 +15,7 @@ def skLearnResponse(user_response):
     return nltk.word_tokenize(text.lower().translate(remove_punct_dict))
 
   user_response=user_response.lower()
-  robo_response=''
+  nexa_response=''
   sent_tokens.append(user_response)
   tfidfvec=TfidfVectorizer(tokenizer=LemNormalize , stop_words='english')
   tfidf=tfidfvec.fit_transform(sent_tokens)
@@ -25,9 +25,9 @@ def skLearnResponse(user_response):
   flat.sort()
   score=flat[-2]
   if score==0:
-    robo_response = "sorry, I dont understand"
+    nexa_response = "sorry, I dont understand"
   else:
-    robo_response = sent_tokens[idx]
+    nexa_response = sent_tokens[idx]
 
   sent_tokens.remove(user_response)
-  return robo_response
+  return nexa_response

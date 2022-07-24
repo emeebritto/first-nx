@@ -9,15 +9,14 @@ from models.model import NeuralNet
 from utils.nltk_utils import bag_of_words, tokenize
 from models.sklearnModel import skLearnResponse
 
-nltk.download('punkt',quiet=True)
-nltk.download('wordnet',quiet=True)
+nltk.download('punkt', quiet=True)
+nltk.download('wordnet', quiet=True)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def some_match(list1, list2):
-  for item1 in list1:
-    for item2 in list2:
-      if (item1 == item2): return True
+  for item in list1:
+    if item in list2: return True
   return False
 
 with open('data/intents.json', 'r') as json_data:
@@ -38,16 +37,13 @@ model.load_state_dict(model_state)
 model.eval()
 
 bot_name = "Nexa"
-nexa.send_to_author(msg="Let's chat!")
+print("Nexa's ready!")
 
 context_network = []
 
 while True:
   sentence = nexa.wait_author_response()
-  if sentence == "quit":
-    break
-  if len(sentence) < 1:
-    continue
+  if not sentence: continue
 
   tokenized_sentence = tokenize(sentence)
   X = bag_of_words(tokenized_sentence, all_words)
@@ -62,8 +58,8 @@ while True:
   prob = probs[0][predicted.item()]
   if prob.item() > 0.75:
     for intent in intents['intents']:
-      allowed = some_match(context_network, intent["context"]) if intent["context"] else True
-      if tag == intent["tag"] and allowed:
+      hasContext = some_match(context_network, intent["context"]) if intent["context"] else True
+      if tag == intent["tag"] and hasContext:
         context_network.append(intent["tag"])
         result = random.choice(intent['responses']).split('::')
         response = result[0]
@@ -75,7 +71,3 @@ while True:
         nexa.send_to_author(msg="??")
   else:
     nexa.send_to_author(msg=skLearnResponse(sentence))
-
-# 1 - verifica todos os padrões, tantando encontrar o 'match' com o input;
-# 2 - retorna a tag em que ocorreu o 'match';
-# 3 - usando 'random.choice' seleciona alguma resposta na tag;
