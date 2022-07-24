@@ -2,9 +2,9 @@ import requests
 from time import sleep
 
 
-class Nexa:
+class NexaTelegram:
 	def __init__(self):
-		super(Nexa, self).__init__()
+		super(NexaTelegram, self).__init__()
 		self.__token = "5435366586:AAE9L0ZVNTEkAIHg12LssdsVgtV36I7BYVc"
 		self.__author = '1242558424'
 		self.__author_name = "Emerson_Britto"
@@ -58,15 +58,16 @@ class Nexa:
 		def compareRequests():
 			newRequest = self.last_message(user=user)
 			if not newRequest: return True
+			if not newRequest["message"].get("text"): return True
 			return lastUpdate["update_id"] == newRequest["update_id"]
 
-		while compareRequests(): sleep(1)
+		while compareRequests(): sleep(1.5)
 		lastUpdate = self.last_message(user=user)
 		if metadata: return lastUpdate
 		else: return lastUpdate["message"]["text"]
 
 
-nexa = Nexa()
+nexaTelegram = NexaTelegram()
 # print("waiting your message..")
 # print(nexa.last_message(user="Emerson-Britto"))
 # print(nexa.wait_new_message(user="Emerson_Britto"))
