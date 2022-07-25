@@ -1,5 +1,5 @@
 import hashlib
-
+import re
 
 def some_match(list1, list2):
   for item in list1:
@@ -17,3 +17,10 @@ def hashl(filePath):
       fb = f.read(BLOCK_SIZE)
 
   return file_hash.hexdigest()
+
+
+def replace(match, newValue, target):
+  if type(target) == list:
+    return re.sub(match, newValue or "", " ".join(target)).split()
+  else:
+    return re.sub(match, newValue or "", target)

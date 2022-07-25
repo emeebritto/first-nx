@@ -84,7 +84,7 @@ class Nexa:
 			self.train()
 
 
-	def _translate(self, value):
+	def _format(self, value):
 		tokenized_value = tokenize(value)
 		X = bag_of_words(tokenized_value, self.all_words)
 		X = X.reshape(1, X.shape[0])
@@ -127,9 +127,9 @@ class Nexa:
 	def read(self, value):
 		if not value: return ""
 
-		valueTranslated = self._translate(value)
+		valueFormated = self._format(value)
 
-		output = self._model(valueTranslated)
+		output = self._model(valueFormated)
 		_, predicted = torch.max(output, dim=1)
 
 		tag = self.tags[predicted.item()]
