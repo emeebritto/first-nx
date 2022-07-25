@@ -9,7 +9,7 @@ from torch.utils.data import Dataset, DataLoader
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from utils.nltk_utils import bag_of_words, tokenize, stem
-from utils.functions import some_match
+from utils.functions import some_match, hashl
 
 
 nltk.download('punkt', quiet=True)
@@ -55,7 +55,7 @@ class NeuralNet(nn.Module):
 
 
 class Nexa:
-	def __init__(self, trainOnStartUp=None):
+	def __init__(self):
 		super(Nexa, self).__init__()
 		self.name = "Nexa"
 		self.context_network = []
@@ -65,6 +65,7 @@ class Nexa:
 
 		self.mindPath = "data/data.pth"
 		self.intentsPath = "data/intents.json"
+		self.intentsHash = None
 
 		# Hyper-parameters 
 		self.num_epochs = 5000
@@ -75,15 +76,12 @@ class Nexa:
 		self.output_size = None
 
 		self._model = None
-
 		self._loadIntents()
-		if trainOnStartUp:
+
+		try:
+			self._loadMind()
+		except Exception as e:
 			self.train()
-		else:
-			try:
-				self._loadMind()
-			except Exception as e:
-				self.train()
 
 
 	def _translate(self, value):
@@ -103,12 +101,16 @@ class Nexa:
 
 
 	def _loadIntents(self):
+		self.intentsHash = hashl(self.intentsPath)
 		with open(self.intentsPath, 'r') as json_data:
 			self.intents = json.load(json_data)
 
 
 	def _loadMind(self):
 		data = torch.load(self.mindPath)
+		if self.intentsHash != data["intents_hash"]:
+			raise Exception
+
 		self.input_size = data["input_size"]
 		self.hidden_size = data["hidden_size"]
 		self.output_size = data["output_size"]
@@ -236,6 +238,7 @@ class Nexa:
 
 	def _saveMind(self):
 		data = {
+			"intents_hash": self.intentsHash,
 		  "model_state": self._model.state_dict(),
 		  "input_size": self.input_size,
 		  "hidden_size": self.hidden_size,

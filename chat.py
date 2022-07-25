@@ -1,7 +1,7 @@
 from nexa.telegram import nexaTelegram
 from nexa.core import Nexa
 
-nexa = Nexa(trainOnStartUp=False)
+nexa = Nexa()
 print("Nexa's ready!")
 
 while True:
