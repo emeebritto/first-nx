@@ -1,6 +1,6 @@
 from nexa.telegram import nexaTelegram
 from nexa.core import Nexa
-from nexa.compiler import Compiler
+# from nexa.compiler import Compiler
 
 # compiler = Compiler()
 # result = compiler.translate(
@@ -12,7 +12,7 @@ from nexa.compiler import Compiler
 #   ]
 # )
 
-#print(result)
+# print(result)
 
 nexa = Nexa()
 print("Nexa's ready!")
