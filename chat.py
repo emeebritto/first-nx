@@ -18,6 +18,6 @@ nexa = Nexa()
 print("Nexa's ready!")
 
 while True:
-  sentence = nexaTelegram.wait_author_response()
-  nexa_msg = nexa.read(sentence)
-  nexaTelegram.send_to_author(msg=nexa_msg)
+  # sentence = nexaTelegram.wait_author_response()
+  print(nexa.read(input("You: ")))
+  # nexaTelegram.send_to_author(msg=nexa_msg)

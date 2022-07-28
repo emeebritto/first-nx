@@ -1,11 +1,21 @@
-from nexa.brain import NexaBrain
+from nexa.neuralNet import NexaNeuralNet
 from nexa.compiler import Compiler
 
-compiler = Compiler()
 
-class Nexa(NexaBrain):
+compiler = Compiler()
+sentenceMood = NexaNeuralNet(
+	intentsPath="data/sentence/mood.json",
+	dataPath="data/sentence/mood.pth"
+)
+sentenceType = NexaNeuralNet(
+	intentsPath="data/sentence/type.json",
+	dataPath="data/sentence/type.pth"
+)
+
+class Nexa:
 	def __init__(self):
 		super(Nexa, self).__init__()
+		self.context_network = []
 		self.name = "Nexa"
 
 
@@ -27,25 +37,10 @@ class Nexa(NexaBrain):
 	def read(self, value):
 		if not value: return ""
 
-		tag, prob = self.predict(value)
+		predictedType = sentenceType.predict(value)
+		predictedMood = sentenceMood.predict(value)
 
-		if prob.item() > 0.75:
-			for intent in self.intents['intents']:
-				hasContext = some_match(self.context_network, intent["context"]) if intent["context"] else True
-				if tag == intent["tag"] and hasContext:
-					self.context_network.append(intent["tag"])
-					response = random.choice(intent['responses'])
-					return self.interpret(
-						inputV=value,
-						outputV=response,
-						intent=intent
-					)
-			return "??"
-		else:
-			with open('data/about_me.md', 'r') as f:
-				nexaMd = f.read()
-
-			return self.extractFromText(value, source=nexaMd)
+		return predictedMood, predictedType
 
 
 	def extractFromText(self, value, source):

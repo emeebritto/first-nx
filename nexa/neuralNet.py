@@ -5,11 +5,13 @@ import torch
 import string
 import numpy as np
 import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from utils.nltk_utils import bag_of_words, tokenize, stem
 from utils.functions import some_match, hashl
+from utils.datasets import ChatDataset
+from models.core import NeuralNet
 
 
 nltk.download('punkt', quiet=True)
@@ -18,52 +20,15 @@ nltk.download('wordnet', quiet=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-
-class ChatDataset(Dataset):
-
-  def __init__(self, X_train, y_train):
-    self.n_samples = len(X_train)
-    self.x_data = X_train
-    self.y_data = y_train
-
-  def __getitem__(self, index):
-    return self.x_data[index], self.y_data[index]
-
-
-  def __len__(self):
-    return self.n_samples
-
-
-
-class NeuralNet(nn.Module):
-  def __init__(self, input_size, hidden_size, num_classes):
-    super(NeuralNet, self).__init__()
-    self.l1 = nn.Linear(input_size, hidden_size) 
-    self.l2 = nn.Linear(hidden_size, hidden_size) 
-    self.l3 = nn.Linear(hidden_size, num_classes)
-    self.relu = nn.ReLU()
-  
-  def forward(self, x):
-    out = self.l1(x)
-    out = self.relu(out)
-    out = self.l2(out)
-    out = self.relu(out)
-    out = self.l3(out)
-    # no activation and no softmax at the end
-    return out
-
-
-
-class NexaBrain:
-	def __init__(self):
-		super(NexaBrain, self).__init__()
-		self.context_network = []
+class NexaNeuralNet:
+	def __init__(self, intentsPath, dataPath):
+		super(NexaNeuralNet, self).__init__()
 		self.all_words = []
 		self.tags = []
 		self.ignore_words = ['?', '.', '!', ',', '||']
 
-		self.mindPath = "data/data.pth"
-		self.intentsPath = "data/intents.json"
+		self.dataPath = dataPath
+		self.intentsPath = intentsPath
 		self.intentsHash = None
 
 		# Hyper-parameters 
@@ -106,7 +71,7 @@ class NexaBrain:
 
 
 	def _loadMind(self):
-		data = torch.load(self.mindPath)
+		data = torch.load(self.dataPath)
 		if self.intentsHash != data["intents_hash"]:
 			raise Exception
 
@@ -132,7 +97,11 @@ class NexaBrain:
 		tag = self.tags[predicted.item()]
 		probs = torch.softmax(output, dim=1)
 		prob = probs[0][predicted.item()]
-		return tag, prob
+		
+		if prob.item() > 0.75:
+			for intent in self.intents['intents']:
+				if tag == intent["tag"]:
+					return intent["tag"]
 
 
 	def _createTrainingData(self, xy):
@@ -210,5 +179,5 @@ class NexaBrain:
 		  "tags": self.tags
 		}
 
-		torch.save(data, self.mindPath)
-		print(f'training complete. file saved to {self.mindPath}')
+		torch.save(data, self.dataPath)
+		print(f'training complete. file saved to {self.dataPath}')
