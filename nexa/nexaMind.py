@@ -1,10 +1,10 @@
 import nltk
-import random
 import json
 import torch
 import string
 import numpy as np
 import torch.nn as nn
+from collections import deque
 from torch.utils.data import DataLoader
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -20,9 +20,9 @@ nltk.download('wordnet', quiet=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-class NexaNeuralNet:
+class NexaMind:
 	def __init__(self, intentsPath, dataPath):
-		super(NexaNeuralNet, self).__init__()
+		super(NexaMind, self).__init__()
 		self.all_words = []
 		self.tags = []
 		self.ignore_words = ['?', '.', '!', ',', '||']
@@ -94,6 +94,11 @@ class NexaNeuralNet:
 		output = self._model(valueFormated)
 		_, predicted = torch.max(output, dim=1)
 
+		print(self.tags)
+
+		print(predicted)
+		print(predicted.item())
+
 		tag = self.tags[predicted.item()]
 		probs = torch.softmax(output, dim=1)
 		prob = probs[0][predicted.item()]
@@ -149,20 +154,24 @@ class NexaNeuralNet:
 
 		criterion = nn.CrossEntropyLoss()
 		optimizer = torch.optim.Adam(self._model.parameters(), lr=self.learning_rate)
+		losses = deque([], maxlen=7)
 
 		for epoch in range(self.num_epochs):
-		  for (words, labels) in train_loader:
-		    words = words.to(device)
-		    labels = labels.to(dtype=torch.long).to(device)
+			for (words, labels) in train_loader:
+				words = words.to(device)
+				labels = labels.to(dtype=torch.long).to(device)
 
-		    outputs = self._model(words)
-		    loss = criterion(outputs, labels)
-		    optimizer.zero_grad()
-		    loss.backward()
-		    optimizer.step()
+				outputs = self._model(words)
+				loss = criterion(outputs, labels)
+				optimizer.zero_grad()
+				loss.backward()
+				optimizer.step()
 
-		  if (epoch+1) % 100 == 0:
-		    print (f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {loss.item():.4f}')
+			if (epoch+1) % 100 == 0:
+				epochLoss = "%.4f" % loss.item()
+				losses.append(epochLoss)
+				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
+				if losses.count(epochLoss) == 6: break
 
 		print(f'final loss: {loss.item():.4f}')
 		self._saveMind()

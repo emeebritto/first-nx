@@ -1,13 +1,13 @@
-from nexa.neuralNet import NexaNeuralNet
+from nexa.nexaMind import NexaMind
 from nexa.compiler import Compiler
 
 
 compiler = Compiler()
-sentenceMood = NexaNeuralNet(
+sentenceMood = NexaMind(
 	intentsPath="data/sentence/mood.json",
 	dataPath="data/sentence/mood.pth"
 )
-sentenceType = NexaNeuralNet(
+sentenceType = NexaMind(
 	intentsPath="data/sentence/type.json",
 	dataPath="data/sentence/type.pth"
 )
