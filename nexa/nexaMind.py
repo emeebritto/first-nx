@@ -23,7 +23,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 class NexaMind:
 	def __init__(self):
 		super(NexaMind, self).__init__()
-		self.all_words = ["hi", "hello"]
+		self.all_words = []
 		self.ignore_words = ['.', ',', '||']
 
 		self.dataPath = "data/data.pth"
@@ -82,11 +82,10 @@ class NexaMind:
 
 	def predict(self, value):
 		valueFormated = self._format(value)
+		self.input_size = len(valueFormated)
 		valueFormated = valueFormated.reshape(1, valueFormated.shape[0])
 		valueFormated = torch.from_numpy(valueFormated).to(device)
-
-		self.input_size = len(valueFormated)
-		self.output_size = len(self.all_words)
+		self.output_size = len(self.all_words) + 1
 
 		self._loadModel()
 		criterion = nn.CrossEntropyLoss()
@@ -94,29 +93,48 @@ class NexaMind:
 
 		self.epoch += 1
 
-		outputs = self._model(valueFormated)
-		expected = self._format(input("expected: "))
-		expected = torch.from_numpy(expected).to(dtype=torch.long).to(device)
-		print(outputs)
-		print(expected)
-		loss = criterion(outputs, expected)
+		tokenized_value = tokenize(input("expected: "))
+		expected = bag_of_words(tokenized_value, self.all_words)
 
-		optimizer.zero_grad()
-		loss.backward()
-		optimizer.step()
+		dataset = ChatDataset(valueFormated, expected)
+		train_loader = DataLoader(dataset=dataset, batch_size=self.batch_size)
 
-		print(f'Epoch [{self.epoch}/{self.num_epochs}], Loss: {"%.4f" % loss.item()}')
-		self._saveMind()
+		for (words, labels) in train_loader:
+			words = words.to(device)
+			labels = labels.to(dtype=torch.long).to(device)
 
-		_, predicted = torch.max(outputs, dim=1)
-		tag = self.tags[predicted.item()]
-		probs = torch.softmax(outputs, dim=1)
-		prob = probs[0][predicted.item()]
+			outputs = self._model(words)
+			print(labels.shape)
+			print(labels)
+			loss = criterion(outputs, labels)
+			optimizer.zero_grad()
+			loss.backward()
+			optimizer.step()
+
+			print(f'Epoch [{self.epoch}/{self.num_epochs}], Loss: {"%.4f" % loss.item()}')
+			self._saveMind()
+
+			print(self.all_words)
+
+			response = []
+
+			for idx, out in enumerate(outputs[0]):
+				print(self.all_words[idx - 1], out)
+				if out > 0.2:
+					response.append(self.all_words[idx - 1])
+
+			return response
+
+
+		# _, predicted = torch.max(outputs, dim=1)
+		# tag = self.tags[predicted.item()]
+		# probs = torch.softmax(outputs, dim=1)
+		# prob = probs[0][predicted.item()]
 		
-		if prob.item() > 0.75:
-			for intent in self.intents:
-				if tag == intent["tag"]:
-					return intent["tag"]
+		# if prob.item() > 0.75:
+		# 	for intent in self.intents:
+		# 		if tag == intent["tag"]:
+		# 			return intent["tag"]
 
 
 	def _createTrainingData(self, xy):
