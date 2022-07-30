@@ -1,0 +1,517 @@
+[
+  {
+    "tag": "question",
+    "pattern": "How’s it going?"
+  },{
+    "tag": "question",
+    "pattern": "what's up ?"
+  },{
+    "tag": "question",
+    "pattern": "what is your name ?""
+  },{
+    "tag": "question",
+    "pattern": "what's your name ?""
+  },{ 
+    "tag": "question",
+    "pattern": "what's your name?"
+  },{ 
+    "tag": "question",
+    "pattern": "Nexa is your name?"
+  },{ 
+    "tag": "question",
+    "pattern": "what's your name"
+  },{ 
+    "tag": "question",
+    "pattern": "how old are you ?"
+  },{ 
+    "tag": "question",
+    "pattern": "how old are you?"
+  },{ 
+    "tag": "question",
+    "pattern": "where are you from ?"
+  },{ 
+    "tag": "question",
+    "pattern": "where do you live ?"
+  },{ 
+    "tag": "question",
+    "pattern": "are you married ?"
+  },{ 
+    "tag": "question",
+    "pattern": "are you married?"
+  },{ 
+    "tag": "question",
+    "pattern": "do you have children?"
+  },{ 
+    "tag": "question",
+    "pattern": "do you have children"
+  },{ 
+    "tag": "question",
+    "pattern": "what is your job ?"
+  },{ 
+    "tag": "question",
+    "pattern": "what's your job ?"
+  },{ 
+    "tag": "question",
+    "pattern": "what do you do for living ?"
+  },{ 
+    "tag": "question",
+    "pattern": "where were you ?"
+  },{ 
+    "tag": "question",
+    "pattern": "where were you"
+  },{ 
+    "tag": "question",
+    "pattern": "do you have a car ?"
+  },{ 
+    "tag": "question",
+    "pattern": "do you have a pet ?"
+  },{ 
+    "tag": "question",
+    "pattern": "do you have a pet"
+  },{ 
+    "tag": "question",
+    "pattern": "do you speak another language ?"
+  },{ 
+    "tag": "question",
+    "pattern": "how much does this cost ?"
+  },{ 
+    "tag": "question",
+    "pattern": "can I try this on ?"
+  },{ 
+    "tag": "question",
+    "pattern": "can I try this on?"
+  },{ 
+    "tag": "question",
+    "pattern": "can I pay by card ?"
+  },{ 
+    "tag": "question",
+    "pattern": "can i pay by card ?"
+  },{ 
+    "tag": "question",
+    "pattern": "Should I go left, or right ?"
+  },{ 
+    "tag": "question",
+    "pattern": "Should I go left, or right"
+  },{ 
+    "tag": "question",
+    "pattern": "Should I go left, or right?"
+  },{ 
+    "tag": "question",
+    "pattern": "Which bus should I get ?"
+  },{ 
+    "tag": "question",
+    "pattern": "Do you like this?"
+  },{ 
+    "tag": "question",
+    "pattern": "do you like this ?"
+  },{ 
+    "tag": "question",
+    "pattern": "are you ready to order ?"
+  },{ 
+    "tag": "question",
+    "pattern": "What is your morning routine ?
+  },{
+    "tag": "question",
+    "mood": "surprise",
+    "pattern": "Nexa?"
+  },{
+    "tag": "question",
+    "mood": "surprise",
+    "pattern": "Nexa ?"
+  },{
+    "tag": "question",
+    "mood": "surprise",
+    "pattern": "Zolee?"
+  },{
+    "tag": "question",
+    "mood": "surprise",
+    "pattern": "really ?"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm mike"
+  },{
+    "tag": "affirmative",
+    "pattern": "I am mike"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm 20"
+  },{
+    "tag": "affirmative",
+    "pattern": "I come from England"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm from Romania"
+  },{
+    "tag": "affirmative",
+    "pattern": "it's 08564"
+  },{
+    "tag": "affirmative",
+    "pattern": "my wife is called Mindy"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm not married"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm single"
+  },{
+    "tag": "affirmative",
+    "pattern": "I like hiking and traveling"
+  },{
+    "tag": "affirmative",
+    "pattern": "I would like to become a manager one day"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm good"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm fine"
+  },{
+    "tag": "affirmative",
+    "pattern": "Im fine"
+  },{
+    "tag": "affirmative",
+    "pattern": "I'm doing good"
+  },{
+    "tag": "affirmative",
+    "pattern": "I went to a bar with some of my colleagues"
+  },{
+    "tag": "affirmative",
+    "pattern": "my family and I went skiing"
+  },{
+    "tag": "affirmative",
+    "pattern": "I use my bike to go around the city"
+  },{
+    "tag": "affirmative",
+    "pattern": "I actually have two parrots"
+  },{
+    "tag": "affirmative",
+    "pattern": "I know Spanish"
+  },{
+    "tag": "affirmative",
+    "pattern": "I speak english"
+  },{
+    "tag": "affirmative",
+    "pattern": "it's so good"
+  },{
+    "tag": "affirmative",
+    "pattern": "You should visit a doctor for a routine check"
+  },{
+    "tag": "affirmative",
+    "pattern": "you are beatiful"
+  },{
+    "tag": "affirmative",
+    "pattern": "you are running"
+  },{
+    "tag": "affirmative",
+    "pattern": "you are busy"
+  },{
+    "tag": "affirmative",
+    "pattern": "they are busy"
+  },{
+    "tag": "affirmative",
+    "pattern": "she is pretty"
+  },{
+    "tag": "affirmative",
+    "pattern": "he is cute"
+  },{
+    "tag": "affirmative",
+    "pattern": "she is so cute"
+  },{
+    "tag": "affirmative",
+    "pattern": "it's work"
+  },{
+    "tag": "affirmative",
+    "pattern": "A river flows through the valley"
+  },{
+    "tag": "affirmative",
+    "pattern": "We watched Television last night"
+  },{
+    "tag": "affirmative",
+    "pattern": "She often forgets to bring her phone with her"
+  },{
+    "tag": "affirmative",
+    "pattern": "We have a cash flow problem at the workplace"
+  },{
+    "tag": "affirmative",
+    "pattern": "He is playing a basketball now"
+  },{
+    "tag": "affirmative",
+    "pattern": "I will be playing basketball"
+  },{
+    "tag": "affirmative",
+    "pattern": "We will have been starting"
+  },{
+    "tag": "affirmative",
+    "pattern": "I was driving the car"
+  },{
+    "tag": "affirmative",
+    "pattern": "Syam is a pilot"
+  },{
+    "tag": "affirmative",
+    "pattern": "She is too weak to talk"
+  },{
+    "tag": "affirmative",
+    "pattern": "They are helpful"
+  },{
+    "tag": "affirmative",
+    "pattern": "The mom was very calculative about the monthly expenditure"
+  },{
+    "tag": "affirmative",
+    "pattern": "Birds are always up in the sky"
+  },{
+    "tag": "affirmative",
+    "pattern": "The milk was dripping from the bottle"
+  },{
+    "tag": "affirmative",
+    "pattern": "He does his exercise everyday"
+  },{
+    "tag": "affirmative",
+    "pattern": "The masters tend to be overprotective of their pets"
+  },{
+    "tag": "affirmative",
+    "pattern": "I wanna be free"
+  },{
+    "tag": "affirmative",
+    "pattern": "Natasha will complete the task"
+  },{
+    "tag": "affirmative",
+    "pattern": "they are adults"
+  },{
+    "tag": "affirmative",
+    "pattern": "Micelle did her homework this afternoon"
+  },{
+    "tag": "affirmative",
+    "pattern": "My uncle was born in 1988"
+  },{
+    "tag": "affirmative",
+    "pattern": "The teachers were preparing for the exam next week at the office."
+  },{
+    "tag": "affirmative",
+    "pattern": "My sister had a headache this morning, I hope she will get better soon."
+  },{
+    "tag": "affirmative",
+    "pattern": "Roy would like to go to the store earlier before it starts to rain."
+  },{
+    "tag": "affirmative",
+    "pattern": "If we had some oranges,I could make you some fresh juice."
+  },{
+    "tag": "affirmative",
+    "pattern": "I am a junior highschool student."
+  },{
+    "tag": "affirmative",
+    "pattern": "Lissa has cooked some cookies. "
+  },{
+    "tag": "affirmative",
+    "pattern": "They have planted the water already."
+  },{
+    "tag": "affirmative",
+    "pattern": "Brian is an engineer."
+  },{
+    "tag": "affirmative",
+    "pattern": "The athletes are practicing so hard."
+  },{
+    "tag": "affirmative",
+    "pattern": "My mother is baking a chocolate cake."
+  },{
+    "tag": "affirmative",
+    "pattern": "Timothy will be staying at home. "
+  },{
+    "tag": "affirmative",
+    "pattern": "Amber misses her mom."
+  },{
+    "tag": "affirmative",
+    "pattern": "My bestfriend is an architect, he designed my house."
+  },{
+    "tag": "affirmative",
+    "pattern": "Tom repaired Timmy’s motorcycle yesterday."
+  },{
+    "tag": "affirmative",
+    "pattern": "We are going to the cinema."
+  },{
+    "tag": "affirmative",
+    "pattern": "Eifel tower was built on 28 January 1887."
+  },{
+    "tag": "affirmative",
+    "pattern": "A tsunami is huge waves caused by a sudden movement of the ocean surface due to earthquakes and other else."
+  },{
+    "tag": "affirmative",
+    "pattern": "Earth is the third planet from the sun."
+  },{
+    "tag": "affirmative",
+    "pattern": "The lions live in the savanna."
+  },{
+    "tag": "affirmative",
+    "pattern": "The brown box was created by Ralph H.Baer in 1967"
+  },{
+    "tag": "affirmative",
+    "pattern": "We can find strawberry milk in the dairy section at the store. "
+  },{
+    "tag": "affirmative",
+    "pattern": "Sam rides a bicycle to go to school."
+  },{
+    "tag": "affirmative",
+    "pattern": "Tyler likes to play football.
+  },{
+    "tag": "negative",
+    "pattern": "They do not speak English"
+  },{
+    "tag": "negative",
+    "pattern": "She hasn’t spoken"
+  },{
+    "tag": "negative",
+    "pattern": "English isn’t spoken there"
+  },{
+    "tag": "negative",
+    "pattern": "Rama did not dislike the gift"
+  },{
+    "tag": "negative",
+    "pattern": "The leaders are not ignorant"
+  },{
+    "tag": "negative",
+    "pattern": "The baby had not ribboned the box"
+  },{
+    "tag": "negative",
+    "pattern": "They are not washing the plates"
+  },{
+    "tag": "negative",
+    "pattern": "Her kid does not hate vegetables"
+  },{
+    "tag": "negative",
+    "pattern": "The servants were not paying attention to the orders"
+  },{
+    "tag": "negative",
+    "pattern": "I am not flying to England"
+  },{
+    "tag": "negative",
+    "pattern": "He wasn't eating white rice."
+  },{
+    "tag": "negative",
+    "pattern": "These aren't pistachios"
+  },{
+    "tag": "negative",
+    "pattern": "They don't practice yoga"
+  },{
+    "tag": "negative",
+    "pattern": "That isn't the way to Nashville."
+  },{
+    "tag": "negative",
+    "pattern": "Amy is not going to school today."
+  },{
+    "tag": "negative",
+    "pattern": "Tom doesn’t like to eat spicy food."
+  },{
+    "tag": "negative",
+    "pattern": "They were not playing basketball."
+  },{
+    "tag": "negative",
+    "pattern": "Roy would not like to go to the store earlier before it starts to rain."
+  },{
+    "tag": "negative",
+    "pattern": "I could not make you some fresh juice."
+  },{
+    "tag": "negative",
+    "pattern": "I am not a junior high school student."
+  },{
+    "tag": "negative",
+    "pattern": "Lissa hasn’t cooked some cookies. "
+  },{
+    "tag": "negative",
+    "pattern": "Brian is not an engineer."
+  },{
+    "tag": "negative",
+    "pattern": "We were not "
+  },{
+    "tag": "negative",
+    "pattern": "The child is not wearing a hat. "
+  },{
+    "tag": "negative",
+    "pattern": "My sister will not have been studying Japanese next year."
+  },{
+    "tag": "negative",
+    "pattern": "We don’t live near each other. "
+  },{
+    "tag": "negative",
+    "pattern": "Hyenas do not eat plants."
+  },{
+    "tag": "negative",
+    "pattern": "Beckie is not allergic to peanuts. "
+  },{
+    "tag": "negative",
+    "pattern": "Nick is not sad, he is very happy."
+  },{
+    "tag": "negative",
+    "pattern": "My father is not going to his office."
+  },{
+    "tag": "negative",
+    "pattern": "She hates playing tennis with her classmate."
+  },{
+    "tag": "negative",
+    "pattern": "He doesn’t work anywhere."
+  },{
+    "tag": "negative",
+    "pattern": "They don’t even try to meet me after the farewell."
+  },{
+    "tag": "negative",
+    "pattern": "I do not have my Email ID yet."
+  },{
+    "tag": "negative",
+    "pattern": "They won’t come to participate in the tournament."
+  },{
+    "tag": "negative",
+    "pattern": "He is not feeling well during the lecture."
+  },{
+    "tag": "negative",
+    "pattern": "You don’t have to hide your face in front of me"
+  },{
+    "tag": "negative",
+    "pattern": "Rodger is not moving anywhere outside the town."
+  },{
+    "tag": "negative",
+    "pattern": "This is not a smoking zone."
+  },{
+    "tag": "negative",
+    "pattern": "They haven’t played any games yet, so they’re so energetic now."
+  },{
+    "tag": "negative",
+    "pattern": "I will not come to his birthday party."
+  },{
+    "tag": "negative",
+    "pattern": "The climate will not be going to change till the morning."
+  },{
+    "tag": "negative",
+    "pattern": "The coach is not satisfied with the goals scored in the match."
+  },{
+    "tag": "negative",
+    "pattern": "She had not completed her homework."
+  },{
+    "tag": "negative",
+    "pattern": "The player is not wearing his helmet."
+  },{
+    "tag": "negative",
+    "pattern": "He does not make mistakes while writing."
+  },{
+    "tag": "negative",
+    "pattern": "He forgets to bring some of the stuff from the bus."
+  },{
+    "tag": "negative",
+    "pattern": "The fire station is not located near this city."
+  },{
+    "tag": "negative",
+    "pattern": "The train is not running on time."
+  },{
+    "tag": "negative",
+    "pattern": "They will not send emails to their seniors."
+  },{
+    "tag": "negative",
+    "pattern": "She convinced me not to throw the equipment outside."
+  },{
+    "tag": "negative",
+    "pattern": "His car has failed to start in the morning."
+  },{
+    "tag": "negative",
+    "pattern": "Do not spoil the weekends of your kids."
+  },{
+    "tag": "negative",
+    "pattern": "Johnson was not responsible for this mistake
+  }
+]

@@ -21,17 +21,17 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
 class NexaMind:
-	def __init__(self, intentsPath, dataPath):
+	def __init__(self):
 		super(NexaMind, self).__init__()
-		self.all_words = []
-		self.tags = []
-		self.ignore_words = ['?', '.', '!', ',', '||']
+		self.all_words = ["hi", "hello"]
+		self.ignore_words = ['.', ',', '||']
 
-		self.dataPath = dataPath
-		self.intentsPath = intentsPath
+		self.dataPath = "data/data.pth"
+		self.intentsPath = "data/intents.json"
 		self.intentsHash = None
 
-		# Hyper-parameters 
+		# Hyper-parameters
+		self.epoch = 0 
 		self.num_epochs = 5000
 		self.batch_size = 100
 		self.learning_rate = 0.001
@@ -40,19 +40,19 @@ class NexaMind:
 		self.output_size = None
 
 		self._model = None
-		self._loadIntents()
 
 		try:
 			self._loadMind()
 		except Exception as e:
-			self.train()
+			print("no data detected, it will be created soon")
 
 
 	def _format(self, value):
 		tokenized_value = tokenize(value)
+		self.all_words.extend(tokenized_value)
+		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
+		self.all_words = sorted(set(self.all_words))
 		X = bag_of_words(tokenized_value, self.all_words)
-		X = X.reshape(1, X.shape[0])
-		X = torch.from_numpy(X).to(device)
 		return X
 
 
@@ -64,22 +64,14 @@ class NexaMind:
 		).to(device)
 
 
-	def _loadIntents(self):
-		self.intentsHash = hashl(self.intentsPath)
-		with open(self.intentsPath, 'r') as json_data:
-			self.intents = json.load(json_data)
-
-
 	def _loadMind(self):
 		data = torch.load(self.dataPath)
-		if self.intentsHash != data["intents_hash"]:
-			raise Exception
 
+		self.epoch = data["epoch"]
 		self.input_size = data["input_size"]
 		self.hidden_size = data["hidden_size"]
 		self.output_size = data["output_size"]
 		self.all_words = data['all_words']
-		self.tags = data['tags']
 		self.model_state = data["model_state"]
 
 		self._loadModel()
@@ -90,21 +82,39 @@ class NexaMind:
 
 	def predict(self, value):
 		valueFormated = self._format(value)
+		valueFormated = valueFormated.reshape(1, valueFormated.shape[0])
+		valueFormated = torch.from_numpy(valueFormated).to(device)
 
-		output = self._model(valueFormated)
-		_, predicted = torch.max(output, dim=1)
+		self.input_size = len(valueFormated)
+		self.output_size = len(self.all_words)
 
-		print(self.tags)
+		self._loadModel()
+		criterion = nn.CrossEntropyLoss()
+		optimizer = torch.optim.Adam(self._model.parameters(), lr=self.learning_rate)
 
-		print(predicted)
-		print(predicted.item())
+		self.epoch += 1
 
+		outputs = self._model(valueFormated)
+		expected = self._format(input("expected: "))
+		expected = torch.from_numpy(expected).to(dtype=torch.long).to(device)
+		print(outputs)
+		print(expected)
+		loss = criterion(outputs, expected)
+
+		optimizer.zero_grad()
+		loss.backward()
+		optimizer.step()
+
+		print(f'Epoch [{self.epoch}/{self.num_epochs}], Loss: {"%.4f" % loss.item()}')
+		self._saveMind()
+
+		_, predicted = torch.max(outputs, dim=1)
 		tag = self.tags[predicted.item()]
-		probs = torch.softmax(output, dim=1)
+		probs = torch.softmax(outputs, dim=1)
 		prob = probs[0][predicted.item()]
 		
 		if prob.item() > 0.75:
-			for intent in self.intents['intents']:
+			for intent in self.intents:
 				if tag == intent["tag"]:
 					return intent["tag"]
 
@@ -126,13 +136,12 @@ class NexaMind:
 	def train(self):
 		xy = []
 		self._loadIntents()
-		for intent in self.intents['intents']:
-		  tag = intent['tag']
-		  self.tags.append(tag)
-		  for pattern in intent['patterns']:
-		    w = tokenize(pattern)
-		    self.all_words.extend(w)
-		    xy.append((w, tag))
+		for intent in self.intents:
+			tag = intent['tag']
+			self.tags.append(tag)
+			w = tokenize(intent['pattern'])
+			self.all_words.extend(w)
+			xy.append((w, tag))
 
 		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
 		self.all_words = sorted(set(self.all_words))
@@ -179,14 +188,13 @@ class NexaMind:
 
 	def _saveMind(self):
 		data = {
-			"intents_hash": self.intentsHash,
 		  "model_state": self._model.state_dict(),
+		  "epoch": self.epoch,
 		  "input_size": self.input_size,
 		  "hidden_size": self.hidden_size,
 		  "output_size": self.output_size,
-		  "all_words": self.all_words,
-		  "tags": self.tags
+		  "all_words": self.all_words
 		}
 
 		torch.save(data, self.dataPath)
-		print(f'training complete. file saved to {self.dataPath}')
+		print(f'checkpoint was saved to {self.dataPath}')
