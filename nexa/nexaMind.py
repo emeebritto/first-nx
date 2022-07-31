@@ -36,7 +36,7 @@ class NexaMind:
 		self.batch_size = 100
 		self.learning_rate = 0.001
 		self.input_size = None
-		self.hidden_size = 8
+		self.hidden_size = 60
 		self.output_size = None
 
 		self._model = None
@@ -47,11 +47,15 @@ class NexaMind:
 			print("no data detected, it will be created soon")
 
 
-	def _format(self, value):
-		tokenized_value = tokenize(value)
-		self.all_words.extend(tokenized_value)
+	def updateVocabulary(self, words):
+		self.all_words.extend(words)
 		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
 		self.all_words = sorted(set(self.all_words))
+
+
+	def _format(self, value):
+		tokenized_value = tokenize(value)
+		self.updateVocabulary(tokenized_value)
 		X = bag_of_words(tokenized_value, self.all_words)
 		return X
 
@@ -77,7 +81,8 @@ class NexaMind:
 		self._loadModel()
 
 		self._model.load_state_dict(self.model_state)
-		self._model.eval()
+		# self._model.eval()
+		self._model.train()
 
 
 	def predict(self, value):
@@ -85,45 +90,60 @@ class NexaMind:
 		self.input_size = len(valueFormated)
 		valueFormated = valueFormated.reshape(1, valueFormated.shape[0])
 		valueFormated = torch.from_numpy(valueFormated).to(device)
-		self.output_size = len(self.all_words) + 1
+		self.output_size = len(self.all_words)
 
 		self._loadModel()
-		criterion = nn.CrossEntropyLoss()
+		criterion = nn.BCELoss()
 		optimizer = torch.optim.Adam(self._model.parameters(), lr=self.learning_rate)
 
 		self.epoch += 1
+		outputs = self._model(valueFormated)
+
+		print("all_words: ", self.all_words)
+
+		outputs = torch.softmax(outputs, dim=1)
+		# print("probs", probs)
 
 		tokenized_value = tokenize(input("expected: "))
 		expected = bag_of_words(tokenized_value, self.all_words)
+		expected = expected.reshape(1, expected.shape[0])
+		expected = torch.from_numpy(expected).to(dtype=torch.float).to(device)
+		print("expected: ", expected)
+		print("outputs: ", outputs)
 
-		dataset = ChatDataset(valueFormated, expected)
-		train_loader = DataLoader(dataset=dataset, batch_size=self.batch_size)
+		loss = criterion(outputs, expected)
+		optimizer.zero_grad()
+		loss.backward()
+		optimizer.step()
 
-		for (words, labels) in train_loader:
-			words = words.to(device)
-			labels = labels.to(dtype=torch.long).to(device)
+		self.updateVocabulary(tokenized_value)
 
-			outputs = self._model(words)
-			print(labels.shape)
-			print(labels)
-			loss = criterion(outputs, labels)
+		print(f'Epoch {self.epoch}, Loss: {"%.4f" % loss.item()}')
+		if float("%.4f" % loss.item()) > 0.1000:
+			outputs = self.deepLearning(valueFormated, expected, criterion, optimizer)
+		self._saveMind()
+
+		response = []
+		for idx, out in enumerate(outputs[0]):
+			if out > 0.1: response.append(self.all_words[idx])
+
+		return response
+
+
+	def deepLearning(self, inputV, expectedV, criterion, optimizer):
+		print("nexa is learning...")
+		while True:
+			outputs = self._model(inputV)
+			outputs = torch.softmax(outputs, dim=1)
+			loss = criterion(outputs, expectedV)
 			optimizer.zero_grad()
 			loss.backward()
 			optimizer.step()
 
-			print(f'Epoch [{self.epoch}/{self.num_epochs}], Loss: {"%.4f" % loss.item()}')
-			self._saveMind()
+			print(f'loss: {"%.4f" % loss.item()}')
 
-			print(self.all_words)
-
-			response = []
-
-			for idx, out in enumerate(outputs[0]):
-				print(self.all_words[idx - 1], out)
-				if out > 0.2:
-					response.append(self.all_words[idx - 1])
-
-			return response
+			if float("%.4f" % loss.item()) <= 0.1000:
+				return outputs
 
 
 		# _, predicted = torch.max(outputs, dim=1)
