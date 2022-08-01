@@ -1,0 +1,75 @@
+
+["I'm", "happy", "sad", "?", "are", "is", "and", "you", "you're", "this", "good"]
+
+
+
+"are you happy ?"
+[  0,      1,      0,    1,    1,    0,     0,     1,       0,       0,      0]
+"suject": "you (1)"
+"topic": "happy (2)"
+
+
+"I'm happy"
+[  1,      1,      0,    0,    0,    1,     0,     0,       0,       0,      0]
+"suject": "I'm (0)"
+"topic": "happy (1)"
+
+
+"this is good"
+"this = happy"
+[  0,      0,      0,    0,    0,    1,     0,     0,       0,       1,      1]
+
+[
+	"   ", "good ", "        ", "", "       ", "good ", " ",
+	"I'm", "bad  ", "and you?", "", "are you", "happy", "?",
+	"   ", "happy", "        ", "", "       ", "bad  ", " ",
+]
+[
+	"       ", "good ", " ",
+	"are you", "happy", "?",
+	"       ", "bad  ", " ",
+]
+
+[ "He",  "was",   "not",  "eating",  "white",  "rice."]
+["noun", "verb", "adverb", "verb", "adjective", "noun"]
+
+[    "a",     "sheet",     "of",        "white",  "paper"]
+["determiner", "noun", "preposition", "adjective", "noun"]
+
+[   "the",    "house",  "was", "built",    "of",    "bricks"]
+["determiner", "noun", "verb", "verb", "preposition", "noun"]
+
+
+"affirmative": "{Sam} rides a bicycle to go to school"
+"setter": "SET San:rides:bicycle"
+"setter": "SET San:goto:school"
+"setter": "LINK San:goto:school AND San:rides:bicycle"
+
+"question": "how to San go to school ?"
+"getter": "GET-LINK San:goto:school"
+"response": "Sam rides a bicycle"
+
+"at": "place"
+"where": "place"
+"to": "LINK"
+"do": "LINK"
+
+"affirmative": "the people study biology at the school"
+"setter": "SET people:study:biology"
+"setter": "SET places:school"
+"setter": "LINK people:study:biology AND places:school"
+
+"question": "where does people study ?"
+"getter": "INTO people:study SEARCH places"
+"response": "at the school"
+
+"question": "what does people do at the school ?"
+"getter": "GET-LINK places:school TO people"
+"response": "the people study biology"
+
+"question": "what do they study ?"
+"getter": "GET people:study"
+"response": "they study biology"
+
+
+// "response": "they learn how to world and life works"
