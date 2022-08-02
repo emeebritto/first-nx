@@ -2,21 +2,17 @@
 ["I'm", "happy", "sad", "?", "are", "is", "and", "you", "you're", "this", "good"]
 
 
-
 "are you happy ?"
 [  0,      1,      0,    1,    1,    0,     0,     1,       0,       0,      0]
 "suject": "you (1)"
 "topic": "happy (2)"
-
 
 "I'm happy"
 [  1,      1,      0,    0,    0,    1,     0,     0,       0,       0,      0]
 "suject": "I'm (0)"
 "topic": "happy (1)"
 
-
 "this is good"
-"this = happy"
 [  0,      0,      0,    0,    0,    1,     0,     0,       0,       1,      1]
 
 [
@@ -40,36 +36,73 @@
 ["determiner", "noun", "verb", "verb", "preposition", "noun"]
 
 
-"affirmative": "{Sam} rides a bicycle to go to school"
-"setter": "SET San:rides:bicycle"
-"setter": "SET San:goto:school"
-"setter": "LINK San:goto:school AND San:rides:bicycle"
+"affirmative": "ride is an action"
+"command": "SET ride:action"
+
+"affirmative": "Sam rides a bicycle to go to school"
+"command": "SET San:action:rides:bicycle:go:place:school"
 
 "question": "how to San go to school ?"
-"getter": "GET-LINK San:goto:school"
+"command": "GET San:action:go:place:school"
 "response": "Sam rides a bicycle"
 
-"at": "place"
-"where": "place"
-"to": "LINK"
-"do": "LINK"
+"affirmative": "school is a place"
+"command": "SET BOTH place:school"
 
 "affirmative": "the people study biology at the school"
-"setter": "SET people:study:biology"
-"setter": "SET places:school"
-"setter": "LINK people:study:biology AND places:school"
+"command": "SET people:action:study:biology:place:school"
 
 "question": "where does people study ?"
-"getter": "INTO people:study SEARCH places"
+"command": "GET people:action:study:place"
 "response": "at the school"
 
 "question": "what does people do at the school ?"
-"getter": "GET-LINK places:school TO people"
+"command": "GET people:action:place:school"
 "response": "the people study biology"
 
 "question": "what do they study ?"
-"getter": "GET people:study"
+"command": "GET people:action:study"
 "response": "they study biology"
 
+"affirmative": "engineer is a role"
+"command": "SET engineer:role"
+
+"affirmative": "Brian is an engineer"
+"command": "SET Brian:role:engineer"
+
+"question": "what is Brian role?"
+"command": "GET Brian:role"
+"response": "he is an engineer"
+
+"affirmative": "baking is an action"
+"command": "SET baking:action"
+
+"affirmative": "baking is a verb"
+"command": "SET baking:verb"
+
+"affirmative": "verb is an action"
+"command": "SET verb:action"
+
+"affirmative": "cake is an food"
+"command": "SET cake:food"
+
+"affirmative": "My mother is baking a chocolate cake."
+"command": "SET emerson:mother:action:baking:chocolate:cake"
+
+"question": "who is baking a chocolate cake ?"
+"command": "GET action:baking:chocolate:cake"
+"response": "your mother"
+
+"question": "what is baking"
+"command": "GET action:baking"
+"response": "baking is action and verb"
+
+"question": "is my mother baking a chocolate cake ?"
+"command": "HAS emerson:mother:action:baking:chocolate:cake"
+"response": "yes, She does"
+
+"question": "are you happy ?"
+"command": "GET self:happy"
+"response": "yes, I'm happy"
 
 // "response": "they learn how to world and life works"
