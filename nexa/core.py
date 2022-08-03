@@ -1,16 +1,7 @@
-from nexa.nexaMind import NexaMind
-from nexa.compiler import Compiler
+from patterns.replacer import replacer
+from neuralNets.sentenceType import sentenceType
 
 
-compiler = Compiler()
-sentenceMood = NexaMind(
-	intentsPath="data/sentence/mood.json",
-	dataPath="data/sentence/mood.pth"
-)
-sentenceType = NexaMind(
-	intentsPath="data/sentence/type.json",
-	dataPath="data/sentence/type.pth"
-)
 
 class Nexa:
 	def __init__(self):
@@ -19,28 +10,11 @@ class Nexa:
 		self.name = "Nexa"
 
 
-	def interpret(self, inputV, outputV, intent):
-		""" whats is your favorite country """
-		dynamicWords = []
-		inputCompiled, variablesZone = compiler.toNexa(
-			value=inputV,
-			base=intent["patterns"]
-		)
-
-		for idx, word in enumerate(inputCompiled):
-			if word == "$DYNAMIC_VALUE":
-				dynamicWords.append(inputV.split()[idx])
-		""" *GET $SELF favorite $DYNAMIC_VALUE """
-		""" [0 0 0 0 1] """
-
-
 	def read(self, value):
 		if not value: return ""
-
+		value = replacer.adjustQuestionMark(value)
 		predictedType = sentenceType.predict(value)
-		predictedMood = sentenceMood.predict(value)
-
-		return predictedMood, predictedType
+		return predictedType
 
 
 	def extractFromText(self, value, source):

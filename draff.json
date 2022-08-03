@@ -105,4 +105,11 @@
 "command": "GET self:happy"
 "response": "yes, I'm happy"
 
+"affirmative": "talking about a suject"
+"command": "SET talking:about:subject"
+
+"question": "what are we talking about ?"
+"command": "GET we:talking:about"
+"response": "we are talking about happy"
+
 // "response": "they learn how to world and life works"

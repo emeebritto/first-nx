@@ -20,15 +20,15 @@ nltk.download('wordnet', quiet=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-class NexaMind:
-	def __init__(self, intentsPath, dataPath):
-		super(NexaMind, self).__init__()
+class SentenceType:
+	def __init__(self):
+		super(SentenceType, self).__init__()
 		self.all_words = []
-		self.tags = []
-		self.ignore_words = ['?', '.', '!', ',', '||']
+		self.sTypes = []
+		self.ignore_words = ['.', ',', '||']
 
-		self.dataPath = dataPath
-		self.intentsPath = intentsPath
+		self.dataPath = "data/sentenceType_data.pth"
+		self.intentsPath = "data/sentences.json"
 		self.intentsHash = None
 
 		# Hyper-parameters 
@@ -46,6 +46,14 @@ class NexaMind:
 			self._loadMind()
 		except Exception as e:
 			self.train()
+
+
+	def _format(self, value):
+		tokenized_value = tokenize(value)
+		X = bag_of_words(tokenized_value, self.all_words)
+		X = X.reshape(1, X.shape[0])
+		X = torch.from_numpy(X).to(device)
+		return X
 
 
 	def _loadModel(self):
@@ -71,7 +79,7 @@ class NexaMind:
 		self.hidden_size = data["hidden_size"]
 		self.output_size = data["output_size"]
 		self.all_words = data['all_words']
-		self.tags = data['tags']
+		self.sTypes = data['sTypes']
 		self.model_state = data["model_state"]
 
 		self._loadModel()
@@ -81,31 +89,28 @@ class NexaMind:
 
 
 	def predict(self, value):
-		output = self._model(value)
+		valueFormated = self._format(value)
+
+		output = self._model(valueFormated)
 		_, predicted = torch.max(output, dim=1)
 
-		print(self.tags)
-
-		print(predicted)
-		print(predicted.item())
-
-		tag = self.tags[predicted.item()]
+		sType = self.sTypes[predicted.item()]
 		probs = torch.softmax(output, dim=1)
 		prob = probs[0][predicted.item()]
 		
 		if prob.item() > 0.75:
-			for intent in self.intents['intents']:
-				if tag == intent["tag"]:
-					return intent["tag"]
+			for intent in self.intents:
+				if sType == intent["type"]:
+					return intent["type"]
 
 
 	def _createTrainingData(self, xy):
 		X_train = []
 		y_train = []
-		for (pattern_sentence, tag) in xy:
+		for (pattern_sentence, sType) in xy:
 		  bag = bag_of_words(pattern_sentence, self.all_words)
 		  X_train.append(bag)
-		  label = self.tags.index(tag)
+		  label = self.sTypes.index(sType)
 		  y_train.append(label)
 
 		X_train = np.array(X_train)
@@ -116,23 +121,23 @@ class NexaMind:
 	def train(self):
 		xy = []
 		self._loadIntents()
-		for intent in self.intents['intents']:
-		  tag = intent['tag']
-		  self.tags.append(tag)
-		  for pattern in intent['patterns']:
-		    w = tokenize(pattern)
-		    self.all_words.extend(w)
-		    xy.append((w, tag))
+		for intent in self.intents:
+			sType = intent['type']
+			self.sTypes.append(sType)
+			w = tokenize(intent['pattern'])
+			self.all_words.extend(w)
+			xy.append((w, sType))
 
 		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
 		self.all_words = sorted(set(self.all_words))
-		self.tags = sorted(set(self.tags))
+		self.sTypes = sorted(set(self.sTypes))
 
 		X_train, y_train = self._createTrainingData(xy)
 		self.input_size = len(X_train[0])
-		self.output_size = len(self.tags)
+		self.output_size = len(self.sTypes)
 
 		self._loadModel()
+		self._model.train()
 
 		dataset = ChatDataset(X_train, y_train)
 		train_loader = DataLoader(
@@ -175,8 +180,12 @@ class NexaMind:
 		  "hidden_size": self.hidden_size,
 		  "output_size": self.output_size,
 		  "all_words": self.all_words,
-		  "tags": self.tags
+		  "sTypes": self.sTypes
 		}
 
 		torch.save(data, self.dataPath)
 		print(f'training complete. file saved to {self.dataPath}')
+
+
+
+sentenceType = SentenceType()
