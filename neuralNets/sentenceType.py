@@ -149,7 +149,7 @@ class SentenceType:
 
 		criterion = nn.CrossEntropyLoss()
 		optimizer = torch.optim.Adam(self._model.parameters(), lr=self.learning_rate)
-		losses = deque([], maxlen=7)
+		losses = deque([], maxlen=8)
 
 		for epoch in range(self.num_epochs):
 			for (words, labels) in train_loader:
@@ -166,7 +166,7 @@ class SentenceType:
 				epochLoss = "%.4f" % loss.item()
 				losses.append(epochLoss)
 				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
-				if losses.count(epochLoss) == 6: break
+				if losses.count(epochLoss) == 7: break
 
 		print(f'final loss: {loss.item():.4f}')
 		self._saveMind()
