@@ -2,224 +2,154 @@
   {
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "mood",
     "pattern": "How’s it going?"
   },{
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "mood",
+    "pattern": "Is he not wonderful?"
+  },{
+    "type": "question",
+    "time": "present",
     "pattern": "what's up ?"
   },{
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "name",
     "pattern": "what is your name ?"
   },{
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "name",
     "pattern": "what's your name ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "name",
     "pattern": "what's your name?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "name",
     "pattern": "Nexa is your name?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "name",
     "pattern": "what's your name"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "age",
     "pattern": "how old are you ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "age",
     "pattern": "how old are you?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "country",
     "pattern": "where are you from ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "home address",
     "pattern": "where do you live ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "married",
     "pattern": "are you married ?"
   },{
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "married",
     "pattern": "are you married?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "have a children",
     "pattern": "do you have children?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "have a children",
     "pattern": "do you have children"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "job description",
     "pattern": "what is your job ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "job description",
     "pattern": "what's your job ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "what do",
     "pattern": "what do you do for living ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "where were",
     "pattern": "where were you ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "where were",
     "pattern": "where were you"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "have a car",
     "pattern": "do you have a car ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "have a pet",
     "pattern": "do you have a pet ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "have a pet",
     "pattern": "do you have a pet"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "speak another language",
     "pattern": "do you speak another language ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "something",
-    "topic": "cost",
     "pattern": "how much does this cost ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "try on",
     "pattern": "can I try this on ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "try this on",
     "pattern": "can I try this on?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "pay by card",
     "pattern": "can I pay by card ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "pay by card",
     "pattern": "can i pay by card ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "direction",
     "pattern": "Should I go left, or right ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "direction",
     "pattern": "Should I go left, or right"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "direction",
     "pattern": "Should I go left, or right?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "Which bus",
     "pattern": "Which bus should I get ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "like",
     "pattern": "Do you like this?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "like this",
     "pattern": "do you like this ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "ready",
     "pattern": "are you ready to order ?"
   },{ 
     "type": "question",
     "time": "present",
-    "subject": "you",
-    "topic": "morning routine",
     "pattern": "What is your morning routine ?"
   },{
     "type": "question",
@@ -237,6 +167,106 @@
     "type": "question",
     "time": "present",
     "pattern": "really ?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did you reach home safely?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did he demand a fair price for the rabbit?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Where did she go?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did you go to the hill station last Sunday?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Why did you laugh?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Why did you insist?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did you receive the salary yesterday?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did your friend sit alone in the dark?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did you pass the exam last year?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Why did you speak loudly?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Where did you go on your last vacation?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "What did you do for your last birthday?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "What did you do last week?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "How did you spend your weekend?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "What did you do yesterday morning?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did you watch any movies last night? What movies did you watch?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Who was your frist crush?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "What did you do for the last 24 hours?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "What was the last movie that you watched?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "When was the last time you went shopping?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "When was the last time you went on a date?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "When was the last time you had a party?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "Did you do any exercises last week? What exercises did you do?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "How did you spend your days when you were a kid?"
+  },{
+    "type": "question",
+    "time": "past",
+    "pattern": "How did you have fun when you were in highschool?"
   },{
     "type": "affirmative",
     "time": "present",
@@ -261,6 +291,10 @@
     "type": "affirmative",
     "time": "present",
     "pattern": "it's 08564"
+  },{
+    "type": "negative",
+    "time": "present",
+    "pattern": "He does not know what he want"
   },{
     "type": "affirmative",
     "time": "present",
@@ -448,95 +482,315 @@
   },{
     "type": "affirmative",
     "time": "past",
-    "pattern": "The teachers were preparing for the exam next week at the office."
+    "pattern": "The teachers were preparing for the exam next week at the office"
   },{
     "type": "affirmative",
     "time": "past",
-    "pattern": "My sister had a headache this morning, I hope she will get better soon."
+    "pattern": "My sister had a headache this morning, I hope she will get better soon"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "Roy would like to go to the store earlier before it starts to rain."
+    "pattern": "Roy would like to go to the store earlier before it starts to rain"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "If we had some oranges, I could make you some fresh juice."
+    "pattern": "If we had some oranges, I could make you some fresh juice"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "I am a junior highschool student."
+    "pattern": "I am a junior highschool student"
   },{
     "type": "affirmative",
     "time": "past",
-    "pattern": "Lissa has cooked some cookies. "
+    "pattern": "Lissa has cooked some cookies "
   },{
     "type": "affirmative",
     "time": "past",
-    "pattern": "They have planted the water already."
+    "pattern": "They have planted the water already"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "Brian is an engineer."
+    "pattern": "Brian is an engineer"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "The athletes are practicing so hard."
+    "pattern": "The athletes are practicing so hard"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "My mother is baking a chocolate cake."
+    "pattern": "My mother is baking a chocolate cake"
   },{
     "type": "affirmative",
     "time": "future",
-    "pattern": "Timothy will be staying at home. "
+    "pattern": "Timothy will be staying at home "
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "Amber misses her mom."
+    "pattern": "Amber misses her mom"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "My bestfriend is an architect, he designed my house."
+    "pattern": "My bestfriend is an architect, he designed my house"
   },{
     "type": "affirmative",
     "time": "past",
-    "pattern": "Tom repaired Timmy’s motorcycle yesterday."
+    "pattern": "Tom repaired Timmy’s motorcycle yesterday"
   },{
     "type": "affirmative",
     "time": "future",
-    "pattern": "We are going to the cinema."
+    "pattern": "We are going to the cinema"
   },{
     "type": "affirmative",
     "time": "past",
-    "pattern": "Eifel tower was built on 28 January 1887."
+    "pattern": "Eifel tower was built on 28 January 1887"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "A tsunami is huge waves caused by a sudden movement of the ocean surface due to earthquakes and other else."
+    "pattern": "A tsunami is huge waves caused by a sudden movement of the ocean surface due to earthquakes and other else"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "Earth is the third planet from the sun."
+    "pattern": "Earth is the third planet from the sun"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "The lions live in the savanna."
+    "pattern": "The lions live in the savanna"
   },{
     "type": "affirmative",
     "time": "past",
-    "pattern": "The brown box was created by Ralph H.Baer in 1967"
+    "pattern": "The brown box was created by Ralph HBaer in 1967"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "We can find strawberry milk in the dairy section at the store. "
+    "pattern": "We can find strawberry milk in the dairy section at the store "
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "Sam rides a bicycle to go to school."
+    "pattern": "Sam rides a bicycle to go to school"
   },{
     "type": "affirmative",
     "time": "present",
-    "pattern": "Tyler likes to play football."
+    "pattern": "Tyler likes to play football"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "Steve came to my house last week"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I went to college 3 years ago"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "He ate dinner 1 hour ago"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I slept well last night"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I lived in Bangkok for 5 years (I don’t live there anymore)"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "He entered a room, lit a cigarette, and smiled at the guests"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The teacher said that the earth moves around the sun"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The teacher taught the lesson well"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The baby cried in the cradle"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "She left the town for good"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The teacher marked the answer books of students"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I threw the wood into the water, but it did not sink"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "We used to take a bath in the tubewell"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I used to play the flute"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I acted upon your advice"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "It rained heavily last night"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I used to go to the hill station (I no more go there)"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "John entered the hall to attend the party"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "My father told me that an honest person is always satisfied"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I studied Spanish two years ago"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "Exercise helped him a lot to maintain his health"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "We went for a walk to enjoy the weather۔"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "He did a great favor to me"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "He devoted himself to biotechnology research"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The sailor swam across the river"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I traveled to Rome three years ago"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "They followed her everywhere"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "He turned his laziness into activity"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "He whitewashed the house a month ago"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I used to live in a village I shifted to a city a year ago"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "She came back last Thursday"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I saw her in the building"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I made a cake for my mom, it was delicious"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I ran to the train station every day"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I sent some flowers to my girlfriends, today it is her birthday"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "They did their homework, it was kind of difficult"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "They played video games the whole night"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "Yesterday I did exercise"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "She lived in California for seven years"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "They were in London from monday to friday"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "Last week, I stayed with my sister for a few days"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "Joe lived in Boston for ten years"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "From 1981 to 1984, he worked for a large multinational company"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I met him yesterday"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I saw him two weeks ago"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "She came to visit me last year"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The last time I went to concert was in 2009"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I played soccer from May to June"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I have known him for a long time"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I worked there for 4 weeks"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "in the 1990s, I stole many cars"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "She was the best singer of the last century"
+  },{
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "In the past, I made so many mistakes"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "They didn’t agree with me"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "I didn’t go to the gym last sunday"
   },{
     "type": "negative",
     "time": "present",
@@ -580,7 +834,7 @@
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "He wasn't eating white rice."
+    "pattern": "He wasn't eating white rice"
   },{
     "type": "negative",
     "time": "present",
@@ -592,39 +846,39 @@
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "That isn't the way to Nashville."
+    "pattern": "That isn't the way to Nashville"
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "Amy is not going to school today."
+    "pattern": "Amy is not going to school today"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "Tom doesn’t like to eat spicy food."
+    "pattern": "Tom doesn’t like to eat spicy food"
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "They were not playing basketball."
+    "pattern": "They were not playing basketball"
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "Roy would not like to go to the store earlier before it starts to rain."
+    "pattern": "Roy would not like to go to the store earlier before it starts to rain"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "I could not make you some fresh juice."
+    "pattern": "I could not make you some fresh juice"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "I am not a junior high school student."
+    "pattern": "I am not a junior high school student"
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "Lissa hasn’t cooked some cookies. "
+    "pattern": "Lissa hasn’t cooked some cookies "
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "Brian is not an engineer."
+    "pattern": "Brian is not an engineer"
   },{
     "type": "negative",
     "time": "past",
@@ -632,55 +886,55 @@
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "The child is not wearing a hat. "
+    "pattern": "The child is not wearing a hat "
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "My sister will not have been studying Japanese next year."
+    "pattern": "My sister will not have been studying Japanese next year"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "We don’t live near each other. "
+    "pattern": "We don’t live near each other "
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "Hyenas do not eat plants."
+    "pattern": "Hyenas do not eat plants"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "Beckie is not allergic to peanuts. "
+    "pattern": "Beckie is not allergic to peanuts "
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "Nick is not sad, he is very happy."
+    "pattern": "Nick is not sad, he is very happy"
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "My father is not going to his office."
+    "pattern": "My father is not going to his office"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "She hates playing tennis with her classmate."
+    "pattern": "She hates playing tennis with her classmate"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "He doesn’t work anywhere."
+    "pattern": "He doesn’t work anywhere"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "They don’t even try to meet me after the farewell."
+    "pattern": "They don’t even try to meet me after the farewell"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "I do not have my Email ID yet."
+    "pattern": "I do not have my Email ID yet"
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "They won’t come to participate in the tournament."
+    "pattern": "They won’t come to participate in the tournament"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "He is not feeling well during the lecture."
+    "pattern": "He is not feeling well during the lecture"
   },{
     "type": "negative",
     "time": "present",
@@ -688,70 +942,130 @@
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "Rodger is not moving anywhere outside the town."
+    "pattern": "Rodger is not moving anywhere outside the town"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "This is not a smoking zone."
+    "pattern": "This is not a smoking zone"
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "They haven’t played any games yet, so they’re so energetic now."
+    "pattern": "They haven’t played any games yet, so they’re so energetic now"
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "I will not come to his birthday party."
+    "pattern": "I will not come to his birthday party"
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "The climate will not be going to change till the morning."
+    "pattern": "The climate will not be going to change till the morning"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "The coach is not satisfied with the goals scored in the match."
+    "pattern": "The coach is not satisfied with the goals scored in the match"
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "She had not completed her homework."
+    "pattern": "She had not completed her homework"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "The player is not wearing his helmet."
+    "pattern": "The player is not wearing his helmet"
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "He does not make mistakes while writing."
+    "pattern": "He does not make mistakes while writing"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "He forgets to bring some of the stuff from the bus."
+    "pattern": "He forgets to bring some of the stuff from the bus"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "The fire station is not located near this city."
+    "pattern": "The fire station is not located near this city"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "The train is not running on time."
+    "pattern": "The train is not running on time"
   },{
     "type": "negative",
     "time": "future",
-    "pattern": "They will not send emails to their seniors."
+    "pattern": "They will not send emails to their seniors"
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "She convinced me not to throw the equipment outside."
+    "pattern": "She convinced me not to throw the equipment outside"
   },{
     "type": "negative",
     "time": "past",
-    "pattern": "His car has failed to start in the morning."
+    "pattern": "His car has failed to start in the morning"
   },{
     "type": "negative",
     "time": "present",
-    "pattern": "Do not spoil the weekends of your kids."
+    "pattern": "Do not spoil the weekends of your kids"
   },{
     "type": "negative",
     "time": "past",
     "pattern": "Johnson was not responsible for this mistake"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "The moon did not appear yesterday"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "He did not listen to me"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "He did not cut the tree"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "They did not attend the party"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "You did not respond to my mail"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "He did not sleep well because he was sick"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "She did not even bother to answer me"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "The company did not increase my salary last year"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "He did not follow the footsteps of his parents"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "The mason did not leave the work incomplete"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "He did not act as if it was bothering him"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "I could not be induced to tell where the key was"
+  },{
+    "type": "negative",
+    "time": "future",
+    "pattern": "In the end, he will not refuse"
+  },{
+    "type": "negative",
+    "time": "past",
+    "pattern": "I did not earn it"
+  },{
+    "type": "negative",
+    "time": "present",
+    "pattern": "I do not want all this"
   }
 ]

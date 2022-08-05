@@ -1,5 +1,6 @@
 from patterns.replacer import replacer
 from neuralNets.sentenceType import sentenceType
+from neuralNets.sentenceTime import sentenceTime
 
 
 
@@ -14,7 +15,8 @@ class Nexa:
 		if not value: return ""
 		value = replacer.adjustQuestionMark(value)
 		predictedType = sentenceType.predict(value)
-		return predictedType
+		predictedTime = sentenceTime.predict(value)
+		return predictedType, predictedTime
 
 
 	def extractFromText(self, value, source):

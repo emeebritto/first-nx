@@ -20,14 +20,14 @@ nltk.download('wordnet', quiet=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-class SentenceType:
+class SentenceTime:
 	def __init__(self):
-		super(SentenceType, self).__init__()
+		super(SentenceTime, self).__init__()
 		self.all_words = []
-		self.sTypes = []
+		self.sTime = []
 		self.ignore_words = ['.', ',', '||']
 
-		self.dataPath = "data/sentenceType_data.pth"
+		self.dataPath = "data/sentenceTime_data.pth"
 		self.intentsPath = "data/sentences.json"
 		self.intentsHash = None
 
@@ -79,7 +79,7 @@ class SentenceType:
 		self.hidden_size = data["hidden_size"]
 		self.output_size = data["output_size"]
 		self.all_words = data['all_words']
-		self.sTypes = data['sTypes']
+		self.sTime = data['sTime']
 		self.model_state = data["model_state"]
 
 		self._loadModel()
@@ -94,23 +94,23 @@ class SentenceType:
 		output = self._model(valueFormated)
 		_, predicted = torch.max(output, dim=1)
 
-		sType = self.sTypes[predicted.item()]
+		time = self.sTime[predicted.item()]
 		probs = torch.softmax(output, dim=1)
 		prob = probs[0][predicted.item()]
 		
 		if prob.item() > 0.75:
 			for intent in self.intents:
-				if sType == intent["type"]:
-					return intent["type"]
+				if time == intent["time"]:
+					return intent["time"]
 
 
 	def _createTrainingData(self, xy):
 		X_train = []
 		y_train = []
-		for (pattern_sentence, sType) in xy:
+		for (pattern_sentence, time) in xy:
 		  bag = bag_of_words(pattern_sentence, self.all_words)
 		  X_train.append(bag)
-		  label = self.sTypes.index(sType)
+		  label = self.sTime.index(time)
 		  y_train.append(label)
 
 		X_train = np.array(X_train)
@@ -122,20 +122,20 @@ class SentenceType:
 		xy = []
 		self._loadIntents()
 		for intent in self.intents:
-			sType = intent.get('type')
-			if not sType: continue
-			self.sTypes.append(sType)
+			time = intent.get('time')
+			if not time: continue
+			self.sTime.append(time)
 			w = tokenize(intent['pattern'])
 			self.all_words.extend(w)
-			xy.append((w, sType))
+			xy.append((w, time))
 
 		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
 		self.all_words = sorted(set(self.all_words))
-		self.sTypes = sorted(set(self.sTypes))
+		self.sTime = sorted(set(self.sTime))
 
 		X_train, y_train = self._createTrainingData(xy)
 		self.input_size = len(X_train[0])
-		self.output_size = len(self.sTypes)
+		self.output_size = len(self.sTime)
 
 		self._loadModel()
 		self._model.train()
@@ -181,7 +181,7 @@ class SentenceType:
 		  "hidden_size": self.hidden_size,
 		  "output_size": self.output_size,
 		  "all_words": self.all_words,
-		  "sTypes": self.sTypes
+		  "sTime": self.sTime
 		}
 
 		torch.save(data, self.dataPath)
@@ -189,4 +189,4 @@ class SentenceType:
 
 
 
-sentenceType = SentenceType()
+sentenceTime = SentenceTime()
