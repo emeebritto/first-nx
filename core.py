@@ -1,25 +1,23 @@
 from patterns.replacer import replacer
-from neuralNets.sentenceType import sentenceType
-from neuralNets.sentenceTime import sentenceTime
+from mind import Mind
 
 
 
 class Nexa:
 	def __init__(self):
 		super(Nexa, self).__init__()
-		self.context_network = []
+		self._context_network = []
 		self.name = "Nexa"
 
 
 	def read(self, value):
 		if not value: return ""
 		value = replacer.adjustQuestionMark(value)
-		predictedType = sentenceType.predict(value)
-		predictedTime = sentenceTime.predict(value)
-		return predictedType, predictedTime
+		predicted = Mind.predict(value)
+		return predicted
 
 
-	def extractFromText(self, value, source):
+	def _extractFromText(self, value, source):
 		sent_tokens = nltk.sent_tokenize(source)
 		remove_punct_dict = dict((ord(punct),None) for punct in string.punctuation)
 

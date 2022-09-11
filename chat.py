@@ -1,5 +1,5 @@
-from nexa.telegram import nexaTelegram
-from nexa.core import Nexa
+from services.telegram import Telegram
+from core import Nexa
 # from nexa.compiler import Compiler
 
 # compiler = Compiler()
@@ -18,6 +18,6 @@ nexa = Nexa()
 print("Nexa's ready!")
 
 while True:
-  # sentence = nexaTelegram.wait_author_response()
+  # sentence = Telegram.wait_author_response()
   print(nexa.read(input("You: ")))
-  # nexaTelegram.send_to_author(msg=nexa_msg)
+  # Telegram.send_to_author(msg=nexa_msg)

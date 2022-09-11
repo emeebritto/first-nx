@@ -20,12 +20,12 @@ nltk.download('wordnet', quiet=True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-class NexaMind:
+class Mind:
 	def __init__(self, intentsPath, dataPath):
-		super(NexaMind, self).__init__()
+		super(Mind, self).__init__()
 		self.all_words = []
 		self.tags = []
-		self.ignore_words = ['?', '.', '!', ',', '||']
+		self.ignore_words = ['!', '||']
 
 		self.dataPath = dataPath
 		self.intentsPath = intentsPath
@@ -133,6 +133,7 @@ class NexaMind:
 		self.output_size = len(self.tags)
 
 		self._loadModel()
+		self._model.train()
 
 		dataset = ChatDataset(X_train, y_train)
 		train_loader = DataLoader(
