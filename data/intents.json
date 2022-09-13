@@ -1,0 +1,33 @@
+{
+  "intents": [
+    {
+      "tag": "dlvideo::20220912041401",
+      "pattern": "donwload $::URL",
+      "execute": "dlvideoyt"
+    },{
+      "tag": "dlvideo::20220912043501",
+      "pattern": "donwload this video $::URL",
+      "execute": "dlvideoyt"
+    },{
+      "tag": "dlvideo::20220912044701",
+      "pattern": "donwload video $::URL",
+      "execute": "dlvideoyt"
+    },{
+      "tag": "dlvideo::20220912043511",
+      "pattern": "dl $::URL",
+      "execute": "dlvideoyt"
+    },{
+      "tag": "dlvideo::20220912045911",
+      "pattern": "dl video $::URL",
+      "execute": "dlvideoyt"
+    },{
+      "tag": "dlvideo::20220913040111",
+      "pattern": "donwload this media from $::URL",
+      "execute": "dlvideoyt"
+    },{
+      "tag": "dlvideo::20220913040211",
+      "pattern": "donwload from $::URL",
+      "execute": "dlvideoyt"
+    }
+  ]
+}

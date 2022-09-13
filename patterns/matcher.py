@@ -9,7 +9,8 @@ class Matcher:
 	def list2str(func):
 		def function(*args, **kwargs):
 			argsList = list(args)
-			if type(argsList[1]) == list: argsList[1] = " ".join(argsList[1])
+			if type(argsList[1]) == list:
+				argsList[1] = " ".join(argsList[1])
 			return func(*argsList, **kwargs)
 		return function
 

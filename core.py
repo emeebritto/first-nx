@@ -1,6 +1,15 @@
+import string
+import nltk
+import numpy as np
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+from compiler import Compiler
 from patterns.replacer import replacer
 from random import choice
 from mind import Mind
+
+compiler = Compiler()
 
 
 
@@ -10,20 +19,29 @@ class Nexa:
 		self._context_network = []
 		self.name = "Nexa"
 		self.age = 20
-		self.context_network = []
+		self._actions = {}
 		self.mind = Mind(intentsPath="data/intents.json", dataPath="data/data.pth")
 
 
-	def read(self, value):
+	def read(self, value, entity="emee"):
 		if not value: return ""
 		value = replacer.adjustQuestionMark(value)
-		predicted = self.Mind.predict(value)
+		predicted = self.mind.predict(value)
 		if not predicted: return "??"
-		self.context_network.append(predicted["tag"])
-		result = choice(predicted['responses']).split('::')
-		context = result[1] if len(result) > 1 else None
-		if (context): context_network.append(context)
-		return result[0]
+		svars = compiler.findVars(predicted["pattern"], value)
+		action = predicted.get("execute")
+		if action: self.execute(action, svars)
+		return action
+
+
+	def learn(self, label, action):
+		print(f"{self.name} learned to {label}")
+		self._actions[label] = action
+
+
+	def execute(self, label, svars):
+		action = self._actions.get(label)
+		if action: action(svars)
 
 
 	def _extractFromText(self, value, source):

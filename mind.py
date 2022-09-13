@@ -25,7 +25,7 @@ class Mind:
 		super(Mind, self).__init__()
 		self.all_words = []
 		self.tags = []
-		self.ignore_words = ['!', '||']
+		self.ignore_words = [',', '!', '||']
 
 		self.dataPath = dataPath
 		self.intentsPath = intentsPath
@@ -35,9 +35,9 @@ class Mind:
 		self.num_epochs = 5000
 		self.batch_size = 100
 		self.learning_rate = 0.001
-		self.input_size = None
+		self.input_size = None # it will be defined in runtime
 		self.hidden_size = 8
-		self.output_size = None
+		self.output_size = None # it will be defined in runtime
 
 		self._model = None
 		self._loadIntents()
@@ -81,13 +81,13 @@ class Mind:
 
 
 	def predict(self, value):
-		output = self._model(value)
+		tokenized_sentence = tokenize(value)
+		X = bag_of_words(tokenized_sentence, self.all_words)
+		X = X.reshape(1, X.shape[0])
+		X = torch.from_numpy(X).to(device)
+
+		output = self._model(X)
 		_, predicted = torch.max(output, dim=1)
-
-		print(self.tags)
-
-		print(predicted)
-		print(predicted.item())
 
 		tag = self.tags[predicted.item()]
 		probs = torch.softmax(output, dim=1)
@@ -117,12 +117,15 @@ class Mind:
 		xy = []
 		self._loadIntents()
 		for intent in self.intents['intents']:
-		  tag = intent['tag']
-		  self.tags.append(tag)
-		  for pattern in intent['patterns']:
-		    w = tokenize(pattern)
-		    self.all_words.extend(w)
-		    xy.append((w, tag))
+			tag = intent['tag']
+			self.tags.append(tag)
+			w = tokenize(intent['pattern'])
+			self.all_words.extend(w)
+			xy.append((w, tag))
+		  # for pattern in intent['patterns']:
+		  #   w = tokenize(pattern)
+		  #   self.all_words.extend(w)
+		  #   xy.append((w, tag))
 
 		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
 		self.all_words = sorted(set(self.all_words))
