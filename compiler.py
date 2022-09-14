@@ -10,7 +10,8 @@ class Compiler:
 		for idx, word in enumerate(base):
 			if "$::" in word:
 				key = word.split("::")[1]
-				svars[key] = value[idx]
+				try: svars[key] = value[idx]
+				except: pass
 		return svars
 
 

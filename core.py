@@ -23,15 +23,15 @@ class Nexa:
 		self.mind = Mind(intentsPath="data/intents.json", dataPath="data/data.pth")
 
 
-	def read(self, value, entity="emee"):
-		if not value: return ""
+	def read(self, value):
+		if not value: return "None", ""
 		value = replacer.adjustQuestionMark(value)
 		predicted = self.mind.predict(value)
-		if not predicted: return "??"
+		if not predicted: return "text", "??"
 		svars = compiler.findVars(predicted["pattern"], value)
 		action = predicted.get("execute")
-		if action: self.execute(action, svars)
-		return action
+		if action: return self.execute(action, svars)
+		return resType, res
 
 
 	def learn(self, label, action):
@@ -41,7 +41,7 @@ class Nexa:
 
 	def execute(self, label, svars):
 		action = self._actions.get(label)
-		if action: action(svars)
+		if action: return action(svars, self._actions)
 
 
 	def _extractFromText(self, value, source):
