@@ -2,15 +2,15 @@
   "intents": [
     {
       "tag": "dlvideo::20220912041401",
-      "pattern": "donwload $::URL",
+      "pattern": "download $::URL",
       "execute": "dlvideoyt"
     },{
       "tag": "dlvideo::20220912043501",
-      "pattern": "donwload this video $::URL",
+      "pattern": "download this video $::URL",
       "execute": "dlvideoyt"
     },{
       "tag": "dlvideo::20220912044701",
-      "pattern": "donwload video $::URL",
+      "pattern": "download video $::URL",
       "execute": "dlvideoyt"
     },{
       "tag": "dlvideo::20220912043511",
@@ -22,12 +22,40 @@
       "execute": "dlvideoyt"
     },{
       "tag": "dlvideo::20220913040111",
-      "pattern": "donwload this media from $::URL",
+      "pattern": "download this media from $::URL",
       "execute": "dlvideoyt"
     },{
       "tag": "dlvideo::20220913040211",
-      "pattern": "donwload from $::URL",
+      "pattern": "download from $::URL",
       "execute": "dlvideoyt"
+    },{
+      "tag": "pronounce::20220915033806",
+      "pattern": "pronounce $::WORD",
+      "execute": "pronounce_words"
+    },{
+      "tag": "pronounce::20220915033706",
+      "pattern": "how to pronounce $::WORD",
+      "execute": "pronounce_words"
+    },{
+      "tag": "pronounce::20220915033806",
+      "pattern": "pronounce $::WORD to me",
+      "execute": "pronounce_words"
+    },{
+      "tag": "pronounce::20220915042306",
+      "pattern": "get audio $::URL to me",
+      "execute": "dlmusicyt"
+    },{
+      "tag": "pronounce::20220915042406",
+      "pattern": "audio $::URL",
+      "execute": "dlmusicyt"
+    },{
+      "tag": "pronounce::20220915042506",
+      "pattern": "download audio $::URL",
+      "execute": "dlmusicyt"
+    },{
+      "tag": "pronounce::20220915042606",
+      "pattern": "get audio $::URL",
+      "execute": "dlmusicyt"
     }
   ]
 }

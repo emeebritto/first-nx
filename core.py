@@ -29,6 +29,7 @@ class Nexa:
 		predicted = self.mind.predict(value)
 		if not predicted: return "text", "??"
 		svars = compiler.findVars(predicted["pattern"], value)
+		print("svars", svars)
 		action = predicted.get("execute")
 		if action: return self.execute(action, svars)
 		return resType, res

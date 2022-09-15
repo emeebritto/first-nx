@@ -1,23 +1,28 @@
 from services.telegram import telegram
 from core import Nexa
-from actions.nx import dlvideoyt
+from actions.nx import dlvideoyt, dlmusicyt, pronounce_words
 
 
 nexa = Nexa()
 print("Nexa's ready!")
 
 nexa.learn("dlvideoyt", dlvideoyt)
+nexa.learn("dlvideoyt", dlvideoyt)
+nexa.learn("dlmusicyt", dlmusicyt)
 
 
 def chat(update, context):
   print(f"you said {update.message.text}")
-  # print(dir(update.message))
+
+  print(dir(update.message))
   userInput = update.message.text
   resType, res = nexa.read(userInput)
 
   responsesType = {
     "text": update.message.reply_text,
-    "document": update.message.reply_document
+    "document": update.message.reply_document,
+    "video": update.message.reply_video,
+    "audio": update.message.reply_audio,
   }
 
   reply_method = responsesType.get(resType)
