@@ -81,6 +81,10 @@
       "pattern": "generate a random image",
       "execute": "randonly_image"
     },{
+      "tag": "generateimg::20220916045906",
+      "pattern": "random image",
+      "execute": "randonly_image"
+    },{
       "tag": "generateimg::20220916021710",
       "pattern": "create a random image",
       "execute": "randonly_image"
