@@ -32,7 +32,7 @@ class Mind:
 		self.intentsHash = None
 
 		# Hyper-parameters 
-		self.num_epochs = 5000
+		self.num_epochs = 7000
 		self.batch_size = 100
 		self.learning_rate = 0.001
 		self.input_size = None # it will be defined in runtime
@@ -93,7 +93,7 @@ class Mind:
 		probs = torch.softmax(output, dim=1)
 		prob = probs[0][predicted.item()]
 		
-		if prob.item() > 0.78:
+		if prob.item() > 0.77:
 			for intent in self.intents['intents']:
 				if tag == intent["tag"]:
 					return intent
@@ -148,7 +148,7 @@ class Mind:
 
 		criterion = nn.CrossEntropyLoss()
 		optimizer = torch.optim.Adam(self._model.parameters(), lr=self.learning_rate)
-		losses = deque([], maxlen=7)
+		losses = deque([], maxlen=10)
 
 		for epoch in range(self.num_epochs):
 			for (words, labels) in train_loader:
@@ -165,7 +165,7 @@ class Mind:
 				epochLoss = "%.4f" % loss.item()
 				losses.append(epochLoss)
 				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
-				if losses.count(epochLoss) == 6: break
+				if losses.count(epochLoss) == 9: break
 
 		print(f'final loss: {loss.item():.4f}')
 		self._saveMind()

@@ -1,20 +1,20 @@
 from services.telegram import telegram
 from core import Nexa
-from actions.nx import dlvideoyt, dlmusicyt, pronounce_words
+from actions.nx import dlvideoyt, dlmusicyt, pronounce_words, randonly_image
 
 
 nexa = Nexa()
 print("Nexa's ready!")
 
 nexa.learn("dlvideoyt", dlvideoyt)
-nexa.learn("dlvideoyt", dlvideoyt)
+nexa.learn("pronounce_words", pronounce_words)
 nexa.learn("dlmusicyt", dlmusicyt)
+nexa.learn("generate_image", randonly_image)
 
 
-def chat(update, context):
+def telegramChat(update, context):
   print(f"you said {update.message.text}")
-
-  print(dir(update.message))
+  # print(dir(update.message))
   userInput = update.message.text
   resType, res = nexa.read(userInput)
 
@@ -23,16 +23,14 @@ def chat(update, context):
     "document": update.message.reply_document,
     "video": update.message.reply_video,
     "audio": update.message.reply_audio,
+    "photo": update.message.reply_photo
   }
 
   reply_method = responsesType.get(resType)
   if reply_method: reply_method(res)
 
-  # update.message.reply_text(res)
-  # update.message.reply_document(open("profile.png", "rb"))
 
-
-telegram.onMessage(chat)
+telegram.onMessage(telegramChat)
 
 
 

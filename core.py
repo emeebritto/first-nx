@@ -25,7 +25,7 @@ class Nexa:
 
 	def read(self, value):
 		if not value: return "None", ""
-		value = replacer.adjustQuestionMark(value)
+		# value = replacer.adjustQuestionMark(value)
 		predicted = self.mind.predict(value)
 		if not predicted: return "text", "??"
 		svars = compiler.findVars(predicted["pattern"], value)

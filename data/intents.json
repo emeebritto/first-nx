@@ -37,7 +37,19 @@
       "pattern": "how to pronounce $::WORD",
       "execute": "pronounce_words"
     },{
-      "tag": "pronounce::20220915033806",
+      "tag": "pronounce::20220916012906",
+      "pattern": "How to Pronounce $::WORD",
+      "execute": "pronounce_words"
+    },{
+      "tag": "pronounce::20220916012806",
+      "pattern": "how to pronounce the word $::WORD",
+      "execute": "pronounce_words"
+    },{
+      "tag": "pronounce::20220916013106",
+      "pattern": "pronounce the word $::WORD",
+      "execute": "pronounce_words"
+    },{
+      "tag": "pronounce::20220915033278",
       "pattern": "pronounce $::WORD to me",
       "execute": "pronounce_words"
     },{
@@ -56,6 +68,34 @@
       "tag": "pronounce::20220915042606",
       "pattern": "get audio $::URL",
       "execute": "dlmusicyt"
+    },{
+      "tag": "generateimg::20220916021506",
+      "pattern": "generate a image",
+      "execute": "generate_image"
+    },{
+      "tag": "generateimg::20220916021606",
+      "pattern": "generate a randonly image",
+      "execute": "generate_image"
+    },{
+      "tag": "generateimg::20220916021706",
+      "pattern": "generate a random image",
+      "execute": "generate_image"
+    },{
+      "tag": "generateimg::20220916021710",
+      "pattern": "create a random image",
+      "execute": "generate_image"
+    },{
+      "tag": "generateimg::20220916021718",
+      "pattern": "create a image",
+      "execute": "generate_image"
+    },{
+      "tag": "generateimg::20220916021721",
+      "pattern": "send me a image",
+      "execute": "generate_image"
+    },{
+      "tag": "generateimg::20220916021726",
+      "pattern": "send to me a image",
+      "execute": "generate_image"
     }
   ]
 }
