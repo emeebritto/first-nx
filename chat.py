@@ -3,6 +3,7 @@ from core import Nexa
 from actions import nx
 
 
+
 nexa = Nexa()
 print("Nexa's ready!")
 

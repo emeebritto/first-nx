@@ -96,6 +96,42 @@
       "tag": "generateimg::20220916021726",
       "pattern": "send to me a image",
       "execute": "randonly_image"
+    },{
+      "tag": "generatefaceimg::20220916043326",
+      "pattern": "send to me a person image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043334",
+      "pattern": "send to me a face person image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043337",
+      "pattern": "send a person image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043437",
+      "pattern": "create a person image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043456",
+      "pattern": "create a face person image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043556",
+      "pattern": "face person image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043656",
+      "pattern": "random face person image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043756",
+      "pattern": "face person random image",
+      "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916043856",
+      "pattern": "random face image",
+      "execute": "randonly_face_image"
     }
   ]
 }
