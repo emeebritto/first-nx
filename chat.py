@@ -1,15 +1,16 @@
 from services.telegram import telegram
 from core import Nexa
-from actions.nx import dlvideoyt, dlmusicyt, pronounce_words, randonly_image
+from actions import nx
 
 
 nexa = Nexa()
 print("Nexa's ready!")
 
-nexa.learn("dlvideoyt", dlvideoyt)
-nexa.learn("pronounce_words", pronounce_words)
-nexa.learn("dlmusicyt", dlmusicyt)
-nexa.learn("generate_image", randonly_image)
+nexa.learnModule(nx)
+# nexa.learn("dlvideoyt", dlvideoyt)
+# nexa.learn("pronounce_words", pronounce_words)
+# nexa.learn("dlmusicyt", dlmusicyt)
+# nexa.learn("generate_image", randonly_image)
 
 
 def telegramChat(update, context):

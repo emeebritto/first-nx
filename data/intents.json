@@ -71,31 +71,31 @@
     },{
       "tag": "generateimg::20220916021506",
       "pattern": "generate a image",
-      "execute": "generate_image"
+      "execute": "randonly_image"
     },{
       "tag": "generateimg::20220916021606",
       "pattern": "generate a randonly image",
-      "execute": "generate_image"
+      "execute": "randonly_image"
     },{
       "tag": "generateimg::20220916021706",
       "pattern": "generate a random image",
-      "execute": "generate_image"
+      "execute": "randonly_image"
     },{
       "tag": "generateimg::20220916021710",
       "pattern": "create a random image",
-      "execute": "generate_image"
+      "execute": "randonly_image"
     },{
       "tag": "generateimg::20220916021718",
       "pattern": "create a image",
-      "execute": "generate_image"
+      "execute": "randonly_image"
     },{
       "tag": "generateimg::20220916021721",
       "pattern": "send me a image",
-      "execute": "generate_image"
+      "execute": "randonly_image"
     },{
       "tag": "generateimg::20220916021726",
       "pattern": "send to me a image",
-      "execute": "generate_image"
+      "execute": "randonly_image"
     }
   ]
 }

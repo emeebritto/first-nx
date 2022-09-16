@@ -35,6 +35,11 @@ class Nexa:
 		return resType, res
 
 
+	def learnModule(self, module):
+		for name, val in module.__dict__.items():
+			if callable(val): self.learn(label=name, action=val)
+
+
 	def learn(self, label, action):
 		print(f"{self.name} learned to {label}")
 		self._actions[label] = action
