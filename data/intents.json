@@ -1,143 +1,177 @@
 {
   "intents": [
     {
-      "tag": "dlvideo::20220912041401",
+      "tag": "ce485604-43eb-4292-a0f9-3fa19b458fa0",
       "pattern": "download $::URL",
       "execute": "dlvideoyt"
-    },{
-      "tag": "dlvideo::20220912043501",
+    },
+    {
+      "tag": "16e8c459-492d-4b50-ba4a-e531dc820bde",
       "pattern": "download this video $::URL",
       "execute": "dlvideoyt"
-    },{
-      "tag": "dlvideo::20220912044701",
+    },
+    {
+      "tag": "f8a5f22c-5c40-4dd3-8157-bdb407f47b00",
       "pattern": "download video $::URL",
       "execute": "dlvideoyt"
-    },{
-      "tag": "dlvideo::20220912043511",
+    },
+    {
+      "tag": "ee9bef04-f5d9-45f1-bae0-44c350a6ff5e",
       "pattern": "dl $::URL",
       "execute": "dlvideoyt"
-    },{
-      "tag": "dlvideo::20220912045911",
+    },
+    {
+      "tag": "da1823f2-186e-4b6e-bdad-f6e5d280528c",
       "pattern": "dl video $::URL",
       "execute": "dlvideoyt"
-    },{
-      "tag": "dlvideo::20220913040111",
+    },
+    {
+      "tag": "9f95c30d-6708-47e6-8b66-d0a8750c0d27",
       "pattern": "download this media from $::URL",
       "execute": "dlvideoyt"
-    },{
-      "tag": "dlvideo::20220913040211",
+    },
+    {
+      "tag": "e7181945-aae1-479d-b024-b394fdd6583f",
       "pattern": "download from $::URL",
       "execute": "dlvideoyt"
-    },{
-      "tag": "pronounce::20220915033806",
+    },
+    {
+      "tag": "f881a998-2f81-4d82-92ac-7c18e67be466",
       "pattern": "pronounce $::WORD",
       "execute": "pronounce_words"
-    },{
-      "tag": "pronounce::20220915033706",
+    },
+    {
+      "tag": "5b20a90a-9578-4342-ade1-d4734a9621cd",
       "pattern": "how to pronounce $::WORD",
       "execute": "pronounce_words"
-    },{
-      "tag": "pronounce::20220916012906",
+    },
+    {
+      "tag": "7a4912a6-4ea9-4054-bf81-e7531979e1b5",
       "pattern": "How to Pronounce $::WORD",
       "execute": "pronounce_words"
-    },{
-      "tag": "pronounce::20220916012806",
+    },
+    {
+      "tag": "5bb948f2-046d-45b2-b305-6d24b405e09c",
       "pattern": "how to pronounce the word $::WORD",
       "execute": "pronounce_words"
-    },{
-      "tag": "pronounce::20220916013106",
+    },
+    {
+      "tag": "7db28bb0-5fc0-4640-aab5-006afc438a43",
       "pattern": "pronounce the word $::WORD",
       "execute": "pronounce_words"
-    },{
-      "tag": "pronounce::20220915033278",
+    },
+    {
+      "tag": "dbf49cab-7712-43f3-afa3-17d3544c93cf",
       "pattern": "pronounce $::WORD to me",
       "execute": "pronounce_words"
-    },{
-      "tag": "pronounce::20220915042306",
+    },
+    {
+      "tag": "89f43834-3d88-4118-9cf1-2ab9436b5c64",
       "pattern": "get audio $::URL to me",
       "execute": "dlmusicyt"
-    },{
-      "tag": "pronounce::20220915042406",
+    },
+    {
+      "tag": "cb47119a-fed8-4c0a-8cfa-3bba2375656c",
       "pattern": "audio $::URL",
       "execute": "dlmusicyt"
-    },{
-      "tag": "pronounce::20220915042506",
+    },
+    {
+      "tag": "118e322f-94cf-4ef2-b9e5-bcab25a3f947",
       "pattern": "download audio $::URL",
       "execute": "dlmusicyt"
-    },{
-      "tag": "pronounce::20220915042606",
+    },
+    {
+      "tag": "69b2786d-d8f8-4232-bf17-efb0e1e7361e",
       "pattern": "get audio $::URL",
       "execute": "dlmusicyt"
-    },{
-      "tag": "generateimg::20220916021506",
+    },
+    {
+      "tag": "fe4e948c-64d3-4217-be28-aeb91393c508",
       "pattern": "generate a image",
       "execute": "randonly_image"
-    },{
-      "tag": "generateimg::20220916021606",
+    },
+    {
+      "tag": "e66d1f0c-4a65-4bdc-a8ee-03d309d7aadc",
       "pattern": "generate a randonly image",
       "execute": "randonly_image"
-    },{
-      "tag": "generateimg::20220916021706",
+    },
+    {
+      "tag": "bf332abc-2673-45a7-a033-4d93e2d380f2",
       "pattern": "generate a random image",
       "execute": "randonly_image"
-    },{
-      "tag": "generateimg::20220916045906",
+    },
+    {
+      "tag": "63e8c14b-3b9e-4b45-9bad-1bf1941403c9",
       "pattern": "random image",
       "execute": "randonly_image"
-    },{
-      "tag": "generateimg::20220916021710",
+    },
+    {
+      "tag": "3272ca8a-418b-4969-81de-e547da397b65",
       "pattern": "create a random image",
       "execute": "randonly_image"
-    },{
-      "tag": "generateimg::20220916021718",
+    },
+    {
+      "tag": "90d75f7d-67d3-4da1-9fb1-0388d0f8e830",
       "pattern": "create a image",
       "execute": "randonly_image"
-    },{
-      "tag": "generateimg::20220916021721",
+    },
+    {
+      "tag": "939d3584-52e4-4936-87a3-8811f72ea9e3",
       "pattern": "send me a image",
       "execute": "randonly_image"
-    },{
-      "tag": "generateimg::20220916021726",
+    },
+    {
+      "tag": "eb44ac01-ab08-403d-9e64-e7dc1f32b526",
       "pattern": "send to me a image",
       "execute": "randonly_image"
-    },{
-      "tag": "generatefaceimg::20220916043326",
+    },
+    {
+      "tag": "b90a65bc-e49b-4b79-9f1b-2c5c2c2d8938",
       "pattern": "send to me a person image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043334",
+    },
+    {
+      "tag": "16daeb09-2497-4f83-8010-f8ad4ca650b8",
       "pattern": "send to me a face person image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043337",
+    },
+    {
+      "tag": "43e609cd-7256-4d3c-a671-5ea4909b5355",
       "pattern": "send a person image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043437",
+    },
+    {
+      "tag": "6000f765-c918-463e-808d-12093f1266ba",
       "pattern": "create a person image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043456",
+    },
+    {
+      "tag": "f1be7376-7239-419c-8475-98f73e2c9466",
       "pattern": "create a face person image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043556",
+    },
+    {
+      "tag": "f952903a-6fbf-4964-b790-d0fc650ed93a",
       "pattern": "face person image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043656",
+    },
+    {
+      "tag": "4d43e6a4-55d3-4310-92ea-f7d4d7c7ae07",
       "pattern": "random face person image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043756",
+    },
+    {
+      "tag": "e95f2aa4-ee9e-4aa4-81e7-060c59065b87",
       "pattern": "face person random image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916043856",
+    },
+    {
+      "tag": "3f1d0825-d09b-4f86-82d9-ba5144a02eea",
       "pattern": "random face image",
       "execute": "randonly_face_image"
-    },{
-      "tag": "generatefaceimg::20220916062156",
+    },
+    {
+      "tag": "d50e1a57-2870-47df-b001-eff02ae07bc8",
       "pattern": "face image",
       "execute": "randonly_face_image"
     }
