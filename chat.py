@@ -15,7 +15,7 @@ nexa.learnModule(nx)
 
 
 def telegramChat(update, context):
-  print(f"you said {update.message.text}")
+  print(f"you said \"{update.message.text}\"")
   # print(dir(update.message))
   userInput = update.message.text
   resType, res = nexa.read(userInput)

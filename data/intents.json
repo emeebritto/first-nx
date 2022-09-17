@@ -136,6 +136,10 @@
       "tag": "generatefaceimg::20220916043856",
       "pattern": "random face image",
       "execute": "randonly_face_image"
+    },{
+      "tag": "generatefaceimg::20220916062156",
+      "pattern": "face image",
+      "execute": "randonly_face_image"
     }
   ]
 }

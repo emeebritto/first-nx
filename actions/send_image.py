@@ -13,6 +13,3 @@ def randonly_face_image(svars, action):
 	res = requests.get(f"{source_base}/en?new=1663313205973").json()
 	data = requests.get(f"{source_base}/{res['src']}")
 	return "photo", data.content
-
-# https://this-person-does-not-exist.com/img/avatar-26cbe674bf0a41bf9a750817039c2b65.jpg
-# https://this-person-does-not-exist.com/en?new=1663313205973
