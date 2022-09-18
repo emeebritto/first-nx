@@ -15,8 +15,6 @@
         "pronounce $::WORD",
         "how to say $::WORD",
         "how to speak $::WORD",
-        "speak $::WORD",
-        "talk $::WORD",
         "talk to me the word $::WORD",
         "how to pronounce $::WORD",
         "how to pronounce the word $::WORD",
@@ -98,6 +96,20 @@
         "to do test"
       ],
       "execute": "take_test"
+    },{
+      "patterns": [
+        "create qr code $::DATA",
+        "create qrcode $::DATA",
+        "qr code $::DATA",
+        "qrcode $::DATA",
+        "create qr code from $::DATA",
+        "create qrcode from $::DATA",
+        "$::DATA create qr code",
+        "$::DATA create qrcode",
+        "send to me qr code from $::DATA",
+        "send to me qrcode from $::DATA"
+      ],
+      "execute": "create_qr_code"
     }
   ]
 }
