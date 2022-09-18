@@ -17,7 +17,9 @@ nexa.learnModule(nx)
 def telegramChat(update, context):
   print(f"you said \"{update.message.text}\"")
   # print(dir(update.message))
+  chatType = update.message.chat.type
   userInput = update.message.text
+  if chatType == "supergroup" and not "Nexa" in userInput: return
   resType, res = nexa.read(userInput)
 
   responsesType = {
@@ -25,7 +27,8 @@ def telegramChat(update, context):
     "document": update.message.reply_document,
     "video": update.message.reply_video,
     "audio": update.message.reply_audio,
-    "photo": update.message.reply_photo
+    "photo": update.message.reply_photo,
+    "animation": update.message.reply_animation
   }
 
   reply_method = responsesType.get(resType)
@@ -44,3 +47,6 @@ telegram.onMessage(telegramChat)
 # "dl this video $::URL in $::RESOLUTION",
 # "dl video $::URL in $::RESOLUTION",
 # "dl $::URL in $::RESOLUTION"
+
+# supergroup
+# private

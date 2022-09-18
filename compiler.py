@@ -1,17 +1,27 @@
+import re
+
+
+
 class Compiler:
 	def __init__(self):
 		super(Compiler, self).__init__()
 
 
-	def findVars(self, base, value):
+	def findVars(self, base_sentence, value):
 		svars = {}
-		base = base.split()
+		svars["mentions"] = re.findall(r"(@\w+)", value)
+		base_sentence = base_sentence.split()
+		value = re.sub(r'(@\w+)', '', value) # remove mentions (@)
 		value = value.split()
-		for idx, word in enumerate(base):
+		for startIdx, word in enumerate(base_sentence):
 			if "$::" in word:
 				key = word.split("::")[1]
-				try: svars[key] = value[idx]
-				except: pass
+				print("base_sentence", base_sentence)
+				print("list(reversed(base_sentence))", list(reversed(base_sentence)))
+				for endIdx, word in enumerate(reversed(base_sentence)):
+					if "$::" in word and key in word:
+						try: svars[key] = " ".join(value[startIdx: -endIdx if endIdx != 0 else None])
+						except: pass
 		return svars
 
 

@@ -4,16 +4,20 @@ from telegram.ext.callbackcontext import CallbackContext
 from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.filters import Filters
+from dotenv import load_dotenv
 
+from os import getenv
 import requests
 from time import sleep
+
+load_dotenv()
 
 
 
 class Telegram:
 	def __init__(self):
 		super(Telegram, self).__init__()
-		self.__token = "5435366586:AAE9L0ZVNTEkAIHg12LssdsVgtV36I7BYVc"
+		self.__token = getenv("NxToken")
 		self.__author = '1242558424'
 		self.__author_name = "Emerson_Britto"
 		self.onMsgFc = lambda: print("no function was defined")

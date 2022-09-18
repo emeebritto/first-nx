@@ -14,19 +14,30 @@
     },{
       "patterns": [
         "pronounce $::WORD",
+        "how to say $::WORD",
+        "how to speak $::WORD",
+        "speak $::WORD",
+        "talk $::WORD",
+        "talk to me the word $::WORD",
         "how to pronounce $::WORD",
         "How to Pronounce $::WORD",
         "how to pronounce the word $::WORD",
         "pronounce the word $::WORD",
+        "pronounce the word $::WORD to me",
         "pronounce $::WORD to me"
       ],
       "execute": "pronounce_words"
     },{
       "patterns": [
         "get audio $::URL to me",
+        "get song $::URL to me",
         "audio $::URL",
+        "song $::URL",
         "download audio $::URL",
-        "get audio $::URL"
+        "download sound $::URL",
+        "download song $::URL",
+        "get audio $::URL",
+        "get sound $::URL"
       ],
       "execute": "dlmusicyt"
     },{
@@ -55,6 +66,34 @@
         "face image"
       ],
       "execute": "randonly_face_image"
+    },{
+      "patterns": [
+        "send to me a cat image",
+        "send a cat image",
+        "send a cat photo",
+        "create a cat image",
+        "create a cat image",
+        "cat image",
+        "cat photo",
+        "random cat image",
+        "cat random image",
+        "cat random photo"
+      ],
+      "execute": "randonly_cat_image"
+    },{
+      "patterns": [
+        "send to me a cat gif image",
+        "send to me a cat gif",
+        "send a cat gif",
+        "create a cat gif",
+        "create a cat gif",
+        "cat gif",
+        "cat gif image",
+        "random cat gif",
+        "cat random gif",
+        "cat gif"
+      ],
+      "execute": "randonly_cat_gif"
     }
   ]
 }
