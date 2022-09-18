@@ -20,7 +20,7 @@ def telegramChat(update, context):
   chatType = update.message.chat.type
   userInput = update.message.text
   if chatType == "supergroup" and not "Nexa" in userInput: return
-  resType, res = nexa.read(userInput)
+  res = nexa.read(userInput)
 
   responsesType = {
     "text": update.message.reply_text,
@@ -31,8 +31,9 @@ def telegramChat(update, context):
     "animation": update.message.reply_animation
   }
 
-  reply_method = responsesType.get(resType)
-  if reply_method: reply_method(res)
+  for msg in res:
+    reply_method = responsesType.get(msg["resType"])
+    if reply_method: reply_method(msg["res"])
 
 
 telegram.onMessage(telegramChat)

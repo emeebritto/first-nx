@@ -20,7 +20,14 @@ class Nexa:
 		self.name = "Nexa"
 		self.age = 20
 		self._actions = {}
-		self.mind = Mind(intentsPath="data/intents.json", dataPath="data/data.pth")
+		self.intentsPath = "data/intents.json"
+		self.dataPath = "data/data.pth"
+		self.mind = Mind(intentsPath=self.intentsPath, dataPath=self.dataPath)
+
+
+	@property
+	def actions(self):
+		return self._actions
 
 
 	def read(self, value):
@@ -47,7 +54,7 @@ class Nexa:
 
 	def execute(self, label, svars):
 		action = self._actions.get(label)
-		if action: return action(svars, self._actions)
+		if action: return action(svars, self.actions, self)
 
 
 	def _extractFromText(self, value, source):

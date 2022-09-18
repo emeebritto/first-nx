@@ -5,7 +5,6 @@
         "download $::URL",
         "download this video $::URL",
         "download video $::URL",
-        "dl $::URL",
         "dl video $::URL",
         "download this media from $::URL",
         "download from $::URL"
@@ -20,7 +19,6 @@
         "talk $::WORD",
         "talk to me the word $::WORD",
         "how to pronounce $::WORD",
-        "How to Pronounce $::WORD",
         "how to pronounce the word $::WORD",
         "pronounce the word $::WORD",
         "pronounce the word $::WORD to me",
@@ -86,7 +84,6 @@
         "send to me a cat gif",
         "send a cat gif",
         "create a cat gif",
-        "create a cat gif",
         "cat gif",
         "cat gif image",
         "random cat gif",
@@ -94,6 +91,13 @@
         "cat gif"
       ],
       "execute": "randonly_cat_gif"
+    },{
+      "patterns": [
+        "take test",
+        "take a test",
+        "to do test"
+      ],
+      "execute": "take_test"
     }
   ]
 }

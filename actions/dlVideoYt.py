@@ -15,7 +15,7 @@ def read_as_binary(stream, fileFormat):
   return data
 
 
-def dlvideoyt(svars, actions):
+def dlvideoyt(svars, actions, nexa):
   video = YouTube(svars.get("URL"))
   streams = video.streams.filter(type="video")
   streams = streams.filter(progressive=True, file_extension="mp4").order_by('resolution')
@@ -28,10 +28,10 @@ def dlvideoyt(svars, actions):
   print("stream_target", stream_target)
   print("stream_target URL", stream_target.url)
 
-  return "document", data
+  return [{"resType": "document", "res": data}]
 
 
-def dlmusicyt(svars, actions):
+def dlmusicyt(svars, actions, nexa):
   video = YouTube(svars.get("URL"))
   streams = video.streams.filter(type="audio")
   streams = streams.filter(mime_type="audio/mp4")
@@ -40,4 +40,4 @@ def dlmusicyt(svars, actions):
   # data = requests.get(stream_target.url, stream=True)
   print("stream_target URL", stream_target.url)
 
-  return "document", data
+  return [{"resType": "document", "res": data}]
