@@ -34,7 +34,7 @@ class Nexa:
 		if not value: return "None", ""
 		# value = replacer.adjustQuestionMark(value)
 		predicted = self.mind.predict(value)
-		if not predicted: return "text", "??"
+		if not predicted: return [{ "resType": "text", "res": "??" }]
 		svars = compiler.findVars(predicted["pattern"], value)
 		print("svars", svars)
 		action = predicted.get("execute")

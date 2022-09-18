@@ -5,9 +5,9 @@ from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.filters import Filters
 from dotenv import load_dotenv
+import requests
 
 from os import getenv
-import requests
 from time import sleep
 
 load_dotenv()
@@ -17,7 +17,7 @@ load_dotenv()
 class Telegram:
 	def __init__(self):
 		super(Telegram, self).__init__()
-		self.__token = getenv("NxToken")
+		self.__token = getenv("ZLToken") # Zolee
 		self.__author = '1242558424'
 		self.__author_name = "Emerson_Britto"
 		self.onMsgFc = lambda: print("no function was defined")
@@ -36,7 +36,9 @@ class Telegram:
 
 
 	def start(self, update: Update, context: CallbackContext):
-		update.message.reply_text("Hi, actually I'm downloading video for everyone :)")
+		username = update.message.chat.first_name
+		data = requests.get("https://api.quotable.io/random").json()
+		update.message.reply_text(data.get("content") or f"Hi {username}")
 
 
 telegram = Telegram()
