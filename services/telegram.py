@@ -1,5 +1,6 @@
 from telegram.ext.updater import Updater
 from telegram.update import Update
+from telegram import File
 from telegram.ext.callbackcontext import CallbackContext
 from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
@@ -12,6 +13,8 @@ from time import sleep
 
 load_dotenv()
 
+# print(telegram)
+# print(dir(telegram))
 
 
 class Telegram:
@@ -24,6 +27,7 @@ class Telegram:
 		self.updater = Updater(self.__token, use_context=True)
 		self.updater.dispatcher.add_handler(CommandHandler('start', self.start))
 		self.updater.dispatcher.add_handler(MessageHandler(Filters.text, self._onMessage))
+		self.updater.dispatcher.add_handler(MessageHandler(Filters.photo, self.onPhoto))
 		self.updater.start_polling()
 
 
@@ -33,6 +37,11 @@ class Telegram:
 
 	def onMessage(self, func):
 		self.onMsgFc = func
+
+
+	def onPhoto(self, update, context):
+		source = update.message.photo[-1].get_file()["file_path"]
+		print(source)
 
 
 	def start(self, update: Update, context: CallbackContext):

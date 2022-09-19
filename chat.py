@@ -5,18 +5,11 @@ from actions import nx
 
 
 nexa = Nexa()
-print("Nexa's ready!")
-
 nexa.learnModule(nx)
-# nexa.learn("dlvideoyt", dlvideoyt)
-# nexa.learn("pronounce_words", pronounce_words)
-# nexa.learn("dlmusicyt", dlmusicyt)
-# nexa.learn("generate_image", randonly_image)
+print("Nexa's ready!")
 
 
 def telegramChat(update, context):
-  print(f"you said \"{update.message.text}\"")
-  # print(dir(update.message))
   chatType = update.message.chat.type
   userInput = update.message.text
   if chatType == "supergroup" and not "Nexa" in userInput: return
