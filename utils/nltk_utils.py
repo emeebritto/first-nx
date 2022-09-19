@@ -1,15 +1,34 @@
 import numpy as np
 import nltk
+import re
 # nltk.download('punkt')
 from nltk.stem.porter import PorterStemmer
 stemmer = PorterStemmer()
+
 
 def tokenize(sentence):
     """
     split sentence into array of words/tokens
     a token can be a word or punctuation character, or number
     """
-    return nltk.word_tokenize(sentence)
+    print(sentence)
+    result = nltk.word_tokenize(sentence)
+    print(result)
+    return result
+
+
+def tokenords(sentence):
+    print(sentence)
+    sentence = re.sub(r"(?<=\w)\.(?!\w)", " .", sentence)
+    sentence = re.sub(r"(?<=\w),+", " ,", sentence)
+    sentence = re.sub(r"(?<=\w)\?+", " ?", sentence)
+    sentence = re.sub(r"(?<=\w)!+", " !", sentence)
+    sentence = re.sub(r"(?<=\w):+(?!\w|[:/])", " :", sentence)
+    sentence = re.sub(r"(?<![#%&*])\$+(?=[0-9]{0,})(?!::|\s)", "$ ", sentence)
+    sentence = re.sub(r"(?<!\w)#+(?!::|\s|$)", "# ", sentence)
+    sentence = re.split(r"\s+", sentence)
+    print(sentence)
+    return sentence
 
 
 def stem(word):

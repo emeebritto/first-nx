@@ -8,7 +8,7 @@ from collections import deque
 from torch.utils.data import DataLoader
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from utils.nltk_utils import bag_of_words, tokenize, stem
+from utils.nltk_utils import bag_of_words, tokenize, tokenords, stem
 from utils.functions import some_match, hashl
 from utils.datasets import ChatDataset
 from models.core import NeuralNet
@@ -81,7 +81,7 @@ class Mind:
 
 
 	def predict(self, value):
-		tokenized_sentence = tokenize(value)
+		tokenized_sentence = tokenords(value)
 		X = bag_of_words(tokenized_sentence, self.all_words)
 		X = X.reshape(1, X.shape[0])
 		X = torch.from_numpy(X).to(device)
@@ -120,11 +120,11 @@ class Mind:
 		for intent in self.intents['intents']:
 			tag = intent['tag']
 			self.tags.append(tag)
-			w = tokenize(intent['pattern'])
+			w = tokenords(intent['pattern'])
 			self.all_words.extend(w)
 			xy.append((w, tag))
 		  # for pattern in intent['patterns']:
-		  #   w = tokenize(pattern)
+		  #   w = tokenords(pattern)
 		  #   self.all_words.extend(w)
 		  #   xy.append((w, tag))
 
