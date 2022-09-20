@@ -73,3 +73,8 @@ enjoy every damn thing.
 Write a list of the things you’re grateful for. no for me, but for you.
 
 Truthfully our age does not define who we are or what we do.
+
+Make your today better than your yesterday.
+
+Comparing your success with that of others is not something you should do.
+
