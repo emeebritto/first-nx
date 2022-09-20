@@ -9,24 +9,29 @@ nexa.learnModule(nx)
 print("Nexa's ready!")
 
 
-def telegramChat(update, context):
-  chatType = update.message.chat.type
-  userInput = update.message.text
-  if chatType == "supergroup" and not "Nexa" in userInput: return
-  res = nexa.read(userInput)
+# def telegramChat(user, chat, msgType, msgContent):
+def telegramChat(msgType, msg):
+  if msg.chat.type == "supergroup": return
+  chatId = msg.chat.id
+
+  if msgType == "text":
+    response = nexa.read(value=msg.text, sender=chatId)
+    if not response: return
+  elif msgType == "photo":
+    response = nexa.view(value=msg.photo, instruction=msg.caption, sender=chatId)
 
   responsesType = {
-    "text": update.message.reply_text,
-    "document": update.message.reply_document,
-    "video": update.message.reply_video,
-    "audio": update.message.reply_audio,
-    "photo": update.message.reply_photo,
-    "animation": update.message.reply_animation
+    "text": msg.reply_text,
+    "document": msg.reply_document,
+    "video": msg.reply_video,
+    "audio": msg.reply_audio,
+    "photo": msg.reply_photo,
+    "animation": msg.reply_animation
   }
 
-  for msg in res:
-    reply_method = responsesType.get(msg["resType"])
-    if reply_method: reply_method(msg["res"])
+  for part in response:
+    reply_method = responsesType.get(part["msgType"])
+    if reply_method: reply_method(part["msg"])
 
 
 telegram.onMessage(telegramChat)

@@ -1,9 +1,10 @@
 import qrcode
 import uuid
+import cv2
 import os
 
 
-def create_qr_code(svars, actions, nexa):
+def create_qr_code(svars, nexa):
 	data = svars.get("DATA")
 	imgPath = f"{str(uuid.uuid4())}.png"
 	qr = qrcode.QRCode(version=15, box_size=10, border=5)
@@ -13,4 +14,11 @@ def create_qr_code(svars, actions, nexa):
 	img.save(imgPath)
 	imgBin = open(imgPath, "rb")
 	os.remove(imgPath)
-	return [{ "resType": "photo", "res": imgBin }]
+	return [{ "msgType": "photo", "msg": imgBin }]
+
+
+def read_qr_code(svars, nexa):
+	cv2.imread("site.png")
+	detector = cv2.QRCodeDetector()
+	data, bbox, straight_qrcode = detector.detectAndDecode(img)
+	return [{ "msgType": "text", "msg": data }]

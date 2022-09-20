@@ -20,6 +20,7 @@ class Nexa:
 		self.name = "Nexa"
 		self.age = 20
 		self._actions = {}
+		self.pending = {}
 		self.intentsPath = "data/intents.json"
 		self.dataPath = "data/data.pth"
 		self.mind = Mind(intentsPath=self.intentsPath, dataPath=self.dataPath)
@@ -30,16 +31,44 @@ class Nexa:
 		return self._actions
 
 
-	def read(self, value):
-		if not value: return "None", ""
-		# value = replacer.adjustQuestionMark(value)
+	def read(self, value, sender="unknown"):
+		if not value: return [{"msgType": "text", "msg": "..."}]
 		predicted = self.mind.predict(value)
-		if not predicted: return [{ "resType": "text", "res": "??" }]
+		if not predicted: return [{ "msgType": "text", "msg": "??" }]
 		svars = compiler.findVars(predicted["pattern"], value)
+		pendingVars = self.pending[sender]
+		svars[pendingVars["name"]] = pendingVars["value"]
 		print("svars", svars)
 		action = predicted.get("execute")
 		if action: return self.execute(action, svars)
-		return resType, res
+		return [{"msgType": "text", "msg": "no actions.."}]
+
+
+	def view(self, value, instruction=None, sender="unknown"):
+		if not value: return
+		response = []
+
+		if instruction:
+			predicted = self.mind.predict(instruction)
+			if not predicted: response.insert(0, {
+				"msgType": "text",
+				"msg": "??"
+			})
+			svars = compiler.findVars(predicted["pattern"], value)
+			svars["IMAGE"] = value
+			action = predicted.get("execute")
+			if action: return self.execute(action, svars)
+		else:
+			response.insert(0, {
+				"msgType": "text",
+				"msg": "what do I do with it?"
+			})
+
+		self.pending[sender] = {
+			"name": "IMAGE",
+			"value": value
+		}
+		return response
 
 
 	def learnModule(self, module):
@@ -54,7 +83,7 @@ class Nexa:
 
 	def execute(self, label, svars):
 		action = self._actions.get(label)
-		if action: return action(svars, self.actions, self)
+		if action: return action(svars, self)
 
 
 	def _extractFromText(self, value, source):
