@@ -110,6 +110,18 @@
         "send to me qrcode from $::DATA"
       ],
       "execute": "create_qr_code"
+    },{
+      "patterns": [
+        "create a image of $::QUERY",
+        "a image of $::QUERY",
+        "image of $::QUERY",
+        "photo of $::QUERY",
+        "a photo of $::QUERY",
+        "create a photo of $::QUERY",
+        "create a image with $::QUERY",
+        "image with $::QUERY"
+      ],
+      "execute": "create_image"
     }
   ]
 }

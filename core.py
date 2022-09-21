@@ -36,8 +36,8 @@ class Nexa:
 		predicted = self.mind.predict(value)
 		if not predicted: return [{ "msgType": "text", "msg": "??" }]
 		svars = compiler.findVars(predicted["pattern"], value)
-		pendingVars = self.pending[sender]
-		svars[pendingVars["name"]] = pendingVars["value"]
+		pendingVars = self.pending.get(sender)
+		if pendingVars: svars[pendingVars["name"]] = pendingVars["value"]
 		print("svars", svars)
 		action = predicted.get("execute")
 		if action: return self.execute(action, svars)
@@ -50,7 +50,7 @@ class Nexa:
 
 		if instruction:
 			predicted = self.mind.predict(instruction)
-			if not predicted: response.insert(0, {
+			if not predicted: response.append({
 				"msgType": "text",
 				"msg": "??"
 			})
@@ -59,7 +59,7 @@ class Nexa:
 			action = predicted.get("execute")
 			if action: return self.execute(action, svars)
 		else:
-			response.insert(0, {
+			response.append({
 				"msgType": "text",
 				"msg": "what do I do with it?"
 			})
