@@ -78,3 +78,46 @@ Make your today better than your yesterday.
 
 Comparing your success with that of others is not something you should do.
 
+The choices you make become who you are.
+
+Never be afraid to stand up for something you believe in.
+
+You can’t go through life without pain, so you need to learn how to soothe yourself through it.
+
+Make time for self-reflection.
+
+Life is not a linear path, you will go through peaks and valleys.
+
+Nothing is absolute.
+
+Become your own best friend.
+
+Emotions are temporary. Never make major decisions on an emotional high.
+
+People will come and go from your life, and that’s okay.
+
+People can disagree but still love each other.
+
+You have the power to change how you act at any second.
+
+Not everyone will like you.
+
+Never make choices based on the decisions of others.
+
+Spend time figuring out what life you want for yourself.
+
+You are your own worst critique.
+
+Mental health is just as important as physical health.
+
+Sometimes, it’s best to just stay quiet.
+
+Always say I love you.
+
+Grief is a process that is completely individual to you.
+
+You are allowed to say no to something that doesn’t serve you.
+
+Never go to bed angry, at anyone.
+
+Find something that makes you happy and never let it go.
