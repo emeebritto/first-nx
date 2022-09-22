@@ -114,6 +114,12 @@
       "patterns": [
         "create a image of $::QUERY",
         "a image of $::QUERY",
+        "send to me a image of $::QUERY",
+        "send to me a photo of $::QUERY",
+        "send to me a image with $::QUERY",
+        "send me a image of $::QUERY",
+        "send me image of $::QUERY",
+        "send image of $::QUERY",
         "image of $::QUERY",
         "photo of $::QUERY",
         "a photo of $::QUERY",
@@ -122,6 +128,21 @@
         "image with $::QUERY"
       ],
       "execute": "create_image"
+    },{
+      "patterns": [
+        "read qr code $::URL",
+        "read qrcode $::URL",
+        "read qr code from $::URL",
+        "read qrcode from $::URL",
+        "$::URL read qr code",
+        "$::URL read qrcode",
+        "send to me qr code data from $::URL",
+        "send to me qrcode data from $::URL",
+        "send to me qr code content from $::URL",
+        "send to me qrcode content from $::URL",
+        "send me qrcode content from $::URL"
+      ],
+      "execute": "read_qr_code"
     }
   ]
 }

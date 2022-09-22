@@ -37,7 +37,9 @@ class Nexa:
 		if not predicted: return [{ "msgType": "text", "msg": "??" }]
 		svars = compiler.findVars(predicted["pattern"], value)
 		pendingVars = self.pending.get(sender)
-		if pendingVars: svars[pendingVars["name"]] = pendingVars["value"]
+		if pendingVars:
+			svars[pendingVars["name"]] = pendingVars["value"]
+			del self.pending[sender]
 		print("svars", svars)
 		action = predicted.get("execute")
 		if action: return self.execute(action, svars)

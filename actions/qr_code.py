@@ -1,7 +1,15 @@
+import requests
+import numpy as np
 import qrcode
 import uuid
 import cv2
 import os
+
+
+def create_filePath(data, fileFormat, fileName=""):
+  filePath = f"{fileName or str(uuid.uuid4())}.{fileFormat}"
+  with open(filePath, 'wb') as file: file.write(data)
+  return filePath
 
 
 def create_qr_code(svars, nexa):
@@ -18,7 +26,14 @@ def create_qr_code(svars, nexa):
 
 
 def read_qr_code(svars, nexa):
-	cv2.imread("site.png")
+	imgPath = svars.get("IMAGE")
+	imgUrl = svars.get("URL")
+	print("imgPath", imgPath)
+	print("imgUrl", imgUrl)	
+	imgData = requests.get(imgPath or imgUrl).content
+	filePath = create_filePath(data=imgData, fileFormat="jpg")
+	img = cv2.imread(filePath)
+	os.remove(filePath)
 	detector = cv2.QRCodeDetector()
 	data, bbox, straight_qrcode = detector.detectAndDecode(img)
 	return [{ "msgType": "text", "msg": data }]

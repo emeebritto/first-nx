@@ -32,17 +32,17 @@ def create_image(svars, nexa):
 	search_url = "https://unsplash.com/napi/search/photos"
 	uInput = svars.get("QUERY")
 	if not uInput: return [{ "msgType": "text", "msg": "sorry, I don't get it :(" }]
-	page = randint(1, 20)
+	page = randint(1, 40)
 	search_config = f"per_page=1&page={page}&xp=unsplash-plus-2:Control"
 	source_base = f"{search_url}?query={uInput}&{search_config}"
 	data = requests.get(source_base)
 	result_metadata = data.json()["results"][0]
 	result_file_url = result_metadata["urls"]["raw"]
-	file = requests.get(result_file_url).content
+	# file = requests.get(result_file_url).content
 	result_file_alt = result_metadata.get("alt_description")
 	response.append({
 		"msgType": "document",
-		"msg": file
+		"msg": result_file_url
 	})
 	if result_file_alt:
 		response.append({
