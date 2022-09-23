@@ -143,6 +143,36 @@
         "send me qrcode content from $::URL"
       ],
       "execute": "read_qr_code"
+    },{
+      "patterns": [
+        "talk $::SENTENCE",
+        "say $::SENTENCE"
+      ],
+      "execute": "talk"
+    },{
+      "patterns": [
+        "generate a cpf",
+        "generate a valid cpf",
+        "generate cpf",
+        "create a cpf",
+        "create cpf",
+        "create a valid cpf",
+        "send to me a valid cpf",
+        "send to me a cpf"
+      ],
+      "execute": "generate_cpf"
+    },{
+      "patterns": [
+        "generate a real cpf",
+        "generate true cpf",
+        "create a cpf active",
+        "create real cpf",
+        "create a valid and real cpf",
+        "create a real and active cpf",
+        "send to me a real cpf",
+        "send to me a active cpf"
+      ],
+      "execute": "generate_real_cpf"
     }
   ]
 }

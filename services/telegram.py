@@ -21,10 +21,10 @@ load_dotenv()
 class Telegram:
 	def __init__(self):
 		super(Telegram, self).__init__()
-		self.__token = getenv("ZLToken")
+		self.__token = getenv("NxToken")
 		self.__author = '1242558424'
 		self.__author_name = "Emerson_Britto"
-		self.notify = lambda: print("no function was defined")
+		self.notify = lambda msgType, msg: print("no function was defined yet")
 		self.messages = {}
 		self.updater = Updater(self.__token, use_context=True)
 		self.updater.dispatcher.add_handler(CommandHandler('start', self.start))

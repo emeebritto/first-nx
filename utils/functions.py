@@ -1,5 +1,7 @@
 import hashlib
+import uuid
 import re
+import os
 
 def some_match(list1, list2):
   for item in list1:
@@ -24,3 +26,19 @@ def replace(match, newValue, target):
     return re.sub(match, newValue or "", " ".join(target)).split()
   else:
     return re.sub(match, newValue or "", target)
+
+
+def read_as_binary(filepath, fileFormat=None):
+  newfilepath = ""
+  if fileFormat:
+    newfilepath = re.sub(r'\.\w*$', f".{fileFormat}", filepath)
+    os.rename(filepath, newfilepath)
+  data = open(newfilepath or filepath, "rb")
+  os.remove(newfilepath or filepath)
+  return data
+
+
+def create_filePath(data, fileFormat, fileName=""):
+  filePath = f"{fileName or str(uuid.uuid4())}.{fileFormat}"
+  with open(filePath, 'wb') as file: file.write(data)
+  return filePath

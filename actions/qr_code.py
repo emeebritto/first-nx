@@ -1,3 +1,4 @@
+from utils.functions import create_filePath
 import requests
 import numpy as np
 import qrcode
@@ -5,11 +6,6 @@ import uuid
 import cv2
 import os
 
-
-def create_filePath(data, fileFormat, fileName=""):
-  filePath = f"{fileName or str(uuid.uuid4())}.{fileFormat}"
-  with open(filePath, 'wb') as file: file.write(data)
-  return filePath
 
 
 def create_qr_code(svars, nexa):
