@@ -66,6 +66,7 @@
       "patterns": [
         "send to me a cat image",
         "send a cat image",
+        "send me cat image",
         "send a cat photo",
         "create a cat image",
         "create a cat image",
@@ -100,8 +101,6 @@
       "patterns": [
         "create qr code $::DATA",
         "create qrcode $::DATA",
-        "qr code $::DATA",
-        "qrcode $::DATA",
         "create qr code from $::DATA",
         "create qrcode from $::DATA",
         "$::DATA create qr code",
@@ -132,11 +131,15 @@
       "patterns": [
         "read qr code $::URL",
         "read qrcode $::URL",
+        "read qrcode data $::URL",
         "read qr code from $::URL",
         "read qrcode from $::URL",
         "$::URL read qr code",
         "$::URL read qrcode",
         "send to me qr code data from $::URL",
+        "extract qr code data from $::URL",
+        "extract qrcode data from $::URL",
+        "extract qrcode data $::URL",
         "send to me qrcode data from $::URL",
         "send to me qr code content from $::URL",
         "send to me qrcode content from $::URL",

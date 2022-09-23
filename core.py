@@ -1,6 +1,7 @@
 import string
 import nltk
 import numpy as np
+from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -18,7 +19,7 @@ class Nexa:
 		super(Nexa, self).__init__()
 		self._context_network = []
 		self.name = "Nexa"
-		self.age = 20
+		self.me = self.about()
 		self._actions = {}
 		self.pending = {}
 		self.intentsPath = "data/intents.json"
@@ -31,8 +32,15 @@ class Nexa:
 		return self._actions
 
 
+	def about(self):
+		with open("data/about_me.md", "r") as file:
+			return file.read()
+
+
 	def read(self, value, sender="unknown"):
 		if not value: return [{"msgType": "text", "msg": "..."}]
+		answer = answer_by_context(context=self.me, value=value)
+		if answer: return [{"msgType": "text", "msg": answer}]
 		predicted = self.mind.predict(value)
 		if not predicted: return [{ "msgType": "text", "msg": "??" }]
 		svars = compiler.findVars(predicted["pattern"], value)

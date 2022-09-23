@@ -1,6 +1,6 @@
 from transformers import BertForQuestionAnswering, AutoTokenizer, pipeline
 
-context = ("""My name is Nexa. I'm 20 years old. I'm pretty :)""")
+context = ("""the cat is red and the house is yellow""")
 question = input("you: ")
 
 model = BertForQuestionAnswering.from_pretrained("deepset/bert-base-cased-squad2")
@@ -13,4 +13,7 @@ result = nlp({
 	"context": context
 })
 
-print(f"Nexa: {result['answer']}")
+if result["score"] > 1: print(f"Nexa: {result['answer']}")
+else: print("??")
+
+print(f"Context: {result['score']}")
