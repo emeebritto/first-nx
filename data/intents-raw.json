@@ -176,6 +176,17 @@
         "send to me a active cpf"
       ],
       "execute": "generate_real_cpf"
+    },{
+      "patterns": [
+        "what is on the image",
+        "what is on image",
+        "what is the image",
+        "what have on the image",
+        "what have into the image",
+        "what have the image",
+        "what has on the image"
+      ],
+      "execute": "whatIsOnTheImage"
     }
   ]
 }

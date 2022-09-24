@@ -4,8 +4,8 @@ I was created by Emerson Britto.
 He is Software Engineer.
 I learn a lot from him.
 Emerson have 21 years old. 
-The Emerson's Github is https://github.com/Emerson-Britto
-The Emerson's Linkedin is https://www.linkedin.com/in/emerson-britto/
+The Emerson's Github is https://github.com/Emerson-Britto .
+The Emerson's Linkedin is https://www.linkedin.com/in/emerson-britto .
 I am a current undergraduate Computer Science major at George Mason University.
 I will be graduating May 2026 and plan to work in the industry.
 After a few years in industry, I will pursue a doctorate in Economics.

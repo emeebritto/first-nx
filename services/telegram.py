@@ -21,7 +21,7 @@ load_dotenv()
 class Telegram:
 	def __init__(self):
 		super(Telegram, self).__init__()
-		self.__token = getenv("NxToken")
+		self.__token = getenv("ZLToken")
 		self.__author = '1242558424'
 		self.__author_name = "Emerson_Britto"
 		self.notify = lambda msgType, msg: print("no function was defined yet")
