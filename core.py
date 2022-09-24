@@ -21,7 +21,7 @@ class Response:
 
 
 	def appendText(self, msg):
-		if not isinstance(self, msg, str):
+		if not isinstance(msg, str):
 			raise Exception("appendText method has received a non-str value")
 		self._response.append({"msgType": "text", "msg": msg})
 		return self._response
