@@ -8,7 +8,7 @@ import os
 
 
 
-def create_qr_code(svars, nexa):
+def create_qr_code(svars, nexa, res):
 	data = svars.get("DATA")
 	imgPath = f"{str(uuid.uuid4())}.png"
 	qr = qrcode.QRCode(version=15, box_size=10, border=5)
@@ -18,10 +18,10 @@ def create_qr_code(svars, nexa):
 	img.save(imgPath)
 	imgBin = open(imgPath, "rb")
 	os.remove(imgPath)
-	return [{ "msgType": "photo", "msg": imgBin }]
+	return res.appendPhoto(imgBin)
 
 
-def read_qr_code(svars, nexa):
+def read_qr_code(svars, nexa, res):
 	imgPath = svars.get("IMAGE")
 	imgUrl = svars.get("URL")
 	print("imgPath", imgPath)
@@ -32,4 +32,4 @@ def read_qr_code(svars, nexa):
 	os.remove(filePath)
 	detector = cv2.QRCodeDetector()
 	data, bbox, straight_qrcode = detector.detectAndDecode(img)
-	return [{ "msgType": "text", "msg": data }]
+	return res.appendText(data)

@@ -29,12 +29,12 @@ def generate_valid_cpf():
   return cpf
 
 
-def generate_cpf(svars, nexa):
-  return [{ "msgType": "text", "msg": generate_valid_cpf() }]
+def generate_cpf(svars, nexa, res):
+  return res.appendText(generate_valid_cpf())
 
 
 
-def generate_real_cpf(svars, nexa):
+def generate_real_cpf(svars, nexa, res):
   browser = Browser()
   for loop in range(5):
     browser.instance.get("https://www.situacao-cadastral.com")
@@ -58,15 +58,9 @@ def generate_real_cpf(svars, nexa):
       status = result.find_element(By.CLASS_NAME, "amr").text
 
       browser.quit()
-      return [{
-        "msgType": "text",
-        "msg": f"CPF: {document}\nNome: {nome}\n{status}"
-      }]
+      return res.appendText(f"CPF: {document}\nNome: {nome}\n{status}")
   browser.quit()
-  return [{
-    "msgType": "text",
-    "msg": "Sorry, I don't get any real CPF for now"
-  }]
+  return res.appendText("Sorry, I don't get any real CPF for now")
 
 
 

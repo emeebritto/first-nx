@@ -6,7 +6,7 @@ import re
 
 
 
-def dlvideoyt(svars, nexa):
+def dlvideoyt(svars, nexa, res):
   video = YouTube(svars.get("URL"))
   streams = video.streams.filter(type="video")
   streams = streams.filter(progressive=True, file_extension="mp4").order_by('resolution')
@@ -21,10 +21,10 @@ def dlvideoyt(svars, nexa):
   print("stream_target", stream_target)
   print("stream_target URL", stream_target.url)
 
-  return [{"msgType": "document", "msg": data}]
+  return res.appendDocument(data)
 
 
-def dlmusicyt(svars, nexa):
+def dlmusicyt(svars, nexa, res):
   video = YouTube(svars.get("URL"))
   streams = video.streams.filter(type="audio")
   streams = streams.filter(mime_type="audio/mp4")
@@ -35,4 +35,4 @@ def dlmusicyt(svars, nexa):
   # data = requests.get(stream_target.url, stream=True)
   print("stream_target URL", stream_target.url)
 
-  return [{"msgType": "document", "msg": data}]
+  return res.appendDocument(data)

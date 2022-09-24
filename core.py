@@ -14,6 +14,41 @@ compiler = Compiler()
 
 
 
+class Response:
+	def __init__(self):
+		super(Response, self).__init__()
+		self._response = []
+
+
+	def appendText(self, msg):
+		if not isinstance(self, msg, str):
+			raise Exception("appendText method has received a non-str value")
+		self._response.append({"msgType": "text", "msg": msg})
+		return self._response
+
+
+	def appendDocument(self, msg):
+		self._response.append({"msgType": "document", "msg": msg})
+		return self._response
+
+
+	def appendPhoto(self, msg):
+		self._response.append({"msgType": "photo", "msg": msg})
+		return self._response
+
+
+	def appendAnimation(self, msg):
+		self._response.append({"msgType": "animation", "msg": msg})
+		return self._response
+
+
+	def appendAudio(self, msg):
+		self._response.append({"msgType": "audio", "msg": msg})
+		return self._response
+
+
+
+
 class Nexa:
 	def __init__(self):
 		super(Nexa, self).__init__()
@@ -38,11 +73,12 @@ class Nexa:
 
 
 	def read(self, value, sender="unknown"):
-		if not value: return [{"msgType": "text", "msg": "..."}]
+		res = Response()
+		if not value: return res.appendText("...")
 		answer = answer_by_context(context=self.me, value=value)
-		if answer: return [{"msgType": "text", "msg": answer}]
+		if answer: return res.appendText(answer)
 		predicted = self.mind.predict(value)
-		if not predicted: return [{ "msgType": "text", "msg": "??" }]
+		if not predicted: return res.appendText("??")
 		svars = compiler.findVars(predicted["pattern"], value)
 		pendingVars = self.pending.get(sender)
 		if pendingVars:
@@ -50,8 +86,8 @@ class Nexa:
 			del self.pending[sender]
 		print("svars", svars)
 		action = predicted.get("execute")
-		if action: return self.execute(action, svars)
-		return [{"msgType": "text", "msg": "no actions.."}]
+		if action: return self.execute(action, svars, res)
+		return res.appendText("no actions..")
 
 
 	def view(self, value, instruction=None, sender="unknown"):
@@ -91,9 +127,9 @@ class Nexa:
 		self._actions[label] = action
 
 
-	def execute(self, label, svars):
+	def execute(self, label, svars, res):
 		action = self._actions.get(label)
-		if action: return action(svars, self)
+		if action: return action(svars, self, res)
 
 
 	def _extractFromText(self, value, source):

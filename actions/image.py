@@ -4,14 +4,14 @@ import requests
 import os
 
 
-def whatIsOnTheImage(svars, nexa):
+def whatIsOnTheImage(svars, nexa, res):
 	imageUrl = svars.get("IMAGE")
 	try:
 		imgData = requests.get(imageUrl).content
 		imagePath = create_filePath(imgData, fileFormat="jpg")
 		preds = caption_from_image([imagePath])
 		os.remove(imagePath)
-		return [{ "msgType": "text", "msg": preds[0] }]
+		return res.appendText(preds[0])
 	except Exception as e:
 		print(e)
-		return [{ "msgType": "text", "msg": "Sorry, I can't get any data from this image." }]
+		return res.appendText("Sorry, I can't get any data from this image.")
