@@ -1,26 +1,16 @@
-import nltk
 import json
 import torch
-import string
 import numpy as np
 import torch.nn as nn
-from collections import deque
-from torch.utils.data import DataLoader
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-from utils.nltk_utils import bag_of_words, tokenize, tokenords, stem
-from utils.functions import some_match, hashl
-from utils.datasets import ChatDataset
+from utils.functions import hashl
 from models.core import NeuralNet
+from skils.learning import Learning
 
-
-nltk.download('punkt', quiet=True)
-nltk.download('wordnet', quiet=True)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 
-class Mind:
+class Mind(Learning):
 	def __init__(self, intentsPath, dataPath):
 		super(Mind, self).__init__()
 		self.all_words = []
@@ -81,10 +71,7 @@ class Mind:
 
 
 	def predict(self, value):
-		tokenized_sentence = tokenords(value)
-		X = bag_of_words(tokenized_sentence, self.all_words)
-		X = X.reshape(1, X.shape[0])
-		X = torch.from_numpy(X).to(device)
+		X = self.bag_of_tokenords(value)
 
 		output = self._model(X)
 		_, predicted = torch.max(output, dim=1)
@@ -98,79 +85,6 @@ class Mind:
 			for intent in self.intents['intents']:
 				if tag == intent["tag"]:
 					return intent
-
-
-	def _createTrainingData(self, xy):
-		X_train = []
-		y_train = []
-		for (pattern_sentence, tag) in xy:
-		  bag = bag_of_words(pattern_sentence, self.all_words)
-		  X_train.append(bag)
-		  label = self.tags.index(tag)
-		  y_train.append(label)
-
-		X_train = np.array(X_train)
-		y_train = np.array(y_train)
-		return X_train, y_train
-
-
-	def train(self):
-		xy = []
-		self._loadIntents()
-		for intent in self.intents['intents']:
-			tag = intent['tag']
-			self.tags.append(tag)
-			w = tokenords(intent['pattern'])
-			self.all_words.extend(w)
-			xy.append((w, tag))
-		  # for pattern in intent['patterns']:
-		  #   w = tokenords(pattern)
-		  #   self.all_words.extend(w)
-		  #   xy.append((w, tag))
-
-		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
-		self.all_words = sorted(set(self.all_words))
-		self.tags = sorted(set(self.tags))
-
-		X_train, y_train = self._createTrainingData(xy)
-		self.input_size = len(X_train[0])
-		self.output_size = len(self.tags)
-
-		self._loadModel()
-		self._model.train()
-
-		dataset = ChatDataset(X_train, y_train)
-		train_loader = DataLoader(
-		  dataset=dataset,
-		  batch_size=self.batch_size,
-		  shuffle=True,
-		  num_workers=0
-		)
-
-		criterion = nn.CrossEntropyLoss()
-		optimizer = torch.optim.Adam(self._model.parameters(), lr=self.learning_rate)
-		losses = deque([], maxlen=15)
-
-		for epoch in range(self.num_epochs):
-			for (words, labels) in train_loader:
-				words = words.to(device)
-				labels = labels.to(dtype=torch.long).to(device)
-
-				outputs = self._model(words)
-				loss = criterion(outputs, labels)
-				optimizer.zero_grad()
-				loss.backward()
-				optimizer.step()
-
-			if (epoch+1) % 100 == 0:
-				epochLoss = "%.4f" % loss.item()
-				losses.append(epochLoss)
-				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
-				if losses.count(epochLoss) == 16: break
-
-		print(f'final loss: {loss.item():.4f}')
-		self._model.eval()
-		self._saveMind()
 
 
 	def _saveMind(self):

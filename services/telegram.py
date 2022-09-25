@@ -14,8 +14,6 @@ from time import sleep
 
 load_dotenv()
 
-# print(telegram)
-# print(dir(telegram))
 
 
 class Telegram:
@@ -72,6 +70,3 @@ class Telegram:
 
 
 telegram = Telegram()
-# print("waiting your message..")
-# print(nexa.last_message(user="Emerson-Britto"))
-# print(nexa.wait_new_message(user="Emerson_Britto"))
