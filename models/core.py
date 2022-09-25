@@ -4,8 +4,6 @@ import torch.nn.functional as F
 from torch.autograd import Variable
 
 
-MODEL_PREFIX = 'seq2seq_translate'
-CHECKPOINT_DIR = './checkpoints'
 MAX_LENGTH = 10
 
 use_cuda = torch.cuda.is_available()

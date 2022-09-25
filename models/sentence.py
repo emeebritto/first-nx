@@ -4,20 +4,20 @@ from skils.learning import Learning
 
 
 
-class Mind(Learning):
-	def __init__(self):
-		super(Mind, self).__init__()
+class SentenceType(Learning):
+	def __init__(self, intentsPath, dataPath):
+		super(SentenceType, self).__init__()
 		self.all_words = []
 		self.tags = []
 		self.ignore_words = [',', '!', '||']
 
-		self.intentsPath = "data/intents.json"
-		self.dataPath = "data/data.pth"
+		self.dataPath = dataPath
+		self.intentsPath = intentsPath
 		self.intentsHash = None
 
 		# Hyper-parameters 
 		self.neuralNet = NeuralNet
-		self.num_epochs = 6000
+		self.num_epochs = 400
 		self.batch_size = 100
 		self.learning_rate = 0.001
 		self.input_size = None # it will be defined in runtime
@@ -25,7 +25,7 @@ class Mind(Learning):
 		self.output_size = None # it will be defined in runtime
 
 		self.input_name = "pattern"
-		self.output_name = "tag"
+		self.output_name = "type"
 
 		self._model = None
 		self._loadIntents()
@@ -46,5 +46,5 @@ class Mind(Learning):
 		
 		if prob > 0.50:
 			for intent in self.intents['intents']:
-				if tag == intent["tag"]:
+				if tag == intent["type"]:
 					return intent

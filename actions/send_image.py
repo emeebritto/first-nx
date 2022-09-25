@@ -10,8 +10,8 @@ def randonly_image(svars, nexa, res):
 
 def randonly_face_image(svars, nexa, res):
 	source_base = "https://this-person-does-not-exist.com"
-	res = requests.get(f"{source_base}/en?new=1663313205973").json()
-	data = requests.get(f"{source_base}/{res['src']}")
+	result = requests.get(f"{source_base}/en?new=1663313205973").json()
+	data = requests.get(f"{source_base}/{result['src']}")
 	return res.appendPhoto(data.content)
 
 

@@ -1,8 +1,10 @@
 import nltk
 import torch
+import json
 import numpy as np
 import torch.nn as nn
 from collections import deque
+from utils.functions import hashl
 from torch.utils.data import DataLoader
 from utils.nltk_utils import bag_of_words, tokenords, stem
 from utils.datasets import ChatDataset
@@ -19,6 +21,38 @@ class Learning:
 		super(Learning, self).__init__()
 
 
+	def _loadModel(self):
+		self._model = self.neuralNet(
+			self.input_size,
+			self.hidden_size,
+			self.output_size
+		).to(device)
+
+
+	def _loadMind(self):
+		data = torch.load(self.dataPath)
+		if self.intentsHash != data["intents_hash"]:
+			raise Exception
+
+		self.input_size = data["input_size"]
+		self.hidden_size = data["hidden_size"]
+		self.output_size = data["output_size"]
+		self.all_words = data['all_words']
+		self.tags = data['tags']
+		self.model_state = data["model_state"]
+
+		self._loadModel()
+
+		self._model.load_state_dict(self.model_state)
+		self._model.eval()
+
+
+	def _loadIntents(self):
+		self.intentsHash = hashl(self.intentsPath)
+		with open(self.intentsPath, 'r') as json_data:
+			self.intents = json.load(json_data)
+
+
 	def bag_of_tokenords(self, sentence):
 		tokenized_sentence = tokenords(sentence)
 		X = bag_of_words(tokenized_sentence, self.all_words)
@@ -30,9 +64,9 @@ class Learning:
 	def prepareData(self, data):
 		xy = []
 		for intent in data['intents']:
-			tag = intent['tag']
+			tag = intent[self.output_name]
 			self.tags.append(tag)
-			w = tokenords(intent['pattern'])
+			w = tokenords(intent[self.input_name])
 			self.all_words.extend(w)
 			xy.append((w, tag))
 
@@ -99,3 +133,25 @@ class Learning:
 		print(f'final loss: {loss.item():.4f}')
 		self._model.eval()
 		self._saveMind()
+
+
+	def probability(self, output, predicted):
+		tag = self.tags[predicted.item()]
+		probs = torch.softmax(output, dim=1)
+		prob = probs[0][predicted.item()]
+		return tag, prob.item()
+
+
+	def _saveMind(self):
+		data = {
+			"intents_hash": self.intentsHash,
+		  "model_state": self._model.state_dict(),
+		  "input_size": self.input_size,
+		  "hidden_size": self.hidden_size,
+		  "output_size": self.output_size,
+		  "all_words": self.all_words,
+		  "tags": self.tags
+		}
+
+		torch.save(data, self.dataPath)
+		print(f'training complete. file saved to {self.dataPath}')

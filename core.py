@@ -8,6 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from compiler import Compiler
 from patterns.replacer import replacer
 from random import choice
+from analyzer import Analyzer
 from mind import Mind
 
 compiler = Compiler()
@@ -62,7 +63,7 @@ class Response:
 
 
 
-class Nexa:
+class Nexa(Mind):
 	def __init__(self):
 		super(Nexa, self).__init__()
 		self._context_network = []
@@ -70,9 +71,7 @@ class Nexa:
 		self.me = self.about()
 		self._actions = {}
 		self.pending = {}
-		self.intentsPath = "data/intents.json"
-		self.dataPath = "data/data.pth"
-		self.mind = Mind(intentsPath=self.intentsPath, dataPath=self.dataPath)
+		self.analyzer = Analyzer()
 
 
 	@property
@@ -85,12 +84,14 @@ class Nexa:
 			return file.read()
 
 
-	def read(self, value, sender="unknown"):
+	def read(self, value, context="", sender="unknown"):
 		res = Response()
 		if not value: return res.appendText("...")
-		answer = answer_by_context(context=self.me, value=value)
-		if answer: return res.appendText(answer)
-		predicted = self.mind.predict(value)
+		print(self.analyzer.type(value))
+		if self.analyzer.isQuestion(value):
+			answer = answer_by_context(context=self.me + context, value=value)
+			if answer: return res.appendText(answer)
+		predicted = self.predict(value)
 		if not predicted: return res.appendText("??")
 		svars = compiler.findVars(predicted["pattern"], value)
 		pendingVars = self.pending.get(sender)
@@ -105,29 +106,24 @@ class Nexa:
 
 	def view(self, value, instruction=None, sender="unknown"):
 		if not value: return
-		response = []
+		res = Response()
 
 		if instruction:
-			predicted = self.mind.predict(instruction)
-			if not predicted: response.append({
-				"msgType": "text",
-				"msg": "??"
-			})
+			predicted = self.predict(instruction)
+			if not predicted: res.appendText("??")
 			svars = compiler.findVars(predicted["pattern"], value)
 			svars["IMAGE"] = value
 			action = predicted.get("execute")
-			if action: return self.execute(action, svars)
+			if action: return self.execute(action, svars, res)
 		else:
-			response.append({
-				"msgType": "text",
-				"msg": "what do I do with it?"
-			})
+			res.appendText("what do I do with it?")
 
 		self.pending[sender] = {
 			"name": "IMAGE",
 			"value": value
 		}
-		return response
+
+		return res.values()
 
 
 	def learnModule(self, module):

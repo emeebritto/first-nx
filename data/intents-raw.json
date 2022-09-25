@@ -187,6 +187,15 @@
         "what has on the image"
       ],
       "execute": "whatIsOnTheImage"
+    },{
+      "patterns": [
+        "clear messages",
+        "clear all messages",
+        "clear old messages",
+        "delete messages",
+        "delete all messages"
+      ],
+      "execute": "clear_messages"
     }
   ]
 }

@@ -1,7 +1,9 @@
+from threading import Thread
+from re import sub as re_sub
+from uuid import uuid4
 import hashlib
-import uuid
-import re
 import os
+
 
 def some_match(list1, list2):
   for item in list1:
@@ -23,15 +25,15 @@ def hashl(filePath):
 
 def replace(match, newValue, target):
   if type(target) == list:
-    return re.sub(match, newValue or "", " ".join(target)).split()
+    return re_sub(match, newValue or "", " ".join(target)).split()
   else:
-    return re.sub(match, newValue or "", target)
+    return re_sub(match, newValue or "", target)
 
 
 def read_as_binary(filepath, fileFormat=None):
   newfilepath = ""
   if fileFormat:
-    newfilepath = re.sub(r'\.\w*$', f".{fileFormat}", filepath)
+    newfilepath = re_sub(r'\.\w*$', f".{fileFormat}", filepath)
     os.rename(filepath, newfilepath)
   data = open(newfilepath or filepath, "rb")
   os.remove(newfilepath or filepath)
@@ -39,6 +41,13 @@ def read_as_binary(filepath, fileFormat=None):
 
 
 def create_filePath(data, fileFormat, fileName=""):
-  filePath = f"{fileName or str(uuid.uuid4())}.{fileFormat}"
+  filePath = f"{fileName or str(uuid4())}.{fileFormat}"
   with open(filePath, 'wb') as file: file.write(data)
   return filePath
+
+
+def syncmethod(func):
+  def function(*args, **kwargs):
+    th = Thread(target=func, args=args, kwargs=kwargs)
+    th.start()
+  return function
