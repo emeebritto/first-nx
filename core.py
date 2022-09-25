@@ -20,6 +20,18 @@ class Response:
 		self._response = []
 
 
+	def __repr__(self):
+		return self._response
+
+
+	def __len__(self):
+		return len(self._response)
+
+
+	def values(self):
+		return self._response
+
+
 	def appendText(self, msg):
 		if not isinstance(msg, str):
 			raise Exception("appendText method has received a non-str value")
@@ -28,6 +40,7 @@ class Response:
 
 
 	def appendDocument(self, msg):
+		print(type(msg))
 		self._response.append({"msgType": "document", "msg": msg})
 		return self._response
 

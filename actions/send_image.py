@@ -41,4 +41,4 @@ def create_image(svars, nexa, res):
 	result_file_alt = result_metadata.get("alt_description")
 	res.appendDocument(result_file_url)
 	if result_file_alt: res.appendText(result_file_alt)
-	return res
+	return res.values()
