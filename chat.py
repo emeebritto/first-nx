@@ -1,9 +1,13 @@
-from services.telegram import telegram
+from services import telegram
+from api import api, api_Thread
 from core import Nexa
 from actions import nx
 
 
 nexa = Nexa()
+telegram.run()
+api_Thread.start()
+api.keep_wake_up()
 nexa.learnModule(nx)
 
 
@@ -13,6 +17,18 @@ def clearMessages(svars, nexa, res):
 
 nexa.learn("clear_messages", clearMessages)
 print("Nexa's ready!")
+
+
+def inboxChat(msgType, msg):
+  if msgType == "text":
+    response = nexa.read(value=msg, context="")
+    if not response: return "sorry, I don't get it"
+    final_response = []
+    for part in response:
+      if part["msgType"] == "text":
+        final_response.append(part["msg"])
+
+    return f"<p>{'</p><p>'.join(final_response)}</p>"
 
 
 # def telegramChat(user, chat, msgType, msgContent):
@@ -48,7 +64,7 @@ def telegramChat(msgType, msg, allMsgs=[]):
 
 
 telegram.onMessage(telegramChat)
-
+api.inbox.onMessage(inboxChat)
 
 
 # "donwload this video $::URL in $::RESOLUTION",

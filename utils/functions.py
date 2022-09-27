@@ -1,6 +1,8 @@
 from threading import Thread
 from re import sub as re_sub
 from uuid import uuid4
+from time import sleep
+import requests
 import hashlib
 import os
 
@@ -51,3 +53,19 @@ def syncmethod(func):
     th = Thread(target=func, args=args, kwargs=kwargs)
     th.start()
   return function
+
+
+@syncmethod
+def interval(fc, time):
+  while True:
+    sleep(time)
+    fc()
+
+
+@syncmethod
+def wake_up():
+  url = "https://nexa-shi.herokuapp.com/test"
+  try:
+    requests.get(url)
+  except Exception as e:
+    print(f"wakeUp failed (url: {url})")

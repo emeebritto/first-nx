@@ -3,5 +3,6 @@ WORKDIR .
 COPY requirements.txt requirements.txt
 RUN apt-get update && apt-get install -y python3-opencv libsm6 libxext6 libgl1
 RUN pip install -r requirements.txt
+EXPOSE 3080
 COPY . .
 CMD [ "python", "chat.py"]

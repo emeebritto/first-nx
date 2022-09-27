@@ -23,18 +23,21 @@ class Telegram:
 		self.__author = '1242558424'
 		self.__author_name = "Emerson_Britto"
 		self._notify = lambda msgType, msg: print("no function was defined yet")
-		self._updater = Updater(self.__token, use_context=True)
-		self._updater.dispatcher.add_handler(CommandHandler('start', self.start))
-		self._updater.dispatcher.add_handler(MessageHandler(Filters.reply, self._onReply))
-		self._updater.dispatcher.add_handler(MessageHandler(Filters.text, self._onMessage))
-		self._updater.dispatcher.add_handler(MessageHandler(Filters.photo, self._onPhoto))
-		self._updater.start_polling()
 
 
 	@property
 	def messages(self):
 		with open("messages.txt", "r") as file:
 			return file.read()
+
+
+	def run(self):
+		self._updater = Updater(self.__token, use_context=True)
+		self._updater.dispatcher.add_handler(CommandHandler('start', self.start))
+		self._updater.dispatcher.add_handler(MessageHandler(Filters.reply, self._onReply))
+		self._updater.dispatcher.add_handler(MessageHandler(Filters.text, self._onMessage))
+		self._updater.dispatcher.add_handler(MessageHandler(Filters.photo, self._onPhoto))
+		self._updater.start_polling()
 
 
 	def registerMsg(self, msg):
@@ -88,6 +91,3 @@ class Telegram:
 			update.message.reply_text(data.get("content"))
 		except Exception as e:
 			update.message.reply_text(f"Hi {chat.first_name}")
-
-
-telegram = Telegram()
