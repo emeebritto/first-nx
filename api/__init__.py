@@ -4,6 +4,9 @@ import requests
 from twilio.twiml.messaging_response import MessagingResponse
 from utils.functions import interval, wake_up
 from .inbox import Inbox
+import os
+
+
 
 api = Flask(__name__)
 
@@ -57,5 +60,5 @@ def api_inbox():
   return response
 
 
-
-api_Thread = Thread(target=api.run, args=(), kwargs={"host": "0.0.0.0", "debug": False, "port": 3080})
+port = int(os.environ.get("PORT", 3080))
+api_Thread = Thread(target=api.run, args=(), kwargs={"host": "0.0.0.0", "debug": False, "port": port})
