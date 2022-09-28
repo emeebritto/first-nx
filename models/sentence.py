@@ -5,15 +5,16 @@ from skils.learning import Learning
 
 
 class SentenceType(Learning):
-	def __init__(self, intentsPath, dataPath):
+	def __init__(self):
 		super(SentenceType, self).__init__()
 		self.all_words = []
 		self.tags = []
 		self.ignore_words = [',', '!', '||']
 
-		self.dataPath = dataPath
-		self.intentsPath = intentsPath
-		self.intentsHash = None
+		#files data paths
+		self.dataPath = "data/sentenceType.pth"
+		self.intentsPath = ["data/sentence.json", "data/intents.json"]
+		self.intentsHash = ""
 
 		# Hyper-parameters 
 		self.neuralNet = NeuralNet
@@ -45,6 +46,6 @@ class SentenceType(Learning):
 		print("prob item", prob)
 		
 		if prob > 0.50:
-			for intent in self.intents['intents']:
+			for intent in self.intents:
 				if tag == intent["type"]:
 					return intent

@@ -1,5 +1,6 @@
 from transformers import BertForQuestionAnswering, AutoTokenizer, pipeline
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor
+from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
 # from transformers import TrOCRProcessor
 from PIL import Image
 import torch
@@ -49,6 +50,16 @@ def caption_from_image(image_paths):
 	preds = tokenizer.batch_decode(output_ids, skip_special_tokens=True)
 	preds = [pred.strip() for pred in preds]
 	return preds
+
+
+def conversation(value):
+	mname = "facebook/blenderbot-400M-distill"
+	model = BlenderbotForConditionalGeneration.from_pretrained(mname)
+	tokenizer = BlenderbotTokenizer.from_pretrained(mname)
+	inputs = tokenizer([value], return_tensors="pt")
+	reply_ids = model.generate(**inputs)
+	return tokenizer.batch_decode(reply_ids, skip_special_tokens=True)[0]
+
 
 
 # def caption_from_image(image_paths):

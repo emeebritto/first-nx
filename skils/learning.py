@@ -1,6 +1,7 @@
 import nltk
 import torch
 import json
+import re
 import numpy as np
 import torch.nn as nn
 from collections import deque
@@ -48,9 +49,14 @@ class Learning:
 
 
 	def _loadIntents(self):
-		self.intentsHash = hashl(self.intentsPath)
-		with open(self.intentsPath, 'r') as json_data:
-			self.intents = json.load(json_data)
+		isList = isinstance(self.intentsPath, list)
+		intentsPath = self.intentsPath if isList else [self.intentsPath]
+		self.intentsHash = ""
+		self.intents = []
+		for path in intentsPath:
+			self.intentsHash += hashl(path)
+			with open(path, 'r') as json_file:
+				self.intents.extend(json.load(json_file))
 
 
 	def bag_of_tokenords(self, sentence):
@@ -63,7 +69,7 @@ class Learning:
 
 	def prepareData(self, data):
 		xy = []
-		for intent in data['intents']:
+		for intent in data:
 			tag = intent[self.output_name]
 			self.tags.append(tag)
 			w = tokenords(intent[self.input_name])
@@ -152,6 +158,9 @@ class Learning:
 		  "all_words": self.all_words,
 		  "tags": self.tags
 		}
+
+		if not self.dataPath:
+			self.dataPath = re.sub(r'\.[a-z]*$', '.pth', self.intentsPath)
 
 		torch.save(data, self.dataPath)
 		print(f'training complete. file saved to {self.dataPath}')

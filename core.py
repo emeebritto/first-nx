@@ -88,20 +88,21 @@ class Nexa(Mind):
 		res = Response()
 		if not value: return res.appendText("...")
 		print(self.analyzer.type(value))
+
 		if self.analyzer.isQuestion(value):
 			answer = answer_by_context(context=self.me + context, value=value)
 			if answer: return res.appendText(answer)
-		predicted = self.predict(value)
-		if not predicted: return res.appendText("??")
-		svars = compiler.findVars(predicted["pattern"], value)
-		pendingVars = self.pending.get(sender)
-		if pendingVars:
-			svars[pendingVars["name"]] = pendingVars["value"]
-			del self.pending[sender]
-		print("svars", svars)
-		action = predicted.get("execute")
-		if action: return self.execute(action, svars, res)
-		return res.appendText("no actions..")
+		if self.analyzer.isOrder(value):
+			predicted = self.predict(value)
+			if not predicted: return res.appendText("??")
+			svars = compiler.findVars(predicted["pattern"], value)
+			pendingVars = self.pending.get(sender)
+			if pendingVars:
+				svars[pendingVars["name"]] = pendingVars["value"]
+				del self.pending[sender]
+			print("svars", svars)
+			action = predicted.get("execute")
+			if action: return self.execute(action, svars, res)
 
 
 	def view(self, value, instruction=None, sender="unknown"):

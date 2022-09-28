@@ -4,7 +4,7 @@ from models.sentence import SentenceType
 class Analyzer:
 	def __init__(self):
 		super(Analyzer, self).__init__()
-		self.sentence = SentenceType(intentsPath="data/sentence.json", dataPath="data/sentenceType.pth")
+		self.sentence = SentenceType()
 
 
 	def type(self, value):
@@ -24,3 +24,8 @@ class Analyzer:
 	def isAffirmative(self, value):
 		predicted = self.sentence.predict(value)
 		return predicted["type"] == "affirmative" if predicted else False
+
+
+	def isOrder(self, value):
+		predicted = self.sentence.predict(value)
+		return predicted["type"] == "order" if predicted else False

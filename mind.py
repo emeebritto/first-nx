@@ -45,6 +45,6 @@ class Mind(Learning):
 		print("prob item", prob)
 		
 		if prob > 0.50:
-			for intent in self.intents['intents']:
+			for intent in self.intents:
 				if tag == intent["tag"]:
 					return intent

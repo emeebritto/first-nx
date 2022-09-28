@@ -1,201 +1,215 @@
-{
-  "intents": [
-    {
-      "patterns": [
-        "download $::URL",
-        "download this video $::URL",
-        "download video $::URL",
-        "dl video $::URL",
-        "download this media from $::URL",
-        "download from $::URL"
-      ],
-      "execute": "dlvideoyt"
-    },{
-      "patterns": [
-        "pronounce $::WORD",
-        "how to say $::WORD",
-        "how to speak $::WORD",
-        "talk to me the word $::WORD",
-        "how to pronounce $::WORD",
-        "how to pronounce the word $::WORD",
-        "pronounce the word $::WORD",
-        "pronounce the word $::WORD to me",
-        "pronounce $::WORD to me"
-      ],
-      "execute": "pronounce_words"
-    },{
-      "patterns": [
-        "get audio $::URL to me",
-        "get song $::URL to me",
-        "audio $::URL",
-        "song $::URL",
-        "download audio $::URL",
-        "download sound $::URL",
-        "download song $::URL",
-        "get audio $::URL",
-        "get sound $::URL"
-      ],
-      "execute": "dlmusicyt"
-    },{
-      "patterns": [
-        "generate a image",
-        "generate a randonly image",
-        "generate a random image",
-        "random image",
-        "create a random image",
-        "create a image",
-        "send me a image",
-        "send to me a image"
-      ],
-      "execute": "randonly_image"
-    },{
-      "patterns": [
-        "send to me a person image",
-        "send to me a face person image",
-        "send a person image",
-        "create a person image",
-        "create a face person image",
-        "face person image",
-        "random face person image",
-        "face person random image",
-        "random face image",
-        "face image"
-      ],
-      "execute": "randonly_face_image"
-    },{
-      "patterns": [
-        "send to me a cat image",
-        "send a cat image",
-        "send me cat image",
-        "send a cat photo",
-        "create a cat image",
-        "create a cat image",
-        "cat image",
-        "cat photo",
-        "random cat image",
-        "cat random image",
-        "cat random photo"
-      ],
-      "execute": "randonly_cat_image"
-    },{
-      "patterns": [
-        "send to me a cat gif image",
-        "send to me a cat gif",
-        "send a cat gif",
-        "create a cat gif",
-        "cat gif",
-        "cat gif image",
-        "random cat gif",
-        "cat random gif",
-        "cat gif"
-      ],
-      "execute": "randonly_cat_gif"
-    },{
-      "patterns": [
-        "take test",
-        "take a test",
-        "to do test"
-      ],
-      "execute": "take_test"
-    },{
-      "patterns": [
-        "create qr code $::DATA",
-        "create qrcode $::DATA",
-        "create qr code from $::DATA",
-        "create qrcode from $::DATA",
-        "$::DATA create qr code",
-        "$::DATA create qrcode",
-        "send to me qr code from $::DATA",
-        "send to me qrcode from $::DATA"
-      ],
-      "execute": "create_qr_code"
-    },{
-      "patterns": [
-        "create a image of $::QUERY",
-        "a image of $::QUERY",
-        "send to me a image of $::QUERY",
-        "send to me a photo of $::QUERY",
-        "send to me a image with $::QUERY",
-        "send me a image of $::QUERY",
-        "send me image of $::QUERY",
-        "send image of $::QUERY",
-        "image of $::QUERY",
-        "photo of $::QUERY",
-        "a photo of $::QUERY",
-        "create a photo of $::QUERY",
-        "create a image with $::QUERY",
-        "image with $::QUERY"
-      ],
-      "execute": "create_image"
-    },{
-      "patterns": [
-        "read qr code $::URL",
-        "read qrcode $::URL",
-        "read qrcode data $::URL",
-        "read qr code from $::URL",
-        "read qrcode from $::URL",
-        "$::URL read qr code",
-        "$::URL read qrcode",
-        "send to me qr code data from $::URL",
-        "extract qr code data from $::URL",
-        "extract qrcode data from $::URL",
-        "extract qrcode data $::URL",
-        "send to me qrcode data from $::URL",
-        "send to me qr code content from $::URL",
-        "send to me qrcode content from $::URL",
-        "send me qrcode content from $::URL"
-      ],
-      "execute": "read_qr_code"
-    },{
-      "patterns": [
-        "talk $::SENTENCE",
-        "say $::SENTENCE"
-      ],
-      "execute": "talk"
-    },{
-      "patterns": [
-        "generate a cpf",
-        "generate a valid cpf",
-        "generate cpf",
-        "create a cpf",
-        "create cpf",
-        "create a valid cpf",
-        "send to me a valid cpf",
-        "send to me a cpf"
-      ],
-      "execute": "generate_cpf"
-    },{
-      "patterns": [
-        "generate a real cpf",
-        "generate true cpf",
-        "create a cpf active",
-        "create real cpf",
-        "create a valid and real cpf",
-        "create a real and active cpf",
-        "send to me a real cpf",
-        "send to me a active cpf"
-      ],
-      "execute": "generate_real_cpf"
-    },{
-      "patterns": [
-        "what is on the image",
-        "what is on image",
-        "what is the image",
-        "what have on the image",
-        "what have into the image",
-        "what have the image",
-        "what has on the image"
-      ],
-      "execute": "whatIsOnTheImage"
-    },{
-      "patterns": [
-        "clear messages",
-        "clear all messages",
-        "clear old messages",
-        "delete messages",
-        "delete all messages"
-      ],
-      "execute": "clear_messages"
-    }
-  ]
-}
+[
+  {
+    "type": "order",
+    "patterns": [
+      "download $::URL",
+      "download this video $::URL",
+      "download video $::URL",
+      "dl video $::URL",
+      "download this media from $::URL",
+      "download from $::URL"
+    ],
+    "execute": "dlvideoyt"
+  },{
+    "type": "order",
+    "patterns": [
+      "pronounce $::WORD",
+      "how to say $::WORD",
+      "how to speak $::WORD",
+      "talk to me the word $::WORD",
+      "how to pronounce $::WORD",
+      "how to pronounce the word $::WORD",
+      "pronounce the word $::WORD",
+      "pronounce the word $::WORD to me",
+      "pronounce $::WORD to me"
+    ],
+    "execute": "pronounce_words"
+  },{
+    "type": "order",
+    "patterns": [
+      "get audio $::URL to me",
+      "get song $::URL to me",
+      "audio $::URL",
+      "song $::URL",
+      "download audio $::URL",
+      "download sound $::URL",
+      "download song $::URL",
+      "get audio $::URL",
+      "get sound $::URL"
+    ],
+    "execute": "dlmusicyt"
+  },{
+    "type": "order",
+    "patterns": [
+      "generate a image",
+      "generate a randonly image",
+      "generate a random image",
+      "random image",
+      "create a random image",
+      "create a image",
+      "send me a image",
+      "send to me a image"
+    ],
+    "execute": "randonly_image"
+  },{
+    "type": "order",
+    "patterns": [
+      "send to me a person image",
+      "send to me a face person image",
+      "send a person image",
+      "create a person image",
+      "create a face person image",
+      "face person image",
+      "random face person image",
+      "face person random image",
+      "random face image",
+      "face image"
+    ],
+    "execute": "randonly_face_image"
+  },{
+    "type": "order",
+    "patterns": [
+      "send to me a cat image",
+      "send a cat image",
+      "send me cat image",
+      "send a cat photo",
+      "create a cat image",
+      "create a cat image",
+      "cat image",
+      "cat photo",
+      "random cat image",
+      "cat random image",
+      "cat random photo"
+    ],
+    "execute": "randonly_cat_image"
+  },{
+    "type": "order",
+    "patterns": [
+      "send to me a cat gif image",
+      "send to me a cat gif",
+      "send a cat gif",
+      "create a cat gif",
+      "cat gif",
+      "cat gif image",
+      "random cat gif",
+      "cat random gif",
+      "cat gif"
+    ],
+    "execute": "randonly_cat_gif"
+  },{
+    "type": "order",
+    "patterns": [
+      "take test",
+      "take a test",
+      "to do test"
+    ],
+    "execute": "take_test"
+  },{
+    "type": "order",
+    "patterns": [
+      "create qr code $::DATA",
+      "create qrcode $::DATA",
+      "create qr code from $::DATA",
+      "create qrcode from $::DATA",
+      "$::DATA create qr code",
+      "$::DATA create qrcode",
+      "send to me qr code from $::DATA",
+      "send to me qrcode from $::DATA"
+    ],
+    "execute": "create_qr_code"
+  },{
+    "type": "order",
+    "patterns": [
+      "create a image of $::QUERY",
+      "a image of $::QUERY",
+      "send to me a image of $::QUERY",
+      "send to me a photo of $::QUERY",
+      "send to me a image with $::QUERY",
+      "send me a image of $::QUERY",
+      "send me image of $::QUERY",
+      "send image of $::QUERY",
+      "image of $::QUERY",
+      "photo of $::QUERY",
+      "a photo of $::QUERY",
+      "create a photo of $::QUERY",
+      "create a image with $::QUERY",
+      "image with $::QUERY"
+    ],
+    "execute": "create_image"
+  },{
+    "type": "order",
+    "patterns": [
+      "read qr code $::URL",
+      "read qrcode $::URL",
+      "read qrcode data $::URL",
+      "read qr code from $::URL",
+      "read qrcode from $::URL",
+      "$::URL read qr code",
+      "$::URL read qrcode",
+      "send to me qr code data from $::URL",
+      "extract qr code data from $::URL",
+      "extract qrcode data from $::URL",
+      "extract qrcode data $::URL",
+      "send to me qrcode data from $::URL",
+      "send to me qr code content from $::URL",
+      "send to me qrcode content from $::URL",
+      "send me qrcode content from $::URL"
+    ],
+    "execute": "read_qr_code"
+  },{
+    "type": "order",
+    "patterns": [
+      "talk $::SENTENCE",
+      "say $::SENTENCE"
+    ],
+    "execute": "talk"
+  },{
+    "type": "order",
+    "patterns": [
+      "generate a cpf",
+      "generate a valid cpf",
+      "generate cpf",
+      "create a cpf",
+      "create cpf",
+      "create a valid cpf",
+      "send to me a valid cpf",
+      "send to me a cpf"
+    ],
+    "execute": "generate_cpf"
+  },{
+    "type": "order",
+    "patterns": [
+      "generate a real cpf",
+      "generate true cpf",
+      "create a cpf active",
+      "create real cpf",
+      "create a valid and real cpf",
+      "create a real and active cpf",
+      "send to me a real cpf",
+      "send to me a active cpf"
+    ],
+    "execute": "generate_real_cpf"
+  },{
+    "type": "order",
+    "patterns": [
+      "what is on the image",
+      "what is on image",
+      "what is the image",
+      "what have on the image",
+      "what have into the image",
+      "what have the image",
+      "what has on the image"
+    ],
+    "execute": "whatIsOnTheImage"
+  },{
+    "type": "order",
+    "patterns": [
+      "clear messages",
+      "clear all messages",
+      "clear old messages",
+      "delete messages",
+      "delete all messages"
+    ],
+    "execute": "clear_messages"
+  }
+]
