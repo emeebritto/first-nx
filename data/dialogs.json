@@ -1,0 +1,8 @@
+[
+  {
+    "patterns": ["hi"],
+    "execute": null,
+    "responses": ["hii"],
+    "type": "exclamation"
+  }	
+]
