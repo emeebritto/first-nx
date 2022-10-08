@@ -23,8 +23,11 @@ def randonly_cat_image(svars, nexa, res):
 
 def randonly_cat_gif(svars, nexa, res):
 	source_base = "https://cataas.com/cat/gif"
-	data = requests.get(source_base)
-	return res.appendAnimation(data.content)
+	try:
+		data = requests.get(source_base)
+		return res.appendAnimation(data.content)
+	except Exception as e:
+		return res.appendText("sorry, but I think there was an Error during the process.")
 
 
 def create_image(svars, nexa, res):

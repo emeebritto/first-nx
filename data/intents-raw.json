@@ -9,7 +9,8 @@
       "download this media from $::URL",
       "download from $::URL"
     ],
-    "execute": "dlvideoyt"
+    "execute": "dlvideoyt",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -23,7 +24,8 @@
       "pronounce the word $::WORD to me",
       "pronounce $::WORD to me"
     ],
-    "execute": "pronounce_words"
+    "execute": "pronounce_words",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -37,7 +39,8 @@
       "get audio $::URL",
       "get sound $::URL"
     ],
-    "execute": "dlmusicyt"
+    "execute": "dlmusicyt",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -50,7 +53,8 @@
       "send me a image",
       "send to me a image"
     ],
-    "execute": "randonly_image"
+    "execute": "randonly_image",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -65,7 +69,8 @@
       "random face image",
       "face image"
     ],
-    "execute": "randonly_face_image"
+    "execute": "randonly_face_image",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -81,7 +86,8 @@
       "cat random image",
       "cat random photo"
     ],
-    "execute": "randonly_cat_image"
+    "execute": "randonly_cat_image",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -95,7 +101,8 @@
       "cat random gif",
       "cat gif"
     ],
-    "execute": "randonly_cat_gif"
+    "execute": "randonly_cat_gif",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -103,7 +110,8 @@
       "take a test",
       "to do test"
     ],
-    "execute": "take_test"
+    "execute": "take_test",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -116,7 +124,8 @@
       "send to me qr code from $::DATA",
       "send to me qrcode from $::DATA"
     ],
-    "execute": "create_qr_code"
+    "execute": "create_qr_code",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -135,7 +144,8 @@
       "create a image with $::QUERY",
       "image with $::QUERY"
     ],
-    "execute": "create_image"
+    "execute": "create_image",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -155,14 +165,16 @@
       "send to me qrcode content from $::URL",
       "send me qrcode content from $::URL"
     ],
-    "execute": "read_qr_code"
+    "execute": "read_qr_code",
+    "response": null
   },{
     "type": "order",
     "patterns": [
       "talk $::SENTENCE",
       "say $::SENTENCE"
     ],
-    "execute": "talk"
+    "execute": "talk",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -175,7 +187,8 @@
       "send to me a valid cpf",
       "send to me a cpf"
     ],
-    "execute": "generate_cpf"
+    "execute": "generate_cpf",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -188,7 +201,8 @@
       "send to me a real cpf",
       "send to me a active cpf"
     ],
-    "execute": "generate_real_cpf"
+    "execute": "generate_real_cpf",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -200,7 +214,8 @@
       "what have the image",
       "what has on the image"
     ],
-    "execute": "whatIsOnTheImage"
+    "execute": "whatIsOnTheImage",
+    "response": null
   },{
     "type": "order",
     "patterns": [
@@ -210,6 +225,7 @@
       "delete messages",
       "delete all messages"
     ],
-    "execute": "clear_messages"
+    "execute": "clear_messages",
+    "response": null
   }
 ]

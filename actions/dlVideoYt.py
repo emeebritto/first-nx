@@ -7,6 +7,7 @@ import re
 
 
 def dlvideoyt(svars, nexa, res):
+  print("BAIXANDO VIDEO")
   video = YouTube(svars.get("URL"))
   streams = video.streams.filter(type="video")
   streams = streams.filter(progressive=True, file_extension="mp4").order_by('resolution')

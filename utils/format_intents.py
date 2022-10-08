@@ -16,6 +16,7 @@ with open(rawIntentsPath, 'r') as json_data:
 				"tag": str(uuid.uuid4()),
 				"pattern": pattern,
 				"execute": intent["execute"],
+				"response": intent["response"],
 				"type": intent["type"]
 			})
 

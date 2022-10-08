@@ -33,15 +33,21 @@ class Response:
 		return self._response
 
 
-	def appendText(self, msg):
-		if not isinstance(msg, str):
-			raise Exception("appendText method has received a non-str value")
-		self._response.append({"msgType": "text", "msg": msg})
+	def appendText(self, msg, choiceOne=False):
+		if isinstance(msg, str):
+			self._response.append({"msgType": "text", "msg": msg})
+		elif isinstance(msg, list):
+			if choiceOne:
+				self._response.append({"msgType": "text", "msg": choice(msg)})
+			else:
+				for text in msg:
+					self._response.append({"msgType": "text", "msg": text})
+		else:
+			raise Exception("appendText method has not received a str either list value")
 		return self._response
 
 
 	def appendDocument(self, msg):
-		print(type(msg))
 		self._response.append({"msgType": "document", "msg": msg})
 		return self._response
 
@@ -102,7 +108,10 @@ class Nexa(Mind):
 				del self.pending[sender]
 			print("svars", svars)
 			action = predicted.get("execute")
-			if action: return self.execute(action, svars, res)
+			if action: self.execute(action, svars, res)
+			responses = predicted.get("response")
+			if responses: res.appendText(responses, choiceOne=True)
+			return res.values()
 
 
 	def view(self, value, instruction=None, sender="unknown"):
