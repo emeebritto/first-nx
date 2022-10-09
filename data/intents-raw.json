@@ -60,6 +60,7 @@
     "patterns": [
       "send to me a person image",
       "send to me a face person image",
+      "send to me a random face image",
       "send a person image",
       "create a person image",
       "create a face person image",

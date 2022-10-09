@@ -39,6 +39,8 @@ class Mind(Learning):
 	def predict(self, value):
 		X = self.bag_of_tokenords(value)
 
+		print("X", X)
+
 		output = self._model(X)
 		_, predicted = torch.max(output, dim=1)
 		tag, prob = self.probability(output, predicted)

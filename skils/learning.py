@@ -88,6 +88,7 @@ class Learning:
 		y_train = []
 		for (pattern_sentence, tag) in xy:
 		  bag = bag_of_words(pattern_sentence, self.all_words)
+		  print("bag", bag)
 		  X_train.append(bag)
 		  label = self.tags.index(tag)
 		  y_train.append(label)
