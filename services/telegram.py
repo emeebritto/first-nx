@@ -56,7 +56,7 @@ class Telegram:
 	def _onMessage(self, update, context):
 		username = update.message.chat.first_name
 		self.registerMsg(f"{username} said {update.message.text}")
-		self.notify(
+		self._notify(
 			msgType="text",
 			msg=update.message,
 			allMsgs=self.messages
@@ -64,7 +64,7 @@ class Telegram:
 
 
 	def onMessage(self, func):
-		self.notify = func
+		self._notify = func
 
 
 	@syncmethod
@@ -72,7 +72,7 @@ class Telegram:
 		message = update.message
 		fileUrl = message.photo[-1].get_file()["file_path"]
 		message.photo = fileUrl
-		self.notify(
+		self._notify(
 			msgType="photo",
 			msg=message,
 		)

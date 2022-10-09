@@ -32,7 +32,7 @@ def inboxChat(msgType, msg):
 
 
 # def telegramChat(user, chat, msgType, msgContent):
-def telegramChat(msgType, msg, allMsgs=[]):
+def telegramChat(msgType, msg, allMsgs=""):
   if msg.chat.type == "supergroup": return
   chatId = msg.chat.id
 

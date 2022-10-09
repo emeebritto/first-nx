@@ -7,8 +7,28 @@ class Neuron:
 		super(Neuron, self).__init__()
 		self._id = str(uuid4())
 		self._weight = randint(1, 999999999)
+		self._activationKeys = []
 		self._value = value
+		self._inputs = [ None ]
 		self._outputs = [ None ]
+
+
+	def __str__(self):
+		return self._value
+
+
+	def __repr__(self):
+		return self._value
+
+
+	@property
+	def weight(self):
+		return self._weight
+
+
+	@property
+	def value(self):
+		return self._value
 
 
 	def propagate(self):
@@ -16,9 +36,25 @@ class Neuron:
 		return picked
 
 
-	def connect(self, neuralNet):
-		otherNeuron = randint(0, neuralNet.length)
+	def propagateByVal(self, values, weight=0):
+		value = value[1:]
+		for output in self._outputs:
+			if output.value == value[0]:
+				output.propagateByVal(value, self._weight + weight)
+
+
+	def setActivationKey(self, key):
+		self._activationKeys.append(key)
+
+
+	def setInput(self, neuron):
+		self._inputs.append(neuron)
+
+
+	def connect(self, otherNeuron, weight=None):
 		self._outputs.append(otherNeuron)
+		otherNeuron.setInput(self)
+		otherNeuron.setActivationKey(weight or self.weight)
 
 
 	def desconnect(self, neuron):
@@ -40,15 +76,30 @@ class NeuralNet:
 	def learn(self, value):
 		neuron = Neuron(value=value)
 		self._neuronList.append(neuron)
+		return neuron
+
+
+	def findByVal(self, value):
+		for neuron in self._neuronList:
+			if neuron.value == value:
+				return neuron
 
 
 	def predict(self, value):
-		if value not in self._neuronList:
-			self.learn(value)
-		else:
-			idx = self._neuronList.index(value)
-			neuron = self._neuronList[idx]
-			return neuron.propagate()
+		value = value.split()
+		globalWeight = 0
+		lastNeuron = None
+		for idx, word in enumerate(value):
+			neuron = self.findByVal(word)
+			if not neuron:
+				lastNeuron = self.learn(word)
+			else:
+				if lastNeuron and not neuron.hasInput(lastNeuron):
+					lastNeuron.connect(neuron, weight=globalWeight)
+					lastNeuron = neuron
+			globalWeight += lastNeuron.weight
+		neuron = findByVal(value[0])
+		neuron.propagateByVal(value)
 
 
 	def reStructure(self, base, output):
