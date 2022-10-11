@@ -55,11 +55,14 @@ def bag_of_words(tokenized_sentence, words):
 	# stem each word
 	sentence_words = [stem(word) for word in tokenized_sentence]
 	print("sentence_words", sentence_words)
+	count = 1
 	# initialize bag with 0 for each word
 	bag = np.zeros(len(words), dtype=np.float32)
 	for idx, w in enumerate(words):
 		if w in sentence_words: 
-			bag[idx] = sentence_words.index(w) + 1
+			# bag[idx] = sentence_words.index(w) + 1
+			bag[idx] = count
+			count += 1
 			# bag[idx] = 1
 
 	return bag

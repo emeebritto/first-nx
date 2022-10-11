@@ -54,11 +54,20 @@ def api_inbox():
   msgType = args.get("msgType")
   msg = args.get("msg")
 
-  if not msgType or not msg: return "missing queries (required: msgType, msg)"
+  if not msgType or not msg:
+    return "missing queries (required: msgType, msg)"
 
   response = api.inbox.wait_reply(msgType, msg)
   return response
 
 
 port = int(os.environ.get("PORT", 3080))
-api_Thread = Thread(target=api.run, args=(), kwargs={"host": "0.0.0.0", "debug": False, "port": port})
+api_Thread = Thread(
+  target=api.run,
+  args=(),
+  kwargs={
+    "host": "0.0.0.0",
+    "debug": False,
+    "port": port
+  }
+)
