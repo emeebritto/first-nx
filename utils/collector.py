@@ -37,7 +37,7 @@ class Collector:
 					os.remove(path)
 				except Exception as e:
 					print(e)
-			del data_file[path]
+				del data_file[path]
 		self.writeJson(data=data_file)
 
 

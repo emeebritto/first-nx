@@ -13,10 +13,11 @@ def createLink(path, response):
   os.rename(path, new_path)
 
   filename = new_path.split("/")[-1]
+  stream_link = f"http://192.168.0.108:3080/file/{filename}"
+  download_link = f"http://192.168.0.108:3080/file/{filename}?download=true"
   response.appendText("Sorry, this file is so large, the telegram just blocked it")
   response.appendText("then, I created a link to you :)")
-  response.appendText(f"stream: http://192.168.0.108:3080/file/{filename}")
-  response.appendText(f"instant download: http://192.168.0.108:3080/file/{filename}?download=true")
+  response.appendText(f"stream: {stream_link}\n\ninstant download: {download_link}")
   collector.addPath(new_path)
   return response.values()
 
