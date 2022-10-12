@@ -23,7 +23,9 @@ def createLink(path, response):
 
 
 def dlvideoyt(svars, nexa, res):
-  video = YouTube(svars.get("URL"))
+  vidUrl = svars.get("URL")
+  if "reddit" in vidUrl: return nexa.execute("dlRedditVid", svars, res)
+  video = YouTube(vidUrl)
   streams = video.streams.filter(type="video")
   streams = streams.filter(progressive=True, file_extension="mp4").order_by('resolution')
   stream_target = streams[-1]
@@ -55,3 +57,12 @@ def dlmusicyt(svars, nexa, res):
   print("stream_target URL", stream_target.url)
 
   return res.appendDocument(data)
+
+
+def dlRedditVid(svars, nexa, res):
+  vidUrl = svars.get("URL")
+  resHtml = requests.get(f"https://redditsave.com/info?url={vidUrl.split('?')[0]}").content
+  matches = re.findall(r"href=\"(https:\/\/sd\.redditsave\.com.+fallback)\"", str(resHtml))
+  print("matches", matches)
+  video = requests.get(matches[0]).content
+  return res.appendVideo(video)

@@ -52,6 +52,11 @@ class Response:
 		return self._response
 
 
+	def appendVideo(self, msg):
+		self._response.append({"msgType": "video", "msg": msg})
+		return self._response
+
+
 	def appendPhoto(self, msg):
 		self._response.append({"msgType": "photo", "msg": msg})
 		return self._response

@@ -228,5 +228,16 @@
     ],
     "execute": "clear_messages",
     "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "download this video from reddit $::URL",
+      "download this video $::URL from reddit",
+      "download from reddit this video $::URL",
+      "download from reddit $::URL",
+      "download from reddit this url $::URL"
+    ],
+    "execute": "dlRedditVid",
+    "response": null
   }
 ]
