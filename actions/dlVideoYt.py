@@ -1,4 +1,4 @@
-from utils.functions import read_as_binary
+from utils.functions import read_as_binary, create_filePath
 from api import collector
 from pytube import YouTube
 import requests
@@ -13,8 +13,8 @@ def createLink(path, response):
   os.rename(path, new_path)
 
   filename = new_path.split("/")[-1]
-  stream_link = f"http://192.168.0.108:3080/file/{filename}"
-  download_link = f"http://192.168.0.108:3080/file/{filename}?download=true"
+  stream_link = f"https://nexa-shi.herokuapp.com/file/{filename}"
+  download_link = f"https://nexa-shi.herokuapp.com/file/{filename}?download=true"
   response.appendText("Sorry, this file is so large, the telegram just blocked it")
   response.appendText("then, I created a link to you :)")
   response.appendText(f"stream: {stream_link}\n\ninstant download: {download_link}")
@@ -65,4 +65,7 @@ def dlRedditVid(svars, nexa, res):
   matches = re.findall(r"href=\"(https:\/\/sd\.redditsave\.com.+fallback)\"", str(resHtml))
   print("matches", matches)
   video = requests.get(matches[0]).content
-  return res.appendVideo(video)
+  filepath = create_filePath(video, fileFormat="mp4")
+  file_size = os.path.getsize(filepath)
+  if file_size > 52428800: return createLink(path=filepath, response=res)
+  return res.appendVideo(read_as_binary(filepath))
