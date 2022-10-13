@@ -59,9 +59,9 @@ class Learning:
 				self.intents.extend(json.load(json_file))
 
 
-	def bag_of_tokenords(self, sentence, base_words=None):
+	def bag_of_tokenords(self, sentence):
 		tokenized_sentence = tokenords(sentence)
-		X = bag_of_words(tokenized_sentence, base_words or self.all_words)
+		X = bag_of_words(tokenized_sentence, self.all_words)
 		X = X.reshape(1, X.shape[0])
 		X = torch.from_numpy(X).to(device)
 		return X

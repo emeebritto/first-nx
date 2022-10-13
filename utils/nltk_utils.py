@@ -50,7 +50,7 @@ def stem(word):
 	return stemmer.stem(word.lower())
 
 
-def bag_of_words(tokenized_sentence, words):
+def bag_of_words(tokenized_sentence, words, tropic_words=None):
 	"""
 	return bag of words array:
 	1 for each known word that exists in the sentence, 0 otherwise

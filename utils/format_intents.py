@@ -1,3 +1,4 @@
+from nltk_utils import tokenords, stem
 import json
 import uuid
 
@@ -11,12 +12,17 @@ with open(rawIntentsPath, 'r') as json_data:
 	formatedIntents = []
 	for intent in rawIntents:
 		patterns = intent["patterns"]
+		base_words = []
+		for pattern in patterns:
+			base_words.extend(tokenords(pattern))
+		base_words = sorted(set([stem(w) for w in base_words]))
 		for pattern in patterns:
 			formatedIntents.append({
 				"tag": str(uuid.uuid4()),
 				"pattern": pattern,
 				"execute": intent["execute"],
 				"response": intent["response"],
+				"base_words": base_words,
 				"type": intent["type"]
 			})
 
