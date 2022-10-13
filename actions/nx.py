@@ -1,7 +1,6 @@
 # module center
-from actions.dlVideoYt import dlvideoyt
-from actions.dlVideoYt import dlmusicyt
-from actions.dlVideoYt import dlRedditVid
+from actions.dlVideo import dlvideoyt, dlmusicyt, dlRedditVid
+from actions.search import searchVideo
 from actions.take_test import take_test
 from actions.qr_code import create_qr_code, read_qr_code
 from actions.pronounce_words import *

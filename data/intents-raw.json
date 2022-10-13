@@ -239,5 +239,19 @@
     ],
     "execute": "dlRedditVid",
     "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "search on youtube $::QUERY",
+      "search $::QUERY on youtube",
+      "search $::QUERY at youtube",
+      "search $::QUERY in youtube",
+      "search $::QUERY in the youtube",
+      "on youtube search $::QUERY",
+      "request $::QUERY on youtube",
+      "query $::QUERY on youtube"
+    ],
+    "execute": "searchVideo",
+    "response": null
   }
 ]

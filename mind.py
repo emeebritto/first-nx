@@ -4,6 +4,19 @@ from skils.learning import Learning
 
 
 
+class Predicted:
+	def __init__(self, intent, uinput, neuralNet):
+		super(Predicted, self).__init__()
+		self.intent = intent
+		self.__neuralNet = neuralNet
+		self.uinput = uinput
+
+
+	def high_precise(self):
+		base_words = self.intent["base_words"]
+		self.__neuralNet.predict(self.uinput, base_words=self.base_words)
+
+
 class Mind(Learning):
 	def __init__(self):
 		super(Mind, self).__init__()
@@ -17,7 +30,7 @@ class Mind(Learning):
 
 		# Hyper-parameters 
 		self.neuralNet = NeuralNet
-		self.num_epochs = 6000
+		self.num_epochs = 1000
 		self.batch_size = 100
 		self.learning_rate = 0.001
 		self.input_size = None # it will be defined in runtime
@@ -36,8 +49,8 @@ class Mind(Learning):
 			self.train()
 
 
-	def predict(self, value):
-		X = self.bag_of_tokenords(value)
+	def predict(self, value, base_words=None):
+		X = self.bag_of_tokenords(value, base_words)
 
 		print("X", X)
 
@@ -49,4 +62,4 @@ class Mind(Learning):
 		if prob > 0.50:
 			for intent in self.intents:
 				if tag == intent["tag"]:
-					return intent
+					return Predicted(intent, value, self)

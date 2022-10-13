@@ -17,9 +17,16 @@ def tokenize(sentence):
 	return result
 
 
+def removeVars(sentence):
+	if isinstance(sentence, str):
+		sentence = re.split(r"\s+", sentence)
+
+	return [word for word in sentence if "$::" not in word]
+
+
 def tokenords(sentence):
 	print(sentence)
-	sentence = re.sub(r"(\s)?\$::[A-Z]*(\s)?", "", sentence)
+	# sentence = re.sub(r"(\s)?\$::[A-Z]*(\s)?", "", sentence)
 	sentence = re.sub(r"(?<=\w)\.(?!\w)", " .", sentence)
 	sentence = re.sub(r"(?<=\w),+", " ,", sentence)
 	sentence = re.sub(r"(?<=\w)\?+", " ?", sentence)
@@ -59,10 +66,10 @@ def bag_of_words(tokenized_sentence, words):
 	# initialize bag with 0 for each word
 	bag = np.zeros(len(words), dtype=np.float32)
 	for idx, w in enumerate(words):
-		if w in sentence_words: 
-			# bag[idx] = sentence_words.index(w) + 1
-			bag[idx] = count
-			count += 1
+		if "$::" not in w and w in sentence_words: 
+			bag[idx] = sentence_words.index(w) + 1
+			# bag[idx] = count
+			# count += 1
 			# bag[idx] = 1
 
 	return bag

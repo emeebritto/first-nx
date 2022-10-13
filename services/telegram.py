@@ -1,15 +1,13 @@
-from telegram.ext.updater import Updater
 from telegram.ext.callbackcontext import CallbackContext
 from telegram.ext.commandhandler import CommandHandler
 from telegram.ext.messagehandler import MessageHandler
+from telegram.ext.updater import Updater
 from telegram.ext.filters import Filters
 from utils.functions import syncmethod
 from dotenv import load_dotenv
 from time import sleep
-import requests
-
 from os import getenv
-from time import sleep
+import requests
 
 load_dotenv()
 

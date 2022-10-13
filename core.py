@@ -104,17 +104,18 @@ class Nexa(Mind):
 			answer = answer_by_context(context=self.me + context, value=value)
 			if answer: return res.appendText(answer)
 		if self.analyzer.isOrder(value):
-			predicted = self.predict(value)
+			predicted = self.predict(value).high_precise()
 			if not predicted: return res.appendText("??")
-			svars = compiler.findVars(predicted["pattern"], value)
+			intent = predicted.intent
+			svars = compiler.findVars(intent["pattern"], value)
 			pendingVars = self.pending.get(sender)
 			if pendingVars:
 				svars[pendingVars["name"]] = pendingVars["value"]
 				del self.pending[sender]
 			print("svars", svars)
-			action = predicted.get("execute")
+			action = intent.get("execute")
 			if action: self.execute(action, svars, res)
-			responses = predicted.get("response")
+			responses = intent.get("response")
 			if responses: res.appendText(responses, choiceOne=True)
 			return res.values()
 
