@@ -72,4 +72,4 @@ class Mind(Learning):
 			for intent in self.intents:
 				if tag == intent["tag"]:
 					return Predicted(intent, value, self)
-		Predicted(None, value, self)
+		return Predicted(None, value, self)

@@ -108,6 +108,7 @@ class Nexa(Mind):
 			predicted = self.predict(value) #.high_precision()
 
 			if not predicted.intent: return res.appendText("??")
+			print("predicted intent", predicted.intent)
 			svars = compiler.findVars(predicted.intent["pattern"], value)
 			pendingVars = self.pending.get(sender)
 
