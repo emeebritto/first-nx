@@ -50,7 +50,7 @@ def stem(word):
 	return stemmer.stem(word.lower())
 
 
-def bag_of_words(tokenized_sentence, words, tropic_words=None):
+def bag_of_words(tokenized_sentence, words, method="binary", tropic_words=None):
 	"""
 	return bag of words array:
 	1 for each known word that exists in the sentence, 0 otherwise
@@ -64,12 +64,14 @@ def bag_of_words(tokenized_sentence, words, tropic_words=None):
 	print("sentence_words", sentence_words)
 	count = 1
 	# initialize bag with 0 for each word
-	bag = np.zeros(len(words), dtype=np.float32)
+	bag = np.zeros(60 if "pos" in method else len(words), dtype=np.float32)
 	for idx, w in enumerate(words):
-		if "$::" not in w and w in sentence_words: 
-			bag[idx] = sentence_words.index(w) + 1
-			# bag[idx] = count
-			# count += 1
-			# bag[idx] = 1
+		if "$::" not in w and w in sentence_words and w in (tropic_words or words): 
+			if "index" in method: bag[idx] = sentence_words.index(w) + 1
+			if "binary" in method: bag[idx] = 1
+			if "pos" in method: bag[sentence_words.index(w)] = idx
+			if "count" in method:
+				bag[idx] = count
+				count += 1
 
 	return bag

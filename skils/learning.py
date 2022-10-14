@@ -32,7 +32,7 @@ class Learning:
 
 	def _loadMind(self):
 		data = torch.load(self.dataPath)
-		if self.intentsHash != data["intents_hash"]:
+		if self.intentsHash != data["intents_hash"] or data["bag_type"] != self.bag_of_words_type:
 			raise Exception
 
 		self.input_size = data["input_size"]
@@ -59,9 +59,14 @@ class Learning:
 				self.intents.extend(json.load(json_file))
 
 
-	def bag_of_tokenords(self, sentence):
+	def bag_of_tokenords(self, sentence, method="index", tropic_words=None):
 		tokenized_sentence = tokenords(sentence)
-		X = bag_of_words(tokenized_sentence, self.all_words)
+		X = bag_of_words(
+			tokenized_sentence,
+			self.all_words,
+			method,
+			tropic_words
+		)
 		X = X.reshape(1, X.shape[0])
 		X = torch.from_numpy(X).to(device)
 		return X
@@ -87,7 +92,11 @@ class Learning:
 		X_train = []
 		y_train = []
 		for (pattern_sentence, tag) in xy:
-		  bag = bag_of_words(pattern_sentence, self.all_words)
+		  bag = bag_of_words(
+		  	pattern_sentence,
+		  	self.all_words,
+		  	self.bag_of_words_type
+		  )
 		  print("bag", bag)
 		  X_train.append(bag)
 		  label = self.tags.index(tag)
@@ -117,7 +126,10 @@ class Learning:
 		)
 
 		criterion = nn.CrossEntropyLoss()
-		optimizer = torch.optim.Adam(self._model.parameters(), lr=self.learning_rate)
+		optimizer = torch.optim.Adam(
+			self._model.parameters(),
+			lr=self.learning_rate
+		)
 		losses = deque([], maxlen=15)
 
 		for epoch in range(self.num_epochs):
@@ -157,6 +169,7 @@ class Learning:
 		  "hidden_size": self.hidden_size,
 		  "output_size": self.output_size,
 		  "all_words": self.all_words,
+		  "bag_type": self.bag_of_words_type,
 		  "tags": self.tags
 		}
 

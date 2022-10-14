@@ -27,6 +27,7 @@ class SentenceType(Learning):
 
 		self.input_name = "pattern"
 		self.output_name = "type"
+		self.bag_of_words_type = "index"
 
 		self._model = None
 		self._loadIntents()
@@ -38,7 +39,7 @@ class SentenceType(Learning):
 
 
 	def predict(self, value):
-		X = self.bag_of_tokenords(value)
+		X = self.bag_of_tokenords(value, self.bag_of_words_type)
 
 		output = self._model(X)
 		_, predicted = torch.max(output, dim=1)
