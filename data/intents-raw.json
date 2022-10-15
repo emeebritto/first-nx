@@ -2,18 +2,6 @@
   {
     "type": "order",
     "patterns": [
-      "download $::URL",
-      "download this video $::URL",
-      "download video $::URL",
-      "dl video $::URL",
-      "download this media from $::URL",
-      "download from $::URL"
-    ],
-    "execute": "dlvideoyt",
-    "response": null
-  },{
-    "type": "order",
-    "patterns": [
       "pronounce $::WORD",
       "how to say $::WORD",
       "how to speak $::WORD",
@@ -252,6 +240,102 @@
       "query $::QUERY on youtube"
     ],
     "execute": "searchVideo",
+    "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "download music on youtube $::QUERY",
+      "download song on youtube $::QUERY",
+      "download music $::QUERY on youtube",
+      "download audio of music $::QUERY on youtube",
+      "download music $::QUERY from youtube",
+      "download song $::QUERY on youtube",
+      "download song $::QUERY from youtube",
+      "send me the song $::QUERY",
+      "send to me the song $::QUERY",
+      "send to me the song $::QUERY from youtube",
+      "send to me song $::QUERY",
+      "get to me the song $::QUERY",
+      "download audio $::QUERY on youtube",
+      "download music $::QUERY at youtube",
+      "download audio $::QUERY in youtube",
+      "download music $::QUERY in youtube",
+      "download music $::QUERY in the youtube",
+      "on youtube download $::QUERY"
+    ],
+    "execute": "dlMusicByQuery",
+    "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "download $::QUERY",
+      "download video $::QUERY",
+      "download the video $::QUERY",
+      "dl video $::QUERY",
+      "dl the video $::QUERY",
+      "download this media from $::QUERY",
+      "download from $::QUERY",
+      "download video on youtube with title $::QUERY",
+      "download video with title $::QUERY on youtube",
+      "download video title $::QUERY on youtube",
+      "download this video $::QUERY on youtube",
+      "download this video $::QUERY at youtube",
+      "download video $::QUERY at youtube",
+      "download this video $::QUERY",
+      "download video $::QUERY",
+      "download video that includes this title $::QUERY",
+      "download video with this title $::QUERY",
+      "download video by title $::QUERY on youtube",
+      "download video $::QUERY from youtube",
+      "send me the video $::QUERY",
+      "send me video $::QUERY",
+      "send to me the video $::QUERY",
+      "send to me the video $::QUERY from youtube",
+      "send to me video $::QUERY",
+      "get to me the video $::QUERY",
+      "download video $::QUERY on youtube",
+      "download video $::QUERY in youtube",
+      "download video $::QUERY in the youtube",
+      "on youtube download this video $::QUERY",
+      "on youtube download video $::QUERY"
+    ],
+    "execute": "dlVideoByQuery",
+    "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "download audio of music $::QUERY on youtube",
+      "download video of music $::QUERY on youtube",
+      "download video music $::QUERY on youtube",
+      "download video music $::QUERY",
+      "download music video $::QUERY",
+      "download video clip $::QUERY",
+      "download videoclip $::QUERY",
+      "download clip $::QUERY",
+      "download video clip $::QUERY from youtube",
+      "download video of song $::QUERY on youtube",
+      "download video of music $::QUERY from youtube",
+      "download video clip of music $::QUERY from youtube",
+      "download videoclip of music $::QUERY from youtube",
+      "send me the videoclip $::QUERY",
+      "send me the video clip $::QUERY",
+      "send me video of music $::QUERY",
+      "send to me the video clip $::QUERY",
+      "send to me the videoclip $::QUERY",
+      "send to me the music video $::QUERY",
+      "send to me the videoclip $::QUERY from youtube",
+      "send to me the  music video $::QUERY from youtube",
+      "send to me clip $::QUERY",
+      "send to me video of music $::QUERY",
+      "send to me music video $::QUERY",
+      "send to me video clip $::QUERY",
+      "get to me the video clip $::QUERY",
+      "get to me the music video $::QUERY",
+      "get to me the videoclip $::QUERY",
+      "get to me the video of music $::QUERY",
+      "get to me video of music $::QUERY"
+    ],
+    "execute": "dlMusicVideoByQuery",
     "response": null
   }
 ]

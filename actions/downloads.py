@@ -1,10 +1,15 @@
 from utils.functions import read_as_binary, create_filePath
-from api import collector
+from actions.search import VideosSearch
 from pytube import YouTube
+from api import collector
 import requests
 import os
 import re
 
+
+def searchVideoLink(query):
+  videosSearch = VideosSearch(query, limit=1)
+  return videosSearch.result()["result"][0]['link']
 
 
 def createLink(path, response):
@@ -69,3 +74,24 @@ def dlRedditVid(svars, nexa, res):
   file_size = os.path.getsize(filepath)
   if file_size > 52428800: return createLink(path=filepath, response=res)
   return res.appendVideo(read_as_binary(filepath))
+
+
+def dlMusicByQuery(svars, nexa, res):
+  query = svars.get("QUERY")
+  svars["URL"] = searchVideoLink(f"{query} music audio")
+  return nexa.execute("dlmusicyt", svars, res)
+
+
+def dlVideoByQuery(svars, nexa, res):
+  query = svars.get("QUERY")
+  if "https://" in query:
+    svars["URL"] = query
+    return nexa.execute("dlvideoyt", svars, res)
+  svars["URL"] = searchVideoLink(query)
+  return nexa.execute("dlvideoyt", svars, res)
+
+
+def dlMusicVideoByQuery(svars, nexa, res):
+  query = svars.get("QUERY")
+  svars["URL"] = searchVideoLink(f"{query} music")
+  return nexa.execute("dlvideoyt", svars, res)

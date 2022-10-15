@@ -33,8 +33,12 @@ def generate_cpf(svars, nexa, res):
   return res.appendText(generate_valid_cpf())
 
 
-
 def generate_real_cpf(svars, nexa, res):
+  res.appendText(f"CPF: 000\nName: ...\nstatus: ...\nLocation (Origin): ...")
+  res.appendText("Sorry, For security reasons I can't send this to you")
+  res.appendText("But, this is a valid cpf")
+  return res.appendText(generate_valid_cpf())
+
   browser = Browser()
   for loop in range(5):
     browser.instance.get("https://www.situacao-cadastral.com")
