@@ -115,7 +115,9 @@ class Nexa(Mind):
 			if pendingVars:
 				svars[pendingVars["name"]] = pendingVars["value"]
 				del self.pending[sender]
+				
 			print("svars", svars)
+			svars["SENDER_ID"] = sender
 			action = predicted.intent.get("execute")
 
 			if action: self.execute(action, svars, res)

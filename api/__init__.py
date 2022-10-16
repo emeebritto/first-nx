@@ -5,15 +5,16 @@ from flask_socketio import SocketIO, emit, send, disconnect
 from flask_socketio import join_room, leave_room
 from threading import Thread
 from utils.collector import Collector
+from utils.managers import Room_Managet
 from .inbox import Inbox
 import requests
 import os
 
-keys = ["sdfsdgfdgd4t44g4t4"]
 
 api = Flask(__name__)
 socketio = SocketIO(api)
 collector = Collector()
+room_Managet = Room_Managet()
 
 def keep_Wake_up():
   interval(wake_up, 4 * 60)
@@ -30,8 +31,9 @@ def connect():
 
 @socketio.on('connect_to_room', namespace="/a/desktop")
 def connect_to_room(room_key):
-  is_valid = room_key in keys
+  is_valid = room_Managet.is_valid_key(room_key)
   if is_valid:
+    room_Managet.reValidateKey(room_key)
     join_room(room_key)
     response = {
       "status": 200,

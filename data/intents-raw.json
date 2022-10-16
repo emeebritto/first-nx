@@ -337,5 +337,56 @@
     ],
     "execute": "dlMusicVideoByQuery",
     "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "create a key to my $::LABEL",
+      "create a key $::LABEL",
+      "I need a key to my $::LABEL",
+      "I need a key to $::LABEL",
+      "I need key to $::LABEL",
+      "I want to a key to $::LABEL",
+      "I want to a key to my $::LABEL",
+      "I want to key to my $::LABEL",
+      "I wanna a key to $::LABEL"
+    ],
+    "execute": "create_key",
+    "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "delete my key label $::LABEL",
+      "delete my key $::LABEL",
+      "delete my $::LABEL key",
+      "delete $::LABEL key",
+      "revoke $::LABEL key",
+      "revoke my key with label $::LABEL",
+      "delete my key with label $::LABEL",
+      "delete my key by label $::LABEL"
+    ],
+    "execute": "del_key",
+    "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "list all my keys",
+      "list all my room keys",
+      "list all my active keys",
+      "list all my active room keys",
+      "I wanna see all my active keys",
+      "I wanna see all my keys",
+      "I want to see all my keys",
+      "show all my keys",
+      "show all my room keys",
+      "display all my keys",
+      "show me all my keys",
+      "show me all my active keys",
+      "my active keys",
+      "all my active keys",
+      "all my keys",
+      "all my room keys"
+    ],
+    "execute": "list_keys",
+    "response": null
   }
 ]
