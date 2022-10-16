@@ -1,15 +1,18 @@
 # from twilio.twiml.messaging_response import MessagingResponse
-from utils.functions import interval, wake_up
+from utils.functions import interval, wake_up, syncmethod
 from flask import Flask, request, send_file
+from flask_socketio import SocketIO, emit, send, disconnect
+from flask_socketio import join_room, leave_room
 from threading import Thread
 from utils.collector import Collector
 from .inbox import Inbox
 import requests
 import os
 
-
+keys = ["sdfsdgfdgd4t44g4t4"]
 
 api = Flask(__name__)
+socketio = SocketIO(api)
 collector = Collector()
 
 def keep_Wake_up():
@@ -18,6 +21,29 @@ def keep_Wake_up():
 
 setattr(api, "keep_wake_up", keep_Wake_up)
 setattr(api, "inbox", Inbox())
+
+
+@socketio.on('connect', namespace="/a/desktop")
+def connect():
+  print("connected")
+
+
+@socketio.on('connect_to_room', namespace="/a/desktop")
+def connect_to_room(room_key):
+  is_valid = room_key in keys
+  if is_valid:
+    join_room(room_key)
+    response = {
+      "status": 200,
+      "msg": "you are connected to your room"
+    }
+    emit("connected_to_room", response, json=True)
+  else:
+    response = {
+      "status": 401,
+      "msg": "your key looks fake, so you can't to enter into room"
+    }
+    emit("room_key_error", response, json=True)
 
 
 @api.route('/test', methods=['GET'])
@@ -53,12 +79,18 @@ def files(filename):
     return "Sorry, this file does not exist"
 
 
-
 port = int(os.environ.get("PORT", 3080))
 collector.start(gap=1)
+
+@syncmethod
+def start_api():
+  socketio.run(api, host="0.0.0.0", debug=False, port=port)
+
+setattr(api, "sync_start", start_api)
+
 api_Thread = Thread(
-  target=api.run,
-  args=(),
+  target=socketio.run,
+  args=(api),
   kwargs={
     "host": "0.0.0.0",
     "debug": False,

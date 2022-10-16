@@ -72,21 +72,14 @@ class Nx_Socket:
   def __init__(self):
     super(Nx_Socket, self).__init__()
     self.host = ''
-    self.port = 7000
     self.methods = {}
     self._onRequest = lambda conn, addr: print("no function was defined")
-    try:
-      self.create_socket()
-    except socket.error as msg:
-      self.server = None
-      print(msg)
+    self.create_socket()
 
 
   def create_socket(self):
     self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print('Socket created')
-    self.server.bind((self.host, self.port))
-    print('Socket bind complete')
 
 
   def decode(self, data):
@@ -94,15 +87,12 @@ class Nx_Socket:
     return json.loads(data)
 
 
-  def start(self):
-    if not self.server:
-      print("Socket wasn't initialized")
-      return 0
-
+  def start(self, port):
+    self.port = port
+    self.server.bind((self.host, port))
     self.server.listen()
-    print('Socket now listening')
+    print(f'Socket started (PORT: {port})')
     self._wait_client()
-    return 1
 
 
   @syncmethod
@@ -142,7 +132,7 @@ def main(req, res):
   print(req.body)
   res.send("hello")
 
-
+port = int(os.environ.get("PORT", 3080))
 socket_server = Nx_Socket()
-socket_server.start()
+socket_server.start(port=port)
 socket_server.on("message", main)

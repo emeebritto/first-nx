@@ -1,6 +1,7 @@
 from threading import Thread
 import socket
 import json
+import os
 
 
 # host = ''  # as both code is running on same pc
@@ -34,7 +35,6 @@ class Nx_Socket_Client:
 	def __init__(self):
 		super(Nx_Socket_Client, self).__init__()
 		self.host = ''
-		self.port = 7000
 		self.methods = {}
 		self._onRequest = lambda conn, addr: print("no function was defined")
 		try:
@@ -54,8 +54,8 @@ class Nx_Socket_Client:
 		return json.loads(data)
 
 
-	def start(self):
-		self.client.connect((self.host, self.port))
+	def start(self, port):
+		self.client.connect((self.host, port))
 		print('Socket connected')
 		# self._wait_server()
 
@@ -107,11 +107,25 @@ def main(data):
 	print("main")
 
 
+port = int(os.environ.get("PORT", 3080))
 sclient = Nx_Socket_Client()
-sclient.start()
+sclient.start(port=port)
 sclient.on("message", main)
 
 
 while True:
 	response = sclient.emit("message", input(" -> "), await_return=True)
 	print("response", response)
+
+
+    Flask
+    Flask-Login
+    Flask-Session
+    Flask_SocketIO
+    itsdangerous
+    Jinja2
+    MarkupSafe
+    python-engineio
+    python-socketio
+    six
+    Werkzeug

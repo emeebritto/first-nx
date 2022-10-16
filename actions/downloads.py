@@ -80,7 +80,7 @@ def dlMusicByQuery(svars, nexa, res):
   query = svars.get("QUERY")
   if "https://" in query:
     svars["URL"] = query
-    return nexa.execute("dlmusicyt", svars, 
+    return nexa.execute("dlmusicyt", svars, res)
   svars["URL"] = searchVideoLink(f"{query} music audio")
   return nexa.execute("dlmusicyt", svars, res)
 
