@@ -73,18 +73,26 @@ class Learning:
 
 
 	def prepareData(self, data):
+		def join(pattern, tag):
+			w = tokenords(pattern)
+			self.all_words.extend(w)
+			return (w, tag)
+
 		xy = []
 		for intent in data:
 			tag = intent[self.output_name]
 			self.tags.append(tag)
-			w = tokenords(intent[self.input_name])
-			self.all_words.extend(w)
-			xy.append((w, tag))
+			if isinstance(intent[self.input_name], list):
+				for pattern in intent[self.input_name]:
+					xy.append(join(pattern, tag))
+			else:
+				xy.append(join(intent[self.input_name], tag))
 
 		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
 		self.all_words = sorted(set(self.all_words))
 		self.tags = sorted(set(self.tags))
 
+		print("bag_of_words (length): ", len(self.all_words))
 		return self.splitTrainingData(xy)
 
 
@@ -97,7 +105,6 @@ class Learning:
 		  	self.all_words,
 		  	self.bag_of_words_type
 		  )
-		  print("bag", bag)
 		  X_train.append(bag)
 		  label = self.tags.index(tag)
 		  y_train.append(label)
@@ -131,6 +138,8 @@ class Learning:
 			lr=self.learning_rate
 		)
 		losses = deque([], maxlen=15)
+
+		print(self.all_words)
 
 		for epoch in range(self.num_epochs):
 			for (words, labels) in train_loader:

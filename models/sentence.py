@@ -44,7 +44,6 @@ class SentenceType(Learning):
 		output = self._model(X)
 		_, predicted = torch.max(output, dim=1)
 		tag, prob = self.probability(output, predicted)
-		print("prob item", prob)
 		
 		if prob > 0.50:
 			for intent in self.intents:

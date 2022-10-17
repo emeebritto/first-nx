@@ -3,7 +3,6 @@ import json
 import uuid
 
 
-
 intentsPath = "../data/intents.json"
 rawIntentsPath = "../data/intents-raw.json"
 
@@ -16,6 +15,18 @@ with open(rawIntentsPath, 'r') as json_data:
 		for pattern in patterns:
 			base_words.extend(tokenords(pattern))
 		base_words = sorted(set([stem(w) for w in base_words]))
+
+		if "$::" in patterns[0]:
+			formatedIntents.append({
+				"tag": str(uuid.uuid4()),
+				"pattern": patterns,
+				"execute": intent["execute"],
+				"response": intent["response"],
+				"base_words": base_words,
+				"type": intent["type"]
+			})
+			continue
+
 		for pattern in patterns:
 			formatedIntents.append({
 				"tag": str(uuid.uuid4()),

@@ -11,9 +11,7 @@ def tokenize(sentence):
 	split sentence into array of words/tokens
 	a token can be a word or punctuation character, or number
 	"""
-	print(sentence)
 	result = nltk.word_tokenize(sentence)
-	print(result)
 	return result
 
 
@@ -25,7 +23,6 @@ def removeVars(sentence):
 
 
 def tokenords(sentence):
-	print(sentence)
 	# sentence = re.sub(r"(\s)?\$::[A-Z]*(\s)?", "", sentence)
 	sentence = re.sub(r"(?<=\w)\.(?!\w)", " .", sentence)
 	sentence = re.sub(r"(?<=\w),+", " ,", sentence)
@@ -35,7 +32,6 @@ def tokenords(sentence):
 	sentence = re.sub(r"(?<![#%&*])\$+(?=[0-9]{0,})(?!::|\s)", "$ ", sentence)
 	sentence = re.sub(r"(?<!\w)#+(?!::|\s|$)", "# ", sentence)
 	sentence = re.split(r"\s+", sentence)
-	print(sentence)
 	return sentence
 
 
@@ -61,7 +57,6 @@ def bag_of_words(tokenized_sentence, words, method="binary", tropic_words=None):
 	"""
 	# stem each word
 	sentence_words = [stem(word) for word in tokenized_sentence]
-	print("sentence_words", sentence_words)
 	count = 1
 	# initialize bag with 0 for each word
 	bag = np.zeros(60 if "pos" in method else len(words), dtype=np.float32)

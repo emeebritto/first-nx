@@ -10,6 +10,7 @@ class Compiler:
 	def findVars(self, base_sentence, value):
 		svars = {}
 		svars["mentions"] = re.findall(r"(@\w+)", value)
+		if not isinstance(base_sentence, str): return svars
 		base_sentence = base_sentence.split()
 		value = re.sub(r'(@\w+)', '', value) # remove mentions (@)
 		value = value.split()

@@ -14,7 +14,6 @@ class Predicted:
 
 	def high_precision(self):
 		if not self.intent: return self
-		print("self.intent['base_words']", self.intent["base_words"])
 		return self.__neuralNet.predict(
 			self.uinput,
 			tropic_words=self.intent["base_words"]
@@ -60,8 +59,6 @@ class Mind(Learning):
 			value,
 			self.bag_of_words_type,
 			tropic_words)
-
-		print("X", X)
 
 		output = self._model(X)
 		_, predicted = torch.max(output, dim=1)

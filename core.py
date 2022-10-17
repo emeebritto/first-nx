@@ -105,7 +105,7 @@ class Nexa(Mind):
 			if answer: return res.appendText(answer)
 
 		if self.analyzer.isOrder(value):
-			predicted = self.predict(value) #.high_precision()
+			predicted = self.predict(value).high_precision()
 
 			if not predicted.intent: return res.appendText("??")
 			print("predicted intent", predicted.intent)
