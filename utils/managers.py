@@ -56,6 +56,13 @@ class Room_Managet:
 				return obj_key
 
 
+	def get_obj_key(self, key):
+		data_file = self.readJson(self.data_file)
+		for obj_key in data_file:
+			if obj_key["key"] == key:
+				return obj_key
+
+
 	def search_matches(self, query):
 		data_file = self.readJson(self.data_file)
 		matches = []
@@ -93,7 +100,7 @@ class Room_Managet:
 
 	def is_valid_key(self, key):
 		data_file = self.readJson(self.data_file)
-		for key in data_file:
-			if key["label"] == label:
+		for obj_key in data_file:
+			if obj_key["key"] == key:
 				return True
 		return False

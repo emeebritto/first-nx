@@ -1,15 +1,15 @@
 from services import telegram
-from api import api, api_Thread
+from api import api
 from core import Nexa
 from actions import nx
 
 
 nexa = Nexa()
 telegram.run()
-# api_Thread.start()
 api.sync_start()
 api.keep_wake_up()
 nexa.learnModule(nx)
+nexa.extend("api", api)
 
 
 def clearMessages(svars, nexa, res):

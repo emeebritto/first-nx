@@ -320,3 +320,84 @@ Emerson said Send to me the video on the floor Jennifer Lopez.
 Emerson said Face image.
 Emerson said Face image.
 Emerson said Face image.
+Emerson said Create a key to my main computer.
+Nexa said your key (None) was created.
+Nexa said key: 15294fd9e44e4f22b49da07b9ef6e8e6.
+Emerson said Create a key to my main computer.
+Nexa said your key (None) was created.
+Nexa said key: 199007b86b0a49f1aa7267dba1541c23.
+Emerson said Create a key to my main computer.
+Nexa said your key (main computer) was created.
+Nexa said key: 83bf579f570d4747a57bcfe9d409816c.
+Emerson said Play this https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said key wasn't deleted, maybe it's not exists.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said I can't identify your room.
+Nexa said try again.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your ['1242558424', 'main computer'].
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.
+Emerson said Play this url https://youtu.be/nAX_dT-S1EI on my main computer.
+Nexa said playing audio on your main computer.

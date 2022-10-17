@@ -16,7 +16,7 @@ with open(rawIntentsPath, 'r') as json_data:
 			base_words.extend(tokenords(pattern))
 		base_words = sorted(set([stem(w) for w in base_words]))
 
-		if "$::" in patterns[0]:
+		if "$::" not in patterns[0]:
 			formatedIntents.append({
 				"tag": str(uuid.uuid4()),
 				"pattern": patterns,

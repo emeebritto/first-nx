@@ -388,5 +388,19 @@
     ],
     "execute": "list_keys",
     "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "play this url $::URL on my $::LABEL",
+      "play this url $::URL at my $::LABEL",
+      "play this $::URL at my $::LABEL",
+      "play $::URL at my $::LABEL",
+      "play $::URL in my $::LABEL",
+      "play the url $::URL in my $::LABEL",
+      "play url $::URL in my $::LABEL",
+      "play url $::URL at my $::LABEL"
+    ],
+    "execute": "play_sound",
+    "response": null
   }
 ]

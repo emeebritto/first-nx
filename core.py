@@ -154,6 +154,10 @@ class Nexa(Mind):
 			if callable(val): self.learn(label=name, action=val)
 
 
+	def extend(self, attr, value):
+		setattr(self, attr, value)
+
+
 	def learn(self, label, action):
 		print(f"{self.name} learned to {label}")
 		self._actions[label] = action

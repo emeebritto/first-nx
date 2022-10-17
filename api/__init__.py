@@ -10,18 +10,17 @@ from .inbox import Inbox
 import requests
 import os
 
-
+MAX_BUFFER_SIZE = 100 * 1000 * 1000  # 100 MB
+# 83bf579f570d4747a57bcfe9d409816c
 api = Flask(__name__)
-socketio = SocketIO(api)
+socketio = SocketIO(api, max_http_buffer_size=MAX_BUFFER_SIZE)
 collector = Collector()
 room_Managet = Room_Managet()
 
-def keep_Wake_up():
-  interval(wake_up, 4 * 60)
-
-
+keep_Wake_up = lambda: interval(wake_up, 4 * 60)
 setattr(api, "keep_wake_up", keep_Wake_up)
 setattr(api, "inbox", Inbox())
+setattr(api, "socketio", socketio)
 
 
 @socketio.on('connect', namespace="/a/desktop")
@@ -33,11 +32,12 @@ def connect():
 def connect_to_room(room_key):
   is_valid = room_Managet.is_valid_key(room_key)
   if is_valid:
+    obj_key = room_Managet.get_obj_key(room_key)
     room_Managet.reValidateKey(room_key)
     join_room(room_key)
     response = {
       "status": 200,
-      "msg": "you are connected to your room"
+      "msg": f"you are connected to your room (key label: {obj_key['label']})"
     }
     emit("connected_to_room", response, json=True)
   else:
@@ -75,7 +75,7 @@ def files(filename):
   try:
     file_data = open(filePath, 'rb')
     collector.reValidate(path=filePath)
-    return send_file(file_data, download_name="NX_file", as_attachment=download)
+    return send_file(file_data, download_name=filename, as_attachment=download)
   except Exception as e:
     print(e)
     return "Sorry, this file does not exist"
@@ -87,7 +87,6 @@ collector.start(gap=1)
 @syncmethod
 def start_api():
   socketio.run(api, host="0.0.0.0", debug=False, port=port)
-
 setattr(api, "sync_start", start_api)
 
 api_Thread = Thread(
