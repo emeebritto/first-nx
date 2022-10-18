@@ -26,7 +26,7 @@ def createLink(path, res):
   os.rename(path, new_path)
 
   filename = new_path.split("/")[-1]
-  stream_link = f"http://127.0.0.1:3080/file/{filename}?download=true"
+  stream_link = f"http://127.0.0.1:3080/file/{filename}"
   # stream_link = f"https://nexa-shi.herokuapp.com/file/{filename}"
   collector.addPath(new_path)
   return stream_link
@@ -48,7 +48,7 @@ def play_sound(svars, nexa, res):
 	filename = stream_target.get_file_path().split("/")[-1]
 	filepath = f"files/{filename}"
 	# data = read_as_binary(filepath, fileFormat="mp4")
-	response = { "status": 200, "url": createLink(path=filepath, res=res) }
+	response = createLink(path=filepath, res=res)
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
 	nexa.api.socketio.emit("play_audio", response, to=obj_key["key"], namespace="/a/desktop")

@@ -33,19 +33,14 @@ def connect_to_room(room_key):
   is_valid = room_Managet.is_valid_key(room_key)
   if is_valid:
     obj_key = room_Managet.get_obj_key(room_key)
+    key_label = obj_key["label"].split("::")[1]
     room_Managet.reValidateKey(room_key)
     join_room(room_key)
-    response = {
-      "status": 200,
-      "msg": f"you are connected to your room (key label: {obj_key['label']})"
-    }
-    emit("connected_to_room", response, json=True)
+    response = f"you are connected to your room (key label: {key_label})"
+    emit("connected_to_room", response, json=False)
   else:
-    response = {
-      "status": 401,
-      "msg": "your key looks fake, so you can't to enter into room"
-    }
-    emit("room_key_error", response, json=True)
+    response = "your key looks fake, so you can't to enter into room"
+    emit("room_key_error", response, json=False)
 
 
 @api.route('/test', methods=['GET'])
@@ -75,7 +70,7 @@ def files(filename):
   try:
     file_data = open(filePath, 'rb')
     collector.reValidate(path=filePath)
-    return send_file(file_data, download_name=filename, as_attachment=download)
+    return send_file(file_data, download_name="nx_file", as_attachment=download)
   except Exception as e:
     print(e)
     return "Sorry, this file does not exist"
