@@ -402,5 +402,34 @@
     ],
     "execute": "play_sound",
     "response": null
+  },{
+    "type": "order",
+    "patterns": [
+      "stop sound that are playing on my $::LABEL",
+      "stop sound that are playing in my $::LABEL",
+      "stop audio on my $::LABEL",
+      "stop audio in my $::LABEL",
+      "stop audio at my $::LABEL",
+      "stop audio that are playing on my $::LABEL",
+      "stop audio that are playing in my $::LABEL",
+      "stop audio that are playing at my $::LABEL",
+      "stop audio are playing on my $::LABEL",
+      "stop audio player in my $::LABEL",
+      "stop audio player on my $::LABEL",
+      "stop url audio on my $::LABEL",
+      "stop url audio at my $::LABEL",
+      "stop url sound at my $::LABEL",
+      "stop playing audio at my $::LABEL",
+      "stop playing sound at my $::LABEL",
+      "stop any sound at my $::LABEL",
+      "stop any audio in my $::LABEL",
+      "stop sound on my $::LABEL",
+      "stop sound player on my $::LABEL",
+      "stop sound player at my $::LABEL",
+      "stop sound in my $::LABEL",
+      "stop sound at my $::LABEL"
+    ],
+    "execute": "stop_sound",
+    "response": null
   }
 ]

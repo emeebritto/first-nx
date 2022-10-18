@@ -10,7 +10,7 @@ from .inbox import Inbox
 import requests
 import os
 
-MAX_BUFFER_SIZE = 100 * 1000 * 1000  # 100 MB
+MAX_BUFFER_SIZE = 2 * 1000 * 1000  # 2 MB
 # 83bf579f570d4747a57bcfe9d409816c
 api = Flask(__name__)
 socketio = SocketIO(api, max_http_buffer_size=MAX_BUFFER_SIZE)
@@ -23,12 +23,12 @@ setattr(api, "inbox", Inbox())
 setattr(api, "socketio", socketio)
 
 
-@socketio.on('connect', namespace="/a/desktop")
+@socketio.on('connect')
 def connect():
   print("connected")
 
 
-@socketio.on('connect_to_room', namespace="/a/desktop")
+@socketio.on('connect_to_room')
 def connect_to_room(room_key):
   is_valid = room_Managet.is_valid_key(room_key)
   if is_valid:

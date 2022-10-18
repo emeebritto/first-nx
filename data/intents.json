@@ -1,6 +1,6 @@
 [
   {
-    "tag": "ef5a4d16-a909-4ce1-9ff3-d15bc10b702e",
+    "tag": "804fd8e8-f6e6-46f0-ae65-3c042895a2f7",
     "pattern": "pronounce $::WORD",
     "execute": "pronounce_words",
     "response": null,
@@ -19,7 +19,7 @@
     "type": "order"
   },
   {
-    "tag": "47b017ac-ec97-4bd3-85d6-c895bd8a15ba",
+    "tag": "c097275c-71c6-48dd-a0f6-688bd5163907",
     "pattern": "how to say $::WORD",
     "execute": "pronounce_words",
     "response": null,
@@ -38,7 +38,7 @@
     "type": "order"
   },
   {
-    "tag": "dfe87119-ccc5-480b-b6f4-7e8ecfe7a49f",
+    "tag": "61a541b9-c1e1-45a8-a3f3-54e1dc190b3e",
     "pattern": "how to speak $::WORD",
     "execute": "pronounce_words",
     "response": null,
@@ -57,7 +57,7 @@
     "type": "order"
   },
   {
-    "tag": "c18dfd31-2ef7-4e2f-9982-331aa8c8a689",
+    "tag": "672241f8-3110-46fb-a8b4-95e3eedfd5e5",
     "pattern": "talk to me the word $::WORD",
     "execute": "pronounce_words",
     "response": null,
@@ -76,7 +76,7 @@
     "type": "order"
   },
   {
-    "tag": "8a2c7f58-82ac-44a5-99aa-bded82bd61a1",
+    "tag": "81bb66df-a173-4155-b7ab-6c7dddde3831",
     "pattern": "how to pronounce $::WORD",
     "execute": "pronounce_words",
     "response": null,
@@ -95,7 +95,7 @@
     "type": "order"
   },
   {
-    "tag": "445e6975-b706-4d4c-a520-47068d21d0d8",
+    "tag": "147de1d2-5da9-4e61-aa3e-a39cacba3058",
     "pattern": "how to pronounce the word $::WORD",
     "execute": "pronounce_words",
     "response": null,
@@ -114,7 +114,7 @@
     "type": "order"
   },
   {
-    "tag": "39a6c2c9-1c14-4044-8ac2-754d396a4170",
+    "tag": "a5d935ba-6fc5-45a4-bd2c-7dea22242be0",
     "pattern": "pronounce the word $::WORD",
     "execute": "pronounce_words",
     "response": null,
@@ -133,7 +133,7 @@
     "type": "order"
   },
   {
-    "tag": "4abdff55-9db8-422c-aa4b-2e7eba0f9730",
+    "tag": "182dfe00-8b5e-4301-a56c-63c90c07a62a",
     "pattern": "pronounce the word $::WORD to me",
     "execute": "pronounce_words",
     "response": null,
@@ -152,7 +152,7 @@
     "type": "order"
   },
   {
-    "tag": "f445be3f-cd5a-4842-a0a2-71edc69f3ef2",
+    "tag": "19a32485-0dd6-4cc0-ac71-14febe9537e1",
     "pattern": "pronounce $::WORD to me",
     "execute": "pronounce_words",
     "response": null,
@@ -171,7 +171,7 @@
     "type": "order"
   },
   {
-    "tag": "076454f9-1f97-4fd3-a45c-47fbe3faa4d3",
+    "tag": "65cb6ee6-368f-46fd-a003-bb4dd2ea59d3",
     "pattern": "get audio $::URL to me",
     "execute": "dlmusicyt",
     "response": null,
@@ -188,7 +188,7 @@
     "type": "order"
   },
   {
-    "tag": "9af88754-c9e1-404e-a261-f17288ac8331",
+    "tag": "211f5935-edde-4d71-b6a4-c88fe8f0bc30",
     "pattern": "get song $::URL to me",
     "execute": "dlmusicyt",
     "response": null,
@@ -205,7 +205,7 @@
     "type": "order"
   },
   {
-    "tag": "331ae51e-aba1-4dca-959d-b148acb886db",
+    "tag": "01f0d055-7e30-4fd1-a839-c2d3d7cbd946",
     "pattern": "audio $::URL",
     "execute": "dlmusicyt",
     "response": null,
@@ -222,7 +222,7 @@
     "type": "order"
   },
   {
-    "tag": "f3dac8f5-0022-4755-a450-d214bf18219a",
+    "tag": "40666995-310b-4436-8477-eed372b8f5bf",
     "pattern": "song $::URL",
     "execute": "dlmusicyt",
     "response": null,
@@ -239,7 +239,7 @@
     "type": "order"
   },
   {
-    "tag": "5f5a8254-7caa-430e-be5a-93ad0b66fbc3",
+    "tag": "1f4dbbb5-c17f-466b-ad5b-7c5fd0de72cb",
     "pattern": "download audio $::URL",
     "execute": "dlmusicyt",
     "response": null,
@@ -256,7 +256,7 @@
     "type": "order"
   },
   {
-    "tag": "c3179efe-43a0-4895-9936-136b3b0cf2ea",
+    "tag": "b04679cf-782c-4904-a918-b2eabce554f0",
     "pattern": "download sound $::URL",
     "execute": "dlmusicyt",
     "response": null,
@@ -273,7 +273,7 @@
     "type": "order"
   },
   {
-    "tag": "b0497798-865d-4703-903e-e5b00d6d96c0",
+    "tag": "1fdf8b86-f196-4170-995b-815e66758196",
     "pattern": "download song $::URL",
     "execute": "dlmusicyt",
     "response": null,
@@ -290,7 +290,7 @@
     "type": "order"
   },
   {
-    "tag": "1f7ca13c-d953-4acb-be79-c01404f73c6d",
+    "tag": "b98dfe22-d497-4693-b615-6fddacc8accb",
     "pattern": "get audio $::URL",
     "execute": "dlmusicyt",
     "response": null,
@@ -307,7 +307,7 @@
     "type": "order"
   },
   {
-    "tag": "cfaedaf2-d4e0-4398-b787-57c709a2faa5",
+    "tag": "2c012325-990c-4ce3-bff4-03354e55bfd7",
     "pattern": "get sound $::URL",
     "execute": "dlmusicyt",
     "response": null,
@@ -324,7 +324,7 @@
     "type": "order"
   },
   {
-    "tag": "b8aa8064-61c4-4296-9f66-dfa36f52ba70",
+    "tag": "0007c5b6-af0d-4f2f-b127-f8148bd64bf9",
     "pattern": [
       "generate a image",
       "generate a randonly image",
@@ -351,7 +351,7 @@
     "type": "order"
   },
   {
-    "tag": "f058d587-999f-4e0e-a9e8-f9e08d8c200e",
+    "tag": "7b4f71c4-70fb-4101-81dc-333eb9d283b8",
     "pattern": [
       "send to me a person image",
       "send to me a face person image",
@@ -381,7 +381,7 @@
     "type": "order"
   },
   {
-    "tag": "5d99fab2-98d5-4b25-a9d0-4ab66c923403",
+    "tag": "ec01d82b-136e-4977-8112-8c5e619c9609",
     "pattern": [
       "send to me a cat image",
       "send a cat image",
@@ -411,7 +411,7 @@
     "type": "order"
   },
   {
-    "tag": "84f20c22-a88b-44e6-8631-d0a076ff205e",
+    "tag": "aa1bb7d9-ce55-4de6-a855-dc35f5deaaea",
     "pattern": [
       "send to me a cat gif image",
       "send to me a cat gif",
@@ -439,7 +439,7 @@
     "type": "order"
   },
   {
-    "tag": "e41529b1-4561-434a-8b55-55fed00d92dc",
+    "tag": "d59c792e-d991-4c99-a3e0-3aa4d8ee7f16",
     "pattern": [
       "take test",
       "take a test",
@@ -457,7 +457,7 @@
     "type": "order"
   },
   {
-    "tag": "1865105a-565f-4c57-87dc-ed5c8bf88425",
+    "tag": "3084addb-00b3-40b3-ab74-0730da70e941",
     "pattern": "create qr code $::DATA",
     "execute": "create_qr_code",
     "response": null,
@@ -475,7 +475,7 @@
     "type": "order"
   },
   {
-    "tag": "d115b790-b953-4b39-b7af-da51ddf9cac8",
+    "tag": "c8c8c508-1ec1-4f7c-9829-cac2c46d6f49",
     "pattern": "create qrcode $::DATA",
     "execute": "create_qr_code",
     "response": null,
@@ -493,7 +493,7 @@
     "type": "order"
   },
   {
-    "tag": "5007ba7c-83bb-488c-80ac-8316dcbc42fd",
+    "tag": "92b825ee-0a1b-4b20-8f0f-36dcfa8b9d8a",
     "pattern": "create qr code from $::DATA",
     "execute": "create_qr_code",
     "response": null,
@@ -511,7 +511,7 @@
     "type": "order"
   },
   {
-    "tag": "3744d797-8af3-4dc8-94d7-8076c9f5b00d",
+    "tag": "5806db72-26b5-442e-8d8b-422305414e27",
     "pattern": "create qrcode from $::DATA",
     "execute": "create_qr_code",
     "response": null,
@@ -529,7 +529,7 @@
     "type": "order"
   },
   {
-    "tag": "475aadb0-e1c2-4c16-9921-28c9683367fc",
+    "tag": "81b6ffe2-d2ba-49c2-af14-3fb0a561be40",
     "pattern": "$::DATA create qr code",
     "execute": "create_qr_code",
     "response": null,
@@ -547,7 +547,7 @@
     "type": "order"
   },
   {
-    "tag": "7ab2137f-12c0-4fd6-9fcf-df614bdfee7c",
+    "tag": "7815f5cf-2909-446f-9b87-2aa2ac25956d",
     "pattern": "$::DATA create qrcode",
     "execute": "create_qr_code",
     "response": null,
@@ -565,7 +565,7 @@
     "type": "order"
   },
   {
-    "tag": "92cb4680-fd18-4a14-a27c-627751c5e0a4",
+    "tag": "db16bc12-4a27-4321-a2a2-ce4bdc9c8957",
     "pattern": "send to me qr code from $::DATA",
     "execute": "create_qr_code",
     "response": null,
@@ -583,7 +583,7 @@
     "type": "order"
   },
   {
-    "tag": "ac4f99b8-7ea7-425d-adac-dcda15abe74a",
+    "tag": "393561f1-c6eb-4958-86f6-743e77dabc79",
     "pattern": "send to me qrcode from $::DATA",
     "execute": "create_qr_code",
     "response": null,
@@ -601,7 +601,7 @@
     "type": "order"
   },
   {
-    "tag": "08a49503-a550-4bca-ba28-030eb0067265",
+    "tag": "8bdcd066-57c8-4b44-a44e-b87563b42be1",
     "pattern": "create a image of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -620,7 +620,7 @@
     "type": "order"
   },
   {
-    "tag": "c267429f-093d-4710-8139-a4e7ccf73d00",
+    "tag": "22141e23-9d60-429e-a2ca-c178339ace0e",
     "pattern": "a image of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -639,7 +639,7 @@
     "type": "order"
   },
   {
-    "tag": "b6ee5be4-e7ce-4d59-8163-84ad546f8b1b",
+    "tag": "0a004d4d-8b18-451b-bbcc-713ac55edc3a",
     "pattern": "send to me a image of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -658,7 +658,7 @@
     "type": "order"
   },
   {
-    "tag": "9f0345aa-c1de-4a20-96a3-14e810a9a569",
+    "tag": "83d86a29-5687-45ba-bbe2-e85330e87323",
     "pattern": "send to me a photo of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -677,7 +677,7 @@
     "type": "order"
   },
   {
-    "tag": "25710a06-252c-4b44-aed0-4ffec53cdc63",
+    "tag": "aeed5fff-15b4-4dcc-a11b-6bd0367bb730",
     "pattern": "send to me a image with $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -696,7 +696,7 @@
     "type": "order"
   },
   {
-    "tag": "fc8451ae-e244-4c4b-9151-357e77304205",
+    "tag": "59124093-731f-4be5-8758-1de20c8cae2e",
     "pattern": "send me a image of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -715,7 +715,7 @@
     "type": "order"
   },
   {
-    "tag": "89435846-ff17-488d-b5fe-0ad94266b28a",
+    "tag": "0a59b24d-766e-4cfd-85f6-fd2f2dfa3684",
     "pattern": "send me image of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -734,7 +734,7 @@
     "type": "order"
   },
   {
-    "tag": "0f20e271-0134-4c49-acab-922d1abb90ef",
+    "tag": "27778f4c-35f4-4d3e-91a2-b670100e75da",
     "pattern": "send image of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -753,7 +753,7 @@
     "type": "order"
   },
   {
-    "tag": "82bcda74-54eb-48e0-9d78-36896f51fd83",
+    "tag": "adefea63-27d8-47d3-b7e0-a5816848f9f5",
     "pattern": "image of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -772,7 +772,7 @@
     "type": "order"
   },
   {
-    "tag": "7e9fb667-7da5-4ef1-81b1-f1c2cc75f3f6",
+    "tag": "d27a857a-4627-458f-a070-0e3bdc9695e3",
     "pattern": "photo of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -791,7 +791,7 @@
     "type": "order"
   },
   {
-    "tag": "7cd394ec-7cb1-48a7-a458-652309d9958a",
+    "tag": "2e67779e-0eb9-41cc-a0e7-e13ac8a10fec",
     "pattern": "a photo of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -810,7 +810,7 @@
     "type": "order"
   },
   {
-    "tag": "99b43d3b-e131-44ce-bc89-94d639a0c3b9",
+    "tag": "ba6346d1-2c10-497b-8c3c-45f47cbf93f0",
     "pattern": "create a photo of $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -829,7 +829,7 @@
     "type": "order"
   },
   {
-    "tag": "2d833b81-774c-4625-bc2c-3d818980f3ba",
+    "tag": "b85038a0-9d2b-4f1f-88f4-1483eb7e7550",
     "pattern": "create a image with $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -848,7 +848,7 @@
     "type": "order"
   },
   {
-    "tag": "d9a98b8b-2f3a-4218-a2d4-a17d10129014",
+    "tag": "98ee5087-07bb-417e-a48e-b82e4c96ffaf",
     "pattern": "image with $::QUERY",
     "execute": "create_image",
     "response": null,
@@ -867,7 +867,7 @@
     "type": "order"
   },
   {
-    "tag": "5a94e0fd-871b-4351-8d58-d2a496be43d4",
+    "tag": "6a9d8292-9e6a-4f57-834d-ecba1e208264",
     "pattern": "read qr code $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -888,7 +888,7 @@
     "type": "order"
   },
   {
-    "tag": "de04e9a0-a078-4d01-ac2e-82e7a8aeedf1",
+    "tag": "533fd8c6-0f68-4860-8a93-5555e0da43ca",
     "pattern": "read qrcode $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -909,7 +909,7 @@
     "type": "order"
   },
   {
-    "tag": "5d471658-6902-4cf5-a72d-1012eb8aff83",
+    "tag": "5a5e8b9a-5a8a-41d5-845f-630722d0fa26",
     "pattern": "read qrcode data $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -930,7 +930,7 @@
     "type": "order"
   },
   {
-    "tag": "5546c857-32ee-4afe-ad86-fef92e4896af",
+    "tag": "3ef2f37e-79f6-46fb-b54a-058993240342",
     "pattern": "read qr code from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -951,7 +951,7 @@
     "type": "order"
   },
   {
-    "tag": "cffb64bf-03bc-4bcd-ab12-d943aa399806",
+    "tag": "538fd646-1992-4bfa-874d-0f7edd0bfd62",
     "pattern": "read qrcode from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -972,7 +972,7 @@
     "type": "order"
   },
   {
-    "tag": "9f8e042c-0f45-4aa7-ab19-307023a6fce4",
+    "tag": "8dfaf294-d115-4ff7-9bd0-ab1174e624fb",
     "pattern": "$::URL read qr code",
     "execute": "read_qr_code",
     "response": null,
@@ -993,7 +993,7 @@
     "type": "order"
   },
   {
-    "tag": "6dace7de-ddac-4184-9245-32de697d5393",
+    "tag": "c89010f5-027a-47a6-807e-8557f2418536",
     "pattern": "$::URL read qrcode",
     "execute": "read_qr_code",
     "response": null,
@@ -1014,7 +1014,7 @@
     "type": "order"
   },
   {
-    "tag": "c1fa3b99-af67-4de6-88b1-29d2a739f726",
+    "tag": "76425642-479b-4378-b43e-d243c9a33570",
     "pattern": "send to me qr code data from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1035,7 +1035,7 @@
     "type": "order"
   },
   {
-    "tag": "0ed7d7fb-7c2f-410c-b0ff-67f9aeefe003",
+    "tag": "f33c0fe7-3257-4a4a-a9cc-d9e753719701",
     "pattern": "extract qr code data from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1056,7 +1056,7 @@
     "type": "order"
   },
   {
-    "tag": "d87070ed-c3cb-48e6-9aa2-0d89cf9b5126",
+    "tag": "0b1fad4d-e7b6-45e1-822b-a26a5b13ce6d",
     "pattern": "extract qrcode data from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1077,7 +1077,7 @@
     "type": "order"
   },
   {
-    "tag": "a6df3532-c5ed-482e-bbdd-52679f400a89",
+    "tag": "736fe7a1-eb2c-40ac-a5df-3863edcb31d4",
     "pattern": "extract qrcode data $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1098,7 +1098,7 @@
     "type": "order"
   },
   {
-    "tag": "b0250aad-b63b-47b2-8ced-dcccdeed1da2",
+    "tag": "30e501a2-dedd-4797-a5a9-83501042fd99",
     "pattern": "send to me qrcode data from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1119,7 +1119,7 @@
     "type": "order"
   },
   {
-    "tag": "a96c151c-0d8e-4254-9d52-ba47f429bce0",
+    "tag": "24a4aab0-2005-4e09-ac10-20fee6f76317",
     "pattern": "send to me qr code content from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1140,7 +1140,7 @@
     "type": "order"
   },
   {
-    "tag": "dbeed92a-5407-44ab-82fb-815d7df3577c",
+    "tag": "d366646b-856c-49f3-a0ac-70d1690ec039",
     "pattern": "send to me qrcode content from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1161,7 +1161,7 @@
     "type": "order"
   },
   {
-    "tag": "8d9977d5-fdc8-4f72-b5a1-50b4a4ce56ff",
+    "tag": "c14ab537-a18c-4184-b98f-0958157c955f",
     "pattern": "send me qrcode content from $::URL",
     "execute": "read_qr_code",
     "response": null,
@@ -1182,7 +1182,7 @@
     "type": "order"
   },
   {
-    "tag": "c08b0e47-d3ce-460d-8bd9-88de972fad11",
+    "tag": "425961f6-450d-4d76-9cbe-30bc3d987b40",
     "pattern": "talk $::SENTENCE",
     "execute": "talk",
     "response": null,
@@ -1194,7 +1194,7 @@
     "type": "order"
   },
   {
-    "tag": "2cba7556-6a62-4dd4-aa5c-5e63c4d776f6",
+    "tag": "445fced4-421a-479e-bcb5-cf0738aec3a4",
     "pattern": "say $::SENTENCE",
     "execute": "talk",
     "response": null,
@@ -1206,7 +1206,7 @@
     "type": "order"
   },
   {
-    "tag": "889ddbbe-05c0-4eb5-bd82-672400f70e83",
+    "tag": "3dfe06fd-3fbe-4a6b-b36b-337d44cd2539",
     "pattern": [
       "generate a cpf",
       "generate a valid cpf",
@@ -1232,7 +1232,7 @@
     "type": "order"
   },
   {
-    "tag": "6f050866-cdf3-4ec0-8a66-c2fb4dccf1ce",
+    "tag": "c194519e-adcf-4158-bba0-fc7d45219452",
     "pattern": [
       "generate a real cpf",
       "generate true cpf",
@@ -1262,7 +1262,7 @@
     "type": "order"
   },
   {
-    "tag": "885dcf46-e04e-458a-9bd9-5c2747bc0ca7",
+    "tag": "37b5e777-1e90-4fbd-9de7-4a8a1ab850e6",
     "pattern": [
       "what is on the image",
       "what is on image",
@@ -1287,7 +1287,7 @@
     "type": "order"
   },
   {
-    "tag": "910ad330-777e-4b52-a994-53c0abbc5877",
+    "tag": "295beba4-f551-4976-af13-774d42537497",
     "pattern": [
       "clear messages",
       "clear all messages",
@@ -1307,7 +1307,7 @@
     "type": "order"
   },
   {
-    "tag": "bf0380b9-b5e7-41b2-9c57-467ed965d67c",
+    "tag": "f9de99a6-8b78-4b1b-881a-48592433c8af",
     "pattern": "download this video from reddit $::URL",
     "execute": "dlRedditVid",
     "response": null,
@@ -1323,7 +1323,7 @@
     "type": "order"
   },
   {
-    "tag": "a431c9ca-28c5-4f7b-a1c2-0e5191e62ac3",
+    "tag": "614bef47-d59f-4067-ad2c-1775c9eb9b3f",
     "pattern": "download this video $::URL from reddit",
     "execute": "dlRedditVid",
     "response": null,
@@ -1339,7 +1339,7 @@
     "type": "order"
   },
   {
-    "tag": "4d28efbb-0358-452a-8639-aa54bb113f4b",
+    "tag": "9065071e-e90c-4dcc-adf8-4b36eb2d9555",
     "pattern": "download from reddit this video $::URL",
     "execute": "dlRedditVid",
     "response": null,
@@ -1355,7 +1355,7 @@
     "type": "order"
   },
   {
-    "tag": "286c0c44-8206-414d-8642-3ae7f7f883f3",
+    "tag": "9e7e0816-4079-4bda-b522-ad0dac71b707",
     "pattern": "download from reddit $::URL",
     "execute": "dlRedditVid",
     "response": null,
@@ -1371,7 +1371,7 @@
     "type": "order"
   },
   {
-    "tag": "d3a8276e-e805-46a1-bb29-c5b8cf697d18",
+    "tag": "612dbc6d-ef2c-4ed8-982f-68b7cd312bc7",
     "pattern": "download from reddit this url $::URL",
     "execute": "dlRedditVid",
     "response": null,
@@ -1387,7 +1387,7 @@
     "type": "order"
   },
   {
-    "tag": "a8d2de78-f9ad-41dc-af66-e0db76f4df43",
+    "tag": "68511930-b3d7-4f3d-8278-3a9268c9cdd4",
     "pattern": "search on youtube $::QUERY",
     "execute": "searchVideo",
     "response": null,
@@ -1405,7 +1405,7 @@
     "type": "order"
   },
   {
-    "tag": "835b1241-d659-4311-bfc4-5359ecbd4c98",
+    "tag": "029781ed-3e88-451d-90ed-3b6c0b3712c3",
     "pattern": "search $::QUERY on youtube",
     "execute": "searchVideo",
     "response": null,
@@ -1423,7 +1423,7 @@
     "type": "order"
   },
   {
-    "tag": "9d63b7e1-fd12-46ca-8aad-bc9ca90f5c5b",
+    "tag": "dd99be5c-0cd1-4176-a976-4ad9e2b5e34c",
     "pattern": "search $::QUERY at youtube",
     "execute": "searchVideo",
     "response": null,
@@ -1441,7 +1441,7 @@
     "type": "order"
   },
   {
-    "tag": "3cdbfd3f-8914-48d3-afb4-b3e39e2ed0a5",
+    "tag": "c747d557-c20b-4916-9747-7eb592c20960",
     "pattern": "search $::QUERY in youtube",
     "execute": "searchVideo",
     "response": null,
@@ -1459,7 +1459,7 @@
     "type": "order"
   },
   {
-    "tag": "f8d0f64e-57a4-45a1-96fe-4f9fe1835454",
+    "tag": "e3daa07d-a5cf-405a-976a-98dda85dc0f3",
     "pattern": "search $::QUERY in the youtube",
     "execute": "searchVideo",
     "response": null,
@@ -1477,7 +1477,7 @@
     "type": "order"
   },
   {
-    "tag": "8e29a7cf-a192-4984-a260-5695b42712cc",
+    "tag": "0c7d8641-06eb-4b73-8a62-1d6710b71fdd",
     "pattern": "on youtube search $::QUERY",
     "execute": "searchVideo",
     "response": null,
@@ -1495,7 +1495,7 @@
     "type": "order"
   },
   {
-    "tag": "fe23ba1a-01e0-4785-a732-42ee52e0798e",
+    "tag": "610676f7-3d6b-4f2b-a2de-d38e2ab06ee3",
     "pattern": "request $::QUERY on youtube",
     "execute": "searchVideo",
     "response": null,
@@ -1513,7 +1513,7 @@
     "type": "order"
   },
   {
-    "tag": "4c7cc5f6-2992-4e78-a0dd-f82c9987d68b",
+    "tag": "19a36ac1-c4bc-4b30-803e-93112ad0868e",
     "pattern": "query $::QUERY on youtube",
     "execute": "searchVideo",
     "response": null,
@@ -1531,7 +1531,7 @@
     "type": "order"
   },
   {
-    "tag": "7ed4d41d-da6a-431b-9097-34ad562b80c7",
+    "tag": "41c3f5a3-62a8-4702-af77-56ecdc66f724",
     "pattern": "download music on youtube $::QUERY",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1556,7 +1556,7 @@
     "type": "order"
   },
   {
-    "tag": "2812faaf-4c83-4124-8f5a-09a514f31617",
+    "tag": "448ee044-291a-4172-81a6-1faf84ff7394",
     "pattern": "download song on youtube $::QUERY",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1581,7 +1581,7 @@
     "type": "order"
   },
   {
-    "tag": "9751062a-8b99-428f-84c8-696cc9dcff85",
+    "tag": "fe261c21-2e74-4103-b49f-c11df4d27e7c",
     "pattern": "download music $::QUERY on youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1606,7 +1606,7 @@
     "type": "order"
   },
   {
-    "tag": "8edbc731-af7d-4fdd-bbb3-f57f62978021",
+    "tag": "fe87ce0a-2aed-44dc-aedf-c2bbe36f7688",
     "pattern": "download audio of music $::QUERY on youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1631,7 +1631,7 @@
     "type": "order"
   },
   {
-    "tag": "4a44fb28-b879-42db-ba15-c601ffa27819",
+    "tag": "cbf82690-7fd6-48e3-9777-f53d33b0b5cb",
     "pattern": "download music $::QUERY from youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1656,7 +1656,7 @@
     "type": "order"
   },
   {
-    "tag": "d19dce6f-3100-48d0-b235-bccb5b93348e",
+    "tag": "f01982c2-a3f7-43a1-965e-f52107f22b7f",
     "pattern": "download song $::QUERY on youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1681,7 +1681,7 @@
     "type": "order"
   },
   {
-    "tag": "b89857f9-220e-4378-907e-f20a07b33b7e",
+    "tag": "1661f9fe-3e4f-4207-9fab-c71ad1de2095",
     "pattern": "download song $::QUERY from youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1706,7 +1706,7 @@
     "type": "order"
   },
   {
-    "tag": "bbb73069-0d56-4dd9-b7d7-98b096477f0c",
+    "tag": "334c355b-72af-4616-9bd7-5266825ba987",
     "pattern": "send me the song $::QUERY",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1731,7 +1731,7 @@
     "type": "order"
   },
   {
-    "tag": "fa4ea28f-a649-4858-9d3c-97c506f59def",
+    "tag": "eafa6f3a-9098-4aab-9c69-9ccb782437bb",
     "pattern": "send to me the song $::QUERY",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1756,7 +1756,7 @@
     "type": "order"
   },
   {
-    "tag": "b685bc15-aed0-4d18-9c41-2ee2b2eef408",
+    "tag": "6893bc03-fe46-4f67-b04b-ac921fe53e2f",
     "pattern": "send to me the song $::QUERY from youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1781,7 +1781,7 @@
     "type": "order"
   },
   {
-    "tag": "6ba19e70-afdc-430a-a675-9c59225f427d",
+    "tag": "0fe580a0-54ad-4d06-87da-361ba392b0b6",
     "pattern": "send to me song $::QUERY",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1806,7 +1806,7 @@
     "type": "order"
   },
   {
-    "tag": "7beb7444-6b8d-47fb-a47a-f5753698d4b5",
+    "tag": "f16aac03-1b13-4cec-ac7a-0110fd7a15c0",
     "pattern": "get to me the song $::QUERY",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1831,7 +1831,7 @@
     "type": "order"
   },
   {
-    "tag": "2334e057-d3db-4a93-82b6-c67a22f77889",
+    "tag": "9ab6ea89-75c9-4745-946f-5a4c84a50fb1",
     "pattern": "download audio $::QUERY on youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1856,7 +1856,7 @@
     "type": "order"
   },
   {
-    "tag": "b197cbf9-4616-4c36-a91c-15c9d3a61070",
+    "tag": "5a43cf9a-bd62-4213-a266-ec96ef02b90e",
     "pattern": "download music $::QUERY at youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1881,7 +1881,7 @@
     "type": "order"
   },
   {
-    "tag": "19a2ac31-cbfc-4da9-a484-73377b893c36",
+    "tag": "776a0364-e142-4cde-b87f-12577d705f98",
     "pattern": "download audio $::QUERY in youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1906,7 +1906,7 @@
     "type": "order"
   },
   {
-    "tag": "820b776f-243b-42f3-83cf-5ea3b12f4b0f",
+    "tag": "97748378-0e96-4850-a5d1-5bdf05e8c610",
     "pattern": "download music $::QUERY in youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1931,7 +1931,7 @@
     "type": "order"
   },
   {
-    "tag": "eebc16bd-d9b9-4026-88a6-7d6c04effcd0",
+    "tag": "7040d7a1-e59d-4159-8e9d-7a67fc11efc3",
     "pattern": "download music $::QUERY in the youtube",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1956,7 +1956,7 @@
     "type": "order"
   },
   {
-    "tag": "31cbec6b-c5a5-4a15-b938-affcc6101770",
+    "tag": "3030a233-7022-4c84-b827-120bb8b789cc",
     "pattern": "on youtube download $::QUERY",
     "execute": "dlMusicByQuery",
     "response": null,
@@ -1981,7 +1981,7 @@
     "type": "order"
   },
   {
-    "tag": "1804c876-1bb8-427a-9acd-1d91711c0621",
+    "tag": "7b2283af-8872-4cb9-bde4-aa1344723181",
     "pattern": "download $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2011,7 +2011,7 @@
     "type": "order"
   },
   {
-    "tag": "9e90986c-4c55-4198-a93a-d6f843b6519e",
+    "tag": "f620c194-d508-48a2-b044-c25b5ac37b8c",
     "pattern": "download video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2041,7 +2041,7 @@
     "type": "order"
   },
   {
-    "tag": "c74cf71c-1e6c-4960-9925-cc84582120a6",
+    "tag": "846588d8-3af0-4a13-8f9f-e2204d42700d",
     "pattern": "download the video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2071,7 +2071,7 @@
     "type": "order"
   },
   {
-    "tag": "bc0a0d62-977f-4429-9346-f9530c4e59ae",
+    "tag": "e28b1296-a60b-43bb-90f1-9e977d6c356b",
     "pattern": "dl video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2101,7 +2101,7 @@
     "type": "order"
   },
   {
-    "tag": "e33a37cb-6e0a-40d0-ad1b-bf2889abdca5",
+    "tag": "69877ac3-93f7-4876-ac1b-aaba05f1b79e",
     "pattern": "dl the video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2131,7 +2131,7 @@
     "type": "order"
   },
   {
-    "tag": "d6a9034d-6b18-4ce9-aa9e-b054048ddd25",
+    "tag": "3a85b711-ec22-4d25-87df-5fb5bd25d572",
     "pattern": "download this media from $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2161,7 +2161,7 @@
     "type": "order"
   },
   {
-    "tag": "6671289f-1c36-4f24-8229-bd43cb61fdbd",
+    "tag": "c0f5d747-9d24-4716-b1a0-370cd7aeda20",
     "pattern": "download from $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2191,7 +2191,7 @@
     "type": "order"
   },
   {
-    "tag": "2e354c8a-6836-4534-b6e6-c4fb3853ffe1",
+    "tag": "9d60ee80-eef4-442d-a55c-ab2c4cf3b3a8",
     "pattern": "download video on youtube with title $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2221,7 +2221,7 @@
     "type": "order"
   },
   {
-    "tag": "3b068282-42e0-468e-a18c-8c524cff555a",
+    "tag": "791bde41-7c5e-4148-aff9-7c426da0eba7",
     "pattern": "download video with title $::QUERY on youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2251,7 +2251,7 @@
     "type": "order"
   },
   {
-    "tag": "434d44e1-dd95-4338-be89-25ab30df8d7e",
+    "tag": "37060fa0-4a54-46d5-ab6f-c8275d0e66a5",
     "pattern": "download video title $::QUERY on youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2281,7 +2281,7 @@
     "type": "order"
   },
   {
-    "tag": "db6b2528-9620-4c9e-b97d-c5699d624d4b",
+    "tag": "48b8d576-8e94-4945-971e-0f2294a128e4",
     "pattern": "download this video $::QUERY on youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2311,7 +2311,7 @@
     "type": "order"
   },
   {
-    "tag": "5ea9491f-b155-4729-b232-1def0ba7a8b0",
+    "tag": "9a1f82a9-896f-4a01-bc3a-11eee32aae6d",
     "pattern": "download this video $::QUERY at youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2341,7 +2341,7 @@
     "type": "order"
   },
   {
-    "tag": "18461f85-97f1-4d50-bd4d-e0993cf45075",
+    "tag": "ead5d4f9-57f8-40e4-9fd3-f3c03b512dba",
     "pattern": "download video $::QUERY at youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2371,7 +2371,7 @@
     "type": "order"
   },
   {
-    "tag": "15afb768-e732-429d-91c5-68b244f4cf11",
+    "tag": "8300af08-13ab-4c7a-b69b-2464d6dc495b",
     "pattern": "download this video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2401,7 +2401,7 @@
     "type": "order"
   },
   {
-    "tag": "ffe20bb4-f519-417f-bd2e-11b36284c141",
+    "tag": "49fb8d88-2a6c-4c6f-8ed1-c522fb6be62e",
     "pattern": "download video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2431,7 +2431,7 @@
     "type": "order"
   },
   {
-    "tag": "62fe9a92-1f0d-476c-a423-ba5d67a96c6e",
+    "tag": "97ed9f8a-1e79-4b13-ba97-8925c7d23365",
     "pattern": "download video that includes this title $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2461,7 +2461,7 @@
     "type": "order"
   },
   {
-    "tag": "228895e8-6932-469d-9c4b-097e49c40900",
+    "tag": "2fe9da37-dca7-4f76-b82b-0ac0312390a2",
     "pattern": "download video with this title $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2491,7 +2491,7 @@
     "type": "order"
   },
   {
-    "tag": "41982a5a-d946-48ce-8934-df20add884bd",
+    "tag": "04650caa-c2da-48a2-983f-a7a38539878e",
     "pattern": "download video by title $::QUERY on youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2521,7 +2521,7 @@
     "type": "order"
   },
   {
-    "tag": "07f8556b-d2e4-43e8-876f-1e8179eb503d",
+    "tag": "495f8521-e581-4915-94e9-2d484386cffb",
     "pattern": "download video $::QUERY from youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2551,7 +2551,7 @@
     "type": "order"
   },
   {
-    "tag": "4c32eda8-6ec7-47dc-bb83-5c5aea27b40b",
+    "tag": "220022c5-605b-46a2-ae79-4d2d0f9dd078",
     "pattern": "send me the video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2581,7 +2581,7 @@
     "type": "order"
   },
   {
-    "tag": "d07e7656-e20a-412e-aefe-77b2ad9aa6c8",
+    "tag": "d7f67570-bc65-4f8e-bd72-7db3c3fb4816",
     "pattern": "send me video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2611,7 +2611,7 @@
     "type": "order"
   },
   {
-    "tag": "95367fff-ac8a-4a32-93a4-06c7ab81d46d",
+    "tag": "4787804c-9bf3-43e6-92b6-f40819dc2691",
     "pattern": "send to me the video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2641,7 +2641,7 @@
     "type": "order"
   },
   {
-    "tag": "5676014a-c691-4b93-9739-5feabc37a32d",
+    "tag": "f6343102-9bb5-469a-b4e6-95e1403021b3",
     "pattern": "send to me the video $::QUERY from youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2671,7 +2671,7 @@
     "type": "order"
   },
   {
-    "tag": "5a5d6b10-fd41-4b1c-8d76-8c8259a09d9f",
+    "tag": "b9cdd47e-7277-4a53-ab7e-5ccdf6bcea02",
     "pattern": "send to me video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2701,7 +2701,7 @@
     "type": "order"
   },
   {
-    "tag": "3a08036a-49b7-4c75-a49f-4e5dbbacbcef",
+    "tag": "dea1f5ed-606c-42ff-b475-5b6d39604b0c",
     "pattern": "get to me the video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2731,7 +2731,7 @@
     "type": "order"
   },
   {
-    "tag": "a3aac9de-426f-45a6-b3cd-58fb0dacbc7d",
+    "tag": "40c67ee4-04b1-4182-9c5f-9d6899d99697",
     "pattern": "download video $::QUERY on youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2761,7 +2761,7 @@
     "type": "order"
   },
   {
-    "tag": "4cdecd5e-9ce2-4d7d-b7bc-45891509897b",
+    "tag": "7141dd5b-c201-480e-8b04-08f9336b3380",
     "pattern": "download video $::QUERY in youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2791,7 +2791,7 @@
     "type": "order"
   },
   {
-    "tag": "3063d5ad-6fbc-4656-875b-588ed3c35361",
+    "tag": "a724193c-b60e-4eb0-b739-ac3cc5833a67",
     "pattern": "download video $::QUERY in the youtube",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2821,7 +2821,7 @@
     "type": "order"
   },
   {
-    "tag": "ed95517a-0240-436c-aacc-b03751f3071f",
+    "tag": "0d71496c-0a8b-4916-81aa-912c880039a6",
     "pattern": "on youtube download this video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2851,7 +2851,7 @@
     "type": "order"
   },
   {
-    "tag": "8a35c361-158b-41a8-a4ac-caabb0033884",
+    "tag": "6ffa4013-722a-4640-bd0b-dfdc4b5ac8fc",
     "pattern": "on youtube download video $::QUERY",
     "execute": "dlVideoByQuery",
     "response": null,
@@ -2881,7 +2881,7 @@
     "type": "order"
   },
   {
-    "tag": "ff326f66-04ec-4617-999f-0478e2d2dbb8",
+    "tag": "286c8124-edc2-49af-a3f6-9f1020e45d0c",
     "pattern": "download audio of music $::QUERY on youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -2907,7 +2907,7 @@
     "type": "order"
   },
   {
-    "tag": "2e3ba5ff-2471-4cd4-a4cd-89c7f638d8c3",
+    "tag": "adc41300-58cd-430a-ae08-dca2bc83fce9",
     "pattern": "download video of music $::QUERY on youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -2933,7 +2933,7 @@
     "type": "order"
   },
   {
-    "tag": "b24efa45-f7b2-45ee-9b84-9f93cf5ff01c",
+    "tag": "b135f688-64cd-4f95-9950-0ea2d590b76a",
     "pattern": "download video music $::QUERY on youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -2959,7 +2959,7 @@
     "type": "order"
   },
   {
-    "tag": "d1df85a1-74ca-4064-80ba-e35b5b9a95ec",
+    "tag": "487edc1a-3b00-44a0-a0f3-6549111d2238",
     "pattern": "download video music $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -2985,7 +2985,7 @@
     "type": "order"
   },
   {
-    "tag": "427a9923-4e58-4840-b11d-ad63dcc263c7",
+    "tag": "d69ec055-92c8-494e-a469-95c66e3fb2a5",
     "pattern": "download music video $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3011,7 +3011,7 @@
     "type": "order"
   },
   {
-    "tag": "cea51e2c-c21f-4d93-ad78-908b88d878ae",
+    "tag": "f649c559-a77f-4468-9cdb-3a1841832d2f",
     "pattern": "download video clip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3037,7 +3037,7 @@
     "type": "order"
   },
   {
-    "tag": "8e92128b-7ace-4478-b442-dfb363973376",
+    "tag": "9d552e16-1864-47e9-a56b-ea6cee0d5eed",
     "pattern": "download videoclip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3063,7 +3063,7 @@
     "type": "order"
   },
   {
-    "tag": "e2224545-e1f1-4919-bea1-5c04c4b76e8b",
+    "tag": "12021b0e-b9f4-4806-a8a3-830af55b7ceb",
     "pattern": "download clip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3089,7 +3089,7 @@
     "type": "order"
   },
   {
-    "tag": "5729bf5a-4993-4959-9481-2c5757909f72",
+    "tag": "e748353f-7ce0-4e31-9e27-8d7e9abe7d67",
     "pattern": "download video clip $::QUERY from youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3115,7 +3115,7 @@
     "type": "order"
   },
   {
-    "tag": "46c4d776-eb88-4d17-879e-e3d0ef58ee20",
+    "tag": "c414f52c-2345-4775-8b22-378a78775603",
     "pattern": "download video of song $::QUERY on youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3141,7 +3141,7 @@
     "type": "order"
   },
   {
-    "tag": "ef036637-a1fc-45c9-a8c8-2a00d290258f",
+    "tag": "e57c62f7-1004-45d6-af89-a2a01c0f9d20",
     "pattern": "download video of music $::QUERY from youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3167,7 +3167,7 @@
     "type": "order"
   },
   {
-    "tag": "8c1027f6-0ddd-4b9d-ac10-9cb851daf4e7",
+    "tag": "55021b80-0929-4784-b21c-e25b4c5665d6",
     "pattern": "download video clip of music $::QUERY from youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3193,7 +3193,7 @@
     "type": "order"
   },
   {
-    "tag": "09b393ff-19af-42d4-9a5c-2695695019aa",
+    "tag": "0844a90e-7b7c-4883-b1d5-fe9fc8e84b50",
     "pattern": "download videoclip of music $::QUERY from youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3219,7 +3219,7 @@
     "type": "order"
   },
   {
-    "tag": "73985133-ab19-4d5b-944a-1704094f3c6a",
+    "tag": "c6cc9a22-e1f9-46f9-8e4b-c8ace226fa15",
     "pattern": "send me the videoclip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3245,7 +3245,7 @@
     "type": "order"
   },
   {
-    "tag": "3c4d2475-d9f6-4df0-b524-14ddfe18a27f",
+    "tag": "bdd5b639-a7d1-4869-b864-9d911964f568",
     "pattern": "send me the video clip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3271,7 +3271,7 @@
     "type": "order"
   },
   {
-    "tag": "d9f1a453-2c86-4256-9e18-9231209938c1",
+    "tag": "bc03b9ee-fcb0-41b3-bf0c-912004fa98e2",
     "pattern": "send me video of music $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3297,7 +3297,7 @@
     "type": "order"
   },
   {
-    "tag": "29ee107b-285f-412e-8659-1a07eca26fd1",
+    "tag": "0c557e66-3846-4be6-bf05-98f87aab82ec",
     "pattern": "send to me the video clip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3323,7 +3323,7 @@
     "type": "order"
   },
   {
-    "tag": "405537da-fe47-4ea2-8c37-b66be3d55692",
+    "tag": "c06a3ecc-7532-436f-bbbe-e0b3792ecb13",
     "pattern": "send to me the videoclip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3349,7 +3349,7 @@
     "type": "order"
   },
   {
-    "tag": "b637a3d2-604d-4f5f-a2a3-b196d9a21412",
+    "tag": "50ead772-24b6-403f-b5eb-f6c805eaf62f",
     "pattern": "send to me the music video $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3375,7 +3375,7 @@
     "type": "order"
   },
   {
-    "tag": "41657e37-15fd-469a-92a8-4dd2bd138a9e",
+    "tag": "aa154f15-c129-4d50-861b-8210c06f2742",
     "pattern": "send to me the videoclip $::QUERY from youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3401,7 +3401,7 @@
     "type": "order"
   },
   {
-    "tag": "33b6827a-e378-4630-8858-a48735c0f7bd",
+    "tag": "5134f9fa-5f46-4d25-b94a-96fcd1cac2ab",
     "pattern": "send to me the  music video $::QUERY from youtube",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3427,7 +3427,7 @@
     "type": "order"
   },
   {
-    "tag": "907d1704-4869-43e1-9dde-29a7421f12fd",
+    "tag": "ececff8f-b946-4c33-8a4b-aad4c105a48e",
     "pattern": "send to me clip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3453,7 +3453,7 @@
     "type": "order"
   },
   {
-    "tag": "f59f6d83-ecba-471d-a426-dbf98ffd3293",
+    "tag": "bc77a3b7-6281-44c6-9404-fec4d6509c5b",
     "pattern": "send to me video of music $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3479,7 +3479,7 @@
     "type": "order"
   },
   {
-    "tag": "11d112ed-36b5-4dbb-b716-75f7049950d6",
+    "tag": "ab7d4503-5300-4cdc-a515-d11c0a807029",
     "pattern": "send to me music video $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3505,7 +3505,7 @@
     "type": "order"
   },
   {
-    "tag": "76026a38-068d-4e64-92cb-ee1bddad0e20",
+    "tag": "2083e19c-4f19-40ee-8d7b-fde24df3585a",
     "pattern": "send to me video clip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3531,7 +3531,7 @@
     "type": "order"
   },
   {
-    "tag": "6ccfa742-ab53-415f-bcd2-9883257ff3c8",
+    "tag": "e662548d-1603-4db8-89ff-db518c0bc448",
     "pattern": "get to me the video clip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3557,7 +3557,7 @@
     "type": "order"
   },
   {
-    "tag": "714fc70e-f4a3-46e5-8e9a-f9b8afc5ea76",
+    "tag": "2c1d0115-6e43-4fea-9a92-740459a709b7",
     "pattern": "get to me the music video $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3583,7 +3583,7 @@
     "type": "order"
   },
   {
-    "tag": "0767bdef-953e-4487-b271-98614b9a9012",
+    "tag": "af8e029b-214b-4ab4-8aaf-3a3bf2b47a26",
     "pattern": "get to me the videoclip $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3609,7 +3609,7 @@
     "type": "order"
   },
   {
-    "tag": "7162f2ba-c44b-4ff8-9b93-2a060901bedd",
+    "tag": "db70cfcd-8b82-4471-bd29-97b5b2981c4d",
     "pattern": "get to me the video of music $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3635,7 +3635,7 @@
     "type": "order"
   },
   {
-    "tag": "854781ce-4986-4105-8d59-f49a16659752",
+    "tag": "fa037083-67dc-414f-be77-0635fa0b3326",
     "pattern": "get to me video of music $::QUERY",
     "execute": "dlMusicVideoByQuery",
     "response": null,
@@ -3661,7 +3661,7 @@
     "type": "order"
   },
   {
-    "tag": "017537bc-f236-46a4-b433-5e33e255d2e4",
+    "tag": "c3db5175-c644-4a38-9933-42f1f3c105a8",
     "pattern": "create a key to my $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3680,7 +3680,7 @@
     "type": "order"
   },
   {
-    "tag": "7c527c02-cb87-4f4b-830f-e72a7ee078b1",
+    "tag": "414f4caa-37aa-43c0-9630-c5d87398333e",
     "pattern": "create a key $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3699,7 +3699,7 @@
     "type": "order"
   },
   {
-    "tag": "cb1a5071-3de9-4056-9888-ff30600b3306",
+    "tag": "914c6892-d59b-4578-9f6e-5f94d24986aa",
     "pattern": "I need a key to my $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3718,7 +3718,7 @@
     "type": "order"
   },
   {
-    "tag": "944920b4-1a1d-4499-a9fd-56c07bb348f2",
+    "tag": "80b69de3-c784-4f06-98fb-f056cc90109e",
     "pattern": "I need a key to $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3737,7 +3737,7 @@
     "type": "order"
   },
   {
-    "tag": "19ade604-c3f5-41c0-b893-aee7aba2da76",
+    "tag": "15cb54ef-e9f6-4909-99c1-7c6a992fc066",
     "pattern": "I need key to $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3756,7 +3756,7 @@
     "type": "order"
   },
   {
-    "tag": "0c5364d4-388b-429c-b9c2-eefebe7e40b2",
+    "tag": "6aaf275d-22bd-4dc0-bdae-218b04f46b63",
     "pattern": "I want to a key to $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3775,7 +3775,7 @@
     "type": "order"
   },
   {
-    "tag": "83b6ea97-51f8-48c5-9f6e-1e8886030751",
+    "tag": "43485ed5-338e-44c6-b991-ba11ab7ba7b1",
     "pattern": "I want to a key to my $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3794,7 +3794,7 @@
     "type": "order"
   },
   {
-    "tag": "02b92bc7-8724-4097-bc85-4b456d1af489",
+    "tag": "e91b139d-cb93-45f6-9bce-6bc6195b91db",
     "pattern": "I want to key to my $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3813,7 +3813,7 @@
     "type": "order"
   },
   {
-    "tag": "31a7d752-3541-40f9-8958-df34b151124b",
+    "tag": "312ef728-ecef-43e5-a65e-689004bed769",
     "pattern": "I wanna a key to $::LABEL",
     "execute": "create_key",
     "response": null,
@@ -3832,7 +3832,7 @@
     "type": "order"
   },
   {
-    "tag": "df0d09c4-9e50-4b38-b345-9b58d60c40a9",
+    "tag": "73491457-37a4-4b00-8589-3cc8386bb0b3",
     "pattern": "delete my key label $::LABEL",
     "execute": "del_key",
     "response": null,
@@ -3849,7 +3849,7 @@
     "type": "order"
   },
   {
-    "tag": "517cf7dc-afab-47d3-be80-17ba1d5d1c79",
+    "tag": "ff5ef661-d516-4b4c-bc49-13d3cff0e237",
     "pattern": "delete my key $::LABEL",
     "execute": "del_key",
     "response": null,
@@ -3866,7 +3866,7 @@
     "type": "order"
   },
   {
-    "tag": "0bd49ed3-787f-4fce-b83e-3d645447a879",
+    "tag": "896cd3d2-70d3-4511-852c-8a5c1c2e0463",
     "pattern": "delete my $::LABEL key",
     "execute": "del_key",
     "response": null,
@@ -3883,7 +3883,7 @@
     "type": "order"
   },
   {
-    "tag": "69230cee-0fe5-49f3-a4a6-32914dd09773",
+    "tag": "96eb5663-b333-4eca-9a4b-3fd9ad7f91c4",
     "pattern": "delete $::LABEL key",
     "execute": "del_key",
     "response": null,
@@ -3900,7 +3900,7 @@
     "type": "order"
   },
   {
-    "tag": "d8e9d624-9987-42dd-b1bb-98e6308980db",
+    "tag": "4d603d38-35a9-4063-aa8e-bf448f24b0d8",
     "pattern": "revoke $::LABEL key",
     "execute": "del_key",
     "response": null,
@@ -3917,7 +3917,7 @@
     "type": "order"
   },
   {
-    "tag": "bd9d0540-5f13-4882-a980-5ee3ccc71065",
+    "tag": "a787dd30-5af9-4497-88cd-726a3bf70dff",
     "pattern": "revoke my key with label $::LABEL",
     "execute": "del_key",
     "response": null,
@@ -3934,7 +3934,7 @@
     "type": "order"
   },
   {
-    "tag": "f1378660-7ff5-4a9c-9171-236458112501",
+    "tag": "78cf8c92-697a-486c-ba43-a69ec08739ab",
     "pattern": "delete my key with label $::LABEL",
     "execute": "del_key",
     "response": null,
@@ -3951,7 +3951,7 @@
     "type": "order"
   },
   {
-    "tag": "c8fbb27e-685b-4db6-b966-183f6ce9e0b1",
+    "tag": "4fbc2ee1-278e-4439-a798-3d7fcff9a0f8",
     "pattern": "delete my key by label $::LABEL",
     "execute": "del_key",
     "response": null,
@@ -3968,7 +3968,7 @@
     "type": "order"
   },
   {
-    "tag": "03d7e7fb-8346-478a-a29e-452c5e8cca79",
+    "tag": "5849a957-09e7-4962-aa97-c4e49ed1a96c",
     "pattern": [
       "list all my keys",
       "list all my room keys",
@@ -4008,7 +4008,7 @@
     "type": "order"
   },
   {
-    "tag": "1d4ddd7a-b4ad-43a2-90f2-83aa94f32946",
+    "tag": "6bbe8567-6b5d-4479-a60c-09fb655916e0",
     "pattern": "play this url $::URL on my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4027,7 +4027,7 @@
     "type": "order"
   },
   {
-    "tag": "408e7457-42eb-49fa-9600-7dbab2911249",
+    "tag": "9e8fe9aa-d533-429a-8016-03e3e08814ea",
     "pattern": "play this url $::URL at my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4046,7 +4046,7 @@
     "type": "order"
   },
   {
-    "tag": "7989d626-24b1-4028-ab80-8d30ac778ab0",
+    "tag": "4dfdfb5c-6fee-429a-9478-cabe6465eac0",
     "pattern": "play this $::URL at my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4065,7 +4065,7 @@
     "type": "order"
   },
   {
-    "tag": "3a2ce3a2-0fc1-469e-a323-81aeee272d29",
+    "tag": "985569b1-3449-4e6c-9aa1-d9acf9458812",
     "pattern": "play $::URL at my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4084,7 +4084,7 @@
     "type": "order"
   },
   {
-    "tag": "d75b32b7-bed5-4ecf-8efb-88b22c8303b6",
+    "tag": "ee44286d-51a8-4aff-ae6f-eb01bba302db",
     "pattern": "play $::URL in my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4103,7 +4103,7 @@
     "type": "order"
   },
   {
-    "tag": "8d76d756-76fa-4cc2-a727-7f42a65de37b",
+    "tag": "79089320-7fbb-47c1-a34a-36105c3f7be1",
     "pattern": "play the url $::URL in my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4122,7 +4122,7 @@
     "type": "order"
   },
   {
-    "tag": "c88b6d8d-7424-4f88-bcbf-4da3329f30fe",
+    "tag": "653512d1-f64f-4bf5-95ba-15414f769dad",
     "pattern": "play url $::URL in my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4141,7 +4141,7 @@
     "type": "order"
   },
   {
-    "tag": "e8d5bf11-59fe-47d2-ab26-25045aa2fe10",
+    "tag": "590aef2f-a304-4369-882c-a634c83c6e9f",
     "pattern": "play url $::URL at my $::LABEL",
     "execute": "play_sound",
     "response": null,
@@ -4155,6 +4155,535 @@
       "play",
       "the",
       "thi",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "8e37a9f3-9554-49d6-a768-a4bfb29d6a00",
+    "pattern": "stop sound that are playing on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "402b3a21-5072-43ec-9b57-f5b7b94f0a8f",
+    "pattern": "stop sound that are playing in my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "a5996048-e772-4306-88f6-bb36d228cbbc",
+    "pattern": "stop audio on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "dad4a0bf-8109-46f4-8300-19009792788c",
+    "pattern": "stop audio in my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "e004b41d-7757-432d-91b9-7113c37a0abb",
+    "pattern": "stop audio at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "86f82059-8284-4488-bda9-f978704d5542",
+    "pattern": "stop audio that are playing on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "f0414d5a-8097-4f26-b82a-9b6c677d6da6",
+    "pattern": "stop audio that are playing in my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "574314be-db51-4c6a-ab78-b5915cb0a3ee",
+    "pattern": "stop audio that are playing at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "fd2aee89-f40b-4376-9afc-89fc42b2f4e8",
+    "pattern": "stop audio are playing on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "c5b98849-937b-439f-bb78-c1a2675af98c",
+    "pattern": "stop audio player in my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "38af413d-146a-4793-97e5-ee83d7d5fc94",
+    "pattern": "stop audio player on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "22750c5e-1c20-4949-87f4-0ba7f5fb17b6",
+    "pattern": "stop url audio on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "e8b2672b-b9b2-4323-9b48-eb1e4ee3b5e2",
+    "pattern": "stop url audio at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "d245fd85-d25f-4ba0-ad6e-6c21ef820040",
+    "pattern": "stop url sound at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "9d95cf57-b744-4491-82a5-8643321f7f9f",
+    "pattern": "stop playing audio at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "6f6a9b91-103d-483a-bfce-208555152aeb",
+    "pattern": "stop playing sound at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "c7d1e110-8773-40c1-845e-28c9c5802c72",
+    "pattern": "stop any sound at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "46030b7e-7578-4287-b8eb-249e6d67b7f9",
+    "pattern": "stop any audio in my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "6fbf71e8-3388-489f-9949-06d8b8bf2a46",
+    "pattern": "stop sound on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "d95bb454-4b14-4cc6-9933-f6d1f6abae1a",
+    "pattern": "stop sound player on my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "a9668cd8-21cd-4306-bb0e-bfd4c6d14eaf",
+    "pattern": "stop sound player at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "57c6543a-b59a-434d-90df-1cbf7e828073",
+    "pattern": "stop sound in my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
+      "url"
+    ],
+    "type": "order"
+  },
+  {
+    "tag": "79e8f720-d597-4b17-84c9-224bfea8e91a",
+    "pattern": "stop sound at my $::LABEL",
+    "execute": "stop_sound",
+    "response": null,
+    "base_words": [
+      "$::label",
+      "ani",
+      "are",
+      "at",
+      "audio",
+      "in",
+      "my",
+      "on",
+      "play",
+      "player",
+      "sound",
+      "stop",
+      "that",
       "url"
     ],
     "type": "order"

@@ -1,7 +1,7 @@
 from utils.functions import read_as_binary
 from utils.managers import Room_Managet
 from pytube import YouTube
-from api import collector
+from api import collector, socketio
 import os
 import re
 room_Managet = Room_Managet()
@@ -51,6 +51,36 @@ def play_sound(svars, nexa, res):
 	response = createLink(path=filepath, res=res)
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	nexa.api.socketio.emit("play_audio", response, to=obj_key["key"], namespace="/a/desktop")
+	socketio.emit("play_audio", response, to=obj_key["key"])
 	key_label = obj_key['label'].split('::')[1]
 	return res.appendText(f"playing audio on your {key_label}")
+
+
+def stop_sound(svars, nexa, res):
+	sender_id = svars.get("SENDER_ID")
+	label = svars.get("LABEL")
+	if not label: return no_label(res)
+
+	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
+	if not obj_key: return no_label(res)
+	socketio.emit("stop_audio", to=obj_key["key"])
+
+
+def pause_sound(svars, nexa, res):
+	sender_id = svars.get("SENDER_ID")
+	label = svars.get("LABEL")
+	if not label: return no_label(res)
+
+	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
+	if not obj_key: return no_label(res)
+	socketio.emit("pause_audio", to=obj_key["key"])
+
+
+def resume_sound(svars, nexa, res):
+	sender_id = svars.get("SENDER_ID")
+	label = svars.get("LABEL")
+	if not label: return no_label(res)
+
+	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
+	if not obj_key: return no_label(res)
+	socketio.emit("resume_audio", to=obj_key["key"])
