@@ -1,6 +1,7 @@
 import string
 import nltk
 import numpy as np
+import wikipedia
 from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -101,13 +102,18 @@ class Nexa(Mind):
 		print(self.analyzer.type(value))
 
 		if self.analyzer.isQuestion(value):
-			answer = answer_by_context(context=self.me + context, value=value)
-			if answer: return res.appendText(answer)
-
-		if self.analyzer.isOrder(value):
+			# result = wikipedia.search(value, results = 1)
+			# print(f"detected theme: {result[0]}")
+			# summary = wikipedia.summary(result[0])
+			answer = answer_by_context(
+				context=self.me + context,
+				value=value
+			)
+			return res.appendText(answer or "I don't know it :(")
+		else:
 			predicted = self.predict(value).high_precision()
-
 			if not predicted.intent: return res.appendText("??")
+
 			print("predicted intent", predicted.intent)
 			svars = compiler.findVars(predicted.intent["pattern"], value)
 			pendingVars = self.pending.get(sender)
@@ -119,10 +125,9 @@ class Nexa(Mind):
 			print("svars", svars)
 			svars["SENDER_ID"] = sender
 			action = predicted.intent.get("execute")
-
 			if action: self.execute(action, svars, res)
-			responses = predicted.intent.get("response")
 
+			responses = predicted.intent.get("response")
 			if responses: res.appendText(responses, choiceOne=True)
 			return res.values()
 

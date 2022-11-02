@@ -1,8 +1,8 @@
 [
   {
-    "patterns": ["hi"],
+    "patterns": ["hi", "hello", "hey", "hii"],
     "execute": null,
-    "responses": ["hii"],
+    "responses": ["hii", "hello", "hello :)"],
     "type": "exclamation"
-  }	
+  }
 ]

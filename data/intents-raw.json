@@ -13,7 +13,7 @@
       "pronounce $::WORD to me"
     ],
     "execute": "pronounce_words",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -28,7 +28,7 @@
       "get sound $::URL"
     ],
     "execute": "dlmusicyt",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -42,7 +42,7 @@
       "send to me a image"
     ],
     "execute": "randonly_image",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -59,7 +59,7 @@
       "face image"
     ],
     "execute": "randonly_face_image",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -76,7 +76,7 @@
       "cat random photo"
     ],
     "execute": "randonly_cat_image",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -91,7 +91,7 @@
       "cat gif"
     ],
     "execute": "randonly_cat_gif",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -100,7 +100,7 @@
       "to do test"
     ],
     "execute": "take_test",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -114,7 +114,7 @@
       "send to me qrcode from $::DATA"
     ],
     "execute": "create_qr_code",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -134,7 +134,7 @@
       "image with $::QUERY"
     ],
     "execute": "create_image",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -155,7 +155,7 @@
       "send me qrcode content from $::URL"
     ],
     "execute": "read_qr_code",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -163,7 +163,7 @@
       "say $::SENTENCE"
     ],
     "execute": "talk",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -177,7 +177,7 @@
       "send to me a cpf"
     ],
     "execute": "generate_cpf",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -191,7 +191,7 @@
       "send to me a active cpf"
     ],
     "execute": "generate_real_cpf",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -204,7 +204,7 @@
       "what has on the image"
     ],
     "execute": "whatIsOnTheImage",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -215,7 +215,7 @@
       "delete all messages"
     ],
     "execute": "clear_messages",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -226,7 +226,7 @@
       "download from reddit this url $::URL"
     ],
     "execute": "dlRedditVid",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -240,7 +240,7 @@
       "query $::QUERY on youtube"
     ],
     "execute": "searchVideo",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -264,7 +264,7 @@
       "on youtube download $::QUERY"
     ],
     "execute": "dlMusicByQuery",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -300,7 +300,7 @@
       "on youtube download video $::QUERY"
     ],
     "execute": "dlVideoByQuery",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -336,7 +336,7 @@
       "get to me video of music $::QUERY"
     ],
     "execute": "dlMusicVideoByQuery",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -351,7 +351,7 @@
       "I wanna a key to $::LABEL"
     ],
     "execute": "create_key",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -361,11 +361,12 @@
       "delete $::LABEL key",
       "revoke $::LABEL key",
       "revoke my key with label $::LABEL",
+      "revoke my key $::LABEL",
       "delete my key with label $::LABEL",
       "delete my key by label $::LABEL"
     ],
     "execute": "del_key",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -387,7 +388,7 @@
       "all my room keys"
     ],
     "execute": "list_keys",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -401,7 +402,7 @@
       "play url $::URL at my $::LABEL"
     ],
     "execute": "play_sound",
-    "response": null
+    "responses": null
   },{
     "type": "order",
     "patterns": [
@@ -430,6 +431,20 @@
       "stop sound at my $::LABEL"
     ],
     "execute": "stop_sound",
-    "response": null
+    "responses": null
+  },{
+    "type": "order",
+    "patterns": [
+      "what you can do?",
+      "what can you do?",
+      "send to me examples what you can do",
+      "send to me examples what can you do",
+      "examples what can you do",
+      "some examples what can you do",
+      "what canny do?",
+      "what can u do?"
+    ],
+    "execute": "send_commands_examples",
+    "responses": null
   }
 ]

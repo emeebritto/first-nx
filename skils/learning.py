@@ -155,7 +155,7 @@ class Learning:
 			if (epoch + 1) % 100 == 0:
 				epochLoss = "%.4f" % loss.item()
 				losses.append(epochLoss)
-				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
+				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}', flush=True)
 				if losses.count(epochLoss) == 16: break
 
 		print(f'final loss: {loss.item():.4f}')

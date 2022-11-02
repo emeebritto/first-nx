@@ -1,6 +1,9 @@
 from transformers import BertForQuestionAnswering, AutoTokenizer, pipeline
 from transformers import VisionEncoderDecoderModel, ViTFeatureExtractor
 from transformers import BlenderbotTokenizer, BlenderbotForConditionalGeneration
+from utils.functions import syncmethod
+from time import sleep, time
+from threading import Lock
 # from transformers import TrOCRProcessor
 from PIL import Image
 import torch
@@ -8,18 +11,52 @@ import torch
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+class Bert:
+	def __init__(self):
+		super(Bert, self).__init__()
+		self._model = None
+		self._tokenize = None
+		self.auto_del_is_running = False
+		self.scheduled_del = 0
+		self._lock = Lock()
+
+	@syncmethod
+	def auto_delete(self):
+		auto_del_is_running = True
+		while True:
+			sleep(5)
+			if time() >= self.scheduled_del:
+				self._model = None
+				self._tokenizer = None
+				self.auto_del_is_running = False
+				break
+
+
+	def _load_data(self):
+		self._model = BertForQuestionAnswering.from_pretrained("deepset/bert-base-cased-squad2")
+		self._tokenizer = AutoTokenizer.from_pretrained("deepset/bert-base-cased-squad2")
+		if not self.auto_del_is_running: self.auto_delete()
+
+
+	def predict(self, context, value):
+		self.scheduled_del = time() + (2 * 60)
+		self._lock.acquire()
+		if not self._model: self._load_data()
+		self._tokenizer.encode(value, truncation=True, padding=True)
+		nlp = pipeline('question-answering', model=self._model, tokenizer=self._tokenizer)
+		self._lock.release()
+		return nlp({
+			"question": value,
+			"context": (context)
+		})
+
+
+bert = Bert()
+
+
 
 def answer_by_context(context, value):
-	model = BertForQuestionAnswering.from_pretrained("deepset/bert-base-cased-squad2")
-	tokenizer = AutoTokenizer.from_pretrained("deepset/bert-base-cased-squad2")
-	tokenizer.encode(value, truncation=True, padding=True)
-	nlp = pipeline('question-answering', model=model, tokenizer=tokenizer)
-
-	result = nlp({
-		"question": value,
-		"context": (context)
-	})
-
+	result = bert.predict(context, value)
 	print(f"Score (Transformers): {result['score']}")
 	return result['answer'] if result["score"] > 0.1 else None
 

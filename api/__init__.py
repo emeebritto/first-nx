@@ -76,6 +76,21 @@ def files(filename):
     return "Sorry, this file does not exist"
 
 
+@api.route('/messages/all', methods=['GET'])
+def allMessage():
+  args = request.args.to_dict()
+  token = args.get("token")
+  filePath = f"messages.txt"
+
+  try:
+    if token != "y1q8uw2a2023nx": raise Exception("INVALID_TOKEN")
+    file_data = open(filePath, 'rb')
+    return send_file(file_data, download_name="nx_messages.txt", as_attachment=False)
+  except Exception as e:
+    print(e)
+    return str(e)
+
+
 port = int(os.environ.get("PORT", 3080))
 collector.start(gap=1)
 

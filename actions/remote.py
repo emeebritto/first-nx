@@ -51,7 +51,11 @@ def play_sound(svars, nexa, res):
 	response = createLink(path=filepath, res=res)
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	socketio.emit("play_audio", response, to=obj_key["key"])
+	order = {
+		"label": "play_audio",
+		"data": response
+	}
+	socketio.emit("execute_order", order, to=obj_key["key"])
 	key_label = obj_key['label'].split('::')[1]
 	return res.appendText(f"playing audio on your {key_label}")
 
@@ -63,7 +67,7 @@ def stop_sound(svars, nexa, res):
 
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	socketio.emit("stop_audio", to=obj_key["key"])
+	socketio.emit("execute_order", {"label":"stop_audio"}, to=obj_key["key"])
 
 
 def pause_sound(svars, nexa, res):
@@ -73,7 +77,7 @@ def pause_sound(svars, nexa, res):
 
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	socketio.emit("pause_audio", to=obj_key["key"])
+	socketio.emit("execute_order", {"label":"pause_audio"}, to=obj_key["key"])
 
 
 def resume_sound(svars, nexa, res):
@@ -83,4 +87,4 @@ def resume_sound(svars, nexa, res):
 
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	socketio.emit("resume_audio", to=obj_key["key"])
+	socketio.emit("execute_order", {"label":"resume_audio"}, to=obj_key["key"])
