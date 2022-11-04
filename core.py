@@ -7,6 +7,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 from compiler import Compiler
+from googletrans import Translator
 from patterns.replacer import replacer
 from random import choice
 from analyzer import Analyzer
@@ -96,9 +97,19 @@ class Nexa(Mind):
 			return file.read()
 
 
+	def translate(self, uInput, from_lang='pt', to_lang='en'):
+		translator = Translator()
+		text_to_translate = translator.translate(uInput, dest=to_lang)
+		# text_to_translate = translator.translate(uInput, src=from_lang, dest=to_lang)
+		return text_to_translate.text
+
+
 	def read(self, value, context="", sender="unknown"):
 		res = Response()
 		if not value: return res.appendText("...")
+		print(f"=> uInput: {value}")
+		value = self.translate(value)
+		print(f"=> uInput (translated): {value}")	
 		print(self.analyzer.type(value))
 
 		if self.analyzer.isQuestion(value):

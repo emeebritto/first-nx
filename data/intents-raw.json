@@ -32,14 +32,15 @@
   },{
     "type": "order",
     "patterns": [
-      "generate a image",
-      "generate a randonly image",
-      "generate a random image",
+      "download a image",
+      "download a randonly image",
+      "download a random image",
       "random image",
-      "create a random image",
-      "create a image",
+      "randonly image",
       "send me a image",
-      "send to me a image"
+      "send me a random image",
+      "send to me a image",
+      "send to me a random image"
     ],
     "execute": "randonly_image",
     "responses": null
@@ -67,9 +68,11 @@
       "send a cat image",
       "send me cat image",
       "send a cat photo",
-      "create a cat image",
-      "create a cat image",
       "cat image",
+      "image of cat",
+      "image of a cat",
+      "photo of cat",
+      "photo of a cat",
       "cat photo",
       "random cat image",
       "cat random image",
@@ -80,10 +83,30 @@
   },{
     "type": "order",
     "patterns": [
+      "send to me a dog image",
+      "send a dog image",
+      "send me dog image",
+      "send a dog photo",
+      "dog image",
+      "image of dog",
+      "image of a dog",
+      "photo of dog",
+      "photo of a dog",
+      "dog photo",
+      "random dog image",
+      "dog random image",
+      "dog random photo"
+    ],
+    "execute": "randonly_dog_image",
+    "responses": null
+  },{
+    "type": "order",
+    "patterns": [
       "send to me a cat gif image",
+      "send to me a random cat gif image",
       "send to me a cat gif",
+      "send to me a random cat gif",
       "send a cat gif",
-      "create a cat gif",
       "cat gif",
       "cat gif image",
       "random cat gif",
@@ -118,7 +141,8 @@
   },{
     "type": "order",
     "patterns": [
-      "create a image of $::QUERY",
+      "get a image of $::QUERY",
+      "download a image of $::QUERY",
       "a image of $::QUERY",
       "send to me a image of $::QUERY",
       "send to me a photo of $::QUERY",
@@ -129,11 +153,13 @@
       "image of $::QUERY",
       "photo of $::QUERY",
       "a photo of $::QUERY",
-      "create a photo of $::QUERY",
-      "create a image with $::QUERY",
+      "get a photo of $::QUERY",
+      "download a photo of $::QUERY",
+      "download a image with $::QUERY",
+      "get a image with $::QUERY",
       "image with $::QUERY"
     ],
-    "execute": "create_image",
+    "execute": "download_image",
     "responses": null
   },{
     "type": "order",
@@ -445,6 +471,28 @@
       "what can u do?"
     ],
     "execute": "send_commands_examples",
+    "responses": null
+  },{
+    "type": "order",
+    "patterns": [
+      "create a image of $::INPUT",
+      "create the image of $::INPUT",
+      "create a image with $::INPUT",
+      "create the image with $::INPUT",
+      "generate a image with $::INPUT",
+      "generate the image with $::INPUT",
+      "generate a image of $::INPUT",
+      "generate the image of $::INPUT",
+      "cria uma imagem de $::INPUT",
+      "gera uma imagem de $::INPUT",
+      "gera uma imagem com $::INPUT",
+      "cria uma imagem com $::INPUT",
+      "cria uma imagem que tenha $::INPUT",
+      "gera uma imagem que tenha $::INPUT",
+      "cria uma imagem que tem $::INPUT",
+      "gera uma imagem que tem $::INPUT"
+    ],
+    "execute": "create_image",
     "responses": null
   }
 ]

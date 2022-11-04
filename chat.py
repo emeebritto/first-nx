@@ -1,3 +1,6 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from services import telegram
 from api import api
 from core import Nexa

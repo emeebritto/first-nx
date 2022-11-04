@@ -4,20 +4,20 @@ from telegram.ext.messagehandler import MessageHandler
 from telegram.ext.updater import Updater
 from telegram.ext.filters import Filters
 from utils.functions import syncmethod
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from time import sleep
 from os import getenv
 import requests
 
-load_dotenv()
+# load_dotenv()
 
 
 
 class Telegram:
 	def __init__(self):
 		super(Telegram, self).__init__()
-		self.__token = getenv("NxToken")
-		# self.__token = getenv("ZLToken")
+		# self.__token = getenv("NxToken")
+		self.__token = getenv("ZLToken")
 		self.__author = '1242558424'
 		self.__author_name = "Emerson_Britto"
 		self._receivers = {}
