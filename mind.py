@@ -12,11 +12,11 @@ class Predicted:
 		self.uinput = uinput
 
 
-	def high_precision(self):
+	def high_precision(self, base=None):
 		if not self.intent: return self
 		return self.__neuralNet.predict(
 			self.uinput,
-			tropic_words=self.intent["base_words"]
+			tropic_words=base or self.intent["base_words"]
 		)
 
 

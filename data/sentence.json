@@ -2,1098 +2,1645 @@
   {
     "type": "question",
     "time": "present",
-    "pattern": "How’s it going?"
-  },{
+    "pattern": "How's it going?",
+    "tag": "15a81483-d0fc-47a7-9357-2748525900bf"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Is he not wonderful?"
-  },{
+    "pattern": "Is he not wonderful?",
+    "tag": "582f7a92-aebc-440f-9d6c-d4a3aa034b7a"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what's up ?"
-  },{
+    "pattern": "what's up ?",
+    "tag": "968aa29c-f6eb-48d8-bbdc-7cda206682e0"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is your name ?"
-  },{
+    "pattern": "what is your name ?",
+    "tag": "189d9db8-c3c5-4cbd-8f90-112117fadd19"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what's your name ?"
-  },{ 
+    "pattern": "what's your name ?",
+    "tag": "271a6995-f482-4453-8071-816dda18e165"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Nexa is your name?"
-  },{ 
+    "pattern": "Nexa is your name?",
+    "tag": "e1491bb0-ea1b-49d5-a1c3-72f9e036cd06"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what's your name"
-  },{ 
+    "pattern": "what's your name",
+    "tag": "4e084c57-954e-43d4-a381-0c871daaceb0"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is your name"
-  },{ 
+    "pattern": "what is your name",
+    "tag": "092f8a4a-9114-460d-af7e-d268a7a24f87"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is the cat name ?"
-  },{ 
+    "pattern": "what is the cat name ?",
+    "tag": "a7a1e2a7-147c-40fa-a34d-cb7a1347aba1"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is the cat color ?"
-  },{ 
+    "pattern": "what is the cat color ?",
+    "tag": "f82f76f5-0134-45f9-8a59-804ed9aece9e"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is the cat color"
-  },{ 
+    "pattern": "what is the cat color",
+    "tag": "d7db318f-6cfb-4dda-8757-50c1c506ab64"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what's the cat color ?"
-  },{ 
+    "pattern": "what's the cat color ?",
+    "tag": "06f28387-b6de-4c38-8fdb-c846eb1bc004"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is cat doing ?"
-  },{ 
+    "pattern": "what is cat doing ?",
+    "tag": "612d671c-d42d-4d5d-a014-67814eee4b8d"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is the house color ?"
-  },{ 
+    "pattern": "what is the house color ?",
+    "tag": "172e2d61-1b84-426d-8ef8-75b18051e6b0"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "how old are you ?"
-  },{ 
+    "pattern": "how old are you ?",
+    "tag": "540620db-6c70-449d-88f3-480415cdbfb1"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "where are you from ?"
-  },{ 
+    "pattern": "where are you from ?",
+    "tag": "c400a1e6-b13e-4100-942c-0ba26a141c56"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "where do you live ?"
-  },{ 
+    "pattern": "where do you live ?",
+    "tag": "403547f4-fd70-410a-82c1-e21565a8c5c3"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "are you married ?"
-  },{ 
+    "pattern": "are you married ?",
+    "tag": "68cafe71-ab0f-4b3e-a3d1-ebc9a74524e2"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "do you have children?"
-  },{ 
+    "pattern": "do you have children?",
+    "tag": "a5db4623-c407-4667-b348-dd57f01c7edd"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "do you have children"
-  },{ 
+    "pattern": "do you have children",
+    "tag": "fe436786-d893-440f-9d3d-9c2170072f67"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what is your job ?"
-  },{ 
+    "pattern": "what is your job ?",
+    "tag": "bd072d47-9790-4efd-9508-3175cc9f943f"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what's your job ?"
-  },{ 
+    "pattern": "what's your job ?",
+    "tag": "aa37a2d8-4cb1-402b-9fe7-ed863bdeb2d9"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "what do you do for living ?"
-  },{ 
+    "pattern": "what do you do for living ?",
+    "tag": "9c7dad1f-2455-4acf-8129-68aadc7bd10e"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "where were you ?"
-  },{ 
+    "pattern": "where were you ?",
+    "tag": "85b00633-2768-46f9-a84b-62249b0d60f9"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "where were you"
-  },{ 
+    "pattern": "where were you",
+    "tag": "6d743ce7-5a5c-4939-9fb5-f804717f66f7"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "do you have a car ?"
-  },{ 
+    "pattern": "do you have a car ?",
+    "tag": "d19e7619-1067-4292-868e-32c0fb0d6eba"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "do you have a pet ?"
-  },{ 
+    "pattern": "do you have a pet ?",
+    "tag": "121af0bc-5965-43e0-860f-0f8e3bab1b52"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "do you have a pet"
-  },{ 
+    "pattern": "do you have a pet",
+    "tag": "45e8cfc7-7fba-4d27-b1da-e13882618108"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "do you speak another language ?"
-  },{ 
+    "pattern": "do you speak another language ?",
+    "tag": "0842d670-9815-4527-9e90-bbdc3b92f046"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "how much does this cost ?"
-  },{ 
+    "pattern": "how much does this cost ?",
+    "tag": "a02469a5-bdb3-4b16-b1d5-c9aafb81e0a4"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "can I try this on ?"
-  },{ 
+    "pattern": "can I try this on ?",
+    "tag": "49a38ecd-58ea-485c-8973-b33257259432"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "can I try this on?"
-  },{ 
+    "pattern": "can I try this on?",
+    "tag": "267bb321-5a59-4ff6-86b7-df24621d22f4"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "can I pay by card ?"
-  },{ 
+    "pattern": "can I pay by card ?",
+    "tag": "e1a88c90-6825-4ee9-8376-dec82de52708"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "can i pay by card ?"
-  },{ 
+    "pattern": "can i pay by card ?",
+    "tag": "6cfb6ac2-c258-4884-9f95-0e6b421fcbb9"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Should I go left, or right ?"
-  },{ 
+    "pattern": "Should I go left, or right ?",
+    "tag": "53a1cc98-eec9-4d41-b9cf-5b5fe79f34e6"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Should I go left, or right"
-  },{ 
+    "pattern": "Should I go left, or right",
+    "tag": "129f5794-ba38-44ec-9425-1fb6d12823dd"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Should I go left, or right?"
-  },{ 
+    "pattern": "Should I go left, or right?",
+    "tag": "cc63baf0-2b08-462c-8601-0adf32f0e05f"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Which bus should I get ?"
-  },{ 
+    "pattern": "Which bus should I get ?",
+    "tag": "0d10eefd-7920-4872-910c-345353c707c1"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Do you like this?"
-  },{ 
+    "pattern": "Do you like this?",
+    "tag": "2749bd1b-fbe8-4553-9409-ed61c3474a03"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "do you like this ?"
-  },{ 
+    "pattern": "do you like this ?",
+    "tag": "b5ee73ce-d470-408e-b57a-b14ac82eef93"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "are you ready to order ?"
-  },{ 
+    "pattern": "are you ready to order ?",
+    "tag": "8d395d4a-23f7-4e3f-b3d4-d2cf777724fa"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "What is your morning routine ?"
-  },{
+    "pattern": "What is your morning routine ?",
+    "tag": "513b3935-da2d-46ea-8a5b-5a6484a91109"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Nexa?"
-  },{
+    "pattern": "Nexa?",
+    "tag": "7c95618e-ab65-43ce-ba5b-24c4da70cc92"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Nexa ?"
-  },{
+    "pattern": "Nexa ?",
+    "tag": "a32be41a-3b53-4545-b230-7a2f459f1df1"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "Zolee?"
-  },{
+    "pattern": "Zolee?",
+    "tag": "e1107e60-c687-491e-8447-f066470c14e3"
+  },
+  {
     "type": "question",
     "time": "present",
-    "pattern": "really ?"
-  },{
+    "pattern": "really ?",
+    "tag": "28f2991f-2f21-4fce-b4bf-d71d2b332b93"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did you reach home safely?"
-  },{
+    "pattern": "Did you reach home safely?",
+    "tag": "26e60aab-4fee-4fc6-a16e-aca5c8ac2b7b"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did he demand a fair price for the rabbit?"
-  },{
+    "pattern": "Did he demand a fair price for the rabbit?",
+    "tag": "ee9c339e-1c39-4881-a524-c53aa8953499"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Where did she go?"
-  },{
+    "pattern": "Where did she go?",
+    "tag": "9701a0ab-6255-4220-a6c5-ce32069f059e"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did you go to the hill station last Sunday?"
-  },{
+    "pattern": "Did you go to the hill station last Sunday?",
+    "tag": "acb1cfce-7260-4266-89ad-4e92377874dd"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Why did you laugh?"
-  },{
+    "pattern": "Why did you laugh?",
+    "tag": "723549e5-4faa-4fd5-bd72-86a31c4ada5a"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Why did you insist?"
-  },{
+    "pattern": "Why did you insist?",
+    "tag": "0c09c58c-df07-4748-8c79-243c7537f7e2"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did you receive the salary yesterday?"
-  },{
+    "pattern": "Did you receive the salary yesterday?",
+    "tag": "40f7af6f-f725-4aff-9b96-878e91d253a4"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did your friend sit alone in the dark?"
-  },{
+    "pattern": "Did your friend sit alone in the dark?",
+    "tag": "750f8f67-87d8-48f5-bdbc-8d949fbc7f7e"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did you pass the exam last year?"
-  },{
+    "pattern": "Did you pass the exam last year?",
+    "tag": "51b0d472-d687-4b1a-9213-60882fd82403"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Why did you speak loudly?"
-  },{
+    "pattern": "Why did you speak loudly?",
+    "tag": "0f02a9d8-bd80-40c7-b2dd-87a72fe7f37b"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Where did you go on your last vacation?"
-  },{
+    "pattern": "Where did you go on your last vacation?",
+    "tag": "0280bf46-8080-419f-b4a7-794df675470e"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "What did you do for your last birthday?"
-  },{
+    "pattern": "What did you do for your last birthday?",
+    "tag": "25807c8b-07aa-4ac0-8bca-c30b0cb76692"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "What did you do last week?"
-  },{
+    "pattern": "What did you do last week?",
+    "tag": "1ad8943e-0b79-49d9-b037-cbe11c8b3f78"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "How did you spend your weekend?"
-  },{
+    "pattern": "How did you spend your weekend?",
+    "tag": "a5f59ad7-a7ae-494d-b7a5-9352659aa75b"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "What did you do yesterday morning?"
-  },{
+    "pattern": "What did you do yesterday morning?",
+    "tag": "592a9952-dc93-4f9b-aad2-086c64e8fe6c"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did you watch any movies last night? What movies did you watch?"
-  },{
+    "pattern": "Did you watch any movies last night? What movies did you watch?",
+    "tag": "1763bab9-d993-420e-9368-39c3b09a4523"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Who was your frist crush?"
-  },{
+    "pattern": "Who was your frist crush?",
+    "tag": "38830aa8-5b76-4c8a-9011-62441bea097d"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "What did you do for the last 24 hours?"
-  },{
+    "pattern": "What did you do for the last 24 hours?",
+    "tag": "b6194323-a879-40f1-bbd3-15e3fab992f6"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "What was the last movie that you watched?"
-  },{
+    "pattern": "What was the last movie that you watched?",
+    "tag": "7606d4cd-7438-4459-adb0-40943e047b81"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "When was the last time you went shopping?"
-  },{
+    "pattern": "When was the last time you went shopping?",
+    "tag": "952ff514-2b39-4af0-91c6-83795a3d1f69"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "When was the last time you went on a date?"
-  },{
+    "pattern": "When was the last time you went on a date?",
+    "tag": "145d9ab2-aed9-464b-8b74-5dcc561113c2"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "When was the last time you had a party?"
-  },{
+    "pattern": "When was the last time you had a party?",
+    "tag": "5534502f-ab44-4e46-99de-a56733426313"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "Did you do any exercises last week? What exercises did you do?"
-  },{
+    "pattern": "Did you do any exercises last week? What exercises did you do?",
+    "tag": "d024dd24-3b80-42ad-888c-7222fd4f90fa"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "How did you spend your days when you were a kid?"
-  },{
+    "pattern": "How did you spend your days when you were a kid?",
+    "tag": "61400090-caf8-45b0-bde4-0fbd8db2d5ac"
+  },
+  {
     "type": "question",
     "time": "past",
-    "pattern": "How did you have fun when you were in highschool?"
-  },{
+    "pattern": "How did you have fun when you were in highschool?",
+    "tag": "69833aba-8adf-41a8-81ac-26df75161000"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm mike"
-  },{
+    "pattern": "I'm mike",
+    "tag": "ae3df401-8605-4032-be5b-8229141bc810"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I am mike"
-  },{
+    "pattern": "I am mike",
+    "tag": "48c7a6ce-9a0d-45a1-9585-d2cc2cb596db"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm 20"
-  },{
+    "pattern": "I'm 20",
+    "tag": "58248cf6-1ed8-4660-938e-e70665e07fdd"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I come from England"
-  },{
+    "pattern": "I come from England",
+    "tag": "2af88bf3-4f95-4edf-9355-680d95a723fe"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm from Romania"
-  },{
+    "pattern": "I'm from Romania",
+    "tag": "4284fe7b-0036-494d-bf1f-3eb3bb8cd8ce"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "it's 08564"
-  },{
+    "pattern": "it's 08564",
+    "tag": "326ce657-0fd4-496f-a2b2-dd7970b2cbd6"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "He does not know what he want"
-  },{
+    "pattern": "He does not know what he want",
+    "tag": "da945a17-ee1d-4daa-8de0-3c86251ff3a5"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "my wife is called Mindy"
-  },{
+    "pattern": "my wife is called Mindy",
+    "tag": "a0c351b1-4c33-4b14-aba7-461698f80f51"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm not married"
-  },{
+    "pattern": "I'm not married",
+    "tag": "954d2970-9dbe-479c-bc8d-ae58c9709e51"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm single"
-  },{
+    "pattern": "I'm single",
+    "tag": "cf28d249-e0bf-4e56-bde3-bbe30da46eaa"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I like hiking and traveling"
-  },{
+    "pattern": "I like hiking and traveling",
+    "tag": "9d091878-2eb2-485e-a5b0-74e1d76f40b7"
+  },
+  {
     "type": "affirmative",
     "time": "future",
-    "pattern": "I would like to become a manager one day"
-  },{
+    "pattern": "I would like to become a manager one day",
+    "tag": "f02d31c5-700d-4586-8970-cb06c573ba19"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm good"
-  },{
+    "pattern": "I'm good",
+    "tag": "fe0e6dcb-da4d-445b-bd83-842d963b4d5f"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm fine"
-  },{
+    "pattern": "I'm fine",
+    "tag": "eec06e40-c00d-43f6-a137-21d14396854f"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "Im fine"
-  },{
+    "pattern": "Im fine",
+    "tag": "fd1df391-6da9-410e-aa3b-f179dc40843e"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I'm doing good"
-  },{
+    "pattern": "I'm doing good",
+    "tag": "13f6e05c-0935-42b2-ab75-91632c5b82bc"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I went to a bar with some of my colleagues"
-  },{
+    "pattern": "I went to a bar with some of my colleagues",
+    "tag": "9241a760-fd33-4e72-9ce2-b14f3f15aabd"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "my family and I went skiing"
-  },{
+    "pattern": "my family and I went skiing",
+    "tag": "efd70e8a-9d4e-449d-8cc6-5ff22e4ab4a3"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I use my bike to go around the city"
-  },{
+    "pattern": "I use my bike to go around the city",
+    "tag": "30ecf9fb-09ec-462b-8896-ee701e1cf6c4"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I actually have two parrots"
-  },{
+    "pattern": "I actually have two parrots",
+    "tag": "d06c0a51-964e-4351-b484-c75475710005"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I know Spanish"
-  },{
+    "pattern": "I know Spanish",
+    "tag": "ba4ec88a-1226-4c73-b209-572947716f2d"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "I speak english"
-  },{
+    "pattern": "I speak english",
+    "tag": "3d7f26a8-fd60-4d17-92a2-731d32d4eca8"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "it's so good"
-  },{
+    "pattern": "it's so good",
+    "tag": "241b0cab-07eb-4cfd-b744-817b5075f0fc"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "You should visit a doctor for a routine check"
-  },{
+    "pattern": "You should visit a doctor for a routine check",
+    "tag": "2c3986d9-2c93-47c0-b657-36ad7ea7d1b8"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "you are beatiful"
-  },{
+    "pattern": "you are beatiful",
+    "tag": "5966e591-8a5a-4cb1-b6be-eb4cc9c34333"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "you are running"
-  },{
+    "pattern": "you are running",
+    "tag": "ba0fb5e4-c8df-43a6-84de-70b80bfe4808"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "you are busy"
-  },{
+    "pattern": "you are busy",
+    "tag": "3d2c426e-f202-4bb6-babd-d3081f81ddc6"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "they are busy"
-  },{
+    "pattern": "they are busy",
+    "tag": "8bba1c59-7ac6-492d-af75-6daa0939e739"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "she is pretty"
-  },{
+    "pattern": "she is pretty",
+    "tag": "c0d21a97-0be1-417e-acf1-c324b4038a3c"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "cat is pretty"
-  },{
+    "pattern": "cat is pretty",
+    "tag": "5a34b03f-606b-468d-b6ca-745f144a2484"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "cat is yellow"
-  },{
+    "pattern": "cat is yellow",
+    "tag": "d7c5daec-e0ed-4246-8fda-e21fe98a6743"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "house is expansive"
-  },{
+    "pattern": "house is expansive",
+    "tag": "2b6d1b8b-ea12-4931-9549-60033fb4dbbe"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "he is cute"
-  },{
+    "pattern": "he is cute",
+    "tag": "4df2e022-b41c-45f4-a3f9-eafd30ef09f9"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "she is so cute"
-  },{
+    "pattern": "she is so cute",
+    "tag": "57fd0106-048d-4836-8745-3d7467a7b2fe"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "it's work"
-  },{
+    "pattern": "it's work",
+    "tag": "d667af61-4f62-4e32-ae3a-2a4b1382fc87"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "A river flows through the valley"
-  },{
+    "pattern": "A river flows through the valley",
+    "tag": "a7a1410a-f442-43e5-985b-5ec79475e1b0"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "We watched Television last night"
-  },{
+    "pattern": "We watched Television last night",
+    "tag": "c8e09c27-c73c-4dc8-8656-7bce71122a99"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "She often forgets to bring her phone with her"
-  },{
+    "pattern": "She often forgets to bring her phone with her",
+    "tag": "b1ebf3ff-3d1a-4a8b-ae81-ef247450705b"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "We have a cash flow problem at the workplace"
-  },{
+    "pattern": "We have a cash flow problem at the workplace",
+    "tag": "bb438cb6-1453-4169-a8d9-55086d068af9"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "He is playing a basketball now"
-  },{
-    "type": "affirmative",
-    "time": "future",
-    "pattern": "I will be playing basketball"
-  },{
-    "type": "affirmative",
-    "time": "future",
-    "pattern": "We will have been starting"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "I was driving the car"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "Syam is a pilot"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "She is too weak to talk"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "They are helpful"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "The mom was very calculative about the monthly expenditure"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "Birds are always up in the sky"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "The milk was dripping from the bottle"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "He does his exercise everyday"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "The masters tend to be overprotective of their pets"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "I wanna be free"
-  },{
-    "type": "affirmative",
-    "time": "future",
-    "pattern": "Natasha will complete the task"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "they are adults"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "Micelle did her homework this afternoon"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "My uncle was born in 1988"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "The teachers were preparing for the exam next week at the office"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "My sister had a headache this morning, I hope she will get better soon"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "Roy would like to go to the store earlier before it starts to rain"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "If we had some oranges, I could make you some fresh juice"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "I am a junior highschool student"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "Lissa has cooked some cookies "
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "They have planted the water already"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "Brian is an engineer"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "The athletes are practicing so hard"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "My mother is baking a chocolate cake"
-  },{
+    "pattern": "He is playing a basketball now",
+    "tag": "fc375463-d51e-4dc5-85eb-38d65916145b"
+  },
+  {
     "type": "affirmative",
     "time": "future",
-    "pattern": "Timothy will be staying at home "
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "Amber misses her mom"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "My bestfriend is an architect, he designed my house"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "Tom repaired Timmy’s motorcycle yesterday"
-  },{
+    "pattern": "I will be playing basketball",
+    "tag": "2868dd55-35ba-4e92-8e3e-faf123d28552"
+  },
+  {
     "type": "affirmative",
     "time": "future",
-    "pattern": "We are going to the cinema"
-  },{
+    "pattern": "We will have been starting",
+    "tag": "6c59db12-5fcf-44ef-9929-65e2f27e95b0"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "Eifel tower was built on 28 January 1887"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "A tsunami is huge waves caused by a sudden movement of the ocean surface due to earthquakes and other else"
-  },{
-    "type": "affirmative",
-    "time": "present",
-    "pattern": "Earth is the third planet from the sun"
-  },{
+    "pattern": "I was driving the car",
+    "tag": "0e2e09f6-0388-49aa-8294-e9bca9ec0b8b"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "The lions live in the savanna"
-  },{
-    "type": "affirmative",
-    "time": "past",
-    "pattern": "The brown box was created by Ralph HBaer in 1967"
-  },{
+    "pattern": "Syam is a pilot",
+    "tag": "43e24557-53e1-485a-adac-af0d7b566a2f"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "We can find strawberry milk in the dairy section at the store "
-  },{
+    "pattern": "She is too weak to talk",
+    "tag": "cf6dff88-79bd-4a5c-98e7-74193a65a02d"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "Sam rides a bicycle to go to school"
-  },{
+    "pattern": "They are helpful",
+    "tag": "c2f51136-5c72-4769-86b4-f0e0b8956489"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The mom was very calculative about the monthly expenditure",
+    "tag": "72bb3d1c-950b-4abd-98a4-438c3d36b333"
+  },
+  {
     "type": "affirmative",
     "time": "present",
-    "pattern": "Tyler likes to play football"
-  },{
+    "pattern": "Birds are always up in the sky",
+    "tag": "e617c1f8-d6a5-4517-93b4-50c31025bc82"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "Steve came to my house last week"
-  },{
+    "pattern": "The milk was dripping from the bottle",
+    "tag": "1f8aaf14-52f5-4bb2-adbc-7d4765372277"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "He does his exercise everyday",
+    "tag": "75bbf079-3457-4b78-b05b-f6c773c99182"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "The masters tend to be overprotective of their pets",
+    "tag": "2bcf591c-0e64-4355-80f8-b145ce5ddbae"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "I wanna be free",
+    "tag": "51488d53-8138-466c-95e5-81489cc7e25d"
+  },
+  {
+    "type": "affirmative",
+    "time": "future",
+    "pattern": "Natasha will complete the task",
+    "tag": "a88bf19e-c449-4440-954b-c9f7957b55c3"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "they are adults",
+    "tag": "8cb8445b-b13a-483c-96dc-1fdab4658705"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I went to college 3 years ago"
-  },{
+    "pattern": "Micelle did her homework this afternoon",
+    "tag": "a7dcfb66-9817-485a-a0a1-7b811a129aa5"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "He ate dinner 1 hour ago"
-  },{
+    "pattern": "My uncle was born in 1988",
+    "tag": "02c460a9-ae76-4a10-bc3d-434598ec6b18"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I slept well last night"
-  },{
+    "pattern": "The teachers were preparing for the exam next week at the office",
+    "tag": "7536d272-66a6-4402-bb23-409fb89264fe"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I lived in Bangkok for 5 years (I don’t live there anymore)"
-  },{
+    "pattern": "My sister had a headache this morning, I hope she will get better soon",
+    "tag": "86ffa4af-03cc-445a-8101-4ce857b06a08"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "Roy would like to go to the store earlier before it starts to rain",
+    "tag": "accc90f8-ff70-4378-904a-893b613a0c03"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "If we had some oranges, I could make you some fresh juice",
+    "tag": "e176d328-3be1-44ae-b8f8-3cbaaca1bcdf"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "I am a junior highschool student",
+    "tag": "b5791099-3d04-4196-bfc7-018f5daad6ca"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "He entered a room, lit a cigarette, and smiled at the guests"
-  },{
+    "pattern": "Lissa has cooked some cookies ",
+    "tag": "9d28529b-a8ae-4d18-8baa-a9def91d1cb7"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "The teacher said that the earth moves around the sun"
-  },{
+    "pattern": "They have planted the water already",
+    "tag": "9dfd7f1c-154d-4595-816f-c9c0465b4e38"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "Brian is an engineer",
+    "tag": "2214db07-86e8-411a-b8e1-cec8b9d686b2"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "The athletes are practicing so hard",
+    "tag": "c578c571-3742-4dab-8b54-60dbe59dc7c1"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "My mother is baking a chocolate cake",
+    "tag": "1334cada-224e-478f-97e9-38a37e1f3a07"
+  },
+  {
+    "type": "affirmative",
+    "time": "future",
+    "pattern": "Timothy will be staying at home ",
+    "tag": "7dc6873b-aa70-46ef-ae12-e7a4b7e89b18"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "Amber misses her mom",
+    "tag": "8d1277fe-c193-4c23-8a57-386220409a9a"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "My bestfriend is an architect, he designed my house",
+    "tag": "90b83614-fd8e-463b-921e-aaa45bd569d2"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "The teacher taught the lesson well"
-  },{
+    "pattern": "Tom repaired Timmy's motorcycle yesterday",
+    "tag": "e4a8c987-ea5d-44f3-b2a4-ce1dfbcd8197"
+  },
+  {
+    "type": "affirmative",
+    "time": "future",
+    "pattern": "We are going to the cinema",
+    "tag": "1ff7c6fa-e90d-429f-98d3-e60c3c7bb4b9"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "The baby cried in the cradle"
-  },{
+    "pattern": "Eifel tower was built on 28 January 1887",
+    "tag": "887742a3-cf95-47e5-8c8b-7d58a35803e1"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "A tsunami is huge waves caused by a sudden movement of the ocean surface due to earthquakes and other else",
+    "tag": "a0482cd0-fc9f-47b8-bcc0-bbd194e481a0"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "Earth is the third planet from the sun",
+    "tag": "9c0abb94-9914-416c-b137-49fde37c201d"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "The lions live in the savanna",
+    "tag": "4c1dba39-5db7-43a9-a818-cd55bc971e36"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "She left the town for good"
-  },{
+    "pattern": "The brown box was created by Ralph HBaer in 1967",
+    "tag": "21d29e27-0399-4d7b-a5e6-4e6a14829085"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "We can find strawberry milk in the dairy section at the store ",
+    "tag": "02459078-e998-4ba8-acb5-6d0c9dfa01f5"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "Sam rides a bicycle to go to school",
+    "tag": "cbe68434-2c35-4159-b615-84fb3e2c96ef"
+  },
+  {
+    "type": "affirmative",
+    "time": "present",
+    "pattern": "Tyler likes to play football",
+    "tag": "2efdf435-04fa-4394-9d03-97b0db7ee87f"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "The teacher marked the answer books of students"
-  },{
+    "pattern": "Steve came to my house last week",
+    "tag": "fd275684-0603-4d03-b93e-4e15962adb00"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I threw the wood into the water, but it did not sink"
-  },{
+    "pattern": "I went to college 3 years ago",
+    "tag": "2d419e82-d00b-4cae-a2f6-5ecb0dd56ee6"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "We used to take a bath in the tubewell"
-  },{
+    "pattern": "He ate dinner 1 hour ago",
+    "tag": "be9494f2-504a-4e25-9fc0-2da85277fa52"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I used to play the flute"
-  },{
+    "pattern": "I slept well last night",
+    "tag": "193fef86-f18c-40a0-a4fa-9a6bd523f649"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I acted upon your advice"
-  },{
+    "pattern": "I lived in Bangkok for 5 years (I don't live there anymore)",
+    "tag": "d751d0d0-12d6-4cfd-9746-43d285fd1a4b"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "It rained heavily last night"
-  },{
+    "pattern": "He entered a room, lit a cigarette, and smiled at the guests",
+    "tag": "a03ec1fa-ec94-4c31-9e62-0823a429436d"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I used to go to the hill station (I no more go there)"
-  },{
+    "pattern": "The teacher said that the earth moves around the sun",
+    "tag": "a3e467c6-2c5d-44e3-b479-3431ea363864"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "John entered the hall to attend the party"
-  },{
+    "pattern": "The teacher taught the lesson well",
+    "tag": "8f2e7347-4e20-4bd3-90bc-9ad8265f355e"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "My father told me that an honest person is always satisfied"
-  },{
+    "pattern": "The baby cried in the cradle",
+    "tag": "64275fd1-4de7-457e-a557-c6f13965da82"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I studied Spanish two years ago"
-  },{
+    "pattern": "She left the town for good",
+    "tag": "e4cf26b4-ddb8-43f9-8d7a-919b38e1361c"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "Exercise helped him a lot to maintain his health"
-  },{
+    "pattern": "The teacher marked the answer books of students",
+    "tag": "818c58da-edf2-43f0-bd27-3a9e1e7dab31"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "We went for a walk to enjoy the weather۔"
-  },{
+    "pattern": "I threw the wood into the water, but it did not sink",
+    "tag": "7af6641f-feff-46dc-8e48-565581054bdd"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "He did a great favor to me"
-  },{
+    "pattern": "We used to take a bath in the tubewell",
+    "tag": "74009340-46c9-4b0b-a0fc-b59f1b8f3a4d"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "He devoted himself to biotechnology research"
-  },{
+    "pattern": "I used to play the flute",
+    "tag": "50163dc7-54b3-40bb-a958-a37d5f2471d5"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "The sailor swam across the river"
-  },{
+    "pattern": "I acted upon your advice",
+    "tag": "0c68dc1e-a0a0-4243-aaa3-1be20cdb1ab4"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I traveled to Rome three years ago"
-  },{
+    "pattern": "It rained heavily last night",
+    "tag": "0ec6e88e-7973-40cf-b69b-de1b0e8830d3"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "They followed her everywhere"
-  },{
+    "pattern": "I used to go to the hill station (I no more go there)",
+    "tag": "2d0864cf-b204-437a-a81d-679ca0cf49d5"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "He turned his laziness into activity"
-  },{
+    "pattern": "John entered the hall to attend the party",
+    "tag": "0c75968e-eff0-4711-8722-56648fd06901"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "He whitewashed the house a month ago"
-  },{
+    "pattern": "My father told me that an honest person is always satisfied",
+    "tag": "cff68008-3394-4e80-ac60-a9d5fc2f4b2b"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I used to live in a village I shifted to a city a year ago"
-  },{
+    "pattern": "I studied Spanish two years ago",
+    "tag": "ed2eb317-cb7a-4dbf-9862-02abf8f1ea72"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "She came back last Thursday"
-  },{
+    "pattern": "Exercise helped him a lot to maintain his health",
+    "tag": "80294a80-0a04-45cc-abea-4c0dce6156be"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I saw her in the building"
-  },{
+    "pattern": "We went for a walk to enjoy the weather.",
+    "tag": "f6e8299a-d0c1-428b-bbb8-7389741d5dd8"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I made a cake for my mom, it was delicious"
-  },{
+    "pattern": "He did a great favor to me",
+    "tag": "0fc2fc46-913a-4e73-8faf-ffb96c7222dc"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I ran to the train station every day"
-  },{
+    "pattern": "He devoted himself to biotechnology research",
+    "tag": "b0ea5ae9-0a63-4843-8043-01696806653a"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I sent some flowers to my girlfriends, today it is her birthday"
-  },{
+    "pattern": "The sailor swam across the river",
+    "tag": "20093063-5ca5-45fe-89a1-5ded8603a239"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "They did their homework, it was kind of difficult"
-  },{
+    "pattern": "I traveled to Rome three years ago",
+    "tag": "712c6ed9-1245-4f3b-bed1-691ee9860d0f"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "They played video games the whole night"
-  },{
+    "pattern": "They followed her everywhere",
+    "tag": "e181b9e2-b12f-489b-b7a5-749d12520cc8"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "Yesterday I did exercise"
-  },{
+    "pattern": "He turned his laziness into activity",
+    "tag": "9ee60515-2acd-4627-80b7-a2384d9d9748"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "She lived in California for seven years"
-  },{
+    "pattern": "He whitewashed the house a month ago",
+    "tag": "a191ebac-ec4d-4b97-b1a2-5ebce6d4cc8c"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "They were in London from monday to friday"
-  },{
+    "pattern": "I used to live in a village I shifted to a city a year ago",
+    "tag": "8ac4f47f-d461-41eb-8a98-6bfabb922b75"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "Last week, I stayed with my sister for a few days"
-  },{
+    "pattern": "She came back last Thursday",
+    "tag": "5f37b8da-0213-4000-b96c-6c69be3ca57e"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "Joe lived in Boston for ten years"
-  },{
+    "pattern": "I saw her in the building",
+    "tag": "50031b8a-9df7-4785-8c96-f377dccbea60"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "From 1981 to 1984, he worked for a large multinational company"
-  },{
+    "pattern": "I made a cake for my mom, it was delicious",
+    "tag": "c045d956-db77-43d7-97eb-046ff75de5b3"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I met him yesterday"
-  },{
+    "pattern": "I ran to the train station every day",
+    "tag": "987ca087-b122-40bf-817d-96faf9b1f34b"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I saw him two weeks ago"
-  },{
+    "pattern": "I sent some flowers to my girlfriends, today it is her birthday",
+    "tag": "f616c39f-bf0e-4641-ba39-b98e5cfaea9e"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "She came to visit me last year"
-  },{
+    "pattern": "They did their homework, it was kind of difficult",
+    "tag": "fde76681-f3ab-4dc6-b0e6-8e334275e16e"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "The last time I went to concert was in 2009"
-  },{
+    "pattern": "They played video games the whole night",
+    "tag": "e893163c-08ce-4963-b6c2-006a8782d251"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I played soccer from May to June"
-  },{
+    "pattern": "Yesterday I did exercise",
+    "tag": "3709527c-61b6-4479-b606-adc9100ec116"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I have known him for a long time"
-  },{
+    "pattern": "She lived in California for seven years",
+    "tag": "bdecfb07-ba0c-47bc-a64f-84e848c6a2cc"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "I worked there for 4 weeks"
-  },{
+    "pattern": "They were in London from monday to friday",
+    "tag": "897b1243-a01b-41a6-afb8-08a4e2d931cd"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "in the 1990s, I stole many cars"
-  },{
+    "pattern": "Last week, I stayed with my sister for a few days",
+    "tag": "5570ffc2-a499-4021-bc16-607c43bb37a8"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "She was the best singer of the last century"
-  },{
+    "pattern": "Joe lived in Boston for ten years",
+    "tag": "5a50df4a-a738-4760-a6b3-009edf0de869"
+  },
+  {
     "type": "affirmative",
     "time": "past",
-    "pattern": "In the past, I made so many mistakes"
-  },{
+    "pattern": "From 1981 to 1984, he worked for a large multinational company",
+    "tag": "29ea7c9f-d4a1-46ba-a1d1-4baece39c220"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I met him yesterday",
+    "tag": "6481ce3c-e73c-4a85-896c-f917e60e6981"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I saw him two weeks ago",
+    "tag": "0d1f0f0f-2c54-4c64-905f-9dca2e14da9e"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "She came to visit me last year",
+    "tag": "f00d439b-2901-44a8-bb88-101f1eef4d4b"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "The last time I went to concert was in 2009",
+    "tag": "205bd184-b517-41f6-a0d7-14c967274548"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I played soccer from May to June",
+    "tag": "6250f98b-3d75-4405-9b6d-382ad769b3b9"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I have known him for a long time",
+    "tag": "dc07494b-fc05-4d18-b315-7b58c812577e"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "I worked there for 4 weeks",
+    "tag": "c593d0db-0fc3-47bc-b4d7-d40830b4f464"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "in the 1990s, I stole many cars",
+    "tag": "ad7f17d0-b797-407f-88df-8a3d0bd99959"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "She was the best singer of the last century",
+    "tag": "77ac9d6c-0281-4f1d-9e5f-b015fd1919e4"
+  },
+  {
+    "type": "affirmative",
+    "time": "past",
+    "pattern": "In the past, I made so many mistakes",
+    "tag": "b4a9ebb8-6dcd-4a09-98eb-bf09bb9edbce"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "They didn’t agree with me"
-  },{
+    "pattern": "They didn't agree with me",
+    "tag": "4dc70efd-7fa0-48f5-b237-a38e75a0be28"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "I didn’t go to the gym last sunday"
-  },{
+    "pattern": "I didn't go to the gym last sunday",
+    "tag": "121b8cb1-c57e-4735-9f9c-7a2dec10404a"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "They do not speak English"
-  },{
+    "pattern": "They do not speak English",
+    "tag": "0870faf4-96a6-409f-826e-9c6099eb265a"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "She hasn’t spoken"
-  },{
+    "pattern": "She hasn't spoken",
+    "tag": "3ea21d20-2cf5-45ea-ae6b-794445dcebd3"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "English isn’t spoken there"
-  },{
+    "pattern": "English isn't spoken there",
+    "tag": "8bb35dbb-a5f2-413d-aaa3-558224c333c3"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "Rama did not dislike the gift"
-  },{
+    "pattern": "Rama did not dislike the gift",
+    "tag": "dcd4c22b-2e77-47b3-8e02-1160cc799f9d"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "The leaders are not ignorant"
-  },{
+    "pattern": "The leaders are not ignorant",
+    "tag": "1a601e0b-45a8-47d0-b04e-dbf7fe02c947"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "The baby had not ribboned the box"
-  },{
+    "pattern": "The baby had not ribboned the box",
+    "tag": "8d7766ac-a1ce-49da-94f0-b7ac76cde1c1"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "They are not washing the plates"
-  },{
+    "pattern": "They are not washing the plates",
+    "tag": "9017f460-3aa4-405d-944e-bdd2c153b13d"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Her kid does not hate vegetables"
-  },{
+    "pattern": "Her kid does not hate vegetables",
+    "tag": "c8e0f87b-2418-48f9-8ec3-77f4e1e17d78"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "The servants were not paying attention to the orders"
-  },{
+    "pattern": "The servants were not paying attention to the orders",
+    "tag": "6517f683-554e-448a-9cb6-c7023c6368d9"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "I am not flying to England"
-  },{
+    "pattern": "I am not flying to England",
+    "tag": "8efafc8c-de42-4d8a-bc13-9077d2ed0dc0"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "He wasn't eating white rice"
-  },{
+    "pattern": "He wasn't eating white rice",
+    "tag": "a6a594c6-5290-40d0-b2f9-3ce35ca51966"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "These aren't pistachios"
-  },{
+    "pattern": "These aren't pistachios",
+    "tag": "2193c86a-5a04-4cc6-9eca-dce31e73c1dc"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "They don't practice yoga"
-  },{
+    "pattern": "They don't practice yoga",
+    "tag": "6b039c99-4e68-492c-8b02-828b12f97847"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "That isn't the way to Nashville"
-  },{
+    "pattern": "That isn't the way to Nashville",
+    "tag": "81718512-bac0-47c7-99fb-0d10a250d671"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "Amy is not going to school today"
-  },{
+    "pattern": "Amy is not going to school today",
+    "tag": "ed11c41c-6d8e-4fcd-8bb1-6958210158ec"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Tom doesn’t like to eat spicy food"
-  },{
+    "pattern": "Tom doesn't like to eat spicy food",
+    "tag": "be09808f-535d-42f1-95fc-1d6b4dbb9b07"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "They were not playing basketball"
-  },{
+    "pattern": "They were not playing basketball",
+    "tag": "fd68024a-42ac-4afe-a7b3-8d5c6c93754c"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "Roy would not like to go to the store earlier before it starts to rain"
-  },{
+    "pattern": "Roy would not like to go to the store earlier before it starts to rain",
+    "tag": "d2e9befc-51bd-4ec5-bffa-613151547656"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "I could not make you some fresh juice"
-  },{
+    "pattern": "I could not make you some fresh juice",
+    "tag": "3979a6bb-5d73-48a8-8be6-c743d95dba0a"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "I am not a junior high school student"
-  },{
+    "pattern": "I am not a junior high school student",
+    "tag": "bcdd7f87-a806-4d8d-bcdb-537ba0afb777"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "Lissa hasn’t cooked some cookies "
-  },{
+    "pattern": "Lissa hasn't cooked some cookies ",
+    "tag": "01c46b7b-754b-4ea8-8aaa-d3c3ef30c8ad"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Brian is not an engineer"
-  },{
+    "pattern": "Brian is not an engineer",
+    "tag": "538a2c3e-ce80-4a99-9d6b-f00200f29664"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "We were not "
-  },{
+    "pattern": "We were not ",
+    "tag": "462e0fea-0f8d-4a93-8876-e583e633177e"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "The child is not wearing a hat "
-  },{
+    "pattern": "The child is not wearing a hat ",
+    "tag": "6e53e710-f53a-4b18-98a8-f98867823d22"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "My sister will not have been studying Japanese next year"
-  },{
+    "pattern": "My sister will not have been studying Japanese next year",
+    "tag": "e8e89647-7d22-4071-a2c9-204ca0c865d7"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "We don’t live near each other "
-  },{
+    "pattern": "We don't live near each other ",
+    "tag": "9b1b81d5-3329-42ca-9d8b-e2305aee22c3"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Hyenas do not eat plants"
-  },{
+    "pattern": "Hyenas do not eat plants",
+    "tag": "24ab5959-9e0a-4c4f-9555-724ae16b5d8a"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Beckie is not allergic to peanuts "
-  },{
+    "pattern": "Beckie is not allergic to peanuts ",
+    "tag": "5604232a-b2d2-4785-82d5-9056f6af7430"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Nick is not sad, he is very happy"
-  },{
+    "pattern": "Nick is not sad, he is very happy",
+    "tag": "69ae66f2-f060-4194-b70d-9fe3d436fa10"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "My father is not going to his office"
-  },{
+    "pattern": "My father is not going to his office",
+    "tag": "f34fcf09-c4ce-48bf-a31e-4513adfb2144"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "She hates playing tennis with her classmate"
-  },{
+    "pattern": "She hates playing tennis with her classmate",
+    "tag": "95ce83bb-1e0f-432d-8346-a7b6de138e9c"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "He doesn’t work anywhere"
-  },{
+    "pattern": "He doesn't work anywhere",
+    "tag": "92f5e8a8-c494-4e0a-b228-63d0cdd2bba2"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "They don’t even try to meet me after the farewell"
-  },{
+    "pattern": "They don't even try to meet me after the farewell",
+    "tag": "33fcbf59-51ab-4a95-8e8b-3ac470830d45"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "I do not have my Email ID yet"
-  },{
+    "pattern": "I do not have my Email ID yet",
+    "tag": "419bf253-1ce9-4be9-bbf2-8a7aee86e930"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "They won’t come to participate in the tournament"
-  },{
+    "pattern": "They won't come to participate in the tournament",
+    "tag": "d8438a54-622c-415c-b519-ff1fd60d54df"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "He is not feeling well during the lecture"
-  },{
+    "pattern": "He is not feeling well during the lecture",
+    "tag": "bb9f5efe-534a-4494-9c0b-86445ce277da"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "You don’t have to hide your face in front of me"
-  },{
+    "pattern": "You don't have to hide your face in front of me",
+    "tag": "b3f87f2f-5069-4bfb-b1eb-77be04faedb3"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Rodger is not moving anywhere outside the town"
-  },{
+    "pattern": "Rodger is not moving anywhere outside the town",
+    "tag": "78eaa99f-04db-4e3f-8276-4c9bd257f99c"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "This is not a smoking zone"
-  },{
+    "pattern": "This is not a smoking zone",
+    "tag": "d10fcf45-f4eb-469f-a03f-689f3dab2d4d"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "They haven’t played any games yet, so they’re so energetic now"
-  },{
+    "pattern": "They haven't played any games yet, so they're so energetic now",
+    "tag": "2c9c819e-5c73-47c8-ba65-4ed18596af42"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "I will not come to his birthday party"
-  },{
+    "pattern": "I will not come to his birthday party",
+    "tag": "63030a13-7c1a-497c-9408-5282953fcdd7"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "The climate will not be going to change till the morning"
-  },{
+    "pattern": "The climate will not be going to change till the morning",
+    "tag": "90333186-212b-4210-8594-5a98251a3aaa"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "The coach is not satisfied with the goals scored in the match"
-  },{
+    "pattern": "The coach is not satisfied with the goals scored in the match",
+    "tag": "a794a40b-b916-4477-9a18-d0dc58624d67"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "She had not completed her homework"
-  },{
+    "pattern": "She had not completed her homework",
+    "tag": "99c72afa-6906-4702-af3f-1b5add6b2377"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "The player is not wearing his helmet"
-  },{
+    "pattern": "The player is not wearing his helmet",
+    "tag": "682bace4-efeb-4d80-8d5c-89dfd223b637"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "He does not make mistakes while writing"
-  },{
+    "pattern": "He does not make mistakes while writing",
+    "tag": "69a99829-f795-4305-baad-822228e371ee"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "He forgets to bring some of the stuff from the bus"
-  },{
+    "pattern": "He forgets to bring some of the stuff from the bus",
+    "tag": "7638cc43-2bd4-4b4d-9b3a-02cf32e27fa6"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "The fire station is not located near this city"
-  },{
+    "pattern": "The fire station is not located near this city",
+    "tag": "29fef35b-336f-4c86-94fe-e41b71bc4bac"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "The train is not running on time"
-  },{
+    "pattern": "The train is not running on time",
+    "tag": "80c68994-c3b6-4272-95d5-a242f2d8c455"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "They will not send emails to their seniors"
-  },{
+    "pattern": "They will not send emails to their seniors",
+    "tag": "efe1cb07-c92d-45ec-aa16-b67f8bf68944"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "She convinced me not to throw the equipment outside"
-  },{
+    "pattern": "She convinced me not to throw the equipment outside",
+    "tag": "ea11c2be-5c04-4255-9977-90c2de1a1d0c"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "His car has failed to start in the morning"
-  },{
+    "pattern": "His car has failed to start in the morning",
+    "tag": "c58faeee-9490-4135-b45e-15e6c7cf2515"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "Do not spoil the weekends of your kids"
-  },{
+    "pattern": "Do not spoil the weekends of your kids",
+    "tag": "b4dbc4f6-3c5f-4224-9da1-14cc6f2338ef"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "Johnson was not responsible for this mistake"
-  },{
+    "pattern": "Johnson was not responsible for this mistake",
+    "tag": "efc4b586-6fd7-411d-a724-682d4539c90e"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "The moon did not appear yesterday"
-  },{
+    "pattern": "The moon did not appear yesterday",
+    "tag": "7dd954e8-1b57-4afd-990e-b9735f349172"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "He did not listen to me"
-  },{
+    "pattern": "He did not listen to me",
+    "tag": "857eaa8b-8b05-495a-8a53-3b69d3ba0e22"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "He did not cut the tree"
-  },{
+    "pattern": "He did not cut the tree",
+    "tag": "901c445a-e670-466a-a08f-f418bef20ba5"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "They did not attend the party"
-  },{
+    "pattern": "They did not attend the party",
+    "tag": "867ae141-1d64-4f85-9e06-db097b6b694a"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "You did not respond to my mail"
-  },{
+    "pattern": "You did not respond to my mail",
+    "tag": "5a683bf7-397c-44f6-8c8a-510f4199c8f5"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "He did not sleep well because he was sick"
-  },{
+    "pattern": "He did not sleep well because he was sick",
+    "tag": "7e168ef3-944a-4c00-8f2a-7f9f8c312d17"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "She did not even bother to answer me"
-  },{
+    "pattern": "She did not even bother to answer me",
+    "tag": "92996dbb-3809-44b7-be4f-94f0bdfa98ba"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "The company did not increase my salary last year"
-  },{
+    "pattern": "The company did not increase my salary last year",
+    "tag": "66b48924-07f1-451b-8c75-4174df237377"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "He did not follow the footsteps of his parents"
-  },{
+    "pattern": "He did not follow the footsteps of his parents",
+    "tag": "0e01d0fb-8263-4dbf-acbe-8d23bd0e478d"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "The mason did not leave the work incomplete"
-  },{
+    "pattern": "The mason did not leave the work incomplete",
+    "tag": "7d7178b5-1281-4701-b9aa-4773588e2c66"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "He did not act as if it was bothering him"
-  },{
+    "pattern": "He did not act as if it was bothering him",
+    "tag": "08fc6eb9-afaa-4a05-ba27-6fd92256b728"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "I could not be induced to tell where the key was"
-  },{
+    "pattern": "I could not be induced to tell where the key was",
+    "tag": "0fff20c0-d932-404a-8403-9c40d646e7b7"
+  },
+  {
     "type": "negative",
     "time": "future",
-    "pattern": "In the end, he will not refuse"
-  },{
+    "pattern": "In the end, he will not refuse",
+    "tag": "583e2a09-2314-4378-8648-5dc74bead3c9"
+  },
+  {
     "type": "negative",
     "time": "past",
-    "pattern": "I did not earn it"
-  },{
+    "pattern": "I did not earn it",
+    "tag": "274e92bc-1c24-41c8-9fed-f09499f38bdb"
+  },
+  {
     "type": "negative",
     "time": "present",
-    "pattern": "I do not want all this"
+    "pattern": "I do not want all this",
+    "tag": "b16d5fd9-82c6-40cf-8a06-5ba259e1c914"
   }
 ]

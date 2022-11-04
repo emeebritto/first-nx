@@ -4,15 +4,15 @@ from skils.learning import Learning
 
 
 
-class SentenceType(Learning):
-	def __init__(self):
-		super(SentenceType, self).__init__()
+class Sentence(Learning):
+	def __init__(self, out, bag_type="index"):
+		super(Sentence, self).__init__()
 		self.all_words = []
 		self.tags = []
 		self.ignore_words = [',', '!', '||']
 
 		#files data paths
-		self.dataPath = "data/sentenceType.pth"
+		self.dataPath = f"data/sentence_{out}.pth"
 		self.intentsPath = ["data/sentence.json", "data/intents.json"]
 		self.intentsHash = ""
 
@@ -26,8 +26,8 @@ class SentenceType(Learning):
 		self.output_size = None # it will be defined in runtime
 
 		self.input_name = "pattern"
-		self.output_name = "type"
-		self.bag_of_words_type = "index"
+		self.output_name = out
+		self.bag_of_words_type = bag_type
 
 		self._model = None
 		self._loadIntents()
@@ -47,5 +47,5 @@ class SentenceType(Learning):
 		
 		if prob > 0.50:
 			for intent in self.intents:
-				if tag == intent["type"]:
+				if tag == intent[self.output_name]:
 					return intent

@@ -110,7 +110,10 @@ class Nexa(Mind):
 		print(f"=> uInput: {value}")
 		value = self.translate(value)
 		print(f"=> uInput (translated): {value}")	
-		print(self.analyzer.type(value))
+		analyzed_type = self.analyzer.type.predict(value)
+		analyzed_tag = self.analyzer.tag.predict(value)
+		print(f"analyzed_type: {analyzed_type}")
+		print(f"analyzed_tag: {analyzed_tag}")
 
 		if self.analyzer.isQuestion(value):
 			# result = wikipedia.search(value, results = 1)
@@ -122,7 +125,7 @@ class Nexa(Mind):
 			)
 			return res.appendText(answer or "I don't know it :(")
 		else:
-			predicted = self.predict(value).high_precision()
+			predicted = self.predict(value).high_precision(base=analyzed_tag["base_words"])
 			if not predicted.intent: return res.appendText("??")
 
 			print("predicted intent", predicted.intent)
