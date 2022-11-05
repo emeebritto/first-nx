@@ -2,12 +2,12 @@ import string
 import nltk
 import numpy as np
 import wikipedia
+import requests
 from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 from compiler import Compiler
-from googletrans import Translator
 from patterns.replacer import replacer
 from random import choice
 from analyzer import Analyzer
@@ -18,9 +18,10 @@ compiler = Compiler()
 
 
 class Response:
-	def __init__(self):
+	def __init__(self, asyncResponse=None):
 		super(Response, self).__init__()
 		self._response = []
+		self._asyncRes = asyncResponse or {}
 
 
 	def __repr__(self):
@@ -35,42 +36,48 @@ class Response:
 		return self._response
 
 
+	def _append(self, value):
+		self._response.append(value)
+		reply_method = self._asyncRes.get(value["msgType"])
+		if reply_method: reply_method(value["msg"])
+
+
 	def appendText(self, msg, choiceOne=False):
 		if isinstance(msg, str):
-			self._response.append({"msgType": "text", "msg": msg})
+			self._append({"msgType": "text", "msg": msg})
 		elif isinstance(msg, list):
 			if choiceOne:
-				self._response.append({"msgType": "text", "msg": choice(msg)})
+				self._append({"msgType": "text", "msg": choice(msg)})
 			else:
 				for text in msg:
-					self._response.append({"msgType": "text", "msg": text})
+					self._append({"msgType": "text", "msg": text})
 		else:
 			raise Exception("appendText method has not received a str either list value")
 		return self._response
 
 
 	def appendDocument(self, msg):
-		self._response.append({"msgType": "document", "msg": msg})
+		self._append({"msgType": "document", "msg": msg})
 		return self._response
 
 
 	def appendVideo(self, msg):
-		self._response.append({"msgType": "video", "msg": msg})
+		self._append({"msgType": "video", "msg": msg})
 		return self._response
 
 
 	def appendPhoto(self, msg):
-		self._response.append({"msgType": "photo", "msg": msg})
+		self._append({"msgType": "photo", "msg": msg})
 		return self._response
 
 
 	def appendAnimation(self, msg):
-		self._response.append({"msgType": "animation", "msg": msg})
+		self._append({"msgType": "animation", "msg": msg})
 		return self._response
 
 
 	def appendAudio(self, msg):
-		self._response.append({"msgType": "audio", "msg": msg})
+		self._append({"msgType": "audio", "msg": msg})
 		return self._response
 
 
@@ -98,14 +105,18 @@ class Nexa(Mind):
 
 
 	def translate(self, uInput, from_lang='pt', to_lang='en'):
-		translator = Translator()
-		text_to_translate = translator.translate(uInput, dest=to_lang)
-		# text_to_translate = translator.translate(uInput, src=from_lang, dest=to_lang)
-		return text_to_translate.text
+		try:
+			result = requests.post("https://translater-for-nx.vercel.app/translate?to=en", { "text": uInput })
+			return result.json()["text"]
+			# text_to_translate = self._translator.translate(uInput, dest=to_lang)
+			# text_to_translate = self._translator.translate(uInput, src=from_lang, dest=to_lang)
+		except Exception as e:
+			print(f"translate (error): {e}")
+			return uInput
 
 
-	def read(self, value, context="", sender="unknown"):
-		res = Response()
+	def read(self, value, context="", sender="unknown", asyncRes=None):
+		res = Response(asyncRes)
 		if not value: return res.appendText("...")
 		print(f"=> uInput: {value}")
 		value = self.translate(value)

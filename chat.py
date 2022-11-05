@@ -40,16 +40,6 @@ def telegramChat(msgType, msg, allMsgs=""):
   if msg.chat.type == "supergroup": return
   chatId = msg.chat.id
 
-  if msgType == "text":
-    response = nexa.read(
-      value=msg.text,
-      context=allMsgs,
-      sender=chatId
-    )
-    if not response: return
-  elif msgType == "photo":
-    response = nexa.view(value=msg.photo, instruction=msg.caption, sender=chatId)
-
   responsesType = {
     "text": msg.reply_text,
     "document": msg.reply_document,
@@ -59,12 +49,29 @@ def telegramChat(msgType, msg, allMsgs=""):
     "animation": msg.reply_animation
   }
 
-  for part in response:
-    if part["msgType"] == "text":
-      telegram.registerMsg(f"Nexa said {part['msg']}")
 
-    reply_method = responsesType.get(part["msgType"])
-    if reply_method: reply_method(part["msg"])
+  if msgType == "text":
+    nexa.read(
+      value=msg.text,
+      context=allMsgs,
+      sender=chatId,
+      asyncRes=responsesType
+    )
+  elif msgType == "photo":
+    nexa.view(
+      value=msg.photo,
+      instruction=msg.caption,
+      sender=chatId,
+      asyncRes=responsesType
+    )
+
+
+  # for part in response:
+  #   if part["msgType"] == "text":
+  #     telegram.registerMsg(f"Nexa said {part['msg']}")
+
+  #   reply_method = responsesType.get(part["msgType"])
+  #   if reply_method: reply_method(part["msg"])
 
 
 telegram.onMessage(telegramChat)

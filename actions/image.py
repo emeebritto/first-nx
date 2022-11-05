@@ -6,6 +6,9 @@ import os
 
 def whatIsOnTheImage(svars, nexa, res):
 	imageUrl = svars.get("IMAGE")
+
+	return res.appendText("it's inactive for now.")
+
 	try:
 		imgData = requests.get(imageUrl).content
 		imagePath = create_filePath(imgData, fileFormat="jpg")
