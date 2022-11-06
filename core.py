@@ -7,6 +7,7 @@ from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+from threading import Lock
 from compiler import Compiler
 from patterns.replacer import replacer
 from random import choice
@@ -91,6 +92,8 @@ class Nexa(Mind):
 		self.me = self.about()
 		self._actions = {}
 		self.pending = {}
+		self._requests_active = []
+		self._lock = Lock()
 		self.analyzer = Analyzer()
 
 
@@ -115,6 +118,21 @@ class Nexa(Mind):
 			return uInput
 
 
+	def nospam(func):
+		def function(*args, **kwargs):
+			nexa = args[0]
+			nexa._requests_active.append(kwargs["sender"])
+			if kwargs["sender"] in nexa._requests_active:
+				nexa._lock.acquire()
+			returned =  func(*args, **kwargs)
+			try: nexa._lock.release()
+			except: pass
+			nexa._requests_active.remove(kwargs["sender"])
+			return returned
+		return function
+
+
+	@nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None):
 		res = Response(asyncRes)
 		if not value: return res.appendText("...")
@@ -122,7 +140,7 @@ class Nexa(Mind):
 		value = self.translate(value)
 		print(f"=> uInput (translated): {value}")	
 		analyzed_type = self.analyzer.type.predict(value)
-		analyzed_tag = self.analyzer.tag.predict(value)
+		analyzed_tag = self.analyzer.tag.predict(value) or {}
 		print(f"analyzed_type: {analyzed_type}")
 		print(f"analyzed_tag: {analyzed_tag}")
 
@@ -136,7 +154,7 @@ class Nexa(Mind):
 			)
 			return res.appendText(answer or "I don't know it :(")
 		else:
-			predicted = self.predict(value).high_precision(base=analyzed_tag["base_words"])
+			predicted = self.predict(value).high_precision(base=analyzed_tag.get("base_words"))
 			if not predicted.intent: return res.appendText("??")
 
 			print("predicted intent", predicted.intent)
