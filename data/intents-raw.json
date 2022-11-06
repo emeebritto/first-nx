@@ -13,15 +13,7 @@
       "generate the image with $::INPUT",
       "generate a image of $::INPUT",
       "generate an image of $::INPUT",
-      "generate the image of $::INPUT",
-      "cria uma imagem de $::INPUT",
-      "gera uma imagem de $::INPUT",
-      "gera uma imagem com $::INPUT",
-      "cria uma imagem com $::INPUT",
-      "cria uma imagem que tenha $::INPUT",
-      "gera uma imagem que tenha $::INPUT",
-      "cria uma imagem que tem $::INPUT",
-      "gera uma imagem que tem $::INPUT"
+      "generate the image of $::INPUT"
     ],
     "execute": "create_image",
     "responses": null
