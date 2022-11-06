@@ -4,5 +4,20 @@
     "execute": null,
     "responses": ["hii", "hello", "hello :)"],
     "type": "exclamation"
+  },{
+    "patterns": ["what is your name?", "what's your name?"],
+    "execute": null,
+    "responses": ["nexa", "my name is nexa"],
+    "type": "question"
+  },{
+    "patterns": ["what is your name?", "what's your name?"],
+    "execute": null,
+    "responses": ["nexa", "my name is nexa"],
+    "type": "question"
+  },{
+    "patterns": ["how are you?", "how are u?"],
+    "execute": null,
+    "responses": ["I'm fine", "I'm good"],
+    "type": "question"
   }
 ]

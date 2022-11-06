@@ -144,35 +144,26 @@ class Nexa(Mind):
 		print(f"analyzed_type: {analyzed_type}")
 		print(f"analyzed_tag: {analyzed_tag}")
 
-		if self.analyzer.isQuestion(value):
-			# result = wikipedia.search(value, results = 1)
-			# print(f"detected theme: {result[0]}")
-			# summary = wikipedia.summary(result[0])
-			answer = answer_by_context(
-				context=self.me + context,
-				value=value
-			)
-			return res.appendText(answer or "I don't know it :(")
-		else:
-			predicted = self.predict(value).high_precision(base=analyzed_tag.get("base_words"))
-			if not predicted.intent: return res.appendText("??")
 
-			print("predicted intent", predicted.intent)
-			svars = compiler.findVars(predicted.intent["pattern"], value)
-			pendingVars = self.pending.get(sender)
+		predicted = self.predict(value).high_precision(base=analyzed_tag.get("base_words"))
+		if not predicted.intent: return res.appendText("??")
 
-			if pendingVars:
-				svars[pendingVars["name"]] = pendingVars["value"]
-				del self.pending[sender]
-				
-			print("svars", svars)
-			svars["SENDER_ID"] = sender
-			action = predicted.intent.get("execute")
-			if action: self.execute(action, svars, res)
+		print("predicted intent", predicted.intent)
+		svars = compiler.findVars(predicted.intent["pattern"], value)
+		pendingVars = self.pending.get(sender)
 
-			responses = predicted.intent.get("response")
-			if responses: res.appendText(responses, choiceOne=True)
-			return res.values()
+		if pendingVars:
+			svars[pendingVars["name"]] = pendingVars["value"]
+			del self.pending[sender]
+			
+		print("svars", svars)
+		svars["SENDER_ID"] = sender
+		action = predicted.intent.get("execute")
+		if action: self.execute(action, svars, res)
+
+		responses = predicted.intent.get("response")
+		if responses: res.appendText(responses, choiceOne=True)
+		return res.values()
 
 
 	def view(self, value, instruction=None, sender="unknown"):
@@ -238,3 +229,16 @@ class Nexa(Mind):
 
 		sent_tokens.remove(value)
 		return nexa_response
+
+
+
+
+		# if self.analyzer.isQuestion(value):
+		# 	# result = wikipedia.search(value, results = 1)
+		# 	# print(f"detected theme: {result[0]}")
+		# 	# summary = wikipedia.summary(result[0])
+		# 	answer = answer_by_context(
+		# 		context=self.me + context,
+		# 		value=value
+		# 	)
+		# 	return res.appendText(answer or "I don't know it :(")
