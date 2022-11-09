@@ -43,6 +43,11 @@ def connect_to_room(room_key):
     emit("room_key_error", response, json=False)
 
 
+@api.route('/', methods=['GET'])
+def api_home():
+  return "home."
+
+
 @api.route('/test', methods=['GET'])
 def api_test():
   return "it looks fine for me."

@@ -1,0 +1,4 @@
+python3-opencv
+libsm6
+libxext6
+libgl1

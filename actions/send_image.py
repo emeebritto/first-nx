@@ -81,5 +81,6 @@ def create_image(svars, nexa, res):
 	  "TE": "trailers"
 	}, data=json.dumps({"fn_index":2,"data":[uInput],"session_hash":getenv("CREATE_IMAGE_SESSION_HASH")}))
 	data = data.json()
-	base = data["data"][0][0].replace("data:image/jpeg;base64,", "")
-	res.appendPhoto(base64.decodebytes(bytes(base, "utf-8")))
+	for base in data["data"][0]:
+		formatted_base = base.replace("data:image/jpeg;base64,", "")
+		res.appendPhoto(base64.decodebytes(bytes(formatted_base, "utf-8")))
