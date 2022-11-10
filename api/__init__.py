@@ -4,7 +4,7 @@ from flask import Flask, request, send_file
 from flask_socketio import SocketIO, emit, send, disconnect
 from flask_socketio import join_room, leave_room
 from threading import Thread
-from utils.collector import Collector
+from utils.fileManager import FileManager
 from utils.managers import Room_Managet
 from .inbox import Inbox
 import requests
@@ -14,7 +14,7 @@ MAX_BUFFER_SIZE = 2 * 1000 * 1000  # 2 MB
 # 83bf579f570d4747a57bcfe9d409816c
 api = Flask(__name__)
 socketio = SocketIO(api, max_http_buffer_size=MAX_BUFFER_SIZE)
-collector = Collector()
+fileManager = FileManager()
 room_Managet = Room_Managet()
 
 keep_Wake_up = lambda: interval(wake_up, 4 * 60)
@@ -74,7 +74,7 @@ def files(filename):
 
   try:
     file_data = open(filePath, 'rb')
-    collector.reValidate(path=filePath)
+    fileManager.reValidate(path=filePath)
     return send_file(file_data, download_name="nx_file", as_attachment=download)
   except Exception as e:
     print(e)
@@ -97,7 +97,7 @@ def allMessage():
 
 
 port = int(os.environ.get("PORT", 3080))
-collector.start(gap=1)
+fileManager.start(gap=1)
 
 @syncmethod
 def start_api():
@@ -113,7 +113,8 @@ api_Thread = Thread(
     "port": port
   }
 )
-
+#Y1q8uw2a%y0q4uw1a#u6
+#Y1q8uw2a%y0q4uw1a#p9
 
 
 

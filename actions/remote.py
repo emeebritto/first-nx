@@ -1,7 +1,7 @@
 from utils.functions import read_as_binary
 from utils.managers import Room_Managet
 from pytube import YouTube
-from api import collector, socketio
+from api import fileManager, socketio
 import os
 import re
 room_Managet = Room_Managet()
@@ -28,7 +28,7 @@ def createLink(path, res):
   filename = new_path.split("/")[-1]
   stream_link = f"http://127.0.0.1:3080/file/{filename}"
   # stream_link = f"https://nexa-shi.herokuapp.com/file/{filename}"
-  collector.addPath(new_path)
+  fileManager.addPath(new_path)
   return stream_link
 
 
