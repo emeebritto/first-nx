@@ -1,7 +1,7 @@
 # module center
 from actions.downloads import dlvideoyt, dlmusicyt, dlRedditVid
 from actions.downloads import dlMusicByQuery, dlVideoByQuery, dlMusicVideoByQuery
-from actions.search import searchVideo
+from actions.search import searchVideo, searchSummary
 from actions.remote import play_sound, stop_sound, pause_sound, resume_sound
 from actions.room import create_key, list_keys, del_key
 from actions.take_test import take_test

@@ -1,4 +1,6 @@
 from models.sentence import Sentence
+import re
+
 
 
 class Analyzer:
@@ -6,6 +8,11 @@ class Analyzer:
 		super(Analyzer, self).__init__()
 		self.type = Sentence(out="type")
 		self.tag = Sentence(out="tag", bag_type="pos")
+
+
+	def isAboutYou(self, value):
+		matches = re.findall(r"(?<![a-zA-Z])(you|your|u)(?![a-zA-Z])", value)
+		return bool(len(matches))
 
 
 	def isNegative(self, value):

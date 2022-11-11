@@ -1,7 +1,6 @@
 import string
 import nltk
 import numpy as np
-import wikipedia
 import requests
 from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -95,6 +94,7 @@ class Nexa(Mind):
 		self._requests_active = []
 		self._lock = Lock()
 		self.analyzer = Analyzer()
+		self.bert_answer = True
 
 
 	@property
@@ -144,6 +144,14 @@ class Nexa(Mind):
 		print(f"analyzed_type: {analyzed_type}")
 		print(f"analyzed_tag: {analyzed_tag}")
 
+
+		if self.analyzer.isQuestion(value) and self.bert_answer:
+			ctx = self.me if self.analyzer.isAboutYou(value) else context # + self.execute("searchSummary", { "TEXT": value }, res)
+			answer = answer_by_context(
+				context=ctx,
+				value=value
+			)
+			return res.appendText(answer or "I don't know it :(")
 
 		predicted = self.predict(value).high_precision(base=analyzed_tag.get("base_words"))
 		if not predicted.intent: return res.appendText("??")
@@ -232,13 +240,3 @@ class Nexa(Mind):
 
 
 
-
-		# if self.analyzer.isQuestion(value):
-		# 	# result = wikipedia.search(value, results = 1)
-		# 	# print(f"detected theme: {result[0]}")
-		# 	# summary = wikipedia.summary(result[0])
-		# 	answer = answer_by_context(
-		# 		context=self.me + context,
-		# 		value=value
-		# 	)
-		# 	return res.appendText(answer or "I don't know it :(")

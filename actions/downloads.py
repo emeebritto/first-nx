@@ -12,8 +12,8 @@ def searchVideoLink(query):
   return videosSearch.result()["result"][0]['link']
 
 
-def createLink(fileId, response):
-  file_url = fileManager.getGFileUrlById(fileId)
+def createLink(filepath, mime_type, response):
+  file_url = fileManager.getGFileUrl(filepath, mime_type=mime_type)
   response.appendText("Sorry, this file is so large, the telegram just blocked it")
   response.appendText("then, I created a link to you :)")
   response.appendText(file_url)
@@ -40,7 +40,7 @@ def dlvideoyt(svars, nexa, res):
   filepath = file_infor["path"]
   fileId = file_infor["id"]
   file_size = os.path.getsize(filepath)
-  if file_size > 52428800: return createLink(fileId=fileId, response=res)
+  if file_size > 52428800: return createLink(filepath=filepath, mime_type="video/mp4", response=res)
   data = read_as_binary(filepath, fileFormat="mp4")
   # data = requests.get(stream_target.url, stream=True)
   # print(response.content)
@@ -53,7 +53,6 @@ def dlmusicyt(svars, nexa, res):
   streams = video.streams.filter(type="audio")
   streams = streams.filter(mime_type="audio/mp4")
   stream_target = streams[0]
-  stream_target.download("files")
   filename = stream_target.get_file_path().split("/")[-1]
 
   filepath = f"files/{filename}"
@@ -67,7 +66,7 @@ def dlmusicyt(svars, nexa, res):
   filepath = file_infor["path"]
   fileId = file_infor["id"]
   file_size = os.path.getsize(filepath)
-  if file_size > 52428800: return createLink(fileId=fileId, response=res)
+  if file_size > 52428800: return createLink(filepath=filepath, mime_type="audio/mp4", response=res)
   data = read_as_binary(filepath, fileFormat="mp3")
   # data = requests.get(stream_target.url, stream=True)
   print("stream_target URL", stream_target.url)
@@ -83,7 +82,7 @@ def dlRedditVid(svars, nexa, res):
   video = requests.get(matches[0]).content
   filepath = create_filePath(video, fileFormat="mp4")
   file_size = os.path.getsize(filepath)
-  if file_size > 52428800: return createLink(path=filepath, response=res)
+  if file_size > 52428800: return createLink(filepath=filepath, mime_type="video/mp4", response=res)
   return res.appendVideo(read_as_binary(filepath))
 
 

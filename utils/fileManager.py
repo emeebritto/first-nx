@@ -3,6 +3,7 @@ from threading import Thread
 from copy import deepcopy
 from uuid import uuid4
 import requests
+import base64
 import json
 import time
 import re
@@ -47,7 +48,7 @@ class FileManager:
 
 	def checkFiles(self):
 		data_file = self.readJson(self.data_file)
-		for idx, file_infor in enumerate(deepcopys(data_file)):
+		for idx, file_infor in enumerate(deepcopy(data_file)):
 			if file_infor["expiresAt"] < time.time():
 				try:
 					os.remove(file_infor["path"])
@@ -133,13 +134,18 @@ class FileManager:
 		return f"{self.base_url}/file=./{path}"
 
 
-	def getGFileUrlById(self, uid):
-		result = requests.post("http://localhost:7860/run/predict", data=json.dumps({
+	def getGFileUrl(self, filepath, mime_type="video/mp4"):
+		file_size = os.path.getsize(filepath)
+		filename = filepath.split("/")[-1]
+		with open(filepath, "rb") as rfile:
+		  base = base64.b64encode(rfile.read()).decode('utf-8')
+		result = requests.post("https://emee-nx-storage.hf.space/run/predict", data=json.dumps({
 			"fn_index":0,
-			"data":[f"file::{uid}"],
-			"session_hash":"cb1gjb938yq"
+			"data":[{"name": filename, "size": file_size, "data": f"data:{mime_type};base64," + base }],
+			"session_hash":"llpx1hcnmi"
 		}), headers={ "Content-Type": "application/json" })
 
 		data = result.json()
-		file = data["data"][0]
-		return f"{self.base_url}/file={file['name']}"
+		print(data)
+		url = data["data"][0]
+		return url
