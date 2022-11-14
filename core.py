@@ -245,3 +245,4 @@ class Nexa(Mind):
 
 
 
+# git reset --soft HEAD^

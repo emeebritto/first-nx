@@ -13,12 +13,31 @@ def searchVideoLink(query):
 
 
 def createLink(filepath, mime_type, response):
+  response.appendText("this file is so large, the telegram just blocked it")
+  response.appendText("then, I will create a link to you :)")
+  response.appendText("wait a moment..")
   fileManager.addPath(filepath)
   file_url = fileManager.getGFileUrl(filepath, mime_type=mime_type)
-  response.appendText("Sorry, this file is so large, the telegram just blocked it")
-  response.appendText("then, I created a link to you :)")
   response.appendText(file_url)
   return response.values()
+
+
+def download_stream(stream_target, ext, res):
+  filename = stream_target.get_file_path().split("/")[-1]
+
+  filepath = f"files/{filename}"
+  file_infor = {}
+  if not fileManager.hasFile(filepath, ext=ext):
+    res.appendText("downloading media..")
+    stream_target.download("files")
+    filepath = fileManager.formatPath(filepath, rename=True, ext=ext)
+  else:
+    res.appendText("I already have this media.")
+    filepath = fileManager.getFileObjByPath(filepath).get("path")
+
+  file_size = os.path.getsize(filepath)
+  return filepath, file_size
+
 
 
 def dlvideoyt(svars, nexa, res):
@@ -28,19 +47,10 @@ def dlvideoyt(svars, nexa, res):
   streams = video.streams.filter(type="video")
   streams = streams.filter(progressive=True, file_extension="mp4").order_by('resolution')
   stream_target = streams[-1]
-  filename = stream_target.get_file_path().split("/")[-1]
-
-  filepath = f"files/{filename}"
-  file_infor = {}
-  if not fileManager.hasFile(filepath):
-    stream_target.download("files")
-    filepath = fileManager.formatPath(filepath, rename=True, ext="mp4")
-  else:
-    filepath = fileManager.getFileObjByPath(filepath).get("path")
-
-  file_size = os.path.getsize(filepath)
+  filepath, file_size = download_stream(stream_target, ext="mp4", res=res)
   if file_size > 52428800: return createLink(filepath=filepath, mime_type="video/mp4", response=res)
   data = read_as_binary(filepath, fileFormat="mp4")
+
   # data = requests.get(stream_target.url, stream=True)
   # print(response.content)
   print("stream_target URL", stream_target.url)
@@ -52,17 +62,7 @@ def dlmusicyt(svars, nexa, res):
   streams = video.streams.filter(type="audio")
   streams = streams.filter(mime_type="audio/mp4")
   stream_target = streams[0]
-  filename = stream_target.get_file_path().split("/")[-1]
-
-  filepath = f"files/{filename}"
-  file_infor = {}
-  if not fileManager.hasFile(filepath, ext="mp3"):
-    stream_target.download("files")
-    filepath = fileManager.formatPath(filepath, rename=True, ext="mp3")
-  else:
-    filepath = fileManager.getFileObjByPath(filepath).get("path")
-
-  file_size = os.path.getsize(filepath)
+  filepath, file_size = download_stream(stream_target, ext="mp3", res=res)
   if file_size > 52428800: return createLink(filepath=filepath, mime_type="audio/mp4", response=res)
   data = read_as_binary(filepath, fileFormat="mp3")
   # data = requests.get(stream_target.url, stream=True)
