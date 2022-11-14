@@ -13,6 +13,7 @@ def searchVideoLink(query):
 
 
 def createLink(filepath, mime_type, response):
+  fileManager.addPath(filepath)
   file_url = fileManager.getGFileUrl(filepath, mime_type=mime_type)
   response.appendText("Sorry, this file is so large, the telegram just blocked it")
   response.appendText("then, I created a link to you :)")
@@ -33,12 +34,10 @@ def dlvideoyt(svars, nexa, res):
   file_infor = {}
   if not fileManager.hasFile(filepath):
     stream_target.download("files")
-    file_infor = fileManager.addPath(filepath)
+    filepath = fileManager.formatPath(filepath, rename=True, ext="mp4")
   else:
-    file_infor = fileManager.getFileObjByPath(filepath)
+    filepath = fileManager.getFileObjByPath(filepath).get("path")
 
-  filepath = file_infor["path"]
-  fileId = file_infor["id"]
   file_size = os.path.getsize(filepath)
   if file_size > 52428800: return createLink(filepath=filepath, mime_type="video/mp4", response=res)
   data = read_as_binary(filepath, fileFormat="mp4")
@@ -57,14 +56,12 @@ def dlmusicyt(svars, nexa, res):
 
   filepath = f"files/{filename}"
   file_infor = {}
-  if not fileManager.hasFile(filepath):
+  if not fileManager.hasFile(filepath, ext="mp3"):
     stream_target.download("files")
-    file_infor = fileManager.addPath(filepath)
+    filepath = fileManager.formatPath(filepath, rename=True, ext="mp3")
   else:
-    file_infor = fileManager.getFileObjByPath(filepath)
+    filepath = fileManager.getFileObjByPath(filepath).get("path")
 
-  filepath = file_infor["path"]
-  fileId = file_infor["id"]
   file_size = os.path.getsize(filepath)
   if file_size > 52428800: return createLink(filepath=filepath, mime_type="audio/mp4", response=res)
   data = read_as_binary(filepath, fileFormat="mp3")

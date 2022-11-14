@@ -14,16 +14,18 @@ import os
 class FileManager:
 	def __init__(self):
 		super(FileManager, self).__init__()
-		self.data_file = "collector_data.json"
+		self.dt_file_path = "collector_data.json"
 		# self.base_url = "http://localhost:7860"
 		self.base_url = "https://emee-nexa.hf.space"
-		if not os.path.exists(self.data_file): self.writeJson()
+		if not os.path.exists(self.dt_file_path): self.writeJson()
 		else: self.checkFiles()
 
 
-	def formatPath(self, path):
+	def formatPath(self, path, rename=False, ext=""):
 	  new_path = re.sub(r'\s+|\s', '-', path)
 	  new_path = re.sub(r'\!|\?|\#|\*|Ç|ç|ê|Ê|ã|Ã', '', new_path)
+	  if ext: new_path = re.sub(r'\.\w*$', f".{ext}", new_path)
+	  if rename: self.rename(path, new_path)
 	  return new_path
 
 
@@ -37,7 +39,7 @@ class FileManager:
 
 
 	def writeJson(self, data={}):
-		data_file = open(self.data_file, "w")
+		data_file = open(self.dt_file_path, "w")
 		json.dump(data, data_file, indent=2)
 		data_file.close()
 
@@ -47,7 +49,7 @@ class FileManager:
 
 
 	def checkFiles(self):
-		data_file = self.readJson(self.data_file)
+		data_file = self.readJson(self.dt_file_path)
 		for idx, file_infor in enumerate(deepcopy(data_file)):
 			if file_infor["expiresAt"] < time.time():
 				try:
@@ -59,7 +61,7 @@ class FileManager:
 
 
 	def reValidate(self, path, expiresAt=60):
-		data_file = self.readJson(self.data_file)
+		data_file = self.readJson(self.dt_file_path)
 		for file_infor in data_file:
 			if file_infor["path"] == path:
 				file_infor["expiresAt"] = time.time() + (expiresAt * 60)
@@ -67,9 +69,8 @@ class FileManager:
 
 
 	def addPath(self, path, expiresAt=60):
-		new_path = self.formatPath(path)
-		self.rename(path, new_path)
-		data_file = self.readJson(self.data_file)
+		new_path = self.formatPath(path, rename=True)
+		data_file = self.readJson(self.dt_file_path)
 		fc = lambda file_infor: file_infor["path"] != new_path
 		data_file = list(filter(fc, data_file))
 		new_file_infor = {
@@ -83,11 +84,15 @@ class FileManager:
 		return new_file_infor
 
 
-	def hasFile(self, path):
-		path = self.formatPath(path)
-		data_file = self.readJson(self.data_file)
-		for file_infor in data_file:
+	def hasFile(self, path, ext=""):
+		path = self.formatPath(path, ext=ext)
+		data_file = self.readJson(self.dt_file_path)
+		for idx, file_infor in enumerate(deepcopy(data_file)):
 			if file_infor["path"] == path:
+				isFile = os.path.isfile(path)
+				if not isFile:
+					del data_file[idx]
+					return False
 				self.reValidate(path)
 				return True
 
@@ -101,7 +106,7 @@ class FileManager:
 
 	def getFileObjByPath(self, path):
 		path = self.formatPath(path)
-		data_file = self.readJson(self.data_file)
+		data_file = self.readJson(self.dt_file_path)
 		for file_infor in data_file:
 			if file_infor["path"] == path:
 				self.reValidate(path)
@@ -109,7 +114,7 @@ class FileManager:
 
 
 	def getFileObjById(self, uid):
-		data_file = self.readJson(self.data_file)
+		data_file = self.readJson(self.dt_file_path)
 		for file_infor in data_file:
 			if file_infor["id"] == uid:
 				self.reValidate(file_infor["path"])

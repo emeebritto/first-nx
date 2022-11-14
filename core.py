@@ -118,13 +118,18 @@ class Nexa(Mind):
 			return uInput
 
 
-	def nospam(func):
+	def _nospam(func):
 		def function(*args, **kwargs):
 			nexa = args[0]
 			nexa._requests_active.append(kwargs["sender"])
 			if kwargs["sender"] in nexa._requests_active:
 				nexa._lock.acquire()
-			returned =  func(*args, **kwargs)
+
+			try: returned = func(*args, **kwargs)
+			except Exception as e:
+				returned = None
+				print(e)
+
 			try: nexa._lock.release()
 			except: pass
 			nexa._requests_active.remove(kwargs["sender"])
@@ -132,7 +137,7 @@ class Nexa(Mind):
 		return function
 
 
-	@nospam
+	@_nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None):
 		res = Response(asyncRes)
 		if not value: return res.appendText("...")
