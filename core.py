@@ -2,10 +2,12 @@ import string
 import nltk
 import numpy as np
 import requests
+from googlesearch import search
+from bs4 import BeautifulSoup
 from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+from spaces import question_answering
 from threading import Lock
 from compiler import Compiler
 from patterns.replacer import replacer
@@ -88,7 +90,7 @@ class Nexa(Mind):
 		super(Nexa, self).__init__()
 		self._context_network = []
 		self.name = "Nexa"
-		self.me = self.about()
+		self.me = self.load("about_me")
 		self._actions = {}
 		self.pending = {}
 		self._requests_active = []
@@ -102,8 +104,8 @@ class Nexa(Mind):
 		return self._actions
 
 
-	def about(self):
-		with open("data/about_me.md", "r") as file:
+	def load(self, subject):
+		with open(f"data/{subject}.md", "r") as file:
 			return file.read()
 
 
@@ -137,6 +139,20 @@ class Nexa(Mind):
 		return function
 
 
+	def nx_search(self, value):
+		def page_content(url):
+		  thepage = requests.get(url).content
+		  soup = BeautifulSoup(thepage, "html.parser")
+		  return soup.text
+
+		source = ""
+		urls = [*search(value, 2)]
+		for url in urls:
+			print(f"nexa searched: {url}")
+			source += page_content(url)
+		return source
+
+
 	@_nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None):
 		res = Response(asyncRes)
@@ -151,11 +167,14 @@ class Nexa(Mind):
 
 
 		if self.analyzer.isQuestion(value) and self.bert_answer:
-			ctx = self.me if self.analyzer.isAboutYou(value) else context # + self.execute("searchSummary", { "TEXT": value }, res)
-			answer = answer_by_context(
-				context=ctx,
-				value=value
-			)
+			about_me = self.load("about_me")
+			other_subject = self.nx_search(value) + self.load("other_subject") + context
+			ctx = about_me if self.analyzer.isAboutYou(value) else other_subject 
+			answer = question_answering(value, ctx)
+			# answer = answer_by_context(
+			# 	context=ctx,
+			# 	value=value
+			# )
 			return res.appendText(answer or "I don't know it :(")
 
 		predicted = self.predict(value).high_precision(base=analyzed_tag.get("base_words"))
