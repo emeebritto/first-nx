@@ -11,10 +11,10 @@ teacher_forcing_ratio = 0.5
 
 
 class NeuralNet(nn.Module):
-  def __init__(self, input_size, hidden_size, num_classes):
+  def __init__(self, n_vocab, hidden_size, num_classes):
     super(NeuralNet, self).__init__()
     self.nx = nn.Sequential(
-      nn.Linear(input_size, hidden_size),
+      nn.Linear(n_vocab, hidden_size),
       nn.ReLU(),
       nn.Linear(hidden_size, hidden_size),
       nn.ReLU(),
@@ -28,95 +28,132 @@ class NeuralNet(nn.Module):
     # no activation and no softmax at the end
 
 
+class LSTM(nn.Module):
+  def __init__(self, n_vocab, hidden_size, num_classes):
+    super(LSTM, self).__init__()
+    self.lstm_size = 128
+    self.embedding_dim = 128
+    self.num_layers = 3
+
+    self.embedding = nn.Embedding(
+      num_embeddings=n_vocab,
+      embedding_dim=self.embedding_dim,
+    )
+    self.lstm = nn.LSTM(
+      input_size=self.lstm_size,
+      hidden_size=self.lstm_size,
+      num_layers=self.num_layers,
+      dropout=0.2,
+    )
+    self.fc = nn.Linear(self.lstm_size, n_vocab)
+
+  def forward(self, x, prev_state):
+    embed = self.embedding(x)
+    output, state = self.lstm(embed, prev_state)
+    logits = self.fc(output)
+
+    return logits, state
+
+  def init_state(self, sequence_length):
+    return (
+      torch.zeros(self.num_layers, sequence_length, self.lstm_size),
+      torch.zeros(self.num_layers, sequence_length, self.lstm_size)
+    )
+
+
+
 class EncoderRNN(nn.Module):
-    def __init__(self, input_size, hidden_size, n_layers=1):
-        super(EncoderRNN, self).__init__()
-        self.n_layers = n_layers
-        self.hidden_size = hidden_size
+  def __init__(self, input_size, hidden_size, n_layers=1):
+    super(EncoderRNN, self).__init__()
+    self.n_layers = n_layers
+    self.hidden_size = hidden_size
 
-        self.embedding = nn.Embedding(input_size, hidden_size)
-        self.gru = nn.GRU(hidden_size, hidden_size)
+    self.embedding = nn.Embedding(input_size, hidden_size)
+    self.gru = nn.GRU(hidden_size, hidden_size)
 
-    def forward(self, inputs, hidden):
-        embedded = self.embedding(inputs).view(1, 1, -1)
-        output = embedded
-        for i in range(self.n_layers):
-            output, hidden = self.gru(output, hidden)
-        return output, hidden
+  def forward(self, inputs, hidden):
+    embedded = self.embedding(inputs).view(1, 1, -1)
+    output = embedded
+    for i in range(self.n_layers):
+        output, hidden = self.gru(output, hidden)
+    return output, hidden
 
-    def init_hidden(self):
-        result = Variable(torch.zeros(1, 1, self.hidden_size))
-        if use_cuda:
-            return result.cuda()
-        else:
-            return result
+  def init_hidden(self):
+    result = Variable(torch.zeros(1, 1, self.hidden_size))
+    if use_cuda:
+      return result.cuda()
+    else:
+      return result
 
 
 class DecoderRNN(nn.Module):
-    def __init__(self, hidden_size, output_size, n_layers=1):
-        super(DecoderRNN, self).__init__()
-        self.n_layers = n_layers
-        self.hidden_size = hidden_size
+  def __init__(self, hidden_size, output_size, n_layers=1):
+    super(DecoderRNN, self).__init__()
+    self.n_layers = n_layers
+    self.hidden_size = hidden_size
 
-        self.embedding = nn.Embedding(output_size, hidden_size)
-        self.gru = nn.GRU(hidden_size, hidden_size)
-        self.out = nn.Linear(hidden_size, output_size)
-        self.softmax = nn.LogSoftmax()
+    self.embedding = nn.Embedding(output_size, hidden_size)
+    self.gru = nn.GRU(hidden_size, hidden_size)
+    self.out = nn.Linear(hidden_size, output_size)
+    self.softmax = nn.LogSoftmax()
 
-    def forward(self, inputs, hidden):
-        output = self.embedding(inputs).view(1, 1, -1)
-        for i in range(self.n_layers):
-            output = F.relu(output)
-            output, hidden = self.gru(output, hidden)
-        output = self.softmax(self.out(output[0]))
-        return output, hidden
+  def forward(self, inputs, hidden):
+    output = self.embedding(inputs).view(1, 1, -1)
+    for i in range(self.n_layers):
+      output = F.relu(output)
+      output, hidden = self.gru(output, hidden)
+    output = self.softmax(self.out(output[0]))
+    return output, hidden
 
-    def init_hidden(self):
-        result = Variable(torch.zeros(1, 1, self.hidden_size))
-        if use_cuda:
-            return result.cuda()
-        else:
-            return result
+  def init_hidden(self):
+    result = Variable(torch.zeros(1, 1, self.hidden_size))
+    if use_cuda:
+      return result.cuda()
+    else:
+      return result
 
 
 class AttnDecoderRNN(nn.Module):
-    def __init__(self, hidden_size, output_size, n_layers=1, dropout_p=0.1, max_length=MAX_LENGTH):
-        super(AttnDecoderRNN, self).__init__()
-        self.hidden_size = hidden_size
-        self.output_size = output_size
-        self.n_layers = n_layers
-        self.dropout_p = dropout_p
-        self.max_length = max_length
+  def __init__(self, hidden_size, output_size, n_layers=1, dropout_p=0.1, max_length=MAX_LENGTH):
+    super(AttnDecoderRNN, self).__init__()
+    self.hidden_size = hidden_size
+    self.output_size = output_size
+    self.n_layers = n_layers
+    self.dropout_p = dropout_p
+    self.max_length = max_length
 
-        self.embedding = nn.Embedding(self.output_size, self.hidden_size)
-        self.attn = nn.Linear(self.hidden_size * 2, self.max_length)
-        self.attn_combine = nn.Linear(self.hidden_size * 2, self.hidden_size)
-        self.dropout = nn.Dropout(self.dropout_p)
-        self.gru = nn.GRU(self.hidden_size, self.hidden_size)
-        self.out = nn.Linear(self.hidden_size, self.output_size)
+    self.embedding = nn.Embedding(self.output_size, self.hidden_size)
+    self.attn = nn.Linear(self.hidden_size * 2, self.max_length)
+    self.attn_combine = nn.Linear(self.hidden_size * 2, self.hidden_size)
+    self.dropout = nn.Dropout(self.dropout_p)
+    self.gru = nn.GRU(self.hidden_size, self.hidden_size)
+    self.out = nn.Linear(self.hidden_size, self.output_size)
 
-    def forward(self, inputs, hidden, encoder_output, encoder_outputs):
-        embedded = self.embedding(inputs).view(1, 1, -1)
-        embedded = self.dropout(embedded)
+  def forward(self, inputs, hidden, encoder_output, encoder_outputs):
+    embedded = self.embedding(inputs).view(1, 1, -1)
+    embedded = self.dropout(embedded)
 
-        attn_weights = F.softmax(
-            self.attn(torch.cat((embedded[0], hidden[0]), 1)))
-        attn_applied = torch.bmm(attn_weights.unsqueeze(0),
-                                 encoder_outputs.unsqueeze(0))
+    attn_weights = F.softmax(
+      self.attn(torch.cat((embedded[0], hidden[0]), 1))
+    )
+    attn_applied = torch.bmm(
+      attn_weights.unsqueeze(0),
+      encoder_outputs.unsqueeze(0)
+    )
 
-        output = torch.cat((embedded[0], attn_applied[0]), 1)
-        output = self.attn_combine(output).unsqueeze(0)
+    output = torch.cat((embedded[0], attn_applied[0]), 1)
+    output = self.attn_combine(output).unsqueeze(0)
 
-        for i in range(self.n_layers):
-            output = F.relu(output)
-            output, hidden = self.gru(output, hidden)
+    for i in range(self.n_layers):
+      output = F.relu(output)
+      output, hidden = self.gru(output, hidden)
 
-        output = F.log_softmax(self.out(output[0]))
-        return output, hidden, attn_weights
+    output = F.log_softmax(self.out(output[0]))
+    return output, hidden, attn_weights
 
-    def init_hidden(self):
-        result = Variable(torch.zeros(1, 1, self.hidden_size))
-        if use_cuda:
-            return result.cuda()
-        else:
-            return result
+  def init_hidden(self):
+    result = Variable(torch.zeros(1, 1, self.hidden_size))
+    if use_cuda:
+      return result.cuda()
+    else:
+      return result

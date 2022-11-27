@@ -68,4 +68,4 @@ Werkzeug==2.2.2
 gevent-websocket==0.10.1
 eventlet==0.33.1
 wikipedia==1.4.0
-googlesearch==1.1.0
+googlesearch-python==1.1.0

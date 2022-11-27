@@ -62,7 +62,7 @@ def create_image(svars, nexa, res):
 	if not uInput: return res.appendText("Sorry, I don't understand you")
 	res.appendText("processing (8 - 40 seconds)")
 	data = requests.post(getenv("CREATE_IMAGE_URL"), headers={
-	  "Host": "stabilityai-stable-diffusion.hf.space",
+	  "Host": "stabilityai-stable-diffusion-1.hf.space",
 	  "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0",
 	  "Accept": "*/*",
 	  "Accept-Language": "en-US,en;q=0.5",

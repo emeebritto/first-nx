@@ -168,7 +168,7 @@ class Nexa(Mind):
 
 		if self.analyzer.isQuestion(value) and self.bert_answer:
 			about_me = self.load("about_me")
-			other_subject = self.nx_search(value) + self.load("other_subject") + context
+			other_subject = context + self.nx_search(value) + self.load("other_subject")
 			ctx = about_me if self.analyzer.isAboutYou(value) else other_subject 
 			answer = question_answering(value, ctx)
 			# answer = answer_by_context(
