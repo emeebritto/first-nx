@@ -1,11 +1,11 @@
 import chat
-from api import fileManager
+from api import memory
 import gradio as gr
 
 def interaction(search):
   if "file::" in search:
     fileId = search.split("::")[1]
-    file_infor = fileManager.getFileObjById(fileId)
+    file_infor = memory.getFileObjById(fileId)
     return file_infor["path"] if file_infor else ""
   return None
 

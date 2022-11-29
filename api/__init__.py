@@ -1,10 +1,10 @@
 # from twilio.twiml.messaging_response import MessagingResponse
 from utils.functions import interval, wake_up, syncmethod
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, jsonify
 from flask_socketio import SocketIO, emit, send, disconnect
 from flask_socketio import join_room, leave_room
 from threading import Thread
-from utils.fileManager import FileManager
+from utils.memory import Memory
 from utils.managers import Room_Managet
 from .inbox import Inbox
 import requests
@@ -14,7 +14,7 @@ MAX_BUFFER_SIZE = 2 * 1000 * 1000  # 2 MB
 # 83bf579f570d4747a57bcfe9d409816c
 api = Flask(__name__)
 socketio = SocketIO(api, max_http_buffer_size=MAX_BUFFER_SIZE)
-fileManager = FileManager()
+memory = Memory()
 room_Managet = Room_Managet()
 
 keep_Wake_up = lambda: interval(wake_up, 4 * 60)
@@ -63,7 +63,7 @@ def api_inbox():
     return "missing queries (required: msgType, msg)"
 
   response = api.inbox.wait_reply(msgType, msg)
-  return response
+  return jsonify(response)
 
 
 @api.route('/file/<filename>', methods=['GET'])
@@ -74,7 +74,7 @@ def files(filename):
 
   try:
     file_data = open(filePath, 'rb')
-    fileManager.reValidate(path=filePath)
+    memory.reValidateMedia(filePath)
     return send_file(file_data, download_name="nx_file", as_attachment=download)
   except Exception as e:
     print(e)
@@ -97,7 +97,7 @@ def allMessage():
 
 
 port = int(os.environ.get("PORT", 3080))
-fileManager.start(gap=1)
+memory.start(gap=1)
 
 @syncmethod
 def start_api():
@@ -113,8 +113,6 @@ api_Thread = Thread(
     "port": port
   }
 )
-#Y1q8uw2a%y0q4uw1a#u6
-#Y1q8uw2a%y0q4uw1a#p9
 
 
 

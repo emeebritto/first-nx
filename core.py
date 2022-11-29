@@ -7,81 +7,15 @@ from bs4 import BeautifulSoup
 from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from utils.response import Response
 from spaces import question_answering
 from threading import Lock
 from compiler import Compiler
 from patterns.replacer import replacer
-from random import choice
 from analyzer import Analyzer
 from mind import Mind
 
 compiler = Compiler()
-
-
-
-class Response:
-	def __init__(self, asyncResponse=None):
-		super(Response, self).__init__()
-		self._response = []
-		self._asyncRes = asyncResponse or {}
-
-
-	def __repr__(self):
-		return self._response
-
-
-	def __len__(self):
-		return len(self._response)
-
-
-	def values(self):
-		return self._response
-
-
-	def _append(self, value):
-		self._response.append(value)
-		reply_method = self._asyncRes.get(value["msgType"])
-		if reply_method: reply_method(value["msg"])
-
-
-	def appendText(self, msg, choiceOne=False):
-		if isinstance(msg, str):
-			self._append({"msgType": "text", "msg": msg})
-		elif isinstance(msg, list):
-			if choiceOne:
-				self._append({"msgType": "text", "msg": choice(msg)})
-			else:
-				for text in msg:
-					self._append({"msgType": "text", "msg": text})
-		else:
-			raise Exception("appendText method has not received a str either list value")
-		return self._response
-
-
-	def appendDocument(self, msg):
-		self._append({"msgType": "document", "msg": msg})
-		return self._response
-
-
-	def appendVideo(self, msg):
-		self._append({"msgType": "video", "msg": msg})
-		return self._response
-
-
-	def appendPhoto(self, msg):
-		self._append({"msgType": "photo", "msg": msg})
-		return self._response
-
-
-	def appendAnimation(self, msg):
-		self._append({"msgType": "animation", "msg": msg})
-		return self._response
-
-
-	def appendAudio(self, msg):
-		self._append({"msgType": "audio", "msg": msg})
-		return self._response
-
 
 
 
@@ -153,9 +87,9 @@ class Nexa(Mind):
 		return source
 
 
-	@_nospam
-	def read(self, value, context="", sender="unknown", asyncRes=None):
-		res = Response(asyncRes)
+	# @_nospam
+	def read(self, value, context="", sender="unknown", asyncRes=None, config=None):
+		res = Response(asyncRes, config)
 		if not value: return res.appendText("...")
 		print(f"=> uInput: {value}")
 		value = self.translate(value)
@@ -195,7 +129,7 @@ class Nexa(Mind):
 
 		responses = predicted.intent.get("response")
 		if responses: res.appendText(responses, choiceOne=True)
-		return res.values()
+		return res
 
 
 	def view(self, value, instruction=None, sender="unknown"):

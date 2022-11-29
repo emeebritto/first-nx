@@ -8,7 +8,7 @@ def create_key(svars, nexa, res):
 	try:
 		obj_key = room_Managet.create_key(label=f"{sender_id}::{label}")
 		print("created key", obj_key)
-		res.appendText(f"your key ({label}) was created")
+		res.sendText(f"your key ({label}) was created")
 		res.appendText(f"key: {obj_key['key']}")
 	except Exception as e:
 		print(e)
@@ -22,7 +22,7 @@ def list_keys(svars, nexa, res):
 	for match in matches:
 		key_label = match["label"].split("::")[1]
 		res.appendText(f"label: {key_label},\nkey: {match['key']}")
-	return res.values()
+	return res
 
 
 def del_key(svars, nexa, res):

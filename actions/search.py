@@ -8,7 +8,7 @@ def searchVideo(svars, nexa, res):
   result = videosSearch.result()["result"]
   for vid in result:
     res.appendText(f"title: {vid['title']}\nurl: {vid['link']}")
-  return res.values()
+  return res
 
 
 def searchSummary(svars, nexa, res):

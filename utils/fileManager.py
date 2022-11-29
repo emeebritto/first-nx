@@ -77,7 +77,7 @@ class FileManager:
 			"path": new_path,
 			"filename": new_path.split("/")[-1],
 			"id": str(uuid4()),
-			"expiresAt": time.time() + (expiresAt * 60) # + 30 minutes
+			"expiresAt": time.time() + (expiresAt * 60) # + 60 minutes
 		}
 		data_file.append(new_file_infor)
 		self.writeJson(data=data_file)
@@ -139,18 +139,21 @@ class FileManager:
 		return f"{self.base_url}/file=./{path}"
 
 
-	def getGFileUrl(self, filepath, mime_type="video/mp4"):
+	def getHttpUrl(self, filepath, mime_type="video/mp4"):
 		file_size = os.path.getsize(filepath)
 		filename = filepath.split("/")[-1]
 		with open(filepath, "rb") as rfile:
 		  base = base64.b64encode(rfile.read()).decode('utf-8')
 		result = requests.post("https://emee-nx-storage.hf.space/run/predict", data=json.dumps({
 			"fn_index":0,
-			"data":[{"name": filename, "size": file_size, "data": f"data:{mime_type};base64," + base }],
+			"data":[{
+				"name": filename,
+				"size": file_size,
+				"data": f"data:{mime_type};base64," + base 
+			}],
 			"session_hash":"llpx1hcnmi"
 		}), headers={ "Content-Type": "application/json" })
 
 		data = result.json()
-		print(data)
 		url = data["data"][0]
 		return url

@@ -1,6 +1,6 @@
 from utils.functions import create_filePath
-import requests
 import numpy as np
+import requests
 import qrcode
 import uuid
 import cv2

@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 from services import telegram
+from utils.response import NxConfig
 from api import api
 from core import Nexa
 from actions import nx
@@ -25,14 +26,11 @@ print("Nexa's ready!")
 
 def inboxChat(msgType, msg):
   if msgType == "text":
-    response = nexa.read(value=msg, context="")
-    if not response: return "sorry, I don't get it"
-    final_response = []
-    for part in response:
-      if part["msgType"] == "text":
-        final_response.append(part["msg"])
-
-    return f"<p>{'</p><p>'.join(final_response)}</p>"
+    config = NxConfig(file_as="url")
+    response = nexa.read(value=msg, context="", config=config)
+    if not response or not len(response.sequence):
+      return { "msgType": "text", "msg": "sorry, something is wrong with me" }
+    return response.sequence
 
 
 # def telegramChat(user, chat, msgType, msgContent):

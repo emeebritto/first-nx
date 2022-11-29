@@ -12,4 +12,4 @@ def send_commands_examples(svars, nexa, res):
 		if idx % 3 == 0:
 			res.appendText(pack)
 			pack = ""
-	return res.values()
+	return res

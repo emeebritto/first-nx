@@ -53,14 +53,14 @@ def download_image(svars, nexa, res):
 	result_file_alt = result_metadata.get("alt_description")
 	res.appendDocument(result_file_url)
 	if result_file_alt: res.appendText(result_file_alt)
-	return res.values()
+	return res
 
 
 def create_image(svars, nexa, res):
 	uInput = svars.get("INPUT")
 	print({ "uInput": uInput })
 	if not uInput: return res.appendText("Sorry, I don't understand you")
-	res.appendText("processing (8 - 40 seconds)")
+	res.sendText("processing (8 - 40 seconds)")
 	data = requests.post(getenv("CREATE_IMAGE_URL"), headers={
 	  "Host": "stabilityai-stable-diffusion-1.hf.space",
 	  "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0",

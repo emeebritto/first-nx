@@ -32,7 +32,8 @@ def replace(match, newValue, target):
     return re_sub(match, newValue or "", target)
 
 
-def read_as_binary(filepath, fileFormat=None):
+def read_as_binary(filepath, fileFormat=None, case=None):
+  if case == False: return filepath
   newfilepath = ""
   if fileFormat:
     newfilepath = re_sub(r'\.\w*$', f".{fileFormat}", filepath)
@@ -42,10 +43,16 @@ def read_as_binary(filepath, fileFormat=None):
   return data
 
 
-def create_filePath(data, fileFormat, fileName=""):
-  filePath = f"{fileName or str(uuid4())}.{fileFormat}"
+def create_filePath(data, fileFormat="", folder=None, fileName=None):
+  filename = f"{fileName or str(uuid4())}.{fileFormat}"
+  filePath = f"{folder}/{filename}" if folder else filename
   with open(filePath, 'wb') as file: file.write(data)
   return filePath
+
+
+def raiseError(msg, case):
+  case = not case # reverse
+  assert case, msg
 
 
 def syncmethod(func):
