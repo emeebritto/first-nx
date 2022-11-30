@@ -87,7 +87,7 @@ class Nexa(Mind):
 		return source
 
 
-	# @_nospam
+	@_nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None, config=None):
 		res = Response(asyncRes, config)
 		if not value: return res.appendText("...")

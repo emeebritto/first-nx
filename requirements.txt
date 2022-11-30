@@ -69,3 +69,4 @@ gevent-websocket==0.10.1
 eventlet==0.33.1
 wikipedia==1.4.0
 googlesearch-python==1.1.0
+python-magic==0.4.27
