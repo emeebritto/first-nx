@@ -12,7 +12,7 @@ class File:
 	def __init__(self, value, mime_type=None):
 		super(File, self).__init__()
 		self.isbuffer = isinstance(value, bytes)
-		self.isUrl = "http" in value[:5]
+		self.isUrl = not self.isbuffer and "http" in value[:5]
 		self.value = value
 		self.mime_type = mime_type or self._getMimeType()
 
@@ -79,7 +79,6 @@ class NxConfig:
 	def __init__(self, **kwargs):
 		super(NxConfig, self).__init__()
 		self.file_as = kwargs.get("file_as", "bin")
-		print(self.file_as)
 		raiseError(
 			msg='invalid file type (file_as)',
 			case=self.file_as not in ["url", "bin", "base64"]

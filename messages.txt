@@ -39,3 +39,28 @@ Emerson said Download audio https://youtu.be/G_BYjnopO6U.
 Emerson said Pronounce girl.
 Emerson said Pronounce girl.
 Emerson said Hi.
+Emerson said exec::download_vid::{text:"hi"}.
+Emerson said exec::download_vid::{text:"hi"}.
+Emerson said exec::download_vid::{text:"hi"}.
+Emerson said exec::download_vid::{text:"hi"}.
+Emerson said exec::download_vid::{"text":"hi"}.
+Emerson said exec::download_vid::{text:"hi"}.
+Emerson said exec::download_vid::{"text":"hi"}.
+Emerson said exec::dlvideoyt::{"URL":"https://youtu.be/SBGpYzCfT-0"}.
+Emerson said exec::dlvideoyt::{"URL":"https://youtu.be/SBGpYzCfT-0"}.
+Emerson said exec::dlvideoyt::url::https://youtu.be/SBGpYzCfT-0.
+Emerson said exec::dlvideoyt::url::https://youtu.be/SBGpYzCfT-0.
+Emerson said exec::dlvideoyt::url::https://youtu.be/SBGpYzCfT-0.
+Emerson said exec::dlvideoyt::url::https://youtu.be/SBGpYzCfT-0::title::hi.
+Emerson said exec::dlvideoyt::url::https://youtu.be/SBGpYzCfT-0::title::hi.
+Emerson said exec::create_image::input::a red cat.
+Emerson said exec::create_image::input::a red cat.
+Emerson said exec::create_image::input::a red cat.
+Emerson said exec::create_image::input::a red cat.
+Emerson said exec::create_image::input::brutalist mayan temple in the jungle, beautiful dynamic lighting, cinematic, wide angle establishing shot, extremely high detail, photo realistic, cinematic lighting, post processed, concept art, artstation, matte painting, style by eddie mendoza, raphael lacoste, alex ross.
+Emerson said Exec::create_image::input::a sunset.
+Emerson said Exec::create_image::input::a sunset.
+Emerson said exec::create_image::input::a sunset.
+Emerson said exec::createimage::input::a red cat.
+Emerson said exec::create_image::input::a red house.
+Emerson said Exec::create_image::input::a red cat.

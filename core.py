@@ -1,19 +1,19 @@
-import string
-import nltk
-import numpy as np
-import requests
-from googlesearch import search
-from bs4 import BeautifulSoup
-from models.transformers import answer_by_context
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-from utils.response import Response
-from spaces import question_answering
-from threading import Lock
-from compiler import Compiler
+from models.transformers import answer_by_context
 from patterns.replacer import replacer
+from spaces import question_answering
+from utils.response import Response
+from googlesearch import search
+from bs4 import BeautifulSoup
+from compiler import Compiler
 from analyzer import Analyzer
+from threading import Lock
 from mind import Mind
+import numpy as np
+import requests
+import string
+import nltk
 
 compiler = Compiler()
 
@@ -91,13 +91,10 @@ class Nexa(Mind):
 	def read(self, value, context="", sender="unknown", asyncRes=None, config=None):
 		res = Response(asyncRes, config)
 		if not value: return res.appendText("...")
-		print(f"=> uInput: {value}")
+		if "exec::" in value.lower(): return self.execCommand(value, sender, res)
 		value = self.translate(value)
-		print(f"=> uInput (translated): {value}")	
-		analyzed_type = self.analyzer.type.predict(value)
+		# analyzed_type = self.analyzer.type.predict(value)
 		analyzed_tag = self.analyzer.tag.predict(value) or {}
-		print(f"analyzed_type: {analyzed_type}")
-		print(f"analyzed_tag: {analyzed_tag}")
 
 
 		if self.analyzer.isQuestion(value) and self.bert_answer:
@@ -168,9 +165,23 @@ class Nexa(Mind):
 		self._actions[label] = action
 
 
+	def execCommand(self, value, sender, res):
+		svars = {}
+		params = value.split("::")
+		action = params[1].lower()
+		actionParams = params[2:]
+		for idx in range(0, len(actionParams), 2):
+			var_name = actionParams[idx].upper()
+			var_val = actionParams[idx+1]
+			svars[var_name] = var_val
+		svars["SENDER_ID"] = sender
+		return self.execute(action, svars, res)
+
+
 	def execute(self, label, svars, res):
 		action = self._actions.get(label)
 		if action: return action(svars, self, res)
+		res.appendText(f"action not found. ({label})")
 
 
 	def _extractFromText(self, value, source):

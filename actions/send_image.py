@@ -3,7 +3,6 @@ from os import getenv
 import requests
 import base64
 import json
-import re
 
 
 def randonly_image(svars, nexa, res):
