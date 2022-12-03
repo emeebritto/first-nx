@@ -129,7 +129,7 @@ class Learning:
 		  dataset=dataset,
 		  batch_size=self.batch_size,
 		  shuffle=True,
-		  num_workers=0
+		  num_workers=2
 		)
 
 		criterion = nn.CrossEntropyLoss()
@@ -166,6 +166,10 @@ class Learning:
 	def probability(self, output, predicted):
 		tag = self.tags[predicted.item()]
 		probs = torch.softmax(output, dim=1)
+		# print("tags", self.tags)
+		# print("softmax", probs)
+		# print("max", predicted)
+		# print("sigmoid", torch.sigmoid(output))
 		prob = probs[0][predicted.item()]
 		return tag, prob.item()
 

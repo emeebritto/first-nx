@@ -14,6 +14,7 @@ def randonly_face_image(svars, nexa, res):
 	source_base = "https://this-person-does-not-exist.com"
 	result = requests.get(f"{source_base}/en?new=1663313205973").json()
 	data = requests.get(f"{source_base}/{result['src']}")
+	if not data.content[:5]: return res.appendText("the image contain errors. (failed)")
 	return res.appendPhoto(data.content)
 
 

@@ -174,6 +174,7 @@ class Nexa(Mind):
 			var_name = actionParams[idx].upper()
 			var_val = actionParams[idx+1]
 			svars[var_name] = var_val
+			svars[var_val] = var_name # bidirectional
 		svars["SENDER_ID"] = sender
 		return self.execute(action, svars, res)
 

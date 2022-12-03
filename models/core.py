@@ -14,6 +14,7 @@ class NeuralNet(nn.Module):
   def __init__(self, n_vocab, hidden_size, num_classes):
     super(NeuralNet, self).__init__()
     self.nx = nn.Sequential(
+      nn.Dropout(p=0.2),
       nn.Linear(n_vocab, hidden_size),
       nn.ReLU(),
       nn.Linear(hidden_size, hidden_size),
