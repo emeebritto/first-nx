@@ -1,6 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from models.transformers import answer_by_context
+from models.external import Chatbot
 from patterns.replacer import replacer
 from spaces import question_answering
 from utils.response import Response
@@ -16,6 +17,7 @@ import string
 import nltk
 
 compiler = Compiler()
+chatbot = Chatbot()
 
 
 
@@ -45,7 +47,7 @@ class Nexa(Mind):
 
 	def translate(self, uInput, from_lang='pt', to_lang='en'):
 		try:
-			result = requests.post("https://translater-for-nx.vercel.app/translate?to=en", { "text": uInput })
+			result = requests.post(f"https://translater-for-nx.vercel.app/translate?to={to_lang}", { "text": uInput })
 			return result.json()["text"]
 			# text_to_translate = self._translator.translate(uInput, dest=to_lang)
 			# text_to_translate = self._translator.translate(uInput, src=from_lang, dest=to_lang)
@@ -87,15 +89,31 @@ class Nexa(Mind):
 		return source
 
 
+	def alterProcess(self, value, res):
+		about_me = self.load("about_me")
+		answer = None
+		if self.analyzer.isAboutYou(value):
+			answer = question_answering(value, about_me)
+			return res.appendText(answer or "I don't know it :(")
+		else:
+			output = chatbot.input(value)
+			if not output or not output.get("message"): return res.appendText("tem algo errado comigo, espere uns minutos")
+			answer = output["message"]
+			answer = self.translate(answer, to_lang="pt")
+			return res.appendText(answer or "tem algo errado comigo, espere uns minutos")
+
+
 	@_nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None, config=None):
 		res = Response(asyncRes, config)
 		if not value: return res.appendText("...")
 		if "exec::" in value.lower(): return self.execCommand(value, sender, res)
-		value = self.translate(value)
+		value = self.translate(value, to_lang="en")
+		print(f"new message => {value} (author_id: {sender})")
 		# analyzed_type = self.analyzer.type.predict(value)
 		analyzed_tag = self.analyzer.tag.predict(value) or {}
 
+		# return self.alterProcess(value, res) # TEMṔ
 
 		if self.analyzer.isQuestion(value) and self.bert_answer:
 			about_me = self.load("about_me")
@@ -129,9 +147,11 @@ class Nexa(Mind):
 		return res
 
 
-	def view(self, value, instruction=None, sender="unknown"):
+	def view(self, value, instruction=None, sender="unknown", asyncRes=None):
 		if not value: return
-		res = Response()
+		res = Response(asyncRes)
+
+		return res.appendText("my vision system is desabled, i don't see anything")
 
 		if instruction:
 			predicted = self.predict(instruction)
