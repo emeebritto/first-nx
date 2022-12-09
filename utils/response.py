@@ -4,6 +4,8 @@ from api import memory
 import hashlib
 import base64
 import magic
+import imghdr
+
 
 
 
@@ -15,6 +17,8 @@ class File:
 		self.isUrl = not self.isbuffer and "http" in value[:5]
 		self.value = value
 		self.mime_type = mime_type or self._getMimeType()
+		self.ext = self._getFileExt()
+		self.mime_type = self._fixMime()
 
 
 	def __repr__(self):
@@ -30,6 +34,19 @@ class File:
 		if self.isUrl: return "link/url"
 		if self.isbuffer: return magic.from_buffer(self.value)
 		return magic.from_file(self.value, mime=True)
+
+
+	def _fixMime(self):
+		if "image" in self.mime_type: return f"image/{self.ext}"
+		return self.mime_type
+
+
+	def _getFileExt(self):
+		# print(self.value)
+		print(type(self.value))
+		if isinstance(self.value, bytes):
+			return imghdr.what(None, self.value)
+		return self.mime_type.split("/")[1]
 
 
 	def _getDataFromUrl(self):
@@ -59,9 +76,12 @@ class File:
 	def as_url(self):
 		if self.isUrl: return self.value
 		if not self.isbuffer: return memory.getHttpUrl(self.value, mime_type=self.mime_type)
-		file_hash = hashlib.sha256().update(self.value).hexdigest()
-		filename = f"{file_hash}.{self.mime_type.split('/')[1]}"
-		filePath = create_filePath(self.value, fileName=filename)
+		file_hash = hashlib.sha256()
+		file_hash.update(self.value)
+		file_hash = file_hash.hexdigest()
+		print("self.mime_type", self.mime_type)
+		print("self.ext", self.ext)
+		filePath = create_filePath(self.value, fileName=file_hash, fileFormat=self.ext)
 		file_url = memory.getHttpUrl(filePath, mime_type=self.mime_type)
 		memory.removeFile(filePath)
 		return file_url
@@ -96,11 +116,11 @@ class Response:
 
 
 	def __repr__(self):
-		return self._response
+		return self._sequence
 
 
 	def __len__(self):
-		return len(self._response)
+		return len(self._sequence)
 
 
 	@property

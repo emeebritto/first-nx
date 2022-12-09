@@ -58,9 +58,10 @@ class Nexa(Mind):
 
 	def _nospam(func):
 		def function(*args, **kwargs):
+			sender = kwargs.get("sender", "unknown")
 			nexa = args[0]
-			nexa._requests_active.append(kwargs["sender"])
-			if kwargs["sender"] in nexa._requests_active:
+			nexa._requests_active.append(sender)
+			if sender in nexa._requests_active:
 				nexa._lock.acquire()
 
 			try: returned = func(*args, **kwargs)
@@ -70,7 +71,7 @@ class Nexa(Mind):
 
 			try: nexa._lock.release()
 			except: pass
-			nexa._requests_active.remove(kwargs["sender"])
+			nexa._requests_active.remove(sender)
 			return returned
 		return function
 
@@ -103,7 +104,7 @@ class Nexa(Mind):
 			return res.appendText(answer or "tem algo errado comigo, espere uns minutos")
 
 
-	@_nospam
+	# @_nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None, config=None):
 		res = Response(asyncRes, config)
 		if not value: return res.appendText("...")
@@ -113,7 +114,7 @@ class Nexa(Mind):
 		# analyzed_type = self.analyzer.type.predict(value)
 		analyzed_tag = self.analyzer.tag.predict(value) or {}
 
-		# return self.alterProcess(value, res) # TEMṔ
+		if "--exp" in value: return self.alterProcess(value, res) # TEMṔ
 
 		if self.analyzer.isQuestion(value) and self.bert_answer:
 			about_me = self.load("about_me")
