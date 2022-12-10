@@ -33,6 +33,7 @@ class Nexa(Mind):
 		self._lock = Lock()
 		self.analyzer = Analyzer()
 		self.bert_answer = True
+		self.always_use_experimental = True
 
 
 	@property
@@ -90,14 +91,14 @@ class Nexa(Mind):
 		return source
 
 
-	def alterProcess(self, value, res):
+	def alterProcess(self, value, sender, res):
 		about_me = self.load("about_me")
 		answer = None
 		if self.analyzer.isAboutYou(value):
 			answer = question_answering(value, about_me)
 			return res.appendText(answer or "I don't know it :(")
 		else:
-			output = chatbot.input(value)
+			output = chatbot.input(value, context=sender)
 			if not output or not output.get("message"): return res.appendText("tem algo errado comigo, espere uns minutos")
 			answer = output["message"]
 			answer = self.translate(answer, to_lang="pt")
@@ -114,7 +115,8 @@ class Nexa(Mind):
 		# analyzed_type = self.analyzer.type.predict(value)
 		analyzed_tag = self.analyzer.tag.predict(value) or {}
 
-		if "--exp" in value: return self.alterProcess(value, res) # TEMṔ
+		if "--exp" in value or self.always_use_experimental:
+			return self.alterProcess(value, sender, res) # TEMṔ
 
 		if self.analyzer.isQuestion(value) and self.bert_answer:
 			about_me = self.load("about_me")
