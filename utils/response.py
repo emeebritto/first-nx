@@ -42,8 +42,6 @@ class File:
 
 
 	def _getFileExt(self):
-		# print(self.value)
-		print(type(self.value))
 		if isinstance(self.value, bytes):
 			return imghdr.what(None, self.value)
 		return self.mime_type.split("/")[1]
@@ -79,8 +77,6 @@ class File:
 		file_hash = hashlib.sha256()
 		file_hash.update(self.value)
 		file_hash = file_hash.hexdigest()
-		print("self.mime_type", self.mime_type)
-		print("self.ext", self.ext)
 		filePath = create_filePath(self.value, fileName=file_hash, fileFormat=self.ext)
 		file_url = memory.getHttpUrl(filePath, mime_type=self.mime_type)
 		memory.removeFile(filePath)

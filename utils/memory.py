@@ -189,7 +189,6 @@ class Memory:
 		cachedData = self.getCache(CACHE_KEY)
 		if cachedData: return cachedData["value"]
 		filename = filepath.split("/")[-1]
-		print("filename", filename)
 		with open(filepath, "rb") as rfile:
 		  base = base64.b64encode(rfile.read()).decode('utf-8')
 		result = requests.post(f"{self._cloud_url}/run/predict", data=json.dumps({
@@ -203,7 +202,6 @@ class Memory:
 		}), headers={ "Content-Type": "application/json" })
 
 		data = result.json()
-		print(data)
 		url = data["data"][0]
 		if url: self.putCache(CACHE_KEY, url, (59 * 60)) # 59 minutes
 		return url
