@@ -33,7 +33,7 @@ class Nexa(Mind):
 		self._lock = Lock()
 		self.analyzer = Analyzer()
 		self.bert_answer = True
-		self.always_use_experimental = True
+		self.always_use_experimental = False
 
 
 	@property
@@ -92,6 +92,7 @@ class Nexa(Mind):
 
 
 	def alterProcess(self, value, sender, res):
+		value = value.replace("--exp", "")
 		about_me = self.load("about_me")
 		answer = None
 		if self.analyzer.isAboutYou(value):
