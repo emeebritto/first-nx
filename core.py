@@ -46,14 +46,15 @@ class Nexa(Mind):
 			return file.read()
 
 
-	def translate(self, uInput, from_lang='pt', to_lang='en'):
-		try:
-			result = requests.post(f"https://translater-for-nx.vercel.app/translate?to={to_lang}", { "text": uInput })
-			return result.json()["text"]
-			# text_to_translate = self._translator.translate(uInput, dest=to_lang)
-			# text_to_translate = self._translator.translate(uInput, src=from_lang, dest=to_lang)
-		except Exception as e:
-			print(f"translate (error): {e}")
+	def translate(self, uInput, from_lang='pt', to_lang='en', case=None, case_enclude=""):
+		if case or case_enclude and case_enclude in uInput:
+			try:
+				result = requests.post(f"https://translater-for-nx.vercel.app/translate?to={to_lang}", { "text": uInput })
+				return result.json()["text"]
+			except Exception as e:
+				print(f"translate (error): {e}")
+				return uInput
+		else:
 			return uInput
 
 
@@ -102,8 +103,9 @@ class Nexa(Mind):
 			output = chatbot.input(value, context=sender)
 			if not output or not output.get("message"): return res.appendText("tem algo errado comigo, espere uns minutos")
 			answer = output["message"]
-			answer = self.translate(answer, to_lang="pt")
-			return res.appendText(answer or "tem algo errado comigo, espere uns minutos")
+			answer = answer or "tem algo errado comigo, espere uns minutos"
+			answer = self.translate(answer, to_lang="pt", case="--tr" in value)
+			return res.appendText(answer)
 
 
 	# @_nospam
@@ -111,7 +113,7 @@ class Nexa(Mind):
 		res = Response(asyncRes, config)
 		if not value: return res.appendText("...")
 		if "exec::" in value.lower(): return self.execCommand(value, sender, res)
-		value = self.translate(value, to_lang="en")
+		value = self.translate(value, to_lang="en", case_enclude="--tr")
 		print(f"new message => {value} (author_id: {sender})")
 		# analyzed_type = self.analyzer.type.predict(value)
 		analyzed_tag = self.analyzer.tag.predict(value) or {}
