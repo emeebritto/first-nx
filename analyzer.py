@@ -11,7 +11,7 @@ class Analyzer:
 
 
 	def isAboutYou(self, value):
-		matches = re.findall(r"(?<![a-zA-Z])(you|your|u)(?![a-zA-Z])", value.lower())
+		matches = re.findall(r"(?<![a-zA-Z])(you|your|u|voce|você|vc)(?![a-zA-Z])", value.lower())
 		return bool(len(matches))
 
 

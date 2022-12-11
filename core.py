@@ -33,7 +33,7 @@ class Nexa(Mind):
 		self._lock = Lock()
 		self.analyzer = Analyzer()
 		self.bert_answer = True
-		self.always_use_experimental = False
+		self.always_use_experimental = True
 
 
 	@property
@@ -97,8 +97,9 @@ class Nexa(Mind):
 		about_me = self.load("about_me")
 		answer = None
 		if self.analyzer.isAboutYou(value):
+			value = self.translate(value, to_lang="en")
 			answer = question_answering(value, about_me)
-			return res.appendText(answer or "I don't know it :(")
+			return res.appendText(answer or "I can't tell you anything about me.")
 		else:
 			output = chatbot.input(value, context=sender)
 			if not output or not output.get("message"): return res.appendText("tem algo errado comigo, espere uns minutos")
