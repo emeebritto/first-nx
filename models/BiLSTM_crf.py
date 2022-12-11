@@ -42,13 +42,13 @@ STOP_TAG = "<STOP>"
 
 
 class BiLSTM_CRF(nn.Module):
-	def __init__(self, vocab_size, embedding_dim, hidden_dim):
+	def __init__(self, vocab_size, tag_to_ix, embedding_dim, hidden_dim):
 		super(BiLSTM_CRF, self).__init__()
 		self.embedding_dim = embedding_dim
 		self.hidden_dim = hidden_dim
 		self.vocab_size = vocab_size
 		self.word_to_ix = {}
-		self.tag_to_ix = { START_TAG: 0, STOP_TAG: 1 }
+		self.tag_to_ix = { START_TAG: 0, STOP_TAG: 1 }.update(tag_to_ix)
 		self.ix_to_tag = { val:key for key, val in self.tag_to_ix.items() }
 		self.tagset_size = len(self.tag_to_ix)
 
@@ -170,7 +170,7 @@ class BiLSTM_CRF(nn.Module):
 
 	def neg_log_likelihood(self, sentence, tags):
 		sentence = seq_to_ix(sentence, self.word_to_ix)
-		tags = seq_to_ix(tags, self.tag_to_ix)
+		tags = torch.tensor([self.tag_to_ix[t] for t in tags], dtype=torch.long)
 		feats = self._get_lstm_features(sentence)
 		forward_score = self._forward_alg(feats)
 		gold_score = self._score_sentence(feats, tags)
@@ -184,3 +184,29 @@ class BiLSTM_CRF(nn.Module):
 		# Find the best path, given the features.
 		score, tag_seq = self._viterbi_decode(lstm_feats)
 		return score, ix_to_seq(tag_seq, self.ix_to_tag)
+
+
+
+class NER(object):
+	def __init__(self, tag_to_ix):
+		super(NER, self).__init__()
+		self.tag_to_ix = tag_to_ix
+		self.EMBEDDING_DIM = 5
+		self.HIDDEN_DIM = 4
+		self.model = BiLSTM_CRF(300, self.tag_to_ix, self.EMBEDDING_DIM, self.HIDDEN_DIM)
+	
+
+	def train(self, training_data):
+		optimizer = optim.SGD(self.model.parameters(), lr=0.01, weight_decay=1e-4)
+		for epoch in range(300):  # again, normally you would NOT do 300 epochs, it is toy data
+			for sentence, tags in training_data:
+				self.model.zero_grad()
+				loss = self.model.neg_log_likelihood(sentence, tags)
+				loss.backward()
+				optimizer.step()
+
+
+	def predict(self, sentence):
+		with torch.no_grad():
+			output = model(sentence)[1]
+			return output
