@@ -9,6 +9,28 @@ rawIntentsPaths = [
 	"../data/dialogs.json"
 ]
 
+
+def s_map(pattern):
+	sMap = []
+	for word in pattern.split():
+		if "$::" not in word:
+			sMap.append("E")
+		else:
+			sMap.append("Q")
+	return " ".join(sMap)
+
+
+def create_map(patterns):
+	if isinstance(patterns, list):
+		maps = []
+		for x in patterns:
+			maps.append(s_map(x))
+		return maps
+	else:
+		return s_map(patterns)
+
+
+
 formatedIntents = []
 for rawIntentsPath in rawIntentsPaths:
 	with open(rawIntentsPath, 'r') as json_data:
@@ -24,6 +46,7 @@ for rawIntentsPath in rawIntentsPaths:
 				formatedIntents.append({
 					"tag": str(uuid.uuid4()),
 					"pattern": patterns,
+					"map": create_map(patterns),
 					"execute": intent["execute"],
 					"response": intent["responses"],
 					"base_words": base_words,
@@ -35,6 +58,7 @@ for rawIntentsPath in rawIntentsPaths:
 				formatedIntents.append({
 					"tag": str(uuid.uuid4()),
 					"pattern": pattern,
+					"map": create_map(pattern),
 					"execute": intent["execute"],
 					"response": intent["responses"],
 					"base_words": base_words,

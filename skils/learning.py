@@ -20,6 +20,9 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 class Learning:
 	def __init__(self):
 		super(Learning, self).__init__()
+		self.all_words = []
+		self.tags = []
+		self.ignore_words = []
 
 
 	def _loadModel(self):
@@ -39,6 +42,8 @@ class Learning:
 		self.hidden_size = data["hidden_size"]
 		self.output_size = data["output_size"]
 		self.all_words = data['all_words']
+		self.word_to_ix = data["word_to_ix"]
+		self.ix_to_word = data["ix_to_word"]
 		self.tags = data['tags']
 		self.model_state = data["model_state"]
 
@@ -81,19 +86,29 @@ class Learning:
 		xy = []
 		for intent in data:
 			tag = intent[self.output_name]
-			self.tags.append(tag)
-			if isinstance(intent[self.input_name], list):
-				for pattern in intent[self.input_name]:
-					xy.append(join(pattern, tag))
+			if isinstance(tag, list):
+				for out in tag:
+					self.tags.append(out)
 			else:
-				xy.append(join(intent[self.input_name], tag))
+				self.tags.append(tag)
+
+			iInput = intent[self.input_name]
+			if isinstance(iInput, list):
+				for idx, pattern in enumerate(iInput):
+					# xy.append(join(pattern, tag[idx])) # TEMP =============
+					xy.append(join(pattern, tag)) # TEMP =============
+			else:
+				xy.append(join(iInput, tag))
 
 		self.all_words = [stem(w) for w in self.all_words if w not in self.ignore_words]
 		self.all_words = sorted(set(self.all_words))
-		self.tags = sorted(set(self.tags))
+		self.word_to_ix = { w:idx for idx, w in enumerate(self.all_words) }
+		self.ix_to_word = { idx:w for idx, w in enumerate(self.all_words) }
+		try: self.tags = sorted(set(self.tags))
+		except: pass
 
 		print("bag_of_words (length): ", len(self.all_words))
-		return self.splitTrainingData(xy)
+		return xy
 
 
 	def splitTrainingData(self, xy):
@@ -116,7 +131,8 @@ class Learning:
 
 	def train(self):
 		intents = self._loadIntents()
-		X_train, y_train = self.prepareData(data=self.intents)
+		xy_bag = self.prepareData(data=self.intents)
+		X_train, y_train = self.splitTrainingData(xy_bag)
 
 		self.input_size = len(X_train[0])
 		self.output_size = len(self.tags)
@@ -182,6 +198,8 @@ class Learning:
 		  "hidden_size": self.hidden_size,
 		  "output_size": self.output_size,
 		  "all_words": self.all_words,
+			"word_to_ix": self.word_to_ix,
+			"ix_to_word": self.ix_to_word,
 		  "bag_type": self.bag_of_words_type,
 		  "tags": self.tags
 		}

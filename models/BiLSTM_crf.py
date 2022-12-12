@@ -2,6 +2,8 @@ import torch
 import torch.autograd as autograd
 import torch.nn as nn
 import torch.optim as optim
+from utils.nltk_utils import tokenords, stem
+from skils.learning import Learning
 
 torch.manual_seed(1)
 
@@ -14,7 +16,8 @@ def argmax(vec):
 
 def seq_to_ix(seq, to_ix):
 	idxs = []
-	for word in seq.split():
+	seq = seq.split() if isinstance(seq, str) else seq
+	for word in seq:
 		if word not in to_ix:
 			w_idx = len(to_ix)
 			to_ix[word] = w_idx
@@ -48,7 +51,7 @@ class BiLSTM_CRF(nn.Module):
 		self.hidden_dim = hidden_dim
 		self.vocab_size = vocab_size
 		self.word_to_ix = {}
-		self.tag_to_ix = { START_TAG: 0, STOP_TAG: 1 }.update(tag_to_ix)
+		self.tag_to_ix = tag_to_ix
 		self.ix_to_tag = { val:key for key, val in self.tag_to_ix.items() }
 		self.tagset_size = len(self.tag_to_ix)
 
@@ -170,7 +173,8 @@ class BiLSTM_CRF(nn.Module):
 
 	def neg_log_likelihood(self, sentence, tags):
 		sentence = seq_to_ix(sentence, self.word_to_ix)
-		tags = torch.tensor([self.tag_to_ix[t] for t in tags], dtype=torch.long)
+		tags = torch.tensor([self.tag_to_ix[t] for t in tags.split()], dtype=torch.long)
+
 		feats = self._get_lstm_features(sentence)
 		forward_score = self._forward_alg(feats)
 		gold_score = self._score_sentence(feats, tags)
@@ -183,30 +187,42 @@ class BiLSTM_CRF(nn.Module):
 
 		# Find the best path, given the features.
 		score, tag_seq = self._viterbi_decode(lstm_feats)
-		return score, ix_to_seq(tag_seq, self.ix_to_tag)
+		return score, tag_seq # ix_to_seq(tag_seq, self.ix_to_tag)
 
 
 
-class NER(object):
-	def __init__(self, tag_to_ix):
+class NER(Learning):
+	def __init__(self, tag_to_ix={}):
 		super(NER, self).__init__()
 		self.tag_to_ix = tag_to_ix
 		self.EMBEDDING_DIM = 5
 		self.HIDDEN_DIM = 4
+		self.intentsPath = "data/intents.json"
+		self.input_name = "pattern"
+		self.output_name = "map"
+		self._loadIntents()
+		self.tag_to_ix = { START_TAG: 0, STOP_TAG: 1, "E": 3, "Q": 4 }
 		self.model = BiLSTM_CRF(300, self.tag_to_ix, self.EMBEDDING_DIM, self.HIDDEN_DIM)
 	
 
-	def train(self, training_data):
+	def train(self):
+		training_data = self.prepareData(data=self.intents)
 		optimizer = optim.SGD(self.model.parameters(), lr=0.01, weight_decay=1e-4)
-		for epoch in range(300):  # again, normally you would NOT do 300 epochs, it is toy data
-			for sentence, tags in training_data:
+		for epoch in range(1000):
+			for (sentence, tags) in training_data:
 				self.model.zero_grad()
 				loss = self.model.neg_log_likelihood(sentence, tags)
 				loss.backward()
 				optimizer.step()
 
+			if (epoch + 1) % 100 == 0:
+				epochLoss = "%.4f" % loss.item()
+				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
+
 
 	def predict(self, sentence):
+		tokenized_sentence = tokenords(sentence)
+		sentence_words = [stem(word) for word in tokenized_sentence]
 		with torch.no_grad():
-			output = model(sentence)[1]
+			output = self.model(sentence_words)[1]
 			return output
