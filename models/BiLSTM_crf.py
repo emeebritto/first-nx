@@ -14,14 +14,14 @@ def argmax(vec):
 	return idx.item()
 
 
-def seq_to_ix(seq, to_ix):
+def seq_to_ix(seq, to_ix, train=True):
 	idxs = []
 	seq = seq.split() if isinstance(seq, str) else seq
 	for word in seq:
 		if word not in to_ix:
-			w_idx = len(to_ix)
-			to_ix[word] = w_idx
-			idxs.append(w_idx)
+			w_idx = len(to_ix) + 1
+			if train: to_ix[word] = w_idx
+			idxs.append(w_idx if train else 0)
 		else:
 			idxs.append(to_ix[word])
 	return torch.tensor(idxs, dtype=torch.long)
@@ -182,7 +182,8 @@ class BiLSTM_CRF(nn.Module):
 
 	def forward(self, sentence):  # dont confuse this with _forward_alg above.
 		# Get the emission scores from the BiLSTM
-		sentence = seq_to_ix(sentence, self.word_to_ix)
+		sentence = seq_to_ix(sentence, self.word_to_ix, train=False)
+		print(sentence)
 		lstm_feats = self._get_lstm_features(sentence)
 
 		# Find the best path, given the features.
@@ -197,32 +198,35 @@ class NER(Learning):
 		self.tag_to_ix = tag_to_ix
 		self.EMBEDDING_DIM = 5
 		self.HIDDEN_DIM = 4
+		self.num_epochs = 20
 		self.intentsPath = "data/intents.json"
 		self.input_name = "pattern"
 		self.output_name = "map"
 		self._loadIntents()
-		self.tag_to_ix = { START_TAG: 0, STOP_TAG: 1, "E": 3, "Q": 4 }
+		self.tag_to_ix = { START_TAG: 0, STOP_TAG: 1, "E": 2, "Q": 3 }
 		self.model = BiLSTM_CRF(300, self.tag_to_ix, self.EMBEDDING_DIM, self.HIDDEN_DIM)
 	
 
 	def train(self):
+		print("starting training")
 		training_data = self.prepareData(data=self.intents)
+		print("training_data (length)", len(training_data))
 		optimizer = optim.SGD(self.model.parameters(), lr=0.01, weight_decay=1e-4)
-		for epoch in range(1000):
+		for epoch in range(self.num_epochs):
 			for (sentence, tags) in training_data:
 				self.model.zero_grad()
 				loss = self.model.neg_log_likelihood(sentence, tags)
 				loss.backward()
 				optimizer.step()
 
-			if (epoch + 1) % 100 == 0:
+			if (epoch + 1) % 2 == 0:
 				epochLoss = "%.4f" % loss.item()
 				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
 
 
 	def predict(self, sentence):
 		tokenized_sentence = tokenords(sentence)
-		sentence_words = [stem(word) for word in tokenized_sentence]
+		# sentence_words = [stem(word) for word in tokenized_sentence]
 		with torch.no_grad():
-			output = self.model(sentence_words)[1]
+			output = self.model(tokenized_sentence)[1]
 			return output

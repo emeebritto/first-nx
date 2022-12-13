@@ -12,7 +12,7 @@ rawIntentsPaths = [
 
 def s_map(pattern):
 	sMap = []
-	for word in pattern.split():
+	for word in tokenords(pattern):
 		if "$::" not in word:
 			sMap.append("E")
 		else:
