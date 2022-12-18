@@ -33,7 +33,7 @@ class Learning:
 		).to(device)
 
 
-	def _loadMind(self):
+	def _loadData(self):
 		data = torch.load(self.dataPath)
 		if self.intentsHash != data["intents_hash"] or data["bag_type"] != self.bag_of_words_type:
 			raise Exception
@@ -47,6 +47,9 @@ class Learning:
 		self.tags = data['tags']
 		self.model_state = data["model_state"]
 
+
+	def _loadMind(self):
+		self._loadData()
 		self._loadModel()
 
 		self._model.load_state_dict(self.model_state)
@@ -95,8 +98,8 @@ class Learning:
 			iInput = intent[self.input_name]
 			if isinstance(iInput, list):
 				for idx, pattern in enumerate(iInput):
-					# xy.append(join(pattern, tag[idx])) # TEMP =============
-					xy.append(join(pattern, tag)) # TEMP =============
+					xy.append(join(pattern, tag[idx])) # TEMP =============
+					# xy.append(join(pattern, tag)) # TEMP =============
 			else:
 				xy.append(join(iInput, tag))
 

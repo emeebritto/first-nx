@@ -6,7 +6,6 @@ from services import telegram
 from actions import nx
 from core import Nexa
 from api import api
-# from models.BiLSTM_crf import NER
 import gradio as gr
 
 
@@ -16,12 +15,6 @@ api.sync_start()
 api.keep_wake_up()
 nexa.learnModule(nx)
 nexa.extend("api", api)
-# ner = NER()
-# ner.train()
-# while True:
-#   uInput = input("you: ")
-#   out = ner.predict(uInput)
-#   print(out)
 
 def clearMessages(svars, nexa, res):
   telegram.clearMessages()

@@ -5,6 +5,7 @@ from models.external import Chatbot
 from patterns.replacer import replacer
 from spaces import question_answering
 from utils.response import Response
+from models.BiLSTM_crf import NER
 from googlesearch import search
 from bs4 import BeautifulSoup
 from compiler import Compiler
@@ -17,7 +18,7 @@ import string
 import nltk
 
 compiler = Compiler()
-chatbot = Chatbot()
+# chatbot = Chatbot()
 
 
 
@@ -32,8 +33,9 @@ class Nexa(Mind):
 		self._requests_active = []
 		self._lock = Lock()
 		self.analyzer = Analyzer()
+		self.ner = NER()
 		self.bert_answer = True
-		self.always_use_experimental = True
+		self.always_use_experimental = False
 
 
 	@property
@@ -92,23 +94,6 @@ class Nexa(Mind):
 		return source
 
 
-	def alterProcess(self, value, sender, res):
-		value = value.replace("--exp", "")
-		about_me = self.load("about_me")
-		answer = None
-		if self.analyzer.isAboutYou(value):
-			value = self.translate(value, to_lang="en")
-			answer = question_answering(value, about_me)
-			return res.appendText(answer or "I can't tell you anything about me.")
-		else:
-			output = chatbot.input(value, context=sender)
-			if not output or not output.get("message"): return res.appendText("tem algo errado comigo, espere uns minutos")
-			answer = output["message"]
-			answer = answer or "tem algo errado comigo, espere uns minutos"
-			answer = self.translate(answer, to_lang="pt", case="--tr" in value)
-			return res.appendText(answer)
-
-
 	# @_nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None, config=None):
 		res = Response(asyncRes, config)
@@ -119,8 +104,9 @@ class Nexa(Mind):
 		# analyzed_type = self.analyzer.type.predict(value)
 		analyzed_tag = self.analyzer.tag.predict(value) or {}
 
-		if "--exp" in value or self.always_use_experimental:
-			return self.alterProcess(value, sender, res) # TEMṔ
+		# output = self.ner.predict(value)
+		# print(" ".join(output))
+		# return res.appendText(" ".join(output))
 
 		if self.analyzer.isQuestion(value) and self.bert_answer:
 			about_me = self.load("about_me")
@@ -238,3 +224,21 @@ class Nexa(Mind):
 
 
 # git reset --soft HEAD^
+
+	# def alterProcess(self, value, sender, res):
+	# 	value = value.replace("--exp", "")
+	# 	about_me = self.load("about_me")
+	# 	answer = None
+	# 	if self.analyzer.isAboutYou(value):
+	# 		value = self.translate(value, to_lang="en")
+	# 		answer = question_answering(value, about_me)
+	# 		return res.appendText(answer or "I can't tell you anything about me.")
+	# 	else:
+	# 		output = chatbot.input(value, context=sender)
+	# 		if not output or not output.get("message"): return res.appendText("tem algo errado comigo, espere uns minutos")
+	# 		answer = output["message"]
+	# 		answer = answer or "tem algo errado comigo, espere uns minutos"
+	# 		answer = self.translate(answer, to_lang="pt", case="--tr" in value)
+	# 		return res.appendText(answer)
+		# if "--exp" in value or self.always_use_experimental:
+		# 	return self.alterProcess(value, sender, res) # TEMṔ

@@ -105,3 +105,9 @@ def dlMusicVideoByQuery(svars, nexa, res):
   query = svars.get("QUERY")
   svars["URL"] = searchVideoLink(f"{query} music")
   return nexa.execute("dlvideoyt", svars, res)
+
+
+def req_media(svars, nexa, res):
+  url = svars.get("URL")
+  data = requests.get(url)
+  return res.appendDocument(data.content)

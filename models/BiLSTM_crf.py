@@ -198,35 +198,47 @@ class NER(Learning):
 		self.tag_to_ix = tag_to_ix
 		self.EMBEDDING_DIM = 5
 		self.HIDDEN_DIM = 4
-		self.num_epochs = 20
+		self.num_epochs = 15
+		self.input_size = None
+		self.hidden_size = None
+		self.output_size = None
+		self.bag_of_words_type = None
 		self.intentsPath = "data/intents.json"
+		self.dataPath = "data/NER.pth"
 		self.input_name = "pattern"
 		self.output_name = "map"
 		self._loadIntents()
 		self.tag_to_ix = { START_TAG: 0, STOP_TAG: 1, "E": 2, "Q": 3 }
-		self.model = BiLSTM_CRF(300, self.tag_to_ix, self.EMBEDDING_DIM, self.HIDDEN_DIM)
+		self.ix_to_tag = { val:key for key, val in self.tag_to_ix.items() }
+		self._model = BiLSTM_CRF(300, self.tag_to_ix, self.EMBEDDING_DIM, self.HIDDEN_DIM)
+		try:
+			self._loadData()
+		except Exception as e:
+			self.train()
 	
 
 	def train(self):
 		print("starting training")
 		training_data = self.prepareData(data=self.intents)
 		print("training_data (length)", len(training_data))
-		optimizer = optim.SGD(self.model.parameters(), lr=0.01, weight_decay=1e-4)
+		optimizer = optim.SGD(self._model.parameters(), lr=0.01, weight_decay=1e-4)
 		for epoch in range(self.num_epochs):
 			for (sentence, tags) in training_data:
-				self.model.zero_grad()
-				loss = self.model.neg_log_likelihood(sentence, tags)
+				self._model.zero_grad()
+				loss = self._model.neg_log_likelihood(sentence, tags)
 				loss.backward()
 				optimizer.step()
 
 			if (epoch + 1) % 2 == 0:
 				epochLoss = "%.4f" % loss.item()
 				print(f'Epoch [{epoch+1}/{self.num_epochs}], Loss: {epochLoss}')
+		self._saveMind()
 
 
 	def predict(self, sentence):
 		tokenized_sentence = tokenords(sentence)
 		# sentence_words = [stem(word) for word in tokenized_sentence]
 		with torch.no_grad():
-			output = self.model(tokenized_sentence)[1]
-			return output
+			output = self._model(tokenized_sentence)[1]
+			print("output (NER)", output)
+			return ix_to_seq(output, self.ix_to_tag)
