@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from utils.nltk_utils import tokenords
 from torch.autograd import Variable
 
 
@@ -8,6 +9,36 @@ MAX_LENGTH = 10
 
 use_cuda = torch.cuda.is_available()
 teacher_forcing_ratio = 0.5
+
+
+class Silly:
+  def __init__(self):
+    super(Silly, self).__init__()
+    self.mind = {}
+
+
+  def __call__(self, *args, **kwargs):
+    uInput = args[0]
+    tokens = tokenords(uInput.lower().strip())
+    train = kwargs.get("train", False)
+
+    if train:
+      for idx, word in enumerate(tokens):
+        try:
+          for n in range(1, 8):
+            self.mind[" ".join(tokens[idx:idx+n])] = tokens[idx+n]
+        except Exception as e:
+          break
+        print(self.mind)
+      return "I learned it"
+    else:
+      idx = 7
+      while idx:
+        print(idx)
+        next_word = self.mind.get(" ".join(tokens[-idx:]))
+        print(next_word)
+        if next_word: return next_word
+        idx -= 1
 
 
 class NeuralNet(nn.Module):

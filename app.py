@@ -10,11 +10,11 @@ import gradio as gr
 
 
 nexa = Nexa()
-telegram.run()
-api.sync_start()
-api.keep_wake_up()
-nexa.learnModule(nx)
-nexa.extend("api", api)
+# telegram.run()
+# api.sync_start()
+# api.keep_wake_up()
+# nexa.learnModule(nx)
+# nexa.extend("api", api)
 
 def clearMessages(svars, nexa, res):
   telegram.clearMessages()
@@ -39,6 +39,10 @@ def interaction(uInput):
   if not response or not len(response.sequence):
     return [{ "msgType": "text", "msg": "sorry, something is wrong with me" }]
   return response.sequence
+
+
+def expInteration(uInput, isTrain):
+  return [{ "msgType": "text", "msg": nexa.silly(uInput, train=bool(isTrain)) }]
 
 
 # def telegramChat(user, chat, msgType, msgContent):
@@ -83,7 +87,7 @@ def telegramChat(msgType, msg, allMsgs=""):
 telegram.onMessage(telegramChat)
 api.inbox.onMessage(inboxChat)
 
-nxapp = gr.Interface(fn=interaction, inputs="text", outputs=["json"])
+nxapp = gr.Interface(fn=expInteration, inputs=["text", "text"], outputs=["json"])
 nxapp.launch()
 
 

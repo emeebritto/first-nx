@@ -1,9 +1,10 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from models.transformers import answer_by_context
-from models.external import Chatbot
+from models.core import Silly
 from patterns.replacer import replacer
 from spaces import question_answering
+# from models.external import Chatbot
 from utils.response import Response
 from models.BiLSTM_crf import NER
 from googlesearch import search
@@ -34,6 +35,7 @@ class Nexa(Mind):
 		self._lock = Lock()
 		self.analyzer = Analyzer()
 		self.ner = NER()
+		self.silly = Silly()
 		self.bert_answer = True
 		self.always_use_experimental = False
 
