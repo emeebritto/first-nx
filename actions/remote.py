@@ -1,9 +1,11 @@
 from utils.functions import read_as_binary
 from utils.managers import Room_Managet
-from api import memory, socketio
+from api.flask import memory
 from pytube import YouTube
 import os
 import re
+
+
 room_Managet = Room_Managet()
 
 
@@ -55,7 +57,7 @@ def play_sound(svars, nexa, res):
 		"label": "play_audio",
 		"data": response
 	}
-	socketio.emit("execute_order", order, to=obj_key["key"])
+	res.emit("execute_task", order, to=obj_key["key"])
 	key_label = obj_key['label'].split('::')[1]
 	return res.appendText(f"playing audio on your {key_label}")
 
@@ -67,7 +69,7 @@ def stop_sound(svars, nexa, res):
 
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	socketio.emit("execute_order", {"label":"stop_audio"}, to=obj_key["key"])
+	res.emit("execute_task", {"label":"stop_audio"}, to=obj_key["key"])
 
 
 def pause_sound(svars, nexa, res):
@@ -77,7 +79,7 @@ def pause_sound(svars, nexa, res):
 
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	socketio.emit("execute_order", {"label":"pause_audio"}, to=obj_key["key"])
+	res.emit("execute_task", {"label":"pause_audio"}, to=obj_key["key"])
 
 
 def resume_sound(svars, nexa, res):
@@ -87,4 +89,4 @@ def resume_sound(svars, nexa, res):
 
 	obj_key = room_Managet.get_key(f"{sender_id}::{label}")
 	if not obj_key: return no_label(res)
-	socketio.emit("execute_order", {"label":"resume_audio"}, to=obj_key["key"])
+	res.emit("execute_task", {"label":"resume_audio"}, to=obj_key["key"])

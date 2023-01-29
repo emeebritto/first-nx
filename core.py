@@ -1,8 +1,4 @@
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 from models.transformers import answer_by_context
-from models.core import Silly
-from patterns.replacer import replacer
 from spaces import question_answering
 # from models.external import Chatbot
 from utils.response import Response
@@ -11,12 +7,11 @@ from googlesearch import search
 from bs4 import BeautifulSoup
 from compiler import Compiler
 from analyzer import Analyzer
+from models.core import Silly
 from threading import Lock
 from mind import Mind
-import numpy as np
 import requests
-import string
-import nltk
+
 
 compiler = Compiler()
 # chatbot = Chatbot()
@@ -98,7 +93,7 @@ class Nexa(Mind):
 
 	# @_nospam
 	def read(self, value, context="", sender="unknown", asyncRes=None, config=None):
-		res = Response(asyncRes, config)
+		res = Response(sender, asyncRes, config)
 		if not value: return res.appendText("...")
 		if "exec::" in value.lower(): return self.execCommand(value, sender, res)
 		value = self.translate(value, to_lang="en", case_enclude="--tr")
@@ -144,7 +139,7 @@ class Nexa(Mind):
 
 	def view(self, value, instruction=None, sender="unknown", asyncRes=None):
 		if not value: return
-		res = Response(asyncRes)
+		res = Response(sender, asyncRes)
 
 		return res.appendText("my vision system is desabled, i don't see anything")
 
@@ -198,30 +193,6 @@ class Nexa(Mind):
 		action = self._actions.get(label)
 		if action: return action(svars, self, res)
 		res.appendText(f"action not found. ({label})")
-
-
-	def _extractFromText(self, value, source):
-		sent_tokens = nltk.sent_tokenize(source)
-		remove_punct_dict = dict((ord(punct),None) for punct in string.punctuation)
-
-		def LemNormalize(text):
-		  return nltk.word_tokenize(text.lower().translate(remove_punct_dict))
-
-		value = value.lower()
-		nexa_response = ""
-		sent_tokens.append(value)
-		tfidfvec = TfidfVectorizer(tokenizer=LemNormalize , stop_words='english')
-		tfidf = tfidfvec.fit_transform(sent_tokens)
-		val = cosine_similarity(tfidf[-1], tfidf)
-		idx = val.argsort()[0][-2]
-		flat = val.flatten()
-		flat.sort()
-		score = flat[-2]
-		if score == 0: nexa_response = "sorry, I dont understand"
-		else: nexa_response = sent_tokens[idx]
-
-		sent_tokens.remove(value)
-		return nexa_response
 
 
 

@@ -1,7 +1,7 @@
 from utils.functions import create_filePath
 from actions.search import VideosSearch
+from api.flask import memory
 from pytube import YouTube
-from api import memory
 import requests
 import os
 import re

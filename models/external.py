@@ -1,4 +1,5 @@
 from utils.functions import syncmethod
+from utils.browser import Browser
 from time import sleep
 from os import getenv
 import requests

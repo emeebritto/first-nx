@@ -76,3 +76,8 @@ def wake_up():
     requests.get(url)
   except Exception as e:
     print(f"wakeUp failed (url: {url})")
+
+
+def keep_awake():
+  print("keep_awake was activated.")
+  interval(wake_up, 4 * 60)

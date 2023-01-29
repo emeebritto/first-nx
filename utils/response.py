@@ -1,10 +1,10 @@
 from utils.functions import read_as_binary, create_filePath, raiseError
+from api.flask import memory
 from random import choice
-from api import memory
 import hashlib
 import base64
-import magic
 import imghdr
+import magic
 
 
 
@@ -103,8 +103,9 @@ class NxConfig:
 
 
 class Response:
-	def __init__(self, asyncResponse=None, config=None):
+	def __init__(self, target, asyncResponse=None, config=None):
 		super(Response, self).__init__()
+		self.target = target
 		self._config = config or NxConfig()
 		self._sequence = []
 		self._main = []
@@ -131,12 +132,18 @@ class Response:
 	def _instantMsg(self, value):
 		reply_method = self._asyncRes.get(value["msgType"])
 		if reply_method: reply_method(value["msg"])
+		if self.target: self.emit("new_nx_message", value, room=self.target)
 
 
 	def _append(self, value):
 		self._sequence.append(value)
 		self._instantMsg(value)
 		return self;
+
+
+	def emit(self, *args, **kwargs):
+		io = self._asyncRes.get("socket")
+		if io: io.emit(*args, **kwargs)
 
 
 	def sendText(self, value):
