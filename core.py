@@ -1,6 +1,4 @@
-from models.transformers import answer_by_context
 from spaces import question_answering
-# from models.external import Chatbot
 from utils.response import Response
 from models.BiLSTM_crf import NER
 from googlesearch import search
@@ -14,8 +12,6 @@ import requests
 
 
 compiler = Compiler()
-# chatbot = Chatbot()
-
 
 
 class Nexa(Mind):
@@ -98,7 +94,6 @@ class Nexa(Mind):
 		if "exec::" in value.lower(): return self.execCommand(value, sender, res)
 		value = self.translate(value, to_lang="en", case_enclude="--tr")
 		print(f"new message => {value} (author_id: {sender})")
-		# analyzed_type = self.analyzer.type.predict(value)
 		analyzed_tag = self.analyzer.tag.predict(value) or {}
 
 		# output = self.ner.predict(value)
@@ -110,10 +105,6 @@ class Nexa(Mind):
 			other_subject = context + self.nx_search(value) + self.load("other_subject")
 			ctx = about_me if self.analyzer.isAboutYou(value) else other_subject 
 			answer = question_answering(value, ctx)
-			# answer = answer_by_context(
-			# 	context=ctx,
-			# 	value=value
-			# )
 			return res.appendText(answer or "I don't know it :(")
 
 		predicted = self.predict(value).high_precision(base=analyzed_tag.get("base_words"))
@@ -197,21 +188,3 @@ class Nexa(Mind):
 
 
 # git reset --soft HEAD^
-
-	# def alterProcess(self, value, sender, res):
-	# 	value = value.replace("--exp", "")
-	# 	about_me = self.load("about_me")
-	# 	answer = None
-	# 	if self.analyzer.isAboutYou(value):
-	# 		value = self.translate(value, to_lang="en")
-	# 		answer = question_answering(value, about_me)
-	# 		return res.appendText(answer or "I can't tell you anything about me.")
-	# 	else:
-	# 		output = chatbot.input(value, context=sender)
-	# 		if not output or not output.get("message"): return res.appendText("tem algo errado comigo, espere uns minutos")
-	# 		answer = output["message"]
-	# 		answer = answer or "tem algo errado comigo, espere uns minutos"
-	# 		answer = self.translate(answer, to_lang="pt", case="--tr" in value)
-	# 		return res.appendText(answer)
-		# if "--exp" in value or self.always_use_experimental:
-		# 	return self.alterProcess(value, sender, res) # TEMṔ
