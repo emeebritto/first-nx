@@ -31,8 +31,6 @@ def apiRequest(msg):
 
 
 def socketRequest(msg):
-  print(msgType, msg)
-
   responsesType = {
     "socket": socket,
   }

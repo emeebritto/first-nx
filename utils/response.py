@@ -8,8 +8,6 @@ import magic
 
 
 
-
-
 class File:
 	def __init__(self, value, mime_type=None):
 		super(File, self).__init__()
