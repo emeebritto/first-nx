@@ -2,9 +2,39 @@ from threading import Thread
 from re import sub as re_sub
 from uuid import uuid4
 from time import sleep
+import subprocess
 import requests
 import hashlib
+import time
+import sys
 import os
+
+
+def syncmethod(func):
+  def function(*args, **kwargs):
+    th = Thread(target=func, args=args, kwargs=kwargs)
+    th.start()
+  return function
+
+
+@syncmethod
+def execute_command(command):
+  print(f"executing subprocess: {command}")
+  process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+  sys.stdout.flush()
+  while True:
+    stdout = process.stdout.readlines()
+    stderr = process.stderr.readlines()
+    if stdout:
+      for line in stdout:
+        print("Out:", line)
+    if stderr:
+      for line in stderr:
+        print("Error:", line)
+    if process.poll() == 0:
+      print("poll", process.poll())
+      break
+    time.sleep(1)
 
 
 def some_match(list1, list2):
@@ -53,13 +83,6 @@ def create_filePath(data, fileFormat="", folder=None, fileName=None):
 def raiseError(msg, case):
   case = not case # reverse
   assert case, msg
-
-
-def syncmethod(func):
-  def function(*args, **kwargs):
-    th = Thread(target=func, args=args, kwargs=kwargs)
-    th.start()
-  return function
 
 
 @syncmethod

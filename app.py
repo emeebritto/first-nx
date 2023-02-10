@@ -6,14 +6,14 @@ from api import socket, flaskAPI
 from services import telegram
 from actions import nx
 from core import Nexa
+from os import getenv
 import gradio as gr
 
+IS_HG_SERVER = getenv("is_hg_server")
 
 
 nexa = Nexa()
 telegram.run()
-socket.start()
-socket.keep_awake()
 nexa.learnModule(nx)
 
 
@@ -94,9 +94,14 @@ def telegramChat(msgType, msg, allMsgs=""):
   #   if reply_method: reply_method(part["msg"])
 
 
+if not IS_HG_SERVER:
+  print("starting APIs")
+  socket.start()
+  socket.keep_awake()
+  flaskAPI.events.onMessage(apiRequest)
+  socket.events.onMessage(socketRequest)
+
 telegram.onMessage(telegramChat)
-flaskAPI.events.onMessage(apiRequest)
-socket.events.onMessage(socketRequest)
 
 nxInterface = gr.Interface(
   fn=gradioInteraction,
